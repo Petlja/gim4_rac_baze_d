@@ -1,6 +1,6 @@
-# Programiranje za prvi razred specijalizovanih IT odeljenja 
+# Baze podataka za četvrti razred gimnazije društveni i opšti smer 
 
-Ovaj repozitorijum posvećen je kursu za Programiranje za prvi razred specijalizovanih IT odeljenja. 
+Ovaj repozitorijum posvećen je kursu za Baze podataka za četvrti razred gimnazije društveni i opšti smer. 
 
 Kurs je na Petljom portalu dotupan ovde: [https://petlja.org/kurs/369/0](https://petlja.org/kurs/369/)
 
