@@ -10,7 +10,12 @@ window.addEventListener('load', function () {
 			this.children[2].classList.toggle('d-none');
 		});
 	});
-
+    var allLectures = document.getElementsByClassName('studioLecture');
+	Array.prototype.forEach.call(allLectures, function (e) {
+		e.addEventListener('click', function () {
+            localStorage.setItem('scrollpos',0);
+		});
+	});
 	var path = decodeURI(document.location.pathname).split('/').slice(-2).join('/');
 	path = path.replaceAll(' ', '%20');
 	var lecture = path.substring(0, path.indexOf('/'));
@@ -28,6 +33,7 @@ window.addEventListener('load', function () {
 
 	if (document.getElementById('prevLectureLink'))
 		document.getElementById('prevLectureLink').addEventListener('click', function (e) {
+            localStorage.setItem('scrollpos',0);
 			e.preventDefault();
             var lectureDiv = document.getElementById(activeLecture);
             if (document.getElementById("activity-" + activity).parentElement.previousElementSibling != null) {
@@ -40,6 +46,7 @@ window.addEventListener('load', function () {
 
 	if (document.getElementById('nextLectureLink'))
 		document.getElementById('nextLectureLink').addEventListener('click', function (e) {
+            localStorage.setItem('scrollpos',0);
 			e.preventDefault();
 			if (activeLecture == '') {
 				var lectureDiv = document.getElementsByClassName('lecture-div')[0];
@@ -103,6 +110,14 @@ window.addEventListener('load', function () {
             incrAllFontSize();
         });
 	}
+    var main = document.getElementsByClassName('lectureContentMaterial')[0]
+    var scrollpos = localStorage.getItem('scrollpos');
+    if (scrollpos) main.scrollTop = scrollpos ;
+
+    document.getElementsByClassName('lectureContentMaterial')[0].addEventListener('scroll', function(e) {
+        var main = document.getElementsByClassName('lectureContentMaterial')[0]
+        localStorage.setItem('scrollpos', main.scrollTop);
+    });
 });
 
 function incrAllFontSize() {
