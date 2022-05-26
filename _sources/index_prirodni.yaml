@@ -1,0 +1,556 @@
+courseId: kurs-gim-cetvrti-prirodni-inf
+lang: sr-Cyrl
+title: Базе података, рачунарске мреже и серверско веб програмирање за четврти разред гимназије природни смер
+description:
+  longDescription: |
+    Овај курс је намењен ученицима четвртог разреда гимназија природно-математичког смера за предмет Рачунарство и информатика. Курс прати одговарајући програм наставе и учења.
+
+    <p>
+    <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.sr_LATN">
+    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+    <br />Овај курс Фондација Петља објавила je под лиценцом <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.sr_LATN">Creative Commons Autorstvo 4.0 Međunarodna Licenca (CC BY 4.0)</a>.
+    </p> 
+  
+  shortDescription: Базе података, рачунарске мреже и серверско веб програмирање за четврти разред гимназије природни смер
+  willLearn:
+    - шта су и чему служе базе података
+    - шта је и како се користи упитни језик SQL
+    - како програми написани на језику Python могу да користе базе података
+    - од чега су сачињене и како функционишу рачунарске мреже
+    - како клијенти и сервери на вебу комуницирају коришћењем протокола HTTP
+    - како се помоћу библиотеке Flask у језику Python програмирају серверске веб-апликације
+    - као пројекат израдићеш једну савремену веб-апликацију
+    - које су најзначајније области савременог рачунарства
+  requirements:
+    - Инсталиран програмски језик Python
+    - Инсталирана библиотека Flask (упутство за инсталацију је дато у склопу курса)
+    - Инсталиран програм SQLLite studio (упутство за инсталацију је дато у склопу курса)
+  toc:
+    - Базе података
+    - Рачунарске мреже
+    - Серверске веб-апликације
+    - Пројектни задатак
+    - Области савременог рачунарства
+  externalLinks:
+    - text: SQLite studio
+      href: https://sqlitestudio.pl/
+    - text: Документација система SQLite 
+      href: https://www.sqlite.org/index.html
+
+
+lessons:
+### СЕКЦИЈА Базе података
+  - title: "1.0 Базе: Увод у базе података"
+    guid: 61dd63f6-a897-418c-8efd-e04c7db5dcf4
+    folder: 01_baze_i_tabele_00_uvod
+    activities:
+      - type: reading
+        title: Шта су базе података?
+        file: 01_baze_00a_uvod.rst
+        guid: 9952e83e-bc5e-4d5c-9a3f-941d53ef75e3
+      - type: reading
+        title: Табеларна организација података
+        file: 01_baze_00b_tabele.rst
+        guid: fdeb40b5-0627-4637-8551-d3e0f2ba9ec8
+      - type: reading
+        title: Повезане табеле
+        file: 01_baze_00c_povezane_tabele.rst
+        guid: cea6af07-8241-4a4f-966e-d575e71a6077
+      - type: quiz
+        title: Базе и табеле - квиз
+        file: 01_baze_00d_kviz.rst
+        guid: 3c772bba-05b3-4a6a-a44e-4aff55718f0d
+
+  - title: "1.1 Базе: SQLite"
+    guid: bd1d3ac2-2a4e-4551-9184-093c8e1d52d9
+    folder: 01_baze_i_tabele_01_SQLite
+    activities:
+      - type: reading
+        title: SQLite и SQLite Studio
+        file: 01_baze_01a_sqlite.rst
+        guid: f2435c77-3c6d-478c-a3bb-e9f7da660177
+      - type: reading
+        title: Креирање базе у SQLite Studio
+        file: 01_baze_01b_sqlite_baza.rst
+        guid: d3739013-648b-4cb1-8058-5d0515878a25
+      - type: quiz
+        title: SQLite и SQLite Studio - квиз
+        file: 01_baze_01c_sqlite_kviz.rst
+        guid: fedfece4-b17e-40d0-97cf-4661afbe4604
+      - type: reading
+        title: Креирање базе у SQLite Studio - задаци за вежбу
+        file: 01_baze_01d_sqlite_vezba.rst
+        guid: ea6bfcb5-e846-4561-8126-6ee7ae47265b
+
+  - title: "1.2 Базе: Дизајнирање базе података"
+    guid: ef450cee-f8d9-4e6d-ab7f-764bf4d799a7
+    folder: 01_baze_i_tabele_02_dizajniranje
+    activities:
+      - type: reading
+        title: База компаније за продају дигиталних композиција - подаци о композицијама
+        file: 01_baze_02a_dizajn_muzika.rst
+        guid: 64e3110d-a95b-47e1-a2da-68e272f94cb2
+      - type: reading # quiz ?
+        title: База компаније за продају дигиталних композиција - подаци о продаји
+        file: 01_baze_02b_dizajn_muzika_prodaja.rst
+        guid: 2dc59aeb-1111-4252-adf0-807d618ac482
+      - type: quiz
+        title: Дизајнирање базе података - квиз
+        file: 01_baze_02c_dizajn_kviz.rst
+        guid: accc6444-ed67-43d4-b025-ae2456769666
+
+        
+### СЕКЦИЈА ЧИТАЊЕ ПОДАТАКА
+  - title: "2.0 - SQL: Читање података из базе"
+    guid: dc254235-5707-446e-a482-25110340e3f4
+    folder: 02_citanje_podataka_00_uvod
+    activities:
+      - type: reading
+        title: "SQL: Читање података из табела"
+        file: 02_citanje_00a_uvod.rst
+        guid: 02099b6b-cc88-49cd-a7b1-5e72d917fa16
+      - type: quiz
+        title: Читање података - квиз
+        file: 02_citanje_00b_citanje_kviz.rst
+        guid: d18a4aef-e340-47cd-ab8b-3e55b092bfbe
+
+  - title: "2.1 SQL: Пројекција и селекција"
+    guid: 9a05a82c-a1e4-43b0-9b35-15cad3b4e582
+    folder: 02_citanje_podataka_01_projekcija_restrikcija
+    activities:
+      - type: reading
+        title: Пројекција
+        file: 02_citanje_01a_projekcija.rst
+        guid: 6af6262d-3daa-4791-bdc5-1b53c153837b
+      - type: reading
+        title: Селекција
+        file: 02_citanje_01b_restrikcija.rst
+        guid: 5352c2d4-3fbf-48d3-97ab-fce40c48df20
+      - type: quiz
+        title: Пројекција и селекција - квиз
+        file: 02_citanje_01c_proj_restr_kviz.rst
+        guid: 017eacf2-ec62-45b3-b246-74e80366cb3c
+      - type: reading
+        title: Пројекција и селекција - задаци (дневник)
+        file: 02_citanje_01d_proj_restr_zadaci_skola.rst
+        guid: c7459add-98bf-4f02-8a8a-af2b433dec83
+      - type: reading
+        title: Пројекција и селекција - задаци (музика)
+        file: 02_citanje_01e_proj_restr_zadaci_muzika.rst
+        guid: 0035d4fe-7f2c-4bce-b835-82a13e51cb33
+
+  - title: "2.2 SQL: Логички и релацијски оператори"
+    guid: 6ca88847-79bd-4e9f-92c9-e0052ffd990b
+    folder: 02_citanje_podataka_02_operatori
+    activities:
+      - type: reading
+        title: Логички оператори
+        file: 02_citanje_02a_logicki_operatori.rst
+        guid: 881dfd0e-584c-4a76-b96c-ef1e25fb73f9
+      - type: reading
+        title: Релацијски оператори
+        file: 02_citanje_02b_relacijski_operatori.rst
+        guid: ca886a03-944a-4c6e-a205-3b191a87b2eb
+      - type: quiz
+        title: Оператори - квиз
+        file: 02_citanje_02c_operatori_kviz.rst
+        guid: e5f38f80-4483-40ac-925a-9679c7cbba4b
+      - type: reading
+        title: Оператори - задаци (дневник)
+        file: 02_citanje_02d_operatori_zadaci_skola.rst
+        guid: c5268e25-819a-44ef-9495-6e013d125749
+      - type: reading
+        title: Оператори - задаци (музика)
+        file: 02_citanje_02e_operatori_zadaci_muzika.rst
+        guid: 21bb4ab3-5c49-46ff-b084-6d2771ab5327
+
+  - title: "2.3 SQL: Изрази и функције"
+    guid: 5e3c70de-36af-4d83-b3ab-bc97aae31adb
+    folder: 02_citanje_podataka_03_izrazi_funkcije
+    activities:
+      - type: reading
+        title: Изрази
+        file: 02_citanje_03a_izrazi.rst
+        guid: 45fbb2a5-6836-4a3f-871b-a7048d25655f
+      - type: reading
+        title: Функције
+        file: 02_citanje_03b_funkcije.rst
+        guid: 5ce6c3d2-c316-4ddc-9b37-ac1613512bd3
+      - type: quiz
+        title: Изрази и функције - квиз
+        file: 02_citanje_03c_izr_fun_kviz.rst
+        guid: 92ac269f-bb47-4b2a-856d-f080ad8d8a17
+      - type: reading
+        title: Изрази и функције - задаци (дневник)
+        file: 02_citanje_03d_izr_fun_zadaci_skola.rst
+        guid: df85e68d-1e53-4a7e-b536-8656dd57e46b
+      - type: reading
+        title: Изрази и функције - задаци (музика)
+        file: 02_citanje_03e_izr_fun_zadaci_muzika.rst
+        guid: 07d3318c-2fda-4f8a-b6d0-9c31285d6544
+
+  - title: "2.4 SQL: Сортирање, уклањање дупликата, ограничавање броја врста"
+    guid: f1f704a8-5d37-4c30-baa8-15a94f0dbd10
+    folder: 02_citanje_podataka_04_soritiranje
+    activities:
+      - type: reading
+        title: Сортирање
+        file: 02_citanje_04a_sortiranje.rst
+        guid: ec67a67f-d34c-40c7-8e3b-6baad51bccb4
+      - type: reading
+        title: Ограничавање броја врста у резултату
+        file: 02_citanje_04b_ogranicavanje.rst
+        guid: 6acf0e32-abc3-4636-ae90-b2a9eabf77ae
+      - type: reading
+        title: Уклањање дупликата
+        file: 02_citanje_04c_uklanjanje_duplikata.rst
+        guid: 4036d393-be46-4ec2-8004-3196f4a4676a
+      - type: quiz
+        title: Сортирање, уклањање дупликата, ограничавање одговора - квиз
+        file: 02_citanje_04d_sort_ogr_kviz.rst
+        guid: 2a8b92b7-df37-4b45-ae0b-f88a12826042
+      - type: reading
+        title: Сортирање и ограничавање - задаци (дневник)
+        file: 02_citanje_04e_sort_ogr_zadaci_skola.rst
+        guid: 02b0323d-a82f-465e-a379-2c75d659b9a5
+      - type: reading
+        title: Сортирање и ограничавање - задаци (музика)
+        file: 02_citanje_04f_sort_ogr_zadaci_muzika.rst
+        guid: 00aac1de-669b-4f4f-813d-8d40bad9d41d
+
+  - title: "2.5 SQL: Агрегатне функције и груписање"
+    guid: 461ef7b5-fcd5-4ac8-9495-3a1e665ec9b6
+    folder: 02_citanje_podataka_05_agregatne_funkcije
+    activities:
+      - type: reading
+        title: Агрегатне функције
+        file: 02_citanje_05a_agregatne_funkcije.rst
+        guid: 70a10f63-e336-494b-b2d5-7ade8ba42cc8
+      - type: reading
+        title: Груписање и израчунавање статистика појединачних група
+        file: 02_citanje_05b_grupisanje.rst
+        guid: 861d0978-4f95-4ec2-a263-c33828e734a4
+      - type: reading
+        title: Селекција након груписања
+        file: 02_citanje_05c_restrikcija_nakon_grupisanja.rst
+        guid: 64dda07c-1a32-404d-aca8-2c77fca517d9
+      - type: quiz
+        title: Агрегатне функције и груписање - квиз
+        file: 02_citanje_05d_agregatne_grupisanje_kviz.rst
+        guid: 94bb237a-a39a-4ae4-ae78-dbd31010bc28
+      - type: reading
+        title: Агрегатне функције и груписање - задаци (дневник)
+        file: 02_citanje_05e_agregatne_zadaci_skola.rst
+        guid: 86b92d7a-5be9-4af8-9e60-9ad7abd28b13
+      - type: reading
+        title: Агрегатне функције и груписање - задаци (музика)
+        file: 02_citanje_05f_agregatne_zadaci_muzika.rst
+        guid: fb620597-1bee-4b50-a803-7c1f4767a09d
+
+  - title: "2.6 SQL: Спајање табела"
+    guid: 94cff4fa-91cc-45fe-9c38-4c3d442c5e35
+    folder: 02_citanje_podataka_06_spajanje
+    activities:
+      - type: reading
+        title: Спајање табела
+        file: 02_citanje_06a_spajanje.rst
+        guid: 1573942e-66d8-40c2-bbc6-e50ac64ea9bd
+      - type: reading
+        title: Имплицитно спајање
+        file: 02_citanje_06b_implicitno_spajanje.rst
+        guid: c7f043de-608f-4f0b-bbe4-38d1893ba83e
+      - type: reading
+        title: Спајање и груписање
+        file: 02_citanje_06c_spajanje_i_grupisanje.rst
+        guid: 51a19e7c-55c9-4a68-bad7-3f10768bcb26
+      - type: reading
+        title: Врсте спајања
+        file: 02_citanje_06d_vrste_spajanja.rst
+        guid: d82adffc-8d26-43c4-8190-8ee492f0639c
+      - type: quiz
+        title: Спајање табела - квиз
+        file: 02_citanje_06e_spajanje_kviz.rst
+        guid: 7be8db65-422d-4a35-b86e-e1b3f0660458
+      - type: reading
+        title: Спајање - задаци (дневник)
+        file: 02_citanje_06f_spajanje_zadaci_skola.rst
+        guid: 3ea72fcf-d9d1-4ab9-ab79-2036a23b5c7d
+      - type: reading
+        title: Спајање - задаци (музика)
+        file: 02_citanje_06g_spajanje_zadaci_muzika.rst
+        guid: 2dd25213-5056-4713-93db-e5e871db32ca
+        
+  - title: "2.7 SQL: Угнежђени упити"
+    guid: b9fa3311-1b8c-4a6b-92f8-fa44d376d7e2
+    folder: 02_citanje_podataka_07_ugnezdjeni_upiti
+    activities:
+      - type: reading
+        title: Угнежђени упити
+        file: 02_citanje_07a_ugnezdjeni_upiti.rst
+        guid: 50556c86-02b9-426b-9a33-d8648dfda53f
+      - type: reading
+        title: Корелисани подупити
+        file: 02_citanje_07b_korelisani_podupiti.rst
+        guid: 432ec19b-8cf7-4675-ae10-083933890ed1
+      - type: reading
+        title: Провера постојања
+        file: 02_citanje_07c_provera_postojanja.rst
+        guid: 51df3cec-1076-467a-bc9c-0eb45c40dd59
+      - type: quiz
+        title: Угнежђени упити - квиз
+        file: 02_citanje_07d_ugnezdjeni_kviz.rst
+        guid: 9fe307aa-2dfe-4599-a344-55ee26746186
+      - type: reading
+        title: Угнежђени упити - задаци (дневник)
+        file: 02_citanje_07e_ugnezdjeni_zadaci_skola.rst
+        guid: 6c3fda23-22a3-410b-a8e9-f17aaee3e17f
+      - type: reading
+        title: Угнежђени упити - задаци (музика) 
+        file: 02_citanje_07f_ugnezdjeni_zadaci_muzika.rst
+        guid: d61e4960-55e4-423f-916b-390612aa197a
+        
+  - title: "2.8 SQL: Погледи"
+    guid: 2567b15f-97b6-4596-9ff4-8618c7706f93
+    folder: 02_citanje_podataka_08_pogledi
+    activities:
+      - type: reading
+        title: Погледи
+        file: 02_citanje_08a_pogledi.rst
+        guid: fedbb648-9bae-4e3d-b35d-08534362ca26
+      - type: quiz
+        title: Погледи - квиз
+        file: 02_citanje_08b_pogledi_kviz.rst
+        guid: 657c546c-b491-437d-9d33-c836f9c4415c
+      - type: reading
+        title: Погледи - задаци (дневник)
+        file: 02_citanje_08c_pogledi_zadaci.rst
+        guid: 15c55c44-a361-4e48-9652-55f061d969c4
+
+
+### СЕКЦИЈА ПРОМЕНА САДРЖАЈА БАЗЕ
+  - title: "3.0 SQL: Промена садржаја базе"
+    guid: 677ee590-07ff-4741-a121-6ea347acaa1d
+    folder: 03_izmene_00_uvod
+    activities:
+      - type: reading
+        title: Измене података у бази
+        file: 03_izmene_00a_uvod.rst
+        guid: a7f22cd8-c823-453c-bd73-b6d5edec1c3a
+
+  - title: "3.1 SQL: Уписивање података у табеле"
+    guid: 89cd79f3-08dd-477b-b0b3-19ad5ba339e2
+    folder: 03_izmene_01_upisivanje
+    activities:
+      - type: reading
+        title: Уписивање података
+        file: 03_izmene_01a_upisivanje.rst
+        guid: 9142c049-1f93-4cb5-a67d-0709016be6c7
+      - type: reading
+        title: Уписивање података прочитаних из базе
+        file: 03_izmene_01b_upisivanje_procitanog.rst
+        guid: b9ff8982-aebe-4803-8a74-910a7224b860
+      - type: quiz
+        title: Уписивање података - квиз
+        file: 03_izmene_01c_upisivanje_kviz.rst
+        guid: 93f6c08e-0926-49e9-833b-37b390fddb54
+
+  - title: "3.2 SQL: Ажурирање података у табелама"
+    guid: 83748255-e22d-4997-bdd5-4234633cd38a
+    folder: 03_izmene_02_azuriranje
+    activities:
+      - type: reading
+        title: Ажурирање података
+        file: 03_izmene_02a_azuriranje.rst
+        guid: c2aa5551-ccef-4908-8200-a211b659ee15
+      - type: quiz
+        title: Ажурирање података - квиз
+        file: 03_izmene_02b_azuriranje_kviz.rst
+        guid: a486cb81-a235-468d-a26d-1de16114f668
+
+  - title: "3.3 SQL: Брисање података из табела"
+    guid: 9e090bb2-50bb-4a62-bf01-b8585e1bf56c
+    folder: 03_izmene_03_brisanje
+    activities:
+      - type: reading
+        title: Брисање података
+        file: 03_izmene_03a_brisanje.rst
+        guid: 921ac985-380e-4d06-b91c-ba146577adbc
+      - type: quiz
+        title: Брисање података - квиз
+        file: 03_izmene_03b_brisanje_kviz.rst
+        guid: ffd323cf-842b-4a03-a5e4-66f08e36b94b
+
+   
+### СЕКЦИЈА Python SQLite API
+  - title: "4.0 Python SQLite API"
+    guid: c94e776e-36e8-452d-8d12-5086106018e9
+    folder: 04_python_sqlite
+    activities:
+      - type: reading
+        title: 4.1 Python SQLite API - увод
+        file: 04_python_sqlite_01a_uvod.rst
+        guid: fc3cdc65-e16a-45f9-a716-432d11e8773d
+      - type: reading
+        title: 4.2 Повезивање са базом
+        file: 04_python_sqlite_01b_povezivanje.rst
+        guid: a56df623-e387-4ca8-ae8c-ec99937d4a69
+      - type: reading
+        title: 4.3 Постављање упита
+        file: 04_python_sqlite_01c_postavljanje_upita.rst
+        guid: 239c0083-8c4a-426e-9ac1-b9ee3e1824ca
+      - type: reading
+        title: 4.4 Упити са параметрима
+        file: 04_python_sqlite_01d_upiti_sa_parametrima.rst
+        guid: 41581677-98cd-4b4e-9e8a-e7f4c54a782c
+      - type: reading
+        title: 4.5 Колационе секвенце
+        file: 04_python_sqlite_01e_kolacione_sekvence.rst
+        guid: e797e25b-ee9f-4595-b8b4-d5fa1441e703
+      - type: reading
+        title: 4.6 Дефинисање помоћних функција
+        file: 04_python_sqlite_01f_pomocne_funkcije.rst
+        guid: 4408ab43-0efa-4bd6-a330-65f6cd053c42
+      - type: quiz
+        title: 4.7 Python SQLite API - квиз
+        file: 04_python_sqlite_01g_kviz.rst
+        guid: 2725662f-8188-430e-af75-dc4d9b701d4c
+
+
+### СЕКЦИЈА Računarske mreže
+  - title: "5.0 Рачунарске мреже"
+    guid: 0eb2a0ec-d038-42b7-a30f-e4ef41be3cfd
+    folder: 05_racunarske_mreze
+    activities:
+      - type: reading
+        title: 5.1 Рачунарске мреже
+        file: 05_mreze_01a_pojam_racunarske_mreze.rst
+        guid: 3464bc77-999c-4b84-a156-4ac56eb05feb
+      - type: reading
+        title: 5.2 Мрежни хардвер и мрежни софтвер
+        file: 05_mreze_01b_mrezni_hardver_i_softver.rst
+        guid: f73273cc-603e-42f2-bca0-28b3268a3800
+      - type: reading
+        title: 5.3 Повезивање и постављање кућне мреже
+        file: 05_mreze_01c_povezivanje_i_postavljanje_mreze.rst
+        guid: b57c6af0-7b6d-41a1-b190-649caa8bc192
+      - type: quiz
+        title: 5.4 Рачунарске мреже - квиз
+        file: 05_mreze_01d_kviz.rst
+        guid: 5f7b7336-ba9e-4495-9fcd-717c46733085
+      - type: reading
+        title: "5.5 Додатак: мрежни слојеви и протоколи, детаљније"
+        file: 05_mreze_01e_mrezni_slojevi.rst
+        guid: bece5c6d-e08e-4ffd-bde7-1880e9f844f9
+
+        
+### СЕКЦИЈА Flask
+  - title: "6.0 Серверско веб-програмирање"
+    guid: 625ae3ea-40d7-4d46-8512-fccc74050597
+    folder: 06_serverske_veb_aplikacije_00_uvod
+    activities:
+      - type: reading
+        title: Веб-апликације - увод
+        file: 06_veb_ap_00a_uvod.rst
+        guid: 34a122ff-097e-4289-bd11-27e5d69e794c
+      - type: reading
+        title: Протокол HTTP
+        file: 06_veb_ap_00b_http_zahtevi.rst
+        guid: 7785bbe6-08f1-4b77-b95f-1e825301e355
+      - type: quiz
+        title: Протокол HTTP - квиз
+        file: 06_veb_ap_00c_http_kviz.rst
+        guid: 1858e7f5-96d2-4f66-b531-05d4f6afcab1
+  - title: "6.1 Библиотека Flask - основни појмови"
+    guid: 453b61a9-27e3-4ccb-9868-ad3143daea52
+    folder: 06_serverske_veb_aplikacije_01_flask
+    activities:
+      - type: reading
+        title: Библиотека Flask - увод
+        file: 06_veb_ap_01a_flask_uvod.rst
+        guid: f0ea5ca8-a012-4142-b689-4e1c59825c50
+      - type: reading
+        title: Библиотека Flask - први програм, путање
+        file: 06_veb_ap_01b_flask_prvi_program.rst
+        guid: d5387ecb-837c-4719-8d22-fd30764d0434
+      - type: reading
+        title: Библиотека Flask - шаблони
+        file: 06_veb_ap_01c_flask_sabloni.rst
+        guid: 4e988ce0-d217-4b23-871c-0320c094c76f
+      - type: reading
+        title: Библиотека Flask - пратеће статичке датотеке и линкови унутар веб-апликације
+        file: 06_veb_ap_01d_flask_staticke_datoteke.rst
+        guid: 8a3021fe-37f1-4f8f-b025-5f7d636ebacd
+      - type: reading
+        title: Библиотека Flask - Метода GET
+        file: 06_veb_ap_01e_flask_parametri_get.rst
+        guid: 7624ef28-0ed6-4498-a6ba-0e3dd528fdce
+      - type: reading
+        title: Библиотека Flask - Метода POST
+        file: 06_veb_ap_01f_flask_parametri_post.rst
+        guid: 9f4f163c-eb3f-4276-ac9f-0e6d56ad60ae
+      - type: reading
+        title: Библиотека Flask - путање са параметрима
+        file: 06_veb_ap_01g_flask_parametri_rutiranje.rst
+        guid: 1e7d3ba9-64e7-40fc-9436-8027d3a40aac
+      - type: reading
+        title: Библиотека Flask - колачићи
+        file: 06_veb_ap_01h_flask_kolacici.rst
+        guid: b2f2e885-b34c-4427-af5e-33740504d684
+      - type: reading
+        title: Библиотека Flask - сесије
+        file: 06_veb_ap_01i_flask_sesije.rst
+        guid: f565976d-3b38-49c1-8529-cf53433509f9
+      - type: quiz
+        title: Библиотека Flask - квиз
+        file: 06_veb_ap_01j_flask_kviz.rst
+        guid: d99d4b14-4e5c-48c0-9e2f-2d85569cfe34
+  - title: "6.2 Библиотека Flask - повезивање са базом података"
+    guid: 0d2c244b-ca2c-474b-b586-61b4ba200038
+    folder: 06_serverske_veb_aplikacije_02_baze
+    activities:
+      - type: reading
+        title: Повезивање са базом и постављање упита
+        file: 06_veb_ap_02a_povezivanje_i_osnovni_upiti.rst
+        guid: 67cb551d-6234-40b3-8f14-4b36519ceaaf
+      - type: reading
+        title: Пренос параметара упита 
+        file: 06_veb_ap_02b_prenos_argumenata_upita.rst
+        guid: 0ac7a838-4a75-40ff-b219-0b4adb162b9e
+      - type: reading
+        title: Формулари и упити
+        file: 06_veb_ap_02c_formulari_i_baze.rst
+        guid: a32d6322-a8d5-4b2a-9ea2-8f109899fbe8
+      - type: reading
+        title: Упис података у базу
+        file: 06_veb_ap_02d_upis_u_bazu.rst
+        guid: d69808d3-599f-4580-998b-d64df71502a4
+      - type: reading
+        title: Флешоване поруке
+        file: 06_veb_ap_02e_flesovane_poruke.rst
+        guid: 4d8856f1-b73e-45a6-98e5-7ab96d0fbfcf
+      - type: reading
+        title: Валидација података унетих у формулар
+        file: 06_veb_ap_02f_validacija_formulara.rst
+        guid: 33148d53-ff5a-4e86-af4f-2c03a4948d76
+      - type: reading
+        title: AJAX
+        file: 06_veb_ap_02g_baze_i_ajax.rst
+        guid: ff6691b9-e045-48e1-b645-e23cbef6b4ec
+#      - type: quiz
+#        title: Серверске апликације и базе - квиз
+#        file: 06h_app_baze_kviz.rst
+#        guid: 9a9d1317-e66b-47d2-b44a-a853f0e83008
+
+  - title: "7.0 Библиотека Flask - пројектни задатак"
+    guid: a31afe76-871b-4578-91df-d79a067fde45
+    folder: 07_projekat
+    activities:
+      - type: reading
+        title: О пројектном задатку
+        file: 07_projekat_01b_uvod.rst
+        guid: 69ce8159-5dc7-4198-a928-b337eb942798
+      - type: reading
+        title: Регистрација корисника и логовање
+        file: 07_projekat_01a_registracija_i_logovanje.rst
+        guid: e279469e-e31c-41c9-8df8-227de0cdb002
+

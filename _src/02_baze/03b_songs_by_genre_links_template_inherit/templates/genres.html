@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block content %}
+     <ul>
+       {% for genre in genres: %}
+       <li>
+         <a href="/tracks?genre_id={{ genre.GenreId }}">
+           {{ genre.Name }}
+         </a>
+       </li>
+       {% endfor %}
+     </ul>
+{% endblock %}

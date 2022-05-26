@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Креирање базе података у SQLite Studio</title>
+    <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/datafile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/dragndrop.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fitb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/parsons.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/lib/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/poll.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/showEval.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabbedstuff.css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/karel.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pycode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/p5js.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-4.0.0-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/flatly.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/petlja-course.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nbstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/CLDRPluralRuleParser.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.messagestore.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.fallbacks.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.language.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.parser.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.emitter.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.emitter.bidi.js"></script>
+    <script type="text/javascript" src="../_static/activecode-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/activecode-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/mchoice-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/mchoice-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/fitb-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/fitb-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/matrixeq.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/parsons-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/showEval.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="../_static/runestonevideo.js"></script>
+    <script type="text/javascript" src="../_static/webglinteractive.js"></script>
+    <script type="text/javascript" src="../_static/FileSaver.min.js"></script>
+    <script type="text/javascript" src="../_static/Blob.js"></script>
+    <script type="text/javascript" src="../_static/karelCorner.js"></script>
+    <script type="text/javascript" src="../_static/karelRobot.js"></script>
+    <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
+    <script type="text/javascript" src="../_static/karelUI.js"></script>
+    <script type="text/javascript" src="../_static/karel.js"></script>
+    <script type="text/javascript" src="../_static/karel-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/karel-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/notes.js"></script>
+    <script type="text/javascript" src="../_static/pygamelib-init.js"></script>
+    <script type="text/javascript" src="../_static/blockly/blockly_compressed.js"></script>
+    <script type="text/javascript" src="../_static/blockly/blocks_compressed.js"></script>
+    <script type="text/javascript" src="../_static/blockly/python_compressed.js"></script>
+    <script type="text/javascript" src="../_static/blockly/msg-sr.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/utilities.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/python_errors.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/ast_node_visitor.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/pytifa.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter_definitions.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/python_to_blockly.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/imported.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/class.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/comment.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/comprehensions.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/dict.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/if.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/io.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/lists.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/sets.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/loops.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/parking.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/tuple.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/turtles.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/text.js"></script>
+    <script type="text/javascript" src="../_static/blockpy-modal.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
+    <script type="text/javascript" src="../_static/pycode.js"></script>
+    <script type="text/javascript" src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <script type="text/javascript" src="../_static/p5js.js"></script>
+    <script type="text/javascript" src="../_static/gallery.js"></script>
+    <script type="text/javascript" src="../_static/dbDirective.js"></script>
+    <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/course-errors.js"></script>
+    <script type="text/javascript" src="../_static/petlja.js"></script>
+    <script type="text/javascript" src="../_static/require.js"></script>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <script type="text/javascript">
+      eBookConfig = {};
+      eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+      eBookConfig.app = eBookConfig.host + '/runestone';
+      eBookConfig.ajaxURL = eBookConfig.app + '/ajax/';
+      eBookConfig.course = 'gim4_baze_web_prirodni';
+      eBookConfig.logLevel = '0';
+      eBookConfig.loginRequired = 'false';
+      eBookConfig.build_info = "";
+      eBookConfig.isLoggedIn = false;
+      eBookConfig.useRunestoneServices = false;
+      eBookConfig.python3 = true;
+      eBookConfig.basecourse = 'gim4_baze_web_prirodni';
+      eBookConfig.runestone_version = '';
+      eBookConfig.imagesDir = '../_images/';
+      eBookConfig.staticDir = '../_static/';
+      if (typeof (Sk) != "undefined")
+        Sk.imgPath = eBookConfig.imagesDir;
+    </script>
+
+  </head>
+
+  <body>
+
+
+
+<div id="navbar" class="content-header">
+  <div class="right-side-nav">
+    
+    <div id="usefulLinksToggle" class="useful-links-toggle">
+        <a class="dropdown-toggle dropdown-toggle-burger" role="button" href="#" id="usefulLinksDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-bars fa-2x"></i>
+        </a>
+        <div class="dropdown-menu dropdown-nav-links shadow-lg" aria-labelledby="usefulLinksDropdown" x-placement="bottom-start" style="position: absolute; transform: translate3d(-55px, 32px, 0px); top: 0px; left: 0px; will-change: transform;">
+          <div class="links-title"> Корисни линкови</div>
+          <div class="useful-link">
+            <a href="https://sqlitestudio.pl/" target="_blank">SQLite studio</a></div>
+          <div class="useful-link">
+            <a href="https://www.sqlite.org/index.html" target="_blank">Документација система SQLite</a></div>
+          
+        </div>
+    </div>
+
+    
+</div>
+
+<div class="left-side-nav">
+  <div class="course-logo-nav">
+      <a target="_blank" href="https://petlja.org">
+          <img src="../_static/img/petlja-logo-wt.svg" alt="petlja.org" id="lightPetljaLogo">
+      </a>
+  </div>
+  <div class="course-logo-nav-kabinet">
+      <a target="_blank" href="https://petlja.org/net.kabinet">
+          <img src="../_static/img/netkabinet-logo-strelica-wt.svg" alt="petlja.org" id="lightNetKabinetLogo">
+      </a>
+  </div>
+</div>
+
+
+<div class="content-header-label" id = "content-header-label" href="../">Базе података, рачунарске мреже и серверско веб програмирање за четврти разред гимназије природни смер</div>
+
+</div>
+
+
+
+
+<div class="petljaCourseContainer">
+
+<div class="petljaCourseContent">
+  
+           <div class="tableOfContent">
+            <h5> Садржај </h5>
+            </div>
+           <div>
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-01_baze_i_tabele_00_uvod>
+                    <h5>1.0 Базе: Увод у базе података</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../01_baze_i_tabele_00_uvod/01_baze_00a_uvod.html><div class="studioLecture" id=activity-01_baze_00a_uvod><i class="fas fa-file-alt activity-icon"></i>Шта су базе података?</div></a>
+                <a href=../01_baze_i_tabele_00_uvod/01_baze_00b_tabele.html><div class="studioLecture" id=activity-01_baze_00b_tabele><i class="fas fa-file-alt activity-icon"></i>Табеларна организација података</div></a>
+                <a href=../01_baze_i_tabele_00_uvod/01_baze_00c_povezane_tabele.html><div class="studioLecture" id=activity-01_baze_00c_povezane_tabele><i class="fas fa-file-alt activity-icon"></i>Повезане табеле</div></a>
+                <a href=../01_baze_i_tabele_00_uvod/01_baze_00d_kviz.html><div class="studioLecture" id=activity-01_baze_00d_kviz><i class="far fa-question-circle activity-icon"></i>Базе и табеле - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-01_baze_i_tabele_01_SQLite>
+                    <h5>1.1 Базе: SQLite</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../01_baze_i_tabele_01_SQLite/01_baze_01a_sqlite.html><div class="studioLecture" id=activity-01_baze_01a_sqlite><i class="fas fa-file-alt activity-icon"></i>SQLite и SQLite Studio</div></a>
+                <a href=../01_baze_i_tabele_01_SQLite/01_baze_01b_sqlite_baza.html><div class="studioLecture" id=activity-01_baze_01b_sqlite_baza><i class="fas fa-file-alt activity-icon"></i>Креирање базе у SQLite Studio</div></a>
+                <a href=../01_baze_i_tabele_01_SQLite/01_baze_01c_sqlite_kviz.html><div class="studioLecture" id=activity-01_baze_01c_sqlite_kviz><i class="far fa-question-circle activity-icon"></i>SQLite и SQLite Studio - квиз</div></a>
+                <a href=../01_baze_i_tabele_01_SQLite/01_baze_01d_sqlite_vezba.html><div class="studioLecture" id=activity-01_baze_01d_sqlite_vezba><i class="fas fa-file-alt activity-icon"></i>Креирање базе у SQLite Studio - задаци за вежбу</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-01_baze_i_tabele_02_dizajniranje>
+                    <h5>1.2 Базе: Дизајнирање базе података</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../01_baze_i_tabele_02_dizajniranje/01_baze_02a_dizajn_muzika.html><div class="studioLecture" id=activity-01_baze_02a_dizajn_muzika><i class="fas fa-file-alt activity-icon"></i>База компаније за продају дигиталних композиција - подаци о композицијама</div></a>
+                <a href=../01_baze_i_tabele_02_dizajniranje/01_baze_02b_dizajn_muzika_prodaja.html><div class="studioLecture" id=activity-01_baze_02b_dizajn_muzika_prodaja><i class="fas fa-file-alt activity-icon"></i>База компаније за продају дигиталних композиција - подаци о продаји</div></a>
+                <a href=../01_baze_i_tabele_02_dizajniranje/01_baze_02c_dizajn_kviz.html><div class="studioLecture" id=activity-01_baze_02c_dizajn_kviz><i class="far fa-question-circle activity-icon"></i>Дизајнирање базе података - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_00_uvod>
+                    <h5>2.0 - SQL: Читање података из базе</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_00_uvod/02_citanje_00a_uvod.html><div class="studioLecture" id=activity-02_citanje_00a_uvod><i class="fas fa-file-alt activity-icon"></i>SQL: Читање података из табела</div></a>
+                <a href=../02_citanje_podataka_00_uvod/02_citanje_00b_citanje_kviz.html><div class="studioLecture" id=activity-02_citanje_00b_citanje_kviz><i class="far fa-question-circle activity-icon"></i>Читање података - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_01_projekcija_restrikcija>
+                    <h5>2.1 SQL: Пројекција и селекција</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_01_projekcija_restrikcija/02_citanje_01a_projekcija.html><div class="studioLecture" id=activity-02_citanje_01a_projekcija><i class="fas fa-file-alt activity-icon"></i>Пројекција</div></a>
+                <a href=../02_citanje_podataka_01_projekcija_restrikcija/02_citanje_01b_restrikcija.html><div class="studioLecture" id=activity-02_citanje_01b_restrikcija><i class="fas fa-file-alt activity-icon"></i>Селекција</div></a>
+                <a href=../02_citanje_podataka_01_projekcija_restrikcija/02_citanje_01c_proj_restr_kviz.html><div class="studioLecture" id=activity-02_citanje_01c_proj_restr_kviz><i class="far fa-question-circle activity-icon"></i>Пројекција и селекција - квиз</div></a>
+                <a href=../02_citanje_podataka_01_projekcija_restrikcija/02_citanje_01d_proj_restr_zadaci_skola.html><div class="studioLecture" id=activity-02_citanje_01d_proj_restr_zadaci_skola><i class="fas fa-file-alt activity-icon"></i>Пројекција и селекција - задаци (дневник)</div></a>
+                <a href=../02_citanje_podataka_01_projekcija_restrikcija/02_citanje_01e_proj_restr_zadaci_muzika.html><div class="studioLecture" id=activity-02_citanje_01e_proj_restr_zadaci_muzika><i class="fas fa-file-alt activity-icon"></i>Пројекција и селекција - задаци (музика)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_02_operatori>
+                    <h5>2.2 SQL: Логички и релацијски оператори</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_02_operatori/02_citanje_02a_logicki_operatori.html><div class="studioLecture" id=activity-02_citanje_02a_logicki_operatori><i class="fas fa-file-alt activity-icon"></i>Логички оператори</div></a>
+                <a href=../02_citanje_podataka_02_operatori/02_citanje_02b_relacijski_operatori.html><div class="studioLecture" id=activity-02_citanje_02b_relacijski_operatori><i class="fas fa-file-alt activity-icon"></i>Релацијски оператори</div></a>
+                <a href=../02_citanje_podataka_02_operatori/02_citanje_02c_operatori_kviz.html><div class="studioLecture" id=activity-02_citanje_02c_operatori_kviz><i class="far fa-question-circle activity-icon"></i>Оператори - квиз</div></a>
+                <a href=../02_citanje_podataka_02_operatori/02_citanje_02d_operatori_zadaci_skola.html><div class="studioLecture" id=activity-02_citanje_02d_operatori_zadaci_skola><i class="fas fa-file-alt activity-icon"></i>Оператори - задаци (дневник)</div></a>
+                <a href=../02_citanje_podataka_02_operatori/02_citanje_02e_operatori_zadaci_muzika.html><div class="studioLecture" id=activity-02_citanje_02e_operatori_zadaci_muzika><i class="fas fa-file-alt activity-icon"></i>Оператори - задаци (музика)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_03_izrazi_funkcije>
+                    <h5>2.3 SQL: Изрази и функције</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_03_izrazi_funkcije/02_citanje_03a_izrazi.html><div class="studioLecture" id=activity-02_citanje_03a_izrazi><i class="fas fa-file-alt activity-icon"></i>Изрази</div></a>
+                <a href=../02_citanje_podataka_03_izrazi_funkcije/02_citanje_03b_funkcije.html><div class="studioLecture" id=activity-02_citanje_03b_funkcije><i class="fas fa-file-alt activity-icon"></i>Функције</div></a>
+                <a href=../02_citanje_podataka_03_izrazi_funkcije/02_citanje_03c_izr_fun_kviz.html><div class="studioLecture" id=activity-02_citanje_03c_izr_fun_kviz><i class="far fa-question-circle activity-icon"></i>Изрази и функције - квиз</div></a>
+                <a href=../02_citanje_podataka_03_izrazi_funkcije/02_citanje_03d_izr_fun_zadaci_skola.html><div class="studioLecture" id=activity-02_citanje_03d_izr_fun_zadaci_skola><i class="fas fa-file-alt activity-icon"></i>Изрази и функције - задаци (дневник)</div></a>
+                <a href=../02_citanje_podataka_03_izrazi_funkcije/02_citanje_03e_izr_fun_zadaci_muzika.html><div class="studioLecture" id=activity-02_citanje_03e_izr_fun_zadaci_muzika><i class="fas fa-file-alt activity-icon"></i>Изрази и функције - задаци (музика)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_04_soritiranje>
+                    <h5>2.4 SQL: Сортирање, уклањање дупликата, ограничавање броја врста</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_04_soritiranje/02_citanje_04a_sortiranje.html><div class="studioLecture" id=activity-02_citanje_04a_sortiranje><i class="fas fa-file-alt activity-icon"></i>Сортирање</div></a>
+                <a href=../02_citanje_podataka_04_soritiranje/02_citanje_04b_ogranicavanje.html><div class="studioLecture" id=activity-02_citanje_04b_ogranicavanje><i class="fas fa-file-alt activity-icon"></i>Ограничавање броја врста у резултату</div></a>
+                <a href=../02_citanje_podataka_04_soritiranje/02_citanje_04c_uklanjanje_duplikata.html><div class="studioLecture" id=activity-02_citanje_04c_uklanjanje_duplikata><i class="fas fa-file-alt activity-icon"></i>Уклањање дупликата</div></a>
+                <a href=../02_citanje_podataka_04_soritiranje/02_citanje_04d_sort_ogr_kviz.html><div class="studioLecture" id=activity-02_citanje_04d_sort_ogr_kviz><i class="far fa-question-circle activity-icon"></i>Сортирање, уклањање дупликата, ограничавање одговора - квиз</div></a>
+                <a href=../02_citanje_podataka_04_soritiranje/02_citanje_04e_sort_ogr_zadaci_skola.html><div class="studioLecture" id=activity-02_citanje_04e_sort_ogr_zadaci_skola><i class="fas fa-file-alt activity-icon"></i>Сортирање и ограничавање - задаци (дневник)</div></a>
+                <a href=../02_citanje_podataka_04_soritiranje/02_citanje_04f_sort_ogr_zadaci_muzika.html><div class="studioLecture" id=activity-02_citanje_04f_sort_ogr_zadaci_muzika><i class="fas fa-file-alt activity-icon"></i>Сортирање и ограничавање - задаци (музика)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_05_agregatne_funkcije>
+                    <h5>2.5 SQL: Агрегатне функције и груписање</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_05_agregatne_funkcije/02_citanje_05a_agregatne_funkcije.html><div class="studioLecture" id=activity-02_citanje_05a_agregatne_funkcije><i class="fas fa-file-alt activity-icon"></i>Агрегатне функције</div></a>
+                <a href=../02_citanje_podataka_05_agregatne_funkcije/02_citanje_05b_grupisanje.html><div class="studioLecture" id=activity-02_citanje_05b_grupisanje><i class="fas fa-file-alt activity-icon"></i>Груписање и израчунавање статистика појединачних група</div></a>
+                <a href=../02_citanje_podataka_05_agregatne_funkcije/02_citanje_05c_restrikcija_nakon_grupisanja.html><div class="studioLecture" id=activity-02_citanje_05c_restrikcija_nakon_grupisanja><i class="fas fa-file-alt activity-icon"></i>Селекција након груписања</div></a>
+                <a href=../02_citanje_podataka_05_agregatne_funkcije/02_citanje_05d_agregatne_grupisanje_kviz.html><div class="studioLecture" id=activity-02_citanje_05d_agregatne_grupisanje_kviz><i class="far fa-question-circle activity-icon"></i>Агрегатне функције и груписање - квиз</div></a>
+                <a href=../02_citanje_podataka_05_agregatne_funkcije/02_citanje_05e_agregatne_zadaci_skola.html><div class="studioLecture" id=activity-02_citanje_05e_agregatne_zadaci_skola><i class="fas fa-file-alt activity-icon"></i>Агрегатне функције и груписање - задаци (дневник)</div></a>
+                <a href=../02_citanje_podataka_05_agregatne_funkcije/02_citanje_05f_agregatne_zadaci_muzika.html><div class="studioLecture" id=activity-02_citanje_05f_agregatne_zadaci_muzika><i class="fas fa-file-alt activity-icon"></i>Агрегатне функције и груписање - задаци (музика)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_06_spajanje>
+                    <h5>2.6 SQL: Спајање табела</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_06_spajanje/02_citanje_06a_spajanje.html><div class="studioLecture" id=activity-02_citanje_06a_spajanje><i class="fas fa-file-alt activity-icon"></i>Спајање табела</div></a>
+                <a href=../02_citanje_podataka_06_spajanje/02_citanje_06b_implicitno_spajanje.html><div class="studioLecture" id=activity-02_citanje_06b_implicitno_spajanje><i class="fas fa-file-alt activity-icon"></i>Имплицитно спајање</div></a>
+                <a href=../02_citanje_podataka_06_spajanje/02_citanje_06c_spajanje_i_grupisanje.html><div class="studioLecture" id=activity-02_citanje_06c_spajanje_i_grupisanje><i class="fas fa-file-alt activity-icon"></i>Спајање и груписање</div></a>
+                <a href=../02_citanje_podataka_06_spajanje/02_citanje_06d_vrste_spajanja.html><div class="studioLecture" id=activity-02_citanje_06d_vrste_spajanja><i class="fas fa-file-alt activity-icon"></i>Врсте спајања</div></a>
+                <a href=../02_citanje_podataka_06_spajanje/02_citanje_06e_spajanje_kviz.html><div class="studioLecture" id=activity-02_citanje_06e_spajanje_kviz><i class="far fa-question-circle activity-icon"></i>Спајање табела - квиз</div></a>
+                <a href=../02_citanje_podataka_06_spajanje/02_citanje_06f_spajanje_zadaci_skola.html><div class="studioLecture" id=activity-02_citanje_06f_spajanje_zadaci_skola><i class="fas fa-file-alt activity-icon"></i>Спајање - задаци (дневник)</div></a>
+                <a href=../02_citanje_podataka_06_spajanje/02_citanje_06g_spajanje_zadaci_muzika.html><div class="studioLecture" id=activity-02_citanje_06g_spajanje_zadaci_muzika><i class="fas fa-file-alt activity-icon"></i>Спајање - задаци (музика)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_07_ugnezdjeni_upiti>
+                    <h5>2.7 SQL: Угнежђени упити</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_07_ugnezdjeni_upiti/02_citanje_07a_ugnezdjeni_upiti.html><div class="studioLecture" id=activity-02_citanje_07a_ugnezdjeni_upiti><i class="fas fa-file-alt activity-icon"></i>Угнежђени упити</div></a>
+                <a href=../02_citanje_podataka_07_ugnezdjeni_upiti/02_citanje_07b_korelisani_podupiti.html><div class="studioLecture" id=activity-02_citanje_07b_korelisani_podupiti><i class="fas fa-file-alt activity-icon"></i>Корелисани подупити</div></a>
+                <a href=../02_citanje_podataka_07_ugnezdjeni_upiti/02_citanje_07c_provera_postojanja.html><div class="studioLecture" id=activity-02_citanje_07c_provera_postojanja><i class="fas fa-file-alt activity-icon"></i>Провера постојања</div></a>
+                <a href=../02_citanje_podataka_07_ugnezdjeni_upiti/02_citanje_07d_ugnezdjeni_kviz.html><div class="studioLecture" id=activity-02_citanje_07d_ugnezdjeni_kviz><i class="far fa-question-circle activity-icon"></i>Угнежђени упити - квиз</div></a>
+                <a href=../02_citanje_podataka_07_ugnezdjeni_upiti/02_citanje_07e_ugnezdjeni_zadaci_skola.html><div class="studioLecture" id=activity-02_citanje_07e_ugnezdjeni_zadaci_skola><i class="fas fa-file-alt activity-icon"></i>Угнежђени упити - задаци (дневник)</div></a>
+                <a href=../02_citanje_podataka_07_ugnezdjeni_upiti/02_citanje_07f_ugnezdjeni_zadaci_muzika.html><div class="studioLecture" id=activity-02_citanje_07f_ugnezdjeni_zadaci_muzika><i class="fas fa-file-alt activity-icon"></i>Угнежђени упити - задаци (музика)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_08_pogledi>
+                    <h5>2.8 SQL: Погледи</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_08_pogledi/02_citanje_08a_pogledi.html><div class="studioLecture" id=activity-02_citanje_08a_pogledi><i class="fas fa-file-alt activity-icon"></i>Погледи</div></a>
+                <a href=../02_citanje_podataka_08_pogledi/02_citanje_08b_pogledi_kviz.html><div class="studioLecture" id=activity-02_citanje_08b_pogledi_kviz><i class="far fa-question-circle activity-icon"></i>Погледи - квиз</div></a>
+                <a href=../02_citanje_podataka_08_pogledi/02_citanje_08c_pogledi_zadaci.html><div class="studioLecture" id=activity-02_citanje_08c_pogledi_zadaci><i class="fas fa-file-alt activity-icon"></i>Погледи - задаци (дневник)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-03_izmene_00_uvod>
+                    <h5>3.0 SQL: Промена садржаја базе</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../03_izmene_00_uvod/03_izmene_00a_uvod.html><div class="studioLecture" id=activity-03_izmene_00a_uvod><i class="fas fa-file-alt activity-icon"></i>Измене података у бази</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-03_izmene_01_upisivanje>
+                    <h5>3.1 SQL: Уписивање података у табеле</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../03_izmene_01_upisivanje/03_izmene_01a_upisivanje.html><div class="studioLecture" id=activity-03_izmene_01a_upisivanje><i class="fas fa-file-alt activity-icon"></i>Уписивање података</div></a>
+                <a href=../03_izmene_01_upisivanje/03_izmene_01b_upisivanje_procitanog.html><div class="studioLecture" id=activity-03_izmene_01b_upisivanje_procitanog><i class="fas fa-file-alt activity-icon"></i>Уписивање података прочитаних из базе</div></a>
+                <a href=../03_izmene_01_upisivanje/03_izmene_01c_upisivanje_kviz.html><div class="studioLecture" id=activity-03_izmene_01c_upisivanje_kviz><i class="far fa-question-circle activity-icon"></i>Уписивање података - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-03_izmene_02_azuriranje>
+                    <h5>3.2 SQL: Ажурирање података у табелама</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../03_izmene_02_azuriranje/03_izmene_02a_azuriranje.html><div class="studioLecture" id=activity-03_izmene_02a_azuriranje><i class="fas fa-file-alt activity-icon"></i>Ажурирање података</div></a>
+                <a href=../03_izmene_02_azuriranje/03_izmene_02b_azuriranje_kviz.html><div class="studioLecture" id=activity-03_izmene_02b_azuriranje_kviz><i class="far fa-question-circle activity-icon"></i>Ажурирање података - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-03_izmene_03_brisanje>
+                    <h5>3.3 SQL: Брисање података из табела</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../03_izmene_03_brisanje/03_izmene_03a_brisanje.html><div class="studioLecture" id=activity-03_izmene_03a_brisanje><i class="fas fa-file-alt activity-icon"></i>Брисање података</div></a>
+                <a href=../03_izmene_03_brisanje/03_izmene_03b_brisanje_kviz.html><div class="studioLecture" id=activity-03_izmene_03b_brisanje_kviz><i class="far fa-question-circle activity-icon"></i>Брисање података - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-04_python_sqlite>
+                    <h5>4.0 Python SQLite API</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../04_python_sqlite/04_python_sqlite_01a_uvod.html><div class="studioLecture" id=activity-04_python_sqlite_01a_uvod><i class="fas fa-file-alt activity-icon"></i>4.1 Python SQLite API - увод</div></a>
+                <a href=../04_python_sqlite/04_python_sqlite_01b_povezivanje.html><div class="studioLecture" id=activity-04_python_sqlite_01b_povezivanje><i class="fas fa-file-alt activity-icon"></i>4.2 Повезивање са базом</div></a>
+                <a href=../04_python_sqlite/04_python_sqlite_01c_postavljanje_upita.html><div class="studioLecture" id=activity-04_python_sqlite_01c_postavljanje_upita><i class="fas fa-file-alt activity-icon"></i>4.3 Постављање упита</div></a>
+                <a href=../04_python_sqlite/04_python_sqlite_01d_upiti_sa_parametrima.html><div class="studioLecture" id=activity-04_python_sqlite_01d_upiti_sa_parametrima><i class="fas fa-file-alt activity-icon"></i>4.4 Упити са параметрима</div></a>
+                <a href=../04_python_sqlite/04_python_sqlite_01e_kolacione_sekvence.html><div class="studioLecture" id=activity-04_python_sqlite_01e_kolacione_sekvence><i class="fas fa-file-alt activity-icon"></i>4.5 Колационе секвенце</div></a>
+                <a href=../04_python_sqlite/04_python_sqlite_01f_pomocne_funkcije.html><div class="studioLecture" id=activity-04_python_sqlite_01f_pomocne_funkcije><i class="fas fa-file-alt activity-icon"></i>4.6 Дефинисање помоћних функција</div></a>
+                <a href=../04_python_sqlite/04_python_sqlite_01g_kviz.html><div class="studioLecture" id=activity-04_python_sqlite_01g_kviz><i class="far fa-question-circle activity-icon"></i>4.7 Python SQLite API - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-05_racunarske_mreze>
+                    <h5>5.0 Рачунарске мреже</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../05_racunarske_mreze/05_mreze_01a_pojam_racunarske_mreze.html><div class="studioLecture" id=activity-05_mreze_01a_pojam_racunarske_mreze><i class="fas fa-file-alt activity-icon"></i>5.1 Рачунарске мреже</div></a>
+                <a href=../05_racunarske_mreze/05_mreze_01b_mrezni_hardver_i_softver.html><div class="studioLecture" id=activity-05_mreze_01b_mrezni_hardver_i_softver><i class="fas fa-file-alt activity-icon"></i>5.2 Мрежни хардвер и мрежни софтвер</div></a>
+                <a href=../05_racunarske_mreze/05_mreze_01c_povezivanje_i_postavljanje_mreze.html><div class="studioLecture" id=activity-05_mreze_01c_povezivanje_i_postavljanje_mreze><i class="fas fa-file-alt activity-icon"></i>5.3 Повезивање и постављање кућне мреже</div></a>
+                <a href=../05_racunarske_mreze/05_mreze_01d_kviz.html><div class="studioLecture" id=activity-05_mreze_01d_kviz><i class="far fa-question-circle activity-icon"></i>5.4 Рачунарске мреже - квиз</div></a>
+                <a href=../05_racunarske_mreze/05_mreze_01e_mrezni_slojevi.html><div class="studioLecture" id=activity-05_mreze_01e_mrezni_slojevi><i class="fas fa-file-alt activity-icon"></i>5.5 Додатак: мрежни слојеви и протоколи, детаљније</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-06_serverske_veb_aplikacije_00_uvod>
+                    <h5>6.0 Серверско веб-програмирање</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../06_serverske_veb_aplikacije_00_uvod/06_veb_ap_00a_uvod.html><div class="studioLecture" id=activity-06_veb_ap_00a_uvod><i class="fas fa-file-alt activity-icon"></i>Веб-апликације - увод</div></a>
+                <a href=../06_serverske_veb_aplikacije_00_uvod/06_veb_ap_00b_http_zahtevi.html><div class="studioLecture" id=activity-06_veb_ap_00b_http_zahtevi><i class="fas fa-file-alt activity-icon"></i>Протокол HTTP</div></a>
+                <a href=../06_serverske_veb_aplikacije_00_uvod/06_veb_ap_00c_http_kviz.html><div class="studioLecture" id=activity-06_veb_ap_00c_http_kviz><i class="far fa-question-circle activity-icon"></i>Протокол HTTP - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-06_serverske_veb_aplikacije_01_flask>
+                    <h5>6.1 Библиотека Flask - основни појмови</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01a_flask_uvod.html><div class="studioLecture" id=activity-06_veb_ap_01a_flask_uvod><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - увод</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01b_flask_prvi_program.html><div class="studioLecture" id=activity-06_veb_ap_01b_flask_prvi_program><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - први програм, путање</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01c_flask_sabloni.html><div class="studioLecture" id=activity-06_veb_ap_01c_flask_sabloni><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - шаблони</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01d_flask_staticke_datoteke.html><div class="studioLecture" id=activity-06_veb_ap_01d_flask_staticke_datoteke><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - пратеће статичке датотеке и линкови унутар веб-апликације</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01e_flask_parametri_get.html><div class="studioLecture" id=activity-06_veb_ap_01e_flask_parametri_get><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - Метода GET</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01f_flask_parametri_post.html><div class="studioLecture" id=activity-06_veb_ap_01f_flask_parametri_post><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - Метода POST</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01g_flask_parametri_rutiranje.html><div class="studioLecture" id=activity-06_veb_ap_01g_flask_parametri_rutiranje><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - путање са параметрима</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01h_flask_kolacici.html><div class="studioLecture" id=activity-06_veb_ap_01h_flask_kolacici><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - колачићи</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01i_flask_sesije.html><div class="studioLecture" id=activity-06_veb_ap_01i_flask_sesije><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - сесије</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01j_flask_kviz.html><div class="studioLecture" id=activity-06_veb_ap_01j_flask_kviz><i class="far fa-question-circle activity-icon"></i>Библиотека Flask - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-06_serverske_veb_aplikacije_02_baze>
+                    <h5>6.2 Библиотека Flask - повезивање са базом података</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../06_serverske_veb_aplikacije_02_baze/06_veb_ap_02a_povezivanje_i_osnovni_upiti.html><div class="studioLecture" id=activity-06_veb_ap_02a_povezivanje_i_osnovni_upiti><i class="fas fa-file-alt activity-icon"></i>Повезивање са базом и постављање упита</div></a>
+                <a href=../06_serverske_veb_aplikacije_02_baze/06_veb_ap_02b_prenos_argumenata_upita.html><div class="studioLecture" id=activity-06_veb_ap_02b_prenos_argumenata_upita><i class="fas fa-file-alt activity-icon"></i>Пренос параметара упита</div></a>
+                <a href=../06_serverske_veb_aplikacije_02_baze/06_veb_ap_02c_formulari_i_baze.html><div class="studioLecture" id=activity-06_veb_ap_02c_formulari_i_baze><i class="fas fa-file-alt activity-icon"></i>Формулари и упити</div></a>
+                <a href=../06_serverske_veb_aplikacije_02_baze/06_veb_ap_02d_upis_u_bazu.html><div class="studioLecture" id=activity-06_veb_ap_02d_upis_u_bazu><i class="fas fa-file-alt activity-icon"></i>Упис података у базу</div></a>
+                <a href=../06_serverske_veb_aplikacije_02_baze/06_veb_ap_02e_flesovane_poruke.html><div class="studioLecture" id=activity-06_veb_ap_02e_flesovane_poruke><i class="fas fa-file-alt activity-icon"></i>Флешоване поруке</div></a>
+                <a href=../06_serverske_veb_aplikacije_02_baze/06_veb_ap_02f_validacija_formulara.html><div class="studioLecture" id=activity-06_veb_ap_02f_validacija_formulara><i class="fas fa-file-alt activity-icon"></i>Валидација података унетих у формулар</div></a>
+                <a href=../06_serverske_veb_aplikacije_02_baze/06_veb_ap_02g_baze_i_ajax.html><div class="studioLecture" id=activity-06_veb_ap_02g_baze_i_ajax><i class="fas fa-file-alt activity-icon"></i>AJAX</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-07_projekat>
+                    <h5>7.0 Библиотека Flask - пројектни задатак</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../07_projekat/07_projekat_01b_uvod.html><div class="studioLecture" id=activity-07_projekat_01b_uvod><i class="fas fa-file-alt activity-icon"></i>О пројектном задатку</div></a>
+                <a href=../07_projekat/07_projekat_01a_registracija_i_logovanje.html><div class="studioLecture" id=activity-07_projekat_01a_registracija_i_logovanje><i class="fas fa-file-alt activity-icon"></i>Регистрација корисника и логовање</div></a>
+                </div>
+            </div>
+                </div>
+</div>
+
+
+
+<div class="lectureContent">
+
+  <div id="errors">
+  </div>
+  
+  <div class="lectureContentMaterial">
+  
+    <div id="main-content">
+    
+  <div class="section" id="sqlite-studio">
+<h1>Креирање базе података у SQLite Studio<a class="headerlink" href="#sqlite-studio" title="Permalink to this headline">¶</a></h1>
+<p>SQLite базу података можемо да креирамо из програма SQLite Studio
+командом менија <code class="docutils literal notranslate"><span class="pre">Database</span> <span class="pre">→</span> <span class="pre">Add</span> <span class="pre">a</span> <span class="pre">database</span></code>. Приликом креирања базе
+потребно је одабрати датотеку у којој ће се та база чувати (ове
+датотеке обично имају екстензију <code class="docutils literal notranslate"><span class="pre">.db</span></code>) и назив под којим ће се база
+приказивати у корисничком интерфејсу. Ми ћемо креирати базу у датотеци
+<code class="docutils literal notranslate"><span class="pre">dnevnik.db</span></code> и приказиваће се под називом <code class="docutils literal notranslate"><span class="pre">dnevnik</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/sqlitestudio_add_database.png"><img alt="Креирање нове базе у систему SQLite Studio" class="align-center" src="../_images/sqlitestudio_add_database.png" style="width: 300px;" /></a>
+<p>Уместо да креирамо нову базу, командом менија <code class="docutils literal notranslate"><span class="pre">Database</span> <span class="pre">→</span> <span class="pre">Add</span> <span class="pre">a</span>
+<span class="pre">database</span></code> можемо и отворити неку постојећу (довољно је одабрати
+постојећу датотеку на диску и уписати назив под којим ће се та база
+видети у нашем систему).</p>
+<div class="section" id="id1">
+<h2>Креирање табела<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Након креирања базе креираћемо табеле у њој. То се може урадити
+командом менија <code class="docutils literal notranslate"><span class="pre">Structure</span> <span class="pre">→</span> <span class="pre">Create</span> <span class="pre">a</span> <span class="pre">table</span></code> или командом <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">a</span>
+<span class="pre">table</span></code> контекстног менија (који се појави након десног клика на назив
+базе на паноу <code class="docutils literal notranslate"><span class="pre">Databases</span></code>).</p>
+<a class="reference internal image-reference" href="../_images/sqlitestudio_add_table_menu.png"><img alt="Креирање нове табеле у систему SQLite Studio" class="align-center" src="../_images/sqlitestudio_add_table_menu.png" style="width: 500px;" /></a>
+<p>Након тога се у централном делу прозора појављује пано са неколико
+картица који је посвећен уређивању табеле. Подразумевано се приказује
+прва картица (<code class="docutils literal notranslate"><span class="pre">Structure</span></code>) која је намењена дефинисању структуре
+табеле.</p>
+<a class="reference internal image-reference" href="../_images/sqlitestudio_table_structure.png"><img alt="Подешавање структуре табеле у систему SQLite Studio" class="align-center" src="../_images/sqlitestudio_table_structure.png" style="width: 500px;" /></a>
+<p>Прво је потребно дефинисати назив табеле (за почетак креирамо табелу
+<code class="docutils literal notranslate"><span class="pre">ucenik</span></code>), попуњавањем поља <code class="docutils literal notranslate"><span class="pre">Table</span> <span class="pre">name</span></code>. Измене које се направе
+се не уносе у базу одмах, већ тек након команде <code class="docutils literal notranslate"><span class="pre">Commit</span> <span class="pre">structure</span>
+<span class="pre">changes</span></code>, односно клика на дугме <img alt="button_commit" src="../_images/button_commit.png" />.  Препоручујемо вам
+да ово дугме често користите и тиме често уписујете измене у базу, да
+их не бисте случајно изгубили, али и да бисте што пре уочили ако
+направите неку грешку).</p>
+<p>Командом <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">column</span></code> (која се може покренути кликом на дугме
+<img alt="button_add_column" src="../_images/button_add_column.png" /> или притиском на тастер <code class="docutils literal notranslate"><span class="pre">Ins</span></code>) додаје се нова
+колона у табелу. Приликом додавања сваке нове колоне у табелу потребно
+је обавезно одредити јој назив (<code class="docutils literal notranslate"><span class="pre">Column</span> <span class="pre">name</span></code>) и тип података у тој
+колони (<code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">type</span></code>).</p>
+<a class="reference internal image-reference" href="../_images/sqlitestudio_add_column.png"><img alt="Додавање колоне у табелу систему SQLite Studio" class="align-center" src="../_images/sqlitestudio_add_column.png" style="width: 300px;" /></a>
+<p>Постоји велики број различитих типова података, међутим, описаћемо
+само неколико најчешће коришћених:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">INTEGER</span></code> – цели бројеви</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DOUBLE</span></code> – реални бројеви (записани у покретном зарезу)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">VARCHAR</span></code> – текстулани подаци (ниске карактера) за које је
+позната максимална дужина</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DATE</span></code>, <code class="docutils literal notranslate"><span class="pre">TIME</span></code>, <code class="docutils literal notranslate"><span class="pre">DATETIME</span></code> – датум, време у току дана
+тј. датум и време.</p></li>
+</ul>
+<p>Код неких типова података (на пример, код типа <code class="docutils literal notranslate"><span class="pre">VARCHAR</span></code>) потребно
+је навести и величину типа и уписати је у поље <code class="docutils literal notranslate"><span class="pre">SIZE</span></code>.</p>
+<p>Након три основна параметра (<code class="docutils literal notranslate"><span class="pre">Column</span> <span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">type</span></code> и
+<code class="docutils literal notranslate"><span class="pre">Size</span></code>) могуће је конфигурисати додатне опције колона. Опишимо
+неколико опција које ћемо користити у наставку.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">Primary</span> <span class="pre">key</span></code> — овом опцијом колону која се додаје можемо да
+прогласимо за примарни кључ табеле (ако више колона чини примарни
+кључ, онда се то подешава тек након додавања свих тих
+колона). Додатне опције су доступне након притиска на дугме
+<code class="docutils literal notranslate"><span class="pre">Configure</span></code>. Једна, прилично често коришћена је <code class="docutils literal notranslate"><span class="pre">Autoincrement</span></code>
+која се користи код целобројних примарних кључева и која омогућава
+да се приликом уноса врсте у табелу не наведе вредност примарног
+кључа, него да се та вредност аутоматски додели као прва наредна
+слободна вредност. На тај начин се имплементирају генерисани
+идентификатори које смо помињали у претходним лекцијама.</p>
+<a class="reference internal image-reference" href="../_images/sqlitestudio_primary_key.png"><img alt="Подешавање примарног кључа у систему SQLite Studio" class="align-center" src="../_images/sqlitestudio_primary_key.png" style="width: 300px;" /></a>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Foreign</span> <span class="pre">key</span></code> — овом опцијом колону која се додаје можемо да
+прогласимо за страни кључ (ако више колона чини исти страни кључ,
+онда се то подешава тек након додавања свих тих колона). Подсетимо
+се, колона је страни кључ ако је свака вредност у тој колони
+примарни кључ у некој другој табели. Зато се приликом подешавања да
+је колона страни кључ бира табела и колона која је њен примарни кључ
+(подразумева се да је та табела већ креирана). Детаљније објашњење
+подешавања страног кључа биће дато кроз пример креирања табеле
+изостанака, мало касније у тексту.</p>
+<a class="reference internal image-reference" href="../_images/sqlitestudio_foreign_key.png"><img alt="Подешавање страног кључа у систему SQLite Studio" class="align-center" src="../_images/sqlitestudio_foreign_key.png" style="width: 300px;" /></a>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Not</span> <span class="pre">null</span></code> — одабиром ове опције се забрањује да колона садржи
+специјалне недостајуће вредности (<code class="docutils literal notranslate"><span class="pre">NULL</span></code>), које се користе да се
+нагласи да је неки податак непознат (кључеви аутоматски не могу да
+садрже недостајуће вредности, па ову опцију углавном користимо за
+колоне које нису кључеви).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Collate</span></code> — овом опцијом се подешава поредак текстуалних
+података (тзв. <strong>колациона секвенца</strong>) што директно одређује и
+редослед сортирања елемената колоне. Ако се у колони смештају и
+карактери који нису део енглеске абецеде (тј. који не припадају
+таблици ASCII), тада је пожељно подесити <code class="docutils literal notranslate"><span class="pre">Collation</span> <span class="pre">name</span></code> да буде
+<code class="docutils literal notranslate"><span class="pre">UNICODE</span></code> (то ћемо увек радити када у колони желимо да памтимо
+текст на српском језику, било да је записан латиницом, било
+ћирилицом).</p>
+<a class="reference internal image-reference" href="../_images/sqlitestudio_collate.png"><img alt="Подешавање колационе секвенце у систему SQLite Studio" class="align-center" src="../_images/sqlitestudio_collate.png" style="width: 300px;" /></a>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Default</span></code> — одабиром ове опције можемо задати подразумевану
+вредност, која ће бити уписана ако се приликом додавања нове врсте
+вредност ове колоне не наведе.</p></li>
+</ul>
+<p>Користећи описани поступак, можемо да креирамо табелу <code class="docutils literal notranslate"><span class="pre">ucenik</span></code> у
+нашем минијатурном електронском дневнику.</p>
+<ul class="simple">
+<li><p>Додајемо колону <code class="docutils literal notranslate"><span class="pre">id</span></code> за коју бирамо тип <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code>, штриклирамо
+опцију <code class="docutils literal notranslate"><span class="pre">PRIMARY</span> <span class="pre">KEY</span></code> и конфигуришемо је тако да буде
+<code class="docutils literal notranslate"><span class="pre">AUTOINCREMENT</span></code>.</p></li>
+<li><p>Додајемо колону <code class="docutils literal notranslate"><span class="pre">ime</span></code> за коју бирамо тип <code class="docutils literal notranslate"><span class="pre">VARCHAR</span></code> и величину 30
+(чиме ограничавамо дужину имена на 30 карактера), штриклирамо опцију
+<code class="docutils literal notranslate"><span class="pre">NOT</span> <span class="pre">NULL</span></code> (јер име ученика не сме да буде непознато) и опцију
+<code class="docutils literal notranslate"><span class="pre">Collate</span></code>, конфигуришући је тако да <code class="docutils literal notranslate"><span class="pre">Collation</span> <span class="pre">name</span></code> буде
+<code class="docutils literal notranslate"><span class="pre">UNICODE</span></code> (јер планирамо да користимо ћирилички запис, као и да
+поредимо и сортирамо ученике на основу имена и презимена у азбучном
+редоследу).</p></li>
+<li><p>Додајемо колону <code class="docutils literal notranslate"><span class="pre">prezime</span></code> за коју бирамо тип <code class="docutils literal notranslate"><span class="pre">VARCHAR</span></code> и
+величину 30 (чиме ограничавамо дужину презимена на 30 карактера),
+штриклирамо опцију <code class="docutils literal notranslate"><span class="pre">NOT</span> <span class="pre">NULL</span></code> (јер презиме ученика не сме да буде
+непознато) и подешавамо <code class="docutils literal notranslate"><span class="pre">Collate</span></code> тако да се користи <code class="docutils literal notranslate"><span class="pre">UNICODE</span></code>.</p></li>
+<li><p>Додајемо колону <code class="docutils literal notranslate"><span class="pre">datum_rodjenja</span></code> за коју бирамо тип <code class="docutils literal notranslate"><span class="pre">DATE</span></code>.</p></li>
+<li><p>Додајемо колону <code class="docutils literal notranslate"><span class="pre">razred</span></code> за коју бирамо тип <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code>.</p></li>
+<li><p>Додајемо колону <code class="docutils literal notranslate"><span class="pre">odeljenje</span></code> за коју бирамо тип <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code>.</p></li>
+</ul>
+<p>Не треба заборавити да након додавања свих колона (а можда и чешће)
+упишемо све измене у базу (дугметом <code class="docutils literal notranslate"><span class="pre">Commit</span> <span class="pre">structure</span> <span class="pre">changes</span></code>).</p>
+<p>Ако је све прошло како треба, на картици <code class="docutils literal notranslate"><span class="pre">Structure</span></code> видеће се
+следећи списак колона.</p>
+<a class="reference internal image-reference" href="../_images/sqlitestudio_structure_ucenik.png"><img alt="Структура табеле ucenik у систему SQLite Studio" class="align-center" src="../_images/sqlitestudio_structure_ucenik.png" style="width: 500px;" /></a>
+</div>
+<div class="section" id="sql">
+<h2>Креирање табеле помоћу језика SQL<a class="headerlink" href="#sql" title="Permalink to this headline">¶</a></h2>
+<p>У досадашњем тексту смо описали како изгледа поступак дефинисања
+табела у бази помоћу графичког корисничког интерфејса. За почетнике је
+овај начин дефинисања табеле сигурно најједноставнији и у наставку
+ћемо претпоставити да ће све табеле бити креиране на тај
+начин. Међутим, табеле је могуће креирати и коришћењем упитног језика
+SQL (и то његовог посебног подскупа који се назива <strong>SQL Data
+Definition Language, DDL</strong>). Након креирања табеле помоћу ГКИ, на
+картици <code class="docutils literal notranslate"><span class="pre">DDL</span></code> можемо да видимо како би се табела могла креирати и
+помоћу упита у језику SQL. За табелу ученик то би изгледало овако:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">ucenik</span> <span class="p">(</span>
+   <span class="n">id</span>             <span class="nb">INTEGER</span>      <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="n">AUTOINCREMENT</span><span class="p">,</span>
+   <span class="n">ime</span>            <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">COLLATE</span> <span class="n">UNICODE</span><span class="p">,</span>
+   <span class="n">prezime</span>        <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">COLLATE</span> <span class="n">UNICODE</span><span class="p">,</span>
+   <span class="n">pol</span>            <span class="nb">CHAR</span><span class="p">,</span>
+   <span class="n">datum_rodjenja</span> <span class="nb">DATE</span><span class="p">,</span>
+   <span class="n">razred</span>         <span class="nb">INTEGER</span><span class="p">,</span>
+   <span class="n">odeljenje</span>      <span class="nb">INTEGER</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>Приметимо да је овај упит облика <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span> <span class="pre">naziv</span> <span class="pre">(kolone);</span></code>, при чему
+се за сваку колону наводи назив, тип података и затим додатни услови и
+ограничења.</p>
+</div>
+<div class="section" id="id2">
+<h2>Рад са подацима у табели<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Када је структура табеле дефинисана, могу се у њу уписати и неки
+подаци. То се врши на картици <code class="docutils literal notranslate"><span class="pre">DATA</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/sqlitestudio_data.png"><img alt="Додавање података у систему SQLite Studio" class="align-center" src="../_images/sqlitestudio_data.png" style="width: 500px;" /></a>
+<p>Додавање врста се врши командом <code class="docutils literal notranslate"><span class="pre">Insert</span> <span class="pre">row</span></code> (доступном путем
+дугмета <img alt="button_insert_row" src="../_images/button_insert_row.png" /> или путем тастера <code class="docutils literal notranslate"><span class="pre">insert</span></code> на
+тастатури). Када се врста дода, може се попунити подацима (при чему,
+оне колоне које имају подешену опцију <code class="docutils literal notranslate"><span class="pre">AUTOINCREMENT</span></code> или
+подразумевану вредност могу да остану и празне).</p>
+<p>Постојеће врсте могу да се ажурирају тако што се просто измени њихов
+садржај.</p>
+<p>Одабрана (селектована) врста може да се избрише командом <code class="docutils literal notranslate"><span class="pre">Delete</span>
+<span class="pre">selected</span> <span class="pre">row</span></code> (доступном путем дугмета <img alt="button_delete_row" src="../_images/button_delete_row.png" />
+или путем тастера <code class="docutils literal notranslate"><span class="pre">delete</span></code> на тастатури).</p>
+<p>Након што смо задовољни садржајем табеле, потребно је да промене
+упишемо у базу, што се врши помоћу команде <code class="docutils literal notranslate"><span class="pre">Commit</span></code> (која је
+доступна путем дугмета <img alt="button_commit" src="../_images/button_commit.png" /> или путем комбинације тастера
+<code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> и <code class="docutils literal notranslate"><span class="pre">Enter</span></code>).</p>
+<p>Командом <code class="docutils literal notranslate"><span class="pre">Rollback</span></code> (која је доступна путем дугмета
+<img alt="button_rollback" src="../_images/button_rollback.png" />, или путем комбинације тастера <code class="docutils literal notranslate"><span class="pre">Ctrl</span></code> и
+<code class="docutils literal notranslate"><span class="pre">Backspace</span></code>) врши се поништавање свих направљених измена и враћање
+табеле у полазно стање.</p>
+<p>Пошто је могуће да се стање табеле промени и ван програма SQLite
+studio, командом <code class="docutils literal notranslate"><span class="pre">Refresh</span> <span class="pre">table</span> <span class="pre">data</span></code> (која је доступна путем
+дугмета <img alt="button_refresh" src="../_images/button_refresh.png" /> или путем тастера <code class="docutils literal notranslate"><span class="pre">F5</span></code>) можемо извршити
+поновно учитавање свих података у табели из датотеке на диску у којој
+се чува база података.</p>
+</div>
+<div class="section" id="id3">
+<h2>Подешавање додатних ограничења<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Покажимо сада на примеру креирања табеле <code class="docutils literal notranslate"><span class="pre">izostanak</span></code> како можемо да
+подесимо додатна, сложенија ограничења табеле. Наиме, у табели ученика
+подесили смо само примарни кључ и забранили недостајуће вредности у
+колонама које садрже име и презиме ученика. У табели изостанака јавља
+се страни кључ, а наметнућемо и додатни услов да ученик на једном
+школском часу може направити највише један изостанак.</p>
+<ul class="simple">
+<li><p>Креирамо табелу <code class="docutils literal notranslate"><span class="pre">izostanak</span></code></p></li>
+<li><p>Додајемо колону <code class="docutils literal notranslate"><span class="pre">id</span></code> типа <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code>, штриклирамо опцију
+<code class="docutils literal notranslate"><span class="pre">PRIMARY</span> <span class="pre">KEY</span></code> и конфигуришемо је тако да буде <code class="docutils literal notranslate"><span class="pre">AUTOINCREMENT</span></code>.</p></li>
+<li><p>Додајемо колону <code class="docutils literal notranslate"><span class="pre">id_ucenik</span></code> типа <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code> и подешавамо је тако
+да буде страни кључ у односу на колону <code class="docutils literal notranslate"><span class="pre">id</span></code> табеле <code class="docutils literal notranslate"><span class="pre">ucenik</span></code>.
+Приликом конфигурисања страног кључа бирамо да нам систем забрани да
+обришемо ученика док у табели изостанака постоје његови изостанци
+(опцијом <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">DELETE</span> <span class="pre">RESTRICT</span></code>), а да када ажурирамо (изменимо)
+примарни кључ ученика, и у табели изостанака подаци за тог ученика
+буду аутоматски ажурирани (опцијом <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">UPDATE</span> <span class="pre">CASCADE</span></code>). Опишимо
+све могуће типове акција које систем може да изврши када примети да
+се нарушава интегритет страног кључа (када се на неки начин мења или
+брише ученик чији изостанци постоје у табели изостанака).</p>
+<ul>
+<li><p>Опција <code class="docutils literal notranslate"><span class="pre">RESTRICT</span></code> забрањује извођење акције над табелом која би
+нарушила интегритет страног кључа.</p></li>
+<li><p>Опција <code class="docutils literal notranslate"><span class="pre">CАSCADE</span></code> подразумева да ће се све промене пропагирати
+(у облику каскаде, тј. степеница), све док се не задовољи
+интегритет страног кључа. Каскадно брисање би подразумевало да
+се у случају брисања ученика аутоматски обришу и сви подаци о
+његовим изостанцима.</p></li>
+<li><p>Опција <code class="docutils literal notranslate"><span class="pre">SET</span> <span class="pre">NULL</span></code> налаже систему да у табели изостанака на место
+идентификатора ученика упише специјалну недостајућу вредност
+<code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></li>
+<li><p>Опција <code class="docutils literal notranslate"><span class="pre">SET</span> <span class="pre">DEFAULT</span></code> налаже да у табели изостанака на место
+идентификатора ученика упише подразумевану вредност (под
+претпоставком да је она подешена).</p></li>
+<li><p>Опција <code class="docutils literal notranslate"><span class="pre">NO</span> <span class="pre">ACTION</span></code> налаже систему да све остави како јесте,
+тј. да не врши никакву акцију у случају да је интегритет страног
+кључа нарушен (ово би требало избегавати, осим ако за то не
+постоји неки посебан разлог).</p></li>
+</ul>
+</li>
+<li><p>Додајемо колону <code class="docutils literal notranslate"><span class="pre">datum</span></code> типа <code class="docutils literal notranslate"><span class="pre">DATE</span></code>.</p></li>
+<li><p>Додајемо колону <code class="docutils literal notranslate"><span class="pre">cas</span></code> типа <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code>.</p></li>
+<li><p>Додајемо колону <code class="docutils literal notranslate"><span class="pre">status</span></code> типа <code class="docutils literal notranslate"><span class="pre">VARCHAR</span></code>, величине 15.</p></li>
+</ul>
+<p>Једно ограничење које се природно намеће је то да ученик не може да
+током једног часа оствари више од једног изостанка. Можемо, дакле,
+гарантовати да не могу да постоје две врсте у табели изостанака у
+којима би тројка колона <code class="docutils literal notranslate"><span class="pre">(id_ucenik,</span> <span class="pre">datum,</span> <span class="pre">cas)</span></code> била једнака. Та
+тројка једнозначно идентификује изостанак и могла би да буде његов
+примарни кључ, међутим, пошто смо увели посебну колону <code class="docutils literal notranslate"><span class="pre">id</span></code> у којој
+чувамо јединствени идентификатор изостанка, коју смо прогласили за
+примарни кључ, поставићемо посебан услов <strong>јединствености</strong> вредности
+у ове три колоне (сваки примарни кључ аутоматски има постављен услов
+јединствености). То можемо урадити тако што у доњем делу картице
+<code class="docutils literal notranslate"><span class="pre">STRUCTURE</span></code> пронађемо команду <code class="docutils literal notranslate"><span class="pre">Add</span> <span class="pre">table</span> <span class="pre">unique</span> <span class="pre">constraint</span></code> (која
+је доступна помоћу дугмета <img alt="button_unique" src="../_images/button_unique.png" />) и затим штриклирамо колоне
+<code class="docutils literal notranslate"><span class="pre">id_ucenik</span></code>, <code class="docutils literal notranslate"><span class="pre">datum</span></code> и <code class="docutils literal notranslate"><span class="pre">cas</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/sqlitestudio_unique.png"><img alt="Подешавање услова јединствености вредности у више колона" class="align-center" src="../_images/sqlitestudio_unique.png" style="width: 300px;" /></a>
+<p>Након креирања табеле <code class="docutils literal notranslate"><span class="pre">izostanak</span></code> на картици <code class="docutils literal notranslate"><span class="pre">DDL</span></code> можемо да видимо
+да је њена дефиниција у језику SQL једнака следећој.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">izostanak</span> <span class="p">(</span>
+   <span class="n">id</span>        <span class="nb">INTEGER</span>      <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="n">AUTOINCREMENT</span><span class="p">,</span>
+   <span class="n">id_ucenik</span>              <span class="k">REFERENCES</span> <span class="n">ucenik</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">RESTRICT</span>
+                                                 <span class="k">ON</span> <span class="k">UPDATE</span> <span class="n">CАSCADE</span><span class="p">,</span>
+   <span class="n">datum</span>     <span class="nb">DATE</span><span class="p">,</span>
+   <span class="n">cas</span>       <span class="nb">INT</span><span class="p">,</span>
+   <span class="n">status</span>    <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">15</span><span class="p">),</span>
+   <span class="k">UNIQUE</span> <span class="p">(</span><span class="n">id_ucenik</span><span class="p">,</span> <span class="n">datum</span><span class="p">,</span> <span class="n">cas</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Преузимање попуњене базе<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>На основу претходне анализе креирана је и попуњена мала база података.
+Она се у овом курсу користи директно користи из прегледача. Са друге
+стране, можеш је <a class="reference external" href="https://petljamediastorage.blob.core.windows.net/root/Media/Default/Kursevi/OnlineNastava/kurs-gim-cetvrti-inf/_static/db/dnevnik.db">преузети</a> и отворити у програму SQLite
+Studio.</p>
+</div>
+</div>
+
+
+    </div>
+    
+    <div>
+<div class="lecture-prev-next-toggle">
+  <a  href="01_baze_01a_sqlite.html" id="prevLectureLink" class="lecture-toggler-arrows"><i class="fas fa-arrow-left fa"></i> <span> Претходно лекција </span> </a>
+  
+  <a id="nextLectureLink" class="lecture-toggler-arrows"><span> Следећа лекција</span>  <i class="fas fa-arrow-right fa"></i> </a>
+</div>
+
+<script type="text/javascript">
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+</script>
+</div>
+
+    
+  </div>
+</div>
+<div class="petljadoc-resources">
+  <span class="pull-left">(Created using  <a href="https://pypi.org/project/Sphinx/">Swinx</a>, <a href="http://runestoneinteractive.org/">RunestoneComponents</a> and <a href="https://github.com/Petlja/PetljaDoc">PetljaDoc</a>) <br> © 2022 Petlja</span>
+</div>
+
+<div class="lectureToolbox">
+
+  <label class="font-size-toggle" id="fontSizeToggle">
+
+      <i class="fas fa-font"></i><label>Слова</label>
+  </label>
+  <div class="font-change d-none" id="fontChangeModal">
+      <span class="dec-letter-icon" id="decLetterIcon">A-</span>
+      <label id="currentFontSize">16</label>
+      <span class="inc-letter-icon" id="incLetterIcon">A+</span>
+  </div>
+</div>
+
+</div>
+
+  </body>
+</html>

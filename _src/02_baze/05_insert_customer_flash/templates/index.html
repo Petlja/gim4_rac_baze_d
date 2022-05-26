@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+   <head>
+     <title>Add new customer</title>
+     <style>
+       .msg { border: 1px sold black; }
+       .error { background-color: #fcc; }
+       .ok  { background-color: #cfc; }
+     </style>
+   </head>
+   <body>
+     {% with messages = get_flashed_messages(with_categories=true) %}
+     {% if messages %}
+        <h1>Info</h1>
+        {% for category, message in messages %}
+        <div class="{{ category }} msg">{{ message }}</div>
+        {% endfor %}
+     {% endif %}
+     {% endwith %}     
+
+     {% block content %}
+     {% endblock %}   
+   </body>
+</html>

@@ -1,0 +1,12 @@
+__pycache__
+_intermediate
+generisane_slike
+build
+.vs
+obj
+bin
+v15
+*~
+.exe
+course.json
+/_build

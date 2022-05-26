@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pizza</title>
+  </head>
+  <body>
+    <form>
+      <table>
+        <tr>
+          <td><label for="ime">Ime i prezime: </label></td>
+          <td><input type="text" id="ime" name="ime" /></td>
+        </tr>
+        <tr>
+          <td><label for="adresa">Adresa: </label></td>
+          <td><textarea id="adresa" name="adresa"></textarea></td>
+        </tr>
+        <tr>
+          <td><label for="vrsta">Vrsta pice: </label></td>
+          <td>
+            <select id="vrsta" name="vrsta">
+              <option value="kaprićoza">Kaprićoza</option>
+	      <option value="margarita">Margarita</option>
+	      <option value="vegetarijana">Vegetarijana</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Veličina</td>
+          <td>
+            <input type="radio" name="velicina" id="velika" value="velika" 
+                   checked />
+            <label for="velika">Velika</label> <br/>
+            <input type="radio" name="velicina" id="srednja" value="srednja" />
+            <label for="srednja">Srednja</label> <br/>
+            <input type="radio" name="velicina" id="mala" value="mala" />
+            <label for="mala">Mala</label>
+          </td>
+        </tr>
+        <tr>
+          <td>Dodaci</td>
+          <td>
+            <input type="checkbox" name="kecap" value="kečap" id="kecap" />
+            <label for="kecap">Kečap</label>
+            <input type="checkbox" name="origano" value="origano" id="origano" />
+            <label for="origano">Origano</label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="submit" name="naruci" value="Naruči" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

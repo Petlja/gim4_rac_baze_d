@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Регистрација и логовање</title>
+    <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/datafile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/dragndrop.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fitb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/parsons.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/lib/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/poll.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/showEval.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabbedstuff.css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/karel.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pycode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/p5js.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-4.0.0-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/flatly.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/petlja-course.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nbstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/CLDRPluralRuleParser.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.messagestore.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.fallbacks.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.language.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.parser.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.emitter.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.emitter.bidi.js"></script>
+    <script type="text/javascript" src="../_static/activecode-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/activecode-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/mchoice-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/mchoice-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/fitb-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/fitb-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/matrixeq.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/parsons-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/showEval.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="../_static/runestonevideo.js"></script>
+    <script type="text/javascript" src="../_static/webglinteractive.js"></script>
+    <script type="text/javascript" src="../_static/FileSaver.min.js"></script>
+    <script type="text/javascript" src="../_static/Blob.js"></script>
+    <script type="text/javascript" src="../_static/karelCorner.js"></script>
+    <script type="text/javascript" src="../_static/karelRobot.js"></script>
+    <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
+    <script type="text/javascript" src="../_static/karelUI.js"></script>
+    <script type="text/javascript" src="../_static/karel.js"></script>
+    <script type="text/javascript" src="../_static/karel-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/karel-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/notes.js"></script>
+    <script type="text/javascript" src="../_static/pygamelib-init.js"></script>
+    <script type="text/javascript" src="../_static/blockly/blockly_compressed.js"></script>
+    <script type="text/javascript" src="../_static/blockly/blocks_compressed.js"></script>
+    <script type="text/javascript" src="../_static/blockly/python_compressed.js"></script>
+    <script type="text/javascript" src="../_static/blockly/msg-sr.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/utilities.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/python_errors.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/ast_node_visitor.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/pytifa.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter_definitions.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/python_to_blockly.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/imported.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/class.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/comment.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/comprehensions.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/dict.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/if.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/io.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/lists.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/sets.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/loops.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/parking.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/tuple.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/turtles.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/text.js"></script>
+    <script type="text/javascript" src="../_static/blockpy-modal.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
+    <script type="text/javascript" src="../_static/pycode.js"></script>
+    <script type="text/javascript" src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <script type="text/javascript" src="../_static/p5js.js"></script>
+    <script type="text/javascript" src="../_static/gallery.js"></script>
+    <script type="text/javascript" src="../_static/dbDirective.js"></script>
+    <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/course-errors.js"></script>
+    <script type="text/javascript" src="../_static/petlja.js"></script>
+    <script type="text/javascript" src="../_static/require.js"></script>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <script type="text/javascript">
+      eBookConfig = {};
+      eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+      eBookConfig.app = eBookConfig.host + '/runestone';
+      eBookConfig.ajaxURL = eBookConfig.app + '/ajax/';
+      eBookConfig.course = 'gim4_baze_web_prirodni';
+      eBookConfig.logLevel = '0';
+      eBookConfig.loginRequired = 'false';
+      eBookConfig.build_info = "";
+      eBookConfig.isLoggedIn = false;
+      eBookConfig.useRunestoneServices = false;
+      eBookConfig.python3 = true;
+      eBookConfig.basecourse = 'gim4_baze_web_prirodni';
+      eBookConfig.runestone_version = '';
+      eBookConfig.imagesDir = '../_images/';
+      eBookConfig.staticDir = '../_static/';
+      if (typeof (Sk) != "undefined")
+        Sk.imgPath = eBookConfig.imagesDir;
+    </script>
+
+  </head>
+
+  <body>
+
+
+
+<div id="navbar" class="content-header">
+  <div class="right-side-nav">
+    
+    <div id="usefulLinksToggle" class="useful-links-toggle">
+        <a class="dropdown-toggle dropdown-toggle-burger" role="button" href="#" id="usefulLinksDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-bars fa-2x"></i>
+        </a>
+        <div class="dropdown-menu dropdown-nav-links shadow-lg" aria-labelledby="usefulLinksDropdown" x-placement="bottom-start" style="position: absolute; transform: translate3d(-55px, 32px, 0px); top: 0px; left: 0px; will-change: transform;">
+          <div class="links-title"> Корисни линкови</div>
+          <div class="useful-link">
+            <a href="https://sqlitestudio.pl/" target="_blank">SQLite studio</a></div>
+          <div class="useful-link">
+            <a href="https://www.sqlite.org/index.html" target="_blank">Документација система SQLite</a></div>
+          
+        </div>
+    </div>
+
+    
+</div>
+
+<div class="left-side-nav">
+  <div class="course-logo-nav">
+      <a target="_blank" href="https://petlja.org">
+          <img src="../_static/img/petlja-logo-wt.svg" alt="petlja.org" id="lightPetljaLogo">
+      </a>
+  </div>
+  <div class="course-logo-nav-kabinet">
+      <a target="_blank" href="https://petlja.org/net.kabinet">
+          <img src="../_static/img/netkabinet-logo-strelica-wt.svg" alt="petlja.org" id="lightNetKabinetLogo">
+      </a>
+  </div>
+</div>
+
+
+<div class="content-header-label" id = "content-header-label" href="../">Базе података, рачунарске мреже и серверско веб програмирање за четврти разред гимназије природни смер</div>
+
+</div>
+
+
+
+
+<div class="petljaCourseContainer">
+
+<div class="petljaCourseContent">
+  
+           <div class="tableOfContent">
+            <h5> Садржај </h5>
+            </div>
+           <div>
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-01_baze_i_tabele_00_uvod>
+                    <h5>1.0 Базе: Увод у базе података</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../01_baze_i_tabele_00_uvod/01_baze_00a_uvod.html><div class="studioLecture" id=activity-01_baze_00a_uvod><i class="fas fa-file-alt activity-icon"></i>Шта су базе података?</div></a>
+                <a href=../01_baze_i_tabele_00_uvod/01_baze_00b_tabele.html><div class="studioLecture" id=activity-01_baze_00b_tabele><i class="fas fa-file-alt activity-icon"></i>Табеларна организација података</div></a>
+                <a href=../01_baze_i_tabele_00_uvod/01_baze_00c_povezane_tabele.html><div class="studioLecture" id=activity-01_baze_00c_povezane_tabele><i class="fas fa-file-alt activity-icon"></i>Повезане табеле</div></a>
+                <a href=../01_baze_i_tabele_00_uvod/01_baze_00d_kviz.html><div class="studioLecture" id=activity-01_baze_00d_kviz><i class="far fa-question-circle activity-icon"></i>Базе и табеле - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-01_baze_i_tabele_01_SQLite>
+                    <h5>1.1 Базе: SQLite</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../01_baze_i_tabele_01_SQLite/01_baze_01a_sqlite.html><div class="studioLecture" id=activity-01_baze_01a_sqlite><i class="fas fa-file-alt activity-icon"></i>SQLite и SQLite Studio</div></a>
+                <a href=../01_baze_i_tabele_01_SQLite/01_baze_01b_sqlite_baza.html><div class="studioLecture" id=activity-01_baze_01b_sqlite_baza><i class="fas fa-file-alt activity-icon"></i>Креирање базе у SQLite Studio</div></a>
+                <a href=../01_baze_i_tabele_01_SQLite/01_baze_01c_sqlite_kviz.html><div class="studioLecture" id=activity-01_baze_01c_sqlite_kviz><i class="far fa-question-circle activity-icon"></i>SQLite и SQLite Studio - квиз</div></a>
+                <a href=../01_baze_i_tabele_01_SQLite/01_baze_01d_sqlite_vezba.html><div class="studioLecture" id=activity-01_baze_01d_sqlite_vezba><i class="fas fa-file-alt activity-icon"></i>Креирање базе у SQLite Studio - задаци за вежбу</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-01_baze_i_tabele_02_dizajniranje>
+                    <h5>1.2 Базе: Дизајнирање базе података</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../01_baze_i_tabele_02_dizajniranje/01_baze_02a_dizajn_muzika.html><div class="studioLecture" id=activity-01_baze_02a_dizajn_muzika><i class="fas fa-file-alt activity-icon"></i>База компаније за продају дигиталних композиција - подаци о композицијама</div></a>
+                <a href=../01_baze_i_tabele_02_dizajniranje/01_baze_02b_dizajn_muzika_prodaja.html><div class="studioLecture" id=activity-01_baze_02b_dizajn_muzika_prodaja><i class="fas fa-file-alt activity-icon"></i>База компаније за продају дигиталних композиција - подаци о продаји</div></a>
+                <a href=../01_baze_i_tabele_02_dizajniranje/01_baze_02c_dizajn_kviz.html><div class="studioLecture" id=activity-01_baze_02c_dizajn_kviz><i class="far fa-question-circle activity-icon"></i>Дизајнирање базе података - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_00_uvod>
+                    <h5>2.0 - SQL: Читање података из базе</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_00_uvod/02_citanje_00a_uvod.html><div class="studioLecture" id=activity-02_citanje_00a_uvod><i class="fas fa-file-alt activity-icon"></i>SQL: Читање података из табела</div></a>
+                <a href=../02_citanje_podataka_00_uvod/02_citanje_00b_citanje_kviz.html><div class="studioLecture" id=activity-02_citanje_00b_citanje_kviz><i class="far fa-question-circle activity-icon"></i>Читање података - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_01_projekcija_restrikcija>
+                    <h5>2.1 SQL: Пројекција и селекција</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_01_projekcija_restrikcija/02_citanje_01a_projekcija.html><div class="studioLecture" id=activity-02_citanje_01a_projekcija><i class="fas fa-file-alt activity-icon"></i>Пројекција</div></a>
+                <a href=../02_citanje_podataka_01_projekcija_restrikcija/02_citanje_01b_restrikcija.html><div class="studioLecture" id=activity-02_citanje_01b_restrikcija><i class="fas fa-file-alt activity-icon"></i>Селекција</div></a>
+                <a href=../02_citanje_podataka_01_projekcija_restrikcija/02_citanje_01c_proj_restr_kviz.html><div class="studioLecture" id=activity-02_citanje_01c_proj_restr_kviz><i class="far fa-question-circle activity-icon"></i>Пројекција и селекција - квиз</div></a>
+                <a href=../02_citanje_podataka_01_projekcija_restrikcija/02_citanje_01d_proj_restr_zadaci_skola.html><div class="studioLecture" id=activity-02_citanje_01d_proj_restr_zadaci_skola><i class="fas fa-file-alt activity-icon"></i>Пројекција и селекција - задаци (дневник)</div></a>
+                <a href=../02_citanje_podataka_01_projekcija_restrikcija/02_citanje_01e_proj_restr_zadaci_muzika.html><div class="studioLecture" id=activity-02_citanje_01e_proj_restr_zadaci_muzika><i class="fas fa-file-alt activity-icon"></i>Пројекција и селекција - задаци (музика)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_02_operatori>
+                    <h5>2.2 SQL: Логички и релацијски оператори</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_02_operatori/02_citanje_02a_logicki_operatori.html><div class="studioLecture" id=activity-02_citanje_02a_logicki_operatori><i class="fas fa-file-alt activity-icon"></i>Логички оператори</div></a>
+                <a href=../02_citanje_podataka_02_operatori/02_citanje_02b_relacijski_operatori.html><div class="studioLecture" id=activity-02_citanje_02b_relacijski_operatori><i class="fas fa-file-alt activity-icon"></i>Релацијски оператори</div></a>
+                <a href=../02_citanje_podataka_02_operatori/02_citanje_02c_operatori_kviz.html><div class="studioLecture" id=activity-02_citanje_02c_operatori_kviz><i class="far fa-question-circle activity-icon"></i>Оператори - квиз</div></a>
+                <a href=../02_citanje_podataka_02_operatori/02_citanje_02d_operatori_zadaci_skola.html><div class="studioLecture" id=activity-02_citanje_02d_operatori_zadaci_skola><i class="fas fa-file-alt activity-icon"></i>Оператори - задаци (дневник)</div></a>
+                <a href=../02_citanje_podataka_02_operatori/02_citanje_02e_operatori_zadaci_muzika.html><div class="studioLecture" id=activity-02_citanje_02e_operatori_zadaci_muzika><i class="fas fa-file-alt activity-icon"></i>Оператори - задаци (музика)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_03_izrazi_funkcije>
+                    <h5>2.3 SQL: Изрази и функције</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_03_izrazi_funkcije/02_citanje_03a_izrazi.html><div class="studioLecture" id=activity-02_citanje_03a_izrazi><i class="fas fa-file-alt activity-icon"></i>Изрази</div></a>
+                <a href=../02_citanje_podataka_03_izrazi_funkcije/02_citanje_03b_funkcije.html><div class="studioLecture" id=activity-02_citanje_03b_funkcije><i class="fas fa-file-alt activity-icon"></i>Функције</div></a>
+                <a href=../02_citanje_podataka_03_izrazi_funkcije/02_citanje_03c_izr_fun_kviz.html><div class="studioLecture" id=activity-02_citanje_03c_izr_fun_kviz><i class="far fa-question-circle activity-icon"></i>Изрази и функције - квиз</div></a>
+                <a href=../02_citanje_podataka_03_izrazi_funkcije/02_citanje_03d_izr_fun_zadaci_skola.html><div class="studioLecture" id=activity-02_citanje_03d_izr_fun_zadaci_skola><i class="fas fa-file-alt activity-icon"></i>Изрази и функције - задаци (дневник)</div></a>
+                <a href=../02_citanje_podataka_03_izrazi_funkcije/02_citanje_03e_izr_fun_zadaci_muzika.html><div class="studioLecture" id=activity-02_citanje_03e_izr_fun_zadaci_muzika><i class="fas fa-file-alt activity-icon"></i>Изрази и функције - задаци (музика)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_04_soritiranje>
+                    <h5>2.4 SQL: Сортирање, уклањање дупликата, ограничавање броја врста</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_04_soritiranje/02_citanje_04a_sortiranje.html><div class="studioLecture" id=activity-02_citanje_04a_sortiranje><i class="fas fa-file-alt activity-icon"></i>Сортирање</div></a>
+                <a href=../02_citanje_podataka_04_soritiranje/02_citanje_04b_ogranicavanje.html><div class="studioLecture" id=activity-02_citanje_04b_ogranicavanje><i class="fas fa-file-alt activity-icon"></i>Ограничавање броја врста у резултату</div></a>
+                <a href=../02_citanje_podataka_04_soritiranje/02_citanje_04c_uklanjanje_duplikata.html><div class="studioLecture" id=activity-02_citanje_04c_uklanjanje_duplikata><i class="fas fa-file-alt activity-icon"></i>Уклањање дупликата</div></a>
+                <a href=../02_citanje_podataka_04_soritiranje/02_citanje_04d_sort_ogr_kviz.html><div class="studioLecture" id=activity-02_citanje_04d_sort_ogr_kviz><i class="far fa-question-circle activity-icon"></i>Сортирање, уклањање дупликата, ограничавање одговора - квиз</div></a>
+                <a href=../02_citanje_podataka_04_soritiranje/02_citanje_04e_sort_ogr_zadaci_skola.html><div class="studioLecture" id=activity-02_citanje_04e_sort_ogr_zadaci_skola><i class="fas fa-file-alt activity-icon"></i>Сортирање и ограничавање - задаци (дневник)</div></a>
+                <a href=../02_citanje_podataka_04_soritiranje/02_citanje_04f_sort_ogr_zadaci_muzika.html><div class="studioLecture" id=activity-02_citanje_04f_sort_ogr_zadaci_muzika><i class="fas fa-file-alt activity-icon"></i>Сортирање и ограничавање - задаци (музика)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_05_agregatne_funkcije>
+                    <h5>2.5 SQL: Агрегатне функције и груписање</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_05_agregatne_funkcije/02_citanje_05a_agregatne_funkcije.html><div class="studioLecture" id=activity-02_citanje_05a_agregatne_funkcije><i class="fas fa-file-alt activity-icon"></i>Агрегатне функције</div></a>
+                <a href=../02_citanje_podataka_05_agregatne_funkcije/02_citanje_05b_grupisanje.html><div class="studioLecture" id=activity-02_citanje_05b_grupisanje><i class="fas fa-file-alt activity-icon"></i>Груписање и израчунавање статистика појединачних група</div></a>
+                <a href=../02_citanje_podataka_05_agregatne_funkcije/02_citanje_05c_restrikcija_nakon_grupisanja.html><div class="studioLecture" id=activity-02_citanje_05c_restrikcija_nakon_grupisanja><i class="fas fa-file-alt activity-icon"></i>Селекција након груписања</div></a>
+                <a href=../02_citanje_podataka_05_agregatne_funkcije/02_citanje_05d_agregatne_grupisanje_kviz.html><div class="studioLecture" id=activity-02_citanje_05d_agregatne_grupisanje_kviz><i class="far fa-question-circle activity-icon"></i>Агрегатне функције и груписање - квиз</div></a>
+                <a href=../02_citanje_podataka_05_agregatne_funkcije/02_citanje_05e_agregatne_zadaci_skola.html><div class="studioLecture" id=activity-02_citanje_05e_agregatne_zadaci_skola><i class="fas fa-file-alt activity-icon"></i>Агрегатне функције и груписање - задаци (дневник)</div></a>
+                <a href=../02_citanje_podataka_05_agregatne_funkcije/02_citanje_05f_agregatne_zadaci_muzika.html><div class="studioLecture" id=activity-02_citanje_05f_agregatne_zadaci_muzika><i class="fas fa-file-alt activity-icon"></i>Агрегатне функције и груписање - задаци (музика)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_06_spajanje>
+                    <h5>2.6 SQL: Спајање табела</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_06_spajanje/02_citanje_06a_spajanje.html><div class="studioLecture" id=activity-02_citanje_06a_spajanje><i class="fas fa-file-alt activity-icon"></i>Спајање табела</div></a>
+                <a href=../02_citanje_podataka_06_spajanje/02_citanje_06b_implicitno_spajanje.html><div class="studioLecture" id=activity-02_citanje_06b_implicitno_spajanje><i class="fas fa-file-alt activity-icon"></i>Имплицитно спајање</div></a>
+                <a href=../02_citanje_podataka_06_spajanje/02_citanje_06c_spajanje_i_grupisanje.html><div class="studioLecture" id=activity-02_citanje_06c_spajanje_i_grupisanje><i class="fas fa-file-alt activity-icon"></i>Спајање и груписање</div></a>
+                <a href=../02_citanje_podataka_06_spajanje/02_citanje_06d_vrste_spajanja.html><div class="studioLecture" id=activity-02_citanje_06d_vrste_spajanja><i class="fas fa-file-alt activity-icon"></i>Врсте спајања</div></a>
+                <a href=../02_citanje_podataka_06_spajanje/02_citanje_06e_spajanje_kviz.html><div class="studioLecture" id=activity-02_citanje_06e_spajanje_kviz><i class="far fa-question-circle activity-icon"></i>Спајање табела - квиз</div></a>
+                <a href=../02_citanje_podataka_06_spajanje/02_citanje_06f_spajanje_zadaci_skola.html><div class="studioLecture" id=activity-02_citanje_06f_spajanje_zadaci_skola><i class="fas fa-file-alt activity-icon"></i>Спајање - задаци (дневник)</div></a>
+                <a href=../02_citanje_podataka_06_spajanje/02_citanje_06g_spajanje_zadaci_muzika.html><div class="studioLecture" id=activity-02_citanje_06g_spajanje_zadaci_muzika><i class="fas fa-file-alt activity-icon"></i>Спајање - задаци (музика)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_07_ugnezdjeni_upiti>
+                    <h5>2.7 SQL: Угнежђени упити</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_07_ugnezdjeni_upiti/02_citanje_07a_ugnezdjeni_upiti.html><div class="studioLecture" id=activity-02_citanje_07a_ugnezdjeni_upiti><i class="fas fa-file-alt activity-icon"></i>Угнежђени упити</div></a>
+                <a href=../02_citanje_podataka_07_ugnezdjeni_upiti/02_citanje_07b_korelisani_podupiti.html><div class="studioLecture" id=activity-02_citanje_07b_korelisani_podupiti><i class="fas fa-file-alt activity-icon"></i>Корелисани подупити</div></a>
+                <a href=../02_citanje_podataka_07_ugnezdjeni_upiti/02_citanje_07c_provera_postojanja.html><div class="studioLecture" id=activity-02_citanje_07c_provera_postojanja><i class="fas fa-file-alt activity-icon"></i>Провера постојања</div></a>
+                <a href=../02_citanje_podataka_07_ugnezdjeni_upiti/02_citanje_07d_ugnezdjeni_kviz.html><div class="studioLecture" id=activity-02_citanje_07d_ugnezdjeni_kviz><i class="far fa-question-circle activity-icon"></i>Угнежђени упити - квиз</div></a>
+                <a href=../02_citanje_podataka_07_ugnezdjeni_upiti/02_citanje_07e_ugnezdjeni_zadaci_skola.html><div class="studioLecture" id=activity-02_citanje_07e_ugnezdjeni_zadaci_skola><i class="fas fa-file-alt activity-icon"></i>Угнежђени упити - задаци (дневник)</div></a>
+                <a href=../02_citanje_podataka_07_ugnezdjeni_upiti/02_citanje_07f_ugnezdjeni_zadaci_muzika.html><div class="studioLecture" id=activity-02_citanje_07f_ugnezdjeni_zadaci_muzika><i class="fas fa-file-alt activity-icon"></i>Угнежђени упити - задаци (музика)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_08_pogledi>
+                    <h5>2.8 SQL: Погледи</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_08_pogledi/02_citanje_08a_pogledi.html><div class="studioLecture" id=activity-02_citanje_08a_pogledi><i class="fas fa-file-alt activity-icon"></i>Погледи</div></a>
+                <a href=../02_citanje_podataka_08_pogledi/02_citanje_08b_pogledi_kviz.html><div class="studioLecture" id=activity-02_citanje_08b_pogledi_kviz><i class="far fa-question-circle activity-icon"></i>Погледи - квиз</div></a>
+                <a href=../02_citanje_podataka_08_pogledi/02_citanje_08c_pogledi_zadaci.html><div class="studioLecture" id=activity-02_citanje_08c_pogledi_zadaci><i class="fas fa-file-alt activity-icon"></i>Погледи - задаци (дневник)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-03_izmene_00_uvod>
+                    <h5>3.0 SQL: Промена садржаја базе</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../03_izmene_00_uvod/03_izmene_00a_uvod.html><div class="studioLecture" id=activity-03_izmene_00a_uvod><i class="fas fa-file-alt activity-icon"></i>Измене података у бази</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-03_izmene_01_upisivanje>
+                    <h5>3.1 SQL: Уписивање података у табеле</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../03_izmene_01_upisivanje/03_izmene_01a_upisivanje.html><div class="studioLecture" id=activity-03_izmene_01a_upisivanje><i class="fas fa-file-alt activity-icon"></i>Уписивање података</div></a>
+                <a href=../03_izmene_01_upisivanje/03_izmene_01b_upisivanje_procitanog.html><div class="studioLecture" id=activity-03_izmene_01b_upisivanje_procitanog><i class="fas fa-file-alt activity-icon"></i>Уписивање података прочитаних из базе</div></a>
+                <a href=../03_izmene_01_upisivanje/03_izmene_01c_upisivanje_kviz.html><div class="studioLecture" id=activity-03_izmene_01c_upisivanje_kviz><i class="far fa-question-circle activity-icon"></i>Уписивање података - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-03_izmene_02_azuriranje>
+                    <h5>3.2 SQL: Ажурирање података у табелама</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../03_izmene_02_azuriranje/03_izmene_02a_azuriranje.html><div class="studioLecture" id=activity-03_izmene_02a_azuriranje><i class="fas fa-file-alt activity-icon"></i>Ажурирање података</div></a>
+                <a href=../03_izmene_02_azuriranje/03_izmene_02b_azuriranje_kviz.html><div class="studioLecture" id=activity-03_izmene_02b_azuriranje_kviz><i class="far fa-question-circle activity-icon"></i>Ажурирање података - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-03_izmene_03_brisanje>
+                    <h5>3.3 SQL: Брисање података из табела</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../03_izmene_03_brisanje/03_izmene_03a_brisanje.html><div class="studioLecture" id=activity-03_izmene_03a_brisanje><i class="fas fa-file-alt activity-icon"></i>Брисање података</div></a>
+                <a href=../03_izmene_03_brisanje/03_izmene_03b_brisanje_kviz.html><div class="studioLecture" id=activity-03_izmene_03b_brisanje_kviz><i class="far fa-question-circle activity-icon"></i>Брисање података - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-04_python_sqlite>
+                    <h5>4.0 Python SQLite API</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../04_python_sqlite/04_python_sqlite_01a_uvod.html><div class="studioLecture" id=activity-04_python_sqlite_01a_uvod><i class="fas fa-file-alt activity-icon"></i>4.1 Python SQLite API - увод</div></a>
+                <a href=../04_python_sqlite/04_python_sqlite_01b_povezivanje.html><div class="studioLecture" id=activity-04_python_sqlite_01b_povezivanje><i class="fas fa-file-alt activity-icon"></i>4.2 Повезивање са базом</div></a>
+                <a href=../04_python_sqlite/04_python_sqlite_01c_postavljanje_upita.html><div class="studioLecture" id=activity-04_python_sqlite_01c_postavljanje_upita><i class="fas fa-file-alt activity-icon"></i>4.3 Постављање упита</div></a>
+                <a href=../04_python_sqlite/04_python_sqlite_01d_upiti_sa_parametrima.html><div class="studioLecture" id=activity-04_python_sqlite_01d_upiti_sa_parametrima><i class="fas fa-file-alt activity-icon"></i>4.4 Упити са параметрима</div></a>
+                <a href=../04_python_sqlite/04_python_sqlite_01e_kolacione_sekvence.html><div class="studioLecture" id=activity-04_python_sqlite_01e_kolacione_sekvence><i class="fas fa-file-alt activity-icon"></i>4.5 Колационе секвенце</div></a>
+                <a href=../04_python_sqlite/04_python_sqlite_01f_pomocne_funkcije.html><div class="studioLecture" id=activity-04_python_sqlite_01f_pomocne_funkcije><i class="fas fa-file-alt activity-icon"></i>4.6 Дефинисање помоћних функција</div></a>
+                <a href=../04_python_sqlite/04_python_sqlite_01g_kviz.html><div class="studioLecture" id=activity-04_python_sqlite_01g_kviz><i class="far fa-question-circle activity-icon"></i>4.7 Python SQLite API - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-05_racunarske_mreze>
+                    <h5>5.0 Рачунарске мреже</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../05_racunarske_mreze/05_mreze_01a_pojam_racunarske_mreze.html><div class="studioLecture" id=activity-05_mreze_01a_pojam_racunarske_mreze><i class="fas fa-file-alt activity-icon"></i>5.1 Рачунарске мреже</div></a>
+                <a href=../05_racunarske_mreze/05_mreze_01b_mrezni_hardver_i_softver.html><div class="studioLecture" id=activity-05_mreze_01b_mrezni_hardver_i_softver><i class="fas fa-file-alt activity-icon"></i>5.2 Мрежни хардвер и мрежни софтвер</div></a>
+                <a href=../05_racunarske_mreze/05_mreze_01c_povezivanje_i_postavljanje_mreze.html><div class="studioLecture" id=activity-05_mreze_01c_povezivanje_i_postavljanje_mreze><i class="fas fa-file-alt activity-icon"></i>5.3 Повезивање и постављање кућне мреже</div></a>
+                <a href=../05_racunarske_mreze/05_mreze_01d_kviz.html><div class="studioLecture" id=activity-05_mreze_01d_kviz><i class="far fa-question-circle activity-icon"></i>5.4 Рачунарске мреже - квиз</div></a>
+                <a href=../05_racunarske_mreze/05_mreze_01e_mrezni_slojevi.html><div class="studioLecture" id=activity-05_mreze_01e_mrezni_slojevi><i class="fas fa-file-alt activity-icon"></i>5.5 Додатак: мрежни слојеви и протоколи, детаљније</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-06_serverske_veb_aplikacije_00_uvod>
+                    <h5>6.0 Серверско веб-програмирање</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../06_serverske_veb_aplikacije_00_uvod/06_veb_ap_00a_uvod.html><div class="studioLecture" id=activity-06_veb_ap_00a_uvod><i class="fas fa-file-alt activity-icon"></i>Веб-апликације - увод</div></a>
+                <a href=../06_serverske_veb_aplikacije_00_uvod/06_veb_ap_00b_http_zahtevi.html><div class="studioLecture" id=activity-06_veb_ap_00b_http_zahtevi><i class="fas fa-file-alt activity-icon"></i>Протокол HTTP</div></a>
+                <a href=../06_serverske_veb_aplikacije_00_uvod/06_veb_ap_00c_http_kviz.html><div class="studioLecture" id=activity-06_veb_ap_00c_http_kviz><i class="far fa-question-circle activity-icon"></i>Протокол HTTP - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-06_serverske_veb_aplikacije_01_flask>
+                    <h5>6.1 Библиотека Flask - основни појмови</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01a_flask_uvod.html><div class="studioLecture" id=activity-06_veb_ap_01a_flask_uvod><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - увод</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01b_flask_prvi_program.html><div class="studioLecture" id=activity-06_veb_ap_01b_flask_prvi_program><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - први програм, путање</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01c_flask_sabloni.html><div class="studioLecture" id=activity-06_veb_ap_01c_flask_sabloni><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - шаблони</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01d_flask_staticke_datoteke.html><div class="studioLecture" id=activity-06_veb_ap_01d_flask_staticke_datoteke><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - пратеће статичке датотеке и линкови унутар веб-апликације</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01e_flask_parametri_get.html><div class="studioLecture" id=activity-06_veb_ap_01e_flask_parametri_get><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - Метода GET</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01f_flask_parametri_post.html><div class="studioLecture" id=activity-06_veb_ap_01f_flask_parametri_post><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - Метода POST</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01g_flask_parametri_rutiranje.html><div class="studioLecture" id=activity-06_veb_ap_01g_flask_parametri_rutiranje><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - путање са параметрима</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01h_flask_kolacici.html><div class="studioLecture" id=activity-06_veb_ap_01h_flask_kolacici><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - колачићи</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01i_flask_sesije.html><div class="studioLecture" id=activity-06_veb_ap_01i_flask_sesije><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - сесије</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01j_flask_kviz.html><div class="studioLecture" id=activity-06_veb_ap_01j_flask_kviz><i class="far fa-question-circle activity-icon"></i>Библиотека Flask - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-06_serverske_veb_aplikacije_02_baze>
+                    <h5>6.2 Библиотека Flask - повезивање са базом података</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../06_serverske_veb_aplikacije_02_baze/06_veb_ap_02a_povezivanje_i_osnovni_upiti.html><div class="studioLecture" id=activity-06_veb_ap_02a_povezivanje_i_osnovni_upiti><i class="fas fa-file-alt activity-icon"></i>Повезивање са базом и постављање упита</div></a>
+                <a href=../06_serverske_veb_aplikacije_02_baze/06_veb_ap_02b_prenos_argumenata_upita.html><div class="studioLecture" id=activity-06_veb_ap_02b_prenos_argumenata_upita><i class="fas fa-file-alt activity-icon"></i>Пренос параметара упита</div></a>
+                <a href=../06_serverske_veb_aplikacije_02_baze/06_veb_ap_02c_formulari_i_baze.html><div class="studioLecture" id=activity-06_veb_ap_02c_formulari_i_baze><i class="fas fa-file-alt activity-icon"></i>Формулари и упити</div></a>
+                <a href=../06_serverske_veb_aplikacije_02_baze/06_veb_ap_02d_upis_u_bazu.html><div class="studioLecture" id=activity-06_veb_ap_02d_upis_u_bazu><i class="fas fa-file-alt activity-icon"></i>Упис података у базу</div></a>
+                <a href=../06_serverske_veb_aplikacije_02_baze/06_veb_ap_02e_flesovane_poruke.html><div class="studioLecture" id=activity-06_veb_ap_02e_flesovane_poruke><i class="fas fa-file-alt activity-icon"></i>Флешоване поруке</div></a>
+                <a href=../06_serverske_veb_aplikacije_02_baze/06_veb_ap_02f_validacija_formulara.html><div class="studioLecture" id=activity-06_veb_ap_02f_validacija_formulara><i class="fas fa-file-alt activity-icon"></i>Валидација података унетих у формулар</div></a>
+                <a href=../06_serverske_veb_aplikacije_02_baze/06_veb_ap_02g_baze_i_ajax.html><div class="studioLecture" id=activity-06_veb_ap_02g_baze_i_ajax><i class="fas fa-file-alt activity-icon"></i>AJAX</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-07_projekat>
+                    <h5>7.0 Библиотека Flask - пројектни задатак</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../07_projekat/07_projekat_01b_uvod.html><div class="studioLecture" id=activity-07_projekat_01b_uvod><i class="fas fa-file-alt activity-icon"></i>О пројектном задатку</div></a>
+                <a href=../07_projekat/07_projekat_01a_registracija_i_logovanje.html><div class="studioLecture" id=activity-07_projekat_01a_registracija_i_logovanje><i class="fas fa-file-alt activity-icon"></i>Регистрација корисника и логовање</div></a>
+                </div>
+            </div>
+                </div>
+</div>
+
+
+
+<div class="lectureContent">
+
+  <div id="errors">
+  </div>
+  
+  <div class="lectureContentMaterial">
+  
+    <div id="main-content">
+    
+  <div class="section" id="id1">
+<h1>Регистрација и логовање<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>Формулар за регистрацију новог корисника и његова стилизација<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Започнимо опис ове функционалности тако што ћемо прво приказати
+клијентску страну дела апликације за регистрацију нових корисника.
+Формулар у који нови корисник уноси своје податке дефинисан је у
+засебном шаблону <code class="docutils literal notranslate"><span class="pre">templates/register.html</span></code>.</p>
+<div class="highlight-html+jinja notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Registracija novog korisnika<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;registration&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;needs-validation&quot;</span> <span class="na">novalidate</span><span class="p">&gt;</span>
+
+  <span class="c">&lt;!-- username --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group row&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-2 col-form-label&quot;</span><span class="p">&gt;</span>Korisničko ime:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-4&quot;</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">username</span> <span class="cp">}}</span><span class="s">&quot;</span>
+              <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">autocomplete</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">required</span><span class="p">/&gt;</span>
+       <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;invalid-feedback&quot;</span><span class="p">&gt;</span>
+         Molimo Vas da unesete željeno korisničko ime
+       <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  
+  <span class="c">&lt;!-- password --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group row&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-2 col-form-label&quot;</span><span class="p">&gt;</span>Lozinka:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-4&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;password&quot;</span>
+             <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">autocomplete</span><span class="o">=</span><span class="s">&quot;new-password&quot;</span> <span class="na">required</span> <span class="na">minlength</span><span class="o">=</span><span class="s">&quot;8&quot;</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;invalid-feedback&quot;</span><span class="p">&gt;</span>
+        Morate uneti jaku lozinku, koja ima najmanje 8 karaktera
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+  <span class="c">&lt;!-- confirm password --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group row&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;confirmPassword&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-2 col-form-label&quot;</span><span class="p">&gt;</span>Ponovi lozinku:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-4&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;confirmPassword&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;confirmPassword&quot;</span>
+             <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">autocomplete</span><span class="o">=</span><span class="s">&quot;new-password&quot;</span> <span class="na">required</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;invalid-feedback&quot;</span><span class="p">&gt;</span>
+        Ponovljena lozinka mora da bude ista kao i originalna
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+  <span class="c">&lt;!-- name --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group row&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-2 col-form-label&quot;</span><span class="p">&gt;</span>Ime i prezime:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-4&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">name</span> <span class="cp">}}</span><span class="s">&quot;</span>
+             <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">autocomplete</span><span class="o">=</span><span class="s">&quot;name&quot;</span> <span class="na">required</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;invalid-feedback&quot;</span><span class="p">&gt;</span>
+        Morate uneti ime i prezime
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+  <span class="c">&lt;!-- email --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group row&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-2 col-form-label&quot;</span><span class="p">&gt;</span>E-mail:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-4&quot;</span><span class="p">&gt;</span>
+      <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">email</span> <span class="cp">}}</span><span class="s">&quot;</span>
+             <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">autocomplete</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">required</span> <span class="p">/&gt;</span>
+      <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;invalid-feedback&quot;</span><span class="p">&gt;</span>
+        Morate uneti ispravnu mejl adresu
+      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+
+  <span class="c">&lt;!-- submit --&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;register&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;register&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Registruj me&quot;</span>
+         <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Изглед формулара за регистрацију је приказан на следећој слици.</p>
+<a class="reference internal image-reference" href="../_images/projekat_02_formular_za_registraciju.png"><img alt="Изглед формулара за регистрацију" class="align-center" src="../_images/projekat_02_formular_za_registraciju.png" style="width: 800px;" /></a>
+<p>Формулар садржи следеће елементе:</p>
+<ul class="simple">
+<li><p>поље за унос текста у које се уноси корисничко име (<code class="docutils literal notranslate"><span class="pre">username</span></code>),</p></li>
+<li><p>поље за унос лозинке (<code class="docutils literal notranslate"><span class="pre">password</span></code>),</p></li>
+<li><p>поље за проверу лозинке тиме што се поново унесе
+(<code class="docutils literal notranslate"><span class="pre">confirm-password</span></code>),</p></li>
+<li><p>поље за унос имена и презимена (<code class="docutils literal notranslate"><span class="pre">name</span></code>) и</p></li>
+<li><p>поље за унос мејл адресе (<code class="docutils literal notranslate"><span class="pre">email</span></code>).</p></li>
+</ul>
+<p>За унос лозинки се користи елемент <code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">type=&quot;password&quot;</span></code>, чиме се
+постиже да се унети карактери не виде, за унос мејл адресе елемент
+<code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">type=&quot;email&quot;</span></code>, чиме се постиже аутоматска провера исправности
+унете мејл адресе, док се за остале податке користи <code class="docutils literal notranslate"><span class="pre">input</span>
+<span class="pre">type=&quot;text&quot;</span></code>. Уз свако поље за унос текста налази се и посебан
+елемент <code class="docutils literal notranslate"><span class="pre">div</span></code> који садржи поруку која ће се приказати у случају да
+се након валидације на клијентској утврди да нешто није коректно унето
+(више речи о валидацији биће дато у наставку).</p>
+<p>Уз елементе за унос података наводимо и атрибуте <code class="docutils literal notranslate"><span class="pre">autocomplete</span></code>,
+којима прегледачу указујемо на значење података које се у то поље
+уписује (да ли је у питању поље за унос имена, адресе, мејл адресе,
+лозинке и слично). Ти атрибути корисницима омогућавају да већину поља
+аутоматски попуне. Наиме, савремени прегледачи могу да упамте основне
+податке о сваком кориснику, попут имена, адресе, мејл адресе и
+слично. Када је коришћењем атрибута <code class="docutils literal notranslate"><span class="pre">autocomplete</span></code> експлицитно
+означено чему служи које поље, прегледач који зна личне податке
+корисника може једноставно аутоматски до попуни та поља.</p>
+<p>Стилизација формулара урађена је помоћу библиотеке Bootstrap.</p>
+<ul class="simple">
+<li><p>За сваки појединачни податак који се уноси креиран је елемент
+<code class="docutils literal notranslate"><span class="pre">div</span></code> који садржи контроле за унос тог податка (то је пар контрола
+које чини натпис тј. елемент <code class="docutils literal notranslate"><span class="pre">label</span></code> и поље за унос текста
+тј. елемент <code class="docutils literal notranslate"><span class="pre">input</span></code>). Сваки такав елемент <code class="docutils literal notranslate"><span class="pre">div</span></code> добио је класу
+<code class="docutils literal notranslate"><span class="pre">form-group</span></code> која служи за груписање елемената формулара и класу
+<code class="docutils literal notranslate"><span class="pre">row</span></code> којом се подешава да садржај треба да се приказује у врсти
+тј. натписи треба да стоје у истом реду као и поље за унос текста,
+уместо једно испод другог).</p></li>
+<li><p>Сваком натпису је постављена класа <code class="docutils literal notranslate"><span class="pre">col-form-label</span></code> која се
+користи за натписе у формулару и класа <code class="docutils literal notranslate"><span class="pre">col-md-2</span></code> којом се постиже
+да ширина натипса буде једна шестина ширине окружујућег контејнера
+(подсетимо се, Bootstrap дели контејнер на 12 колона, а ширина
+натписа је овом класом постављена на две колоне).</p></li>
+<li><p>Поља за унос текста су стављена у посебан елемент <code class="docutils literal notranslate"><span class="pre">div</span></code> класе
+<code class="docutils literal notranslate"><span class="pre">col-md-4</span></code> чиме се постиже да њихова ширина буде трећина ширине
+окружујућег контејнера (заузимају 4 од 12 колона). Пошто се у том
+елементу налазе и поље за унос података и порука о грешци, вероватно
+је да оне неће моћи да се сложе једно поред другог, већ ће се поруке
+о грешкама приказивати испод поља за унос података.</p></li>
+<li><p>Дугме <code class="docutils literal notranslate"><span class="pre">submit</span></code> добија Bootstrap класе <code class="docutils literal notranslate"><span class="pre">btn</span></code> и <code class="docutils literal notranslate"><span class="pre">btn-primary</span></code>
+које одређују његов изглед (али не и функционалност).</p></li>
+</ul>
+<p>Неки атрибути који су употребљени у овом формулару се односе на
+валидацију података из тог формулара и биђе описани у наставку (такви
+су, на пример, <code class="docutils literal notranslate"><span class="pre">required</span></code>, <code class="docutils literal notranslate"><span class="pre">minlength</span></code> и <code class="docutils literal notranslate"><span class="pre">invalid-feedback</span></code>).</p>
+</div>
+<div class="section" id="id3">
+<h2>Валидација формулара на клијентској страни<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>Имплементирајмо и валидацију формулара на клијентској страни, помоћу
+језика JavaScript. На наредној слици приказан је изглед формулара
+након валидације.</p>
+<a class="reference internal image-reference" href="../_images/projekat_04_validacija_formulara.png"><img alt="Изглед формулара након валидације" class="align-center" src="../_images/projekat_04_validacija_formulara.png" style="width: 450px;" /></a>
+<p>За основну валидацију користићемо уграђену подршку језика HTML5, док
+ћемо за напреднију валидацију користити провере које сами ручно
+имплементирамо у језику JavaScript.</p>
+<ul class="simple">
+<li><p>Ниједно поље не сме да остане празно, па свим пољима додајемо
+атрибут <code class="docutils literal notranslate"><span class="pre">required</span></code>.</p></li>
+<li><p>Провера исправности мејл адресе се аутоматски врши тиме што за унос
+мејл адресе користимо поље типа <code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">type=&quot;email&quot;</span></code>.</p></li>
+<li><p>Инсистираћемо и да лозинка мора да садржи бар 8 карактера, што
+можемо осигурати постављањем атрибута <code class="docutils literal notranslate"><span class="pre">minlength=&quot;8&quot;</span></code> у поље за
+унос лозинке.</p></li>
+</ul>
+<p>Прегледач приликом слања података из формулара тј. притска на дугме
+<code class="docutils literal notranslate"><span class="pre">submit</span></code> аутоматски врши све провере исправности одређене HTML5
+дефиницијама и приказује своје подразумеване поруке о грешкама које се
+појављују у искачућим прозорчићима изнад поља за унос података (тачан
+текст порука зависи од самог прегледача). Библиотека Bootstrap пружа
+могућност да се у случају грешке корисницима не прикажу те
+подразумеване, већ да се прикажу прилагођене поруке о грешкама и то у
+за то посебно намењеним HTML елементима (уместо у искачућим
+прозоричићима). У овом примеру користимо такву могућност, тако што
+поред свако поља за унос података постављамо елемент <code class="docutils literal notranslate"><span class="pre">div</span></code> који
+садржи прилагођену поруку о грешци, на српском језику. Елементи који
+садрже прилагођене поруке о грешкама морају да имају класу
+<code class="docutils literal notranslate"><span class="pre">invalid-feedback</span></code> и јако је важно да буду „браћа” поља за унос (у
+нашем примеру су оба деца истог окружујућег помоћног елемента
+<code class="docutils literal notranslate"><span class="pre">div</span></code>). Могуће је и да се у случају иправног уноса података у поља
+формулара кориснику прикажу прилагођене поруке о томе. Ти елементи
+треба да имају класу <code class="docutils literal notranslate"><span class="pre">valid-feedback</span></code> и такође треба да буду „браћа”
+поља за унос.</p>
+<p>Пошто ми не желимо да се слањем формулара аутоматски прикажу
+подразумеване поруке о грешкама (јер смо припремили прилагођене
+поруке), формулару додајемо атрибут <code class="docutils literal notranslate"><span class="pre">novalidate</span></code>. Када то урадимо
+провера и приказ подразумеваних порука о грешакама се неће вршити
+аутоматски приликом слања података из формулара тј. притиска на дугме
+<code class="docutils literal notranslate"><span class="pre">submit</span></code>, али ћемо и даље у склопу JavaScript скрипта моћи да
+одреагујемо на догађај <code class="docutils literal notranslate"><span class="pre">submit</span></code> и тада позовемо функцију
+<code class="docutils literal notranslate"><span class="pre">checkValidity</span></code>, којом ћемо активирати уграђену HTML5 валидацију. Та
+функција ће нам вратити <code class="docutils literal notranslate"><span class="pre">true</span></code> ако и само ако су сва поља исправно
+попуњена. Приликом провере валидности, током позива функције
+<code class="docutils literal notranslate"><span class="pre">checkValidity</span></code>, прегледач ће поља која су исправна означити
+псеудокласом <code class="docutils literal notranslate"><span class="pre">:valid</span></code> а она која нису исправна псеудокласом
+<code class="docutils literal notranslate"><span class="pre">:invalid</span></code> и аутоматски ће свим пољима придружити подразумеване
+поруке о грешкама (у случају исправних података подразумевано се не
+приказује никаква порука). Библиотека Bootstrap неће те поруке
+приказати (приказаће се поруке које се налазе у елементима означеним
+класама <code class="docutils literal notranslate"><span class="pre">valid-feedback</span></code> и <code class="docutils literal notranslate"><span class="pre">invalid-feedback</span></code>), али ће на основу
+псеудокласа <code class="docutils literal notranslate"><span class="pre">:valid</span></code> и <code class="docutils literal notranslate"><span class="pre">:invalid</span></code> додељених пољима за унос
+података стилизовати та поља и одабраће које поруке треба да се
+прикажу.</p>
+<p>Поред уграђене валидације попуњености свих поља, исправности мејл
+адресе и дужине лозинке, желимо да осигурамо да се лозинка и поновљена
+лозинка поклапају.</p>
+<a class="reference internal image-reference" href="../_images/projekat_03_validacija_lozinke.png"><img alt="Изглед валидације поклапања две лозинке" class="align-center" src="../_images/projekat_03_validacija_lozinke.png" style="width: 800px;" /></a>
+<p>Проверу тог додатног услова ћемо вршити у склопу JavaScript функције
+<code class="docutils literal notranslate"><span class="pre">checkPassword</span></code>, коју ћемо ручно имплементирати и позивати након
+позива функције <code class="docutils literal notranslate"><span class="pre">checkValidity</span></code>. У функцији <code class="docutils literal notranslate"><span class="pre">checkPassword</span></code> ћемо
+имати потребу да променимо статус исправности неког поља
+(тј. псеудокласу која му је додељена). Заиста, могуће је, на пример,
+да је прегледач поље за поновљену лозинку означио као исправно, јер је
+непразно, а ми желимо да га означимо као неисправно, јер смо накнадном
+провером утврдили да се лозинке не поклапају. То можемо да урадимо
+методом <code class="docutils literal notranslate"><span class="pre">setCustomValidity</span></code>. Ако овој методи проследимо неку
+непразну ниску, поље се означава као неисправно (добија псеудокласу
+<code class="docutils literal notranslate"><span class="pre">:invalid</span></code>) и та ниска му се придружује као порука о грешци (додуше,
+ми те поруке не приказујемо). Ако проследимо празну ниску, то поље се
+означава као исправно (добија псеудокласу <code class="docutils literal notranslate"><span class="pre">:valid</span></code>).</p>
+<p>Да резимирамо, валидацију формулара вршићемо када се притисне дугме
+<code class="docutils literal notranslate"><span class="pre">submit</span></code>. Реаговаћемо на тај догађај и у склопу његове обраде позове
+метода <code class="docutils literal notranslate"><span class="pre">checkValidity()</span></code> којом се врши уграђена валидација. Одмах
+након уграђених провера, позваћемо и функцију <code class="docutils literal notranslate"><span class="pre">checkPassword</span></code> којом
+ћемо проверити једнакост лозинки. Ако било која провера валидности не
+успе, методом <code class="docutils literal notranslate"><span class="pre">event.preventDefault()</span></code> зауставићемо слање података
+из формулара.</p>
+<p>Да би библиотека Bootstrap кренула да стилизује поља и приказује
+поруке у складу са исходом провере о грешкама, формулар мора да добије
+класу <code class="docutils literal notranslate"><span class="pre">was-validated</span></code>. Тај атрибут ћемо формулару доделити након што
+је извршена валидација (било успешно, било неуспешно), на крају
+функције којом се реагује на догађај <code class="docutils literal notranslate"><span class="pre">submit</span></code>.</p>
+<p>На крају, додајмо да се провера једнакости лозинки не врши само када
+се шаљу подаци из формулара, већ сваки пут када се нека од две унете
+лозинке промени. То можемо остварити тако што позив функције
+<code class="docutils literal notranslate"><span class="pre">checkPassword</span></code> региструјемо као реакцију на догађај подизања
+тастера тастатуре у неком од поља за унос лозинке.</p>
+<p>Иако у функцији <code class="docutils literal notranslate"><span class="pre">checkPassword</span></code> променимо статус валидације методом
+<code class="docutils literal notranslate"><span class="pre">setCustomValidity</span></code>, тај статус се неће приказивати све док се
+формулару не дода класа <code class="docutils literal notranslate"><span class="pre">was-validated</span></code>, тј. док се не притисне
+дугме <code class="docutils literal notranslate"><span class="pre">submit</span></code>. Ако бисмо класу <code class="docutils literal notranslate"><span class="pre">was-validated</span></code> формулару додали
+унутар функције <code class="docutils literal notranslate"><span class="pre">checkPassword</span></code>, приказале би се грешке за сва поља
+у формулару, а то не желимо, јер док попуњавамо лозинку остала поља
+нису још попуњена и нема потребе да се због тога приказују
+грешке. Један начин да се прикаже статус исправности само за поља за
+унос лозинки је да уместо коришћења псеудокласа <code class="docutils literal notranslate"><span class="pre">valid</span></code> и
+<code class="docutils literal notranslate"><span class="pre">invalid</span></code> које су део уграђеног HTML5 механизма валидације,
+употребимо посебне Bootstrap класе за стилизацију поља за унос
+података. Исправним пољима ћемо додати класу <code class="docutils literal notranslate"><span class="pre">is-valid</span></code>, а
+неисправним класу <code class="docutils literal notranslate"><span class="pre">is-invalid</span></code>. Додељивањем ових класа, статус
+исправности поља се приказује одмах, без обзира на то да ли формулар
+има класу <code class="docutils literal notranslate"><span class="pre">was-validated</span></code> или нема. У случају конфликта предност
+имају пседуокласе које су део HTML5 валидације. Дакле, ако елемент има
+Bootstrap класу <code class="docutils literal notranslate"><span class="pre">is-valid</span></code>, али псеудокласу <code class="docutils literal notranslate"><span class="pre">invalid</span></code> која му је
+постављена током рада методе <code class="docutils literal notranslate"><span class="pre">checkValidity</span></code> или методом
+<code class="docutils literal notranslate"><span class="pre">setCustomValidity</span></code>, он ће бити приказан као неисправан. Зато је уз
+додељивање класа <code class="docutils literal notranslate"><span class="pre">is-valid</span></code> тј. <code class="docutils literal notranslate"><span class="pre">is-invalid</span></code> и даље потребно
+позивати и методу <code class="docutils literal notranslate"><span class="pre">setCustomValidity</span></code> (до тренутка док се не кликне
+дугме <code class="docutils literal notranslate"><span class="pre">submit</span></code>, класе су те које одређују стилизацију, а након тог
+тренутка, када се формулару дода класа <code class="docutils literal notranslate"><span class="pre">was-validated</span></code>, псеудокласе
+преузимају ту улогу).</p>
+<p>На основу свега реченог долазимо до следећег JavaScript скрипта за
+клијентску валидацију.</p>
+<div class="highlight-html+jinja notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+  <span class="c1">// DOM objekti koji odgovaraju formularu i poljima za unos lozinke</span>
+  <span class="kd">var</span> <span class="nx">form</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">.</span><span class="nx">registration</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">passwordInput</span> <span class="o">=</span> <span class="nx">form</span><span class="p">.</span><span class="nx">password</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">confirmPasswordInput</span> <span class="o">=</span> <span class="nx">form</span><span class="p">.</span><span class="nx">confirmPassword</span><span class="p">;</span>
+
+  <span class="c1">// lozinka se proverava prilikom svake promene</span>
+  <span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;keyup&quot;</span><span class="p">,</span> <span class="nx">checkPassword</span><span class="p">)</span>
+  <span class="nx">passwordInput</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;keyup&quot;</span><span class="p">,</span> <span class="nx">checkPassword</span><span class="p">)</span>
+
+  <span class="c1">// funkcija za proveru poklapanja lozinki</span>
+  <span class="kd">function</span> <span class="nx">checkPassword</span><span class="p">()</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">OK</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+      <span class="k">if</span> <span class="p">(</span><span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">value</span> <span class="o">!=</span> <span class="nx">passwordInput</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
+          <span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">setCustomValidity</span><span class="p">(</span><span class="s2">&quot;Lozinke se ne poklapaju&quot;</span><span class="p">);</span>
+          <span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;is-invalid&quot;</span><span class="p">);</span>
+          <span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&quot;is-valid&quot;</span><span class="p">);</span>
+          <span class="nx">OK</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">setCustomValidity</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+          <span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;is-valid&quot;</span><span class="p">);</span>
+          <span class="nx">confirmPasswordInput</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="s2">&quot;is-invalid&quot;</span><span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="c1">// TODO: proširiti ovu funkciju zahtevom da lozinka sadrži i slova</span>
+      <span class="c1">// i cifre i specijalne karaktere</span>
+      
+      <span class="k">return</span> <span class="nx">OK</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// provera prilikom slanja podataka iz formulara</span>
+  <span class="nx">form</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;submit&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// vršimo ugrađene HTML5 provere i dodatnu proveru lozinki</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">form</span><span class="p">.</span><span class="nx">checkValidity</span><span class="p">()</span> <span class="o">||</span> <span class="o">!</span><span class="nx">checkPassword</span><span class="p">())</span> <span class="p">{</span>
+          <span class="c1">// sprečavamo slanje</span>
+          <span class="nx">event</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+          <span class="nx">event</span><span class="p">.</span><span class="nx">stopPropagation</span><span class="p">();</span>
+      <span class="p">}</span>
+
+      <span class="c1">// označavamo da je formular proveren</span>
+      <span class="nx">form</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s2">&quot;was-validated&quot;</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>Табела о корисницима<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Податке о свим регистрованим корисницима ћемо чувати у склопу базе
+података у табели <code class="docutils literal notranslate"><span class="pre">user</span></code>, која је дефинисана на следећи начин.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="k">user</span> <span class="p">(</span>
+    <span class="n">username</span> <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">60</span><span class="p">)</span> <span class="k">PRIMARY</span> <span class="k">KEY</span><span class="p">,</span>
+    <span class="n">password</span> <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">32</span><span class="p">),</span>
+    <span class="n">name</span>     <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+    <span class="n">email</span>    <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id5">
+<h2>Серверски скрипт за регистрацију<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Прикажимо сада серверски део апликације. Регистрација корисника ће се
+вршити путем путање <code class="docutils literal notranslate"><span class="pre">/register</span></code>. Ако се на ту путању пошаље захтев
+GET, тада се само приказује формулар за регистрацију. Са друге стране,
+ако се пошаље захтев POST, тада се прво врши основна валидација тих
+података на серверској страни (без обзира на то што је валидација већ
+урађена на клијентској страни) и ако је све успешно, проверава се да
+ли је одабрано корисничко име расположиво. Ако јесте, корисник се
+региструје, пријављује се порука о успешној валидацији (коришћењем
+флешованих порука), корисник се одмах логује (коришћењем сесије) и
+пребацује се на главну страну сајта (коришћењем редирекције). Ако дође
+до било какве грешке (серверска валидација не прође или је корисничко
+име већ одабрано), пријављује се грешка (коришћењем флешованих
+порука).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/register&quot;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">register</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;POST&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">validate_register_form</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">):</span>
+            <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">username_available</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
+                <span class="n">flash</span><span class="p">(</span><span class="s2">&quot;Korisničko ime &quot;</span> <span class="o">+</span> <span class="n">username</span> <span class="o">+</span> <span class="s2">&quot; je već odabrano, &quot;</span> <span class="o">+</span>
+                      <span class="s2">&quot;molimo vas da pokušate ponovo&quot;</span><span class="p">,</span> <span class="s2">&quot;danger&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;register.html&quot;</span><span class="p">,</span>
+                                       <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">password</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s2">&quot;password&quot;</span><span class="p">]</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+                <span class="n">email</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s2">&quot;email&quot;</span><span class="p">]</span>
+                <span class="n">register_user</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="p">)</span>
+                <span class="n">session</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">username</span>    <span class="c1"># korisnika automatski i logujemo</span>
+                <span class="n">flash</span><span class="p">(</span><span class="s2">&quot;Korisnik &quot;</span> <span class="o">+</span> <span class="n">username</span> <span class="o">+</span> <span class="s2">&quot; je uspešno registrovan&quot;</span><span class="p">,</span> <span class="s2">&quot;success&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s2">&quot;index&quot;</span><span class="p">))</span> <span class="c1"># vraćamo se na početnu stranu</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">flash</span><span class="p">(</span><span class="s2">&quot;Pogrešno navedeni podaci u formularu za registraciju&quot;</span><span class="p">,</span> <span class="s2">&quot;danger&quot;</span><span class="p">)</span>
+            <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+            <span class="n">email</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s2">&quot;email&quot;</span><span class="p">]</span>
+            <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;register.html&quot;</span><span class="p">,</span>
+                                   <span class="n">username</span><span class="o">=</span><span class="n">username</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="o">=</span><span class="n">email</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;register.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Анализирајмо укратко претходну функцију. У првој линији се она везује
+за путању <code class="docutils literal notranslate"><span class="pre">/register</span></code> и допушта се слање захтева и преко метода GET
+и преко метода POST. Основно гранање је на основу употребљеног метода.
+Ако је метод очитан из поља <code class="docutils literal notranslate"><span class="pre">request.method</span></code> једнак <code class="docutils literal notranslate"><span class="pre">&quot;POST&quot;</span></code>
+обрађују се подаци из формулара, а ако није, тада знамо да је у питању
+метода GET и помоћу <code class="docutils literal notranslate"><span class="pre">render_template</span></code> приказујемо раније описани
+шаблон који садржи формулар за регистрацију (он је коришћењем
+наслеђивања шаблона уклопљен у ширу веб-страну). Ако су подаци послати
+преко методе POST, позивамо функцију <code class="docutils literal notranslate"><span class="pre">validate_register_form</span></code> којом
+се врши основна провера провера тих података. Наредна, веома
+једноставна, имплементација те функције само проверава да ли су сви
+потребни подаци послати (наравно, овде је могуће додати додатне
+провере).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">validate_register_form</span><span class="p">(</span><span class="n">form</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="s2">&quot;username&quot;</span> <span class="ow">in</span> <span class="n">form</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">form</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="s2">&quot;password&quot;</span> <span class="ow">in</span> <span class="n">form</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">form</span><span class="p">[</span><span class="s2">&quot;password&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+        <span class="k">return</span> <span class="kc">False</span><span class="p">;</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="s2">&quot;name&quot;</span> <span class="ow">in</span> <span class="n">form</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">form</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="s2">&quot;email&quot;</span> <span class="ow">in</span> <span class="n">form</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">form</span><span class="p">[</span><span class="s2">&quot;email&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Ако је валидација успешно извршена, очитава се предложено корисничко
+име и проверава се да ли је корисничко име доступно. То се врши
+наредном функцијом, која врши упит ка бази података којим се проналази
+број корисника у табели <code class="docutils literal notranslate"><span class="pre">user</span></code> који имају то корисничко
+име. Корисничко име је слободно ако и само ако је тај број корисника
+једнак нули.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">username_available</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">query_db</span><span class="p">(</span><span class="s2">&quot;SELECT COUNT(*) FROM user WHERE username=?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="p">),</span> <span class="kc">True</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">count</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Ако је корисничко име слободно, тада прикупљамо остале податке из POST
+захтева и позивамо функцију <code class="docutils literal notranslate"><span class="pre">register_user</span></code> која ће регистровати
+корисника тако што ће податке о њему уписати у базу, у табелу
+<code class="docutils literal notranslate"><span class="pre">user</span></code>. Имплементацију ове функције ћемо описати касније.</p>
+<p>Након што региструјемо корисника аутоматски ћемо га улоговати, тако
+што ћемо његово корисничко име уписати у сесију (наредбом
+<code class="docutils literal notranslate"><span class="pre">session[&quot;username&quot;]</span> <span class="pre">=</span> <span class="pre">username</span></code>). На многим сајтовима се након
+регистрације очекује да корисник потврди своју мејл адресу, тако да се
+логовање не врши аутоматски, већ тек након потврде мејл адресе.</p>
+<p>На крају, позивом <code class="docutils literal notranslate"><span class="pre">return</span> <span class="pre">redirect(url_for(&quot;index&quot;))</span></code> преусмеравамо
+корисника на долазну страну сајта, која је везана за путању <code class="docutils literal notranslate"><span class="pre">/</span></code> и
+која се приказује функцијом <code class="docutils literal notranslate"><span class="pre">index</span></code> (та функција само приказује
+шаблон <code class="docutils literal notranslate"><span class="pre">index.html</span></code> који садржи опис долазне стране). Пошто смо пре
+тога поставили флеш-поруку о успешном логовању, она ће бити приказана
+у склопу долазне стране.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">index</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s2">&quot;index.html&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Ако приликом регистрације дође до неке грешке, поставља се флеш-порука
+која ближе описује ту грешку и поново се приказује формулар за
+регистрацију (тако што се позове <code class="docutils literal notranslate"><span class="pre">render_html(&quot;registration.html&quot;,</span>
+<span class="pre">...)</span></code> чиме се шаље GET захтев за том страном). Функцији
+<code class="docutils literal notranslate"><span class="pre">render_html</span></code> се као додатни параметри шаљу подаци које је корисник
+раније унео у формулар (сви осим лозинки), да би се приликом поновног
+приказа формулара очувале вредности у тим пољима (изузетак је приказ
+формулара након што се установи да је корисничко име већ заузето, када
+се корисничко име које је било унето у формулар брише).</p>
+</div>
+<div class="section" id="id6">
+<h2>Хеширање лозинки<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Да бисмо описали имплементацију функције за регистрацију, потребно је
+да објаснимо како се лозинке обично складиште у бази. Прва идеја је да
+табела садржи сирове лозинке, онакве какве су корисници унели. То
+решење је катастрофално лоше са становишта безбедности података, јер
+би било који упад на сајт који би омогућио злонамерним корисницима
+увид у вашу базу података открио лозинке свих ваших корисника. Пошто
+корисници често користе исте (или сличне) лозинке на више сајтова,
+тиме би они били озбиљно угрожени.  Стога се користи техника
+<strong>хеширања лозинки</strong>. Пре него што се лозинка упише у базу, на њу се
+примени трансформација одређена неком познатом криптографском
+хеш-функцијом (такве су функције md5, sha1, …). На пример, када се
+на лозинку <code class="docutils literal notranslate"><span class="pre">pera123</span></code> примени функција sha1, добија се хеш-вредност
+<code class="docutils literal notranslate"><span class="pre">be105a6ee5530d17d9f234baa85ac846b463edd6</span></code>. Хеш-функције имају
+особину да је јако лако на основу лозинке добија хеш-вредност, а да је
+јако тешко (практично немогуће) на основу хеш-вредности одредити
+лозинку која је дала ту хеш-вредност. Додатно, иако ове функције нису
+бијективне, јако је мала вероватноћа да две различите лозинке дају
+исту хеш вредност. Мале промене лозинке доводе до потпуно другачијих
+хеш-вредности. Ово омогућава да се провера коректности лозинке изврши
+тако што се за лозинку коју корисник унесе приликом логовања израчуна
+хеш-вредност и да се онда тако добијена хеш-вредност упореди са оном
+која је складиштена у бази података. Ако се хеш-вредности не поклопе,
+тада је лозинка сигурно неисправна, а ако се поклопе, тада је са
+вероватноћом од преко 99,99…99% лозинка исправна (каже се да је већа
+вероватноћа да хардвер рачунара погреши у неком израчунавању, него да
+две различите лозинке дају исту хеш вредност).</p>
+<p>Иако хеширање наизглед решава проблем хакерског упада у табелу са
+информацијама о вашим корисницима, нажалост, проблем није у потпуности
+решен. Наиме, људи јако често користе неке лозинке које су правилне и
+које се једноставно памте. Истраживања показују да су 10 најчешће
+коришћених лозинки <code class="docutils literal notranslate"><span class="pre">123456</span></code>, <code class="docutils literal notranslate"><span class="pre">123456789</span></code>, <code class="docutils literal notranslate"><span class="pre">qwerty</span></code>,
+<code class="docutils literal notranslate"><span class="pre">password</span></code>, <code class="docutils literal notranslate"><span class="pre">12345</span></code>, <code class="docutils literal notranslate"><span class="pre">qwerty123</span></code>, <code class="docutils literal notranslate"><span class="pre">1q2w3e</span></code> и
+<code class="docutils literal notranslate"><span class="pre">12345678</span></code>. Често се користе и имена, комбинације имена и година или
+датума рођења и слично. На интернету су доступне табеле (тзв. <em>rainbow
+tables</em>) које садрже огромне листе хеш-вредности за огроман број
+лозинки за које се могу претпоставити да ће бити често коришћене.
+Помоћу тих табела и откривених хеш-вредности јако лако могу
+реконструисати често коришћене лозинке.</p>
+<p>Заштита од напада овог типа је да се пре хеширања лозинке „засоле”. То
+значи да се лозинкама дода нека помоћна ниска карактера тј. бајтова
+(тзв. „со”). Препоручује се да се за сваку лозинку употреби посебна,
+насумично генерисана „со”. „Со” није тајни податак, па се може
+сачувати у бази података уз саму лозинку.</p>
+<p>У нашој имплементацији хеширање и „сољење” лозинки је извршено
+коришћењем библиотеке <code class="docutils literal notranslate"><span class="pre">bcrypt</span></code>. Функција <code class="docutils literal notranslate"><span class="pre">bcrypt.gensalt()</span></code>
+насумично генерише „со” за тренутну лозинку (добијена „со” је низ
+бајтова). Након тога функција <code class="docutils literal notranslate"><span class="pre">bcrypt.hashpw</span></code> на основу лозинке и
+соли гради ниску која садржи хеш-вредност и „со” (оне се спајају у
+једну ниску карактера), која се може уписати у базу на поље предвиђено
+за унос лозинке.</p>
+<p>На основу свега изреченог, долазимо до следеће имплементације функције
+за регистрацију новог корисника.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">register_user</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="p">):</span>
+    <span class="n">db_conn</span> <span class="o">=</span> <span class="n">get_db</span><span class="p">()</span>
+    <span class="n">cursor</span> <span class="o">=</span> <span class="n">db_conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+    <span class="n">hash_and_salt</span> <span class="o">=</span> <span class="n">bcrypt</span><span class="o">.</span><span class="n">hashpw</span><span class="p">(</span><span class="n">password</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">bcrypt</span><span class="o">.</span><span class="n">gensalt</span><span class="p">())</span>
+    <span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO user VALUES (?, ?, ?, ?)&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">hash_and_salt</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">email</span><span class="p">))</span>
+    <span class="n">db_conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Приликом логовања врши се провера коректности лозинке. Из базе читамо
+ту ниску за дато корисничко име. Ако читање не успе (јер корисничко не
+постоји), пријављујемо да логовање није успело. Ако успе, онда знамо
+хеш-вредност лозинке и употребљену „со” и позивом функције
+<code class="docutils literal notranslate"><span class="pre">bcrypt.checkpw</span></code> проверавамо коректност унете лозинке. Њој се
+прослеђује лозинка коју је кориснику унео (у облику низа бајтова) и
+ниска која чува „со” и хеш-вредност праве лозинке коју смо прочитали
+из базе и она аутоматски из те ниске издваја „со”, израчунава
+хеш-вредност унете лозинке и упоређује је са хеш-вредношћу праве
+лозинке која је издвојена из ниске прочитане из базе.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">check_login</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+    <span class="n">row</span> <span class="o">=</span> <span class="n">query_db</span><span class="p">(</span><span class="s2">&quot;SELECT password FROM user WHERE username=?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="p">),</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">row</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="n">hash_and_salt</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">bcrypt</span><span class="o">.</span><span class="n">checkpw</span><span class="p">(</span><span class="n">password</span><span class="o">.</span><span class="n">encode</span><span class="p">(),</span> <span class="n">hash_and_salt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>Дугмад за логовање/излогивање<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>На свакој страни сајта ћемо корисницима пружити могућност да се
+улогују (ако нису улоговани) тј. да се излогују (ако су
+улоговани). Проверу да ли је корисник тренутно улогован можемо
+извршити провером да ли корисничко име уписано у сесију тј. да ли је
+дефинисана променљива <code class="docutils literal notranslate"><span class="pre">session[&quot;username&quot;]</span></code>. Ако јесте, приказаћемо
+дугме којим ће се активирати формулар за логовање и испод њега линк
+који води ка путањи за регистрацију новог корисника
+(<code class="docutils literal notranslate"><span class="pre">url_for(&quot;register&quot;)</span></code>), а ако није, приказаћемо линк који води ка
+путањи за коју је везана функција за излогивање
+(<code class="docutils literal notranslate"><span class="pre">url_for(&quot;logout&quot;)</span></code>).</p>
+<div class="highlight-html+jinja notranslate"><div class="highlight"><pre><span></span>  <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;float-right&quot;</span><span class="p">&gt;</span>
+  <span class="cp">{%</span> <span class="k">if</span> <span class="k">not</span> <span class="nv">session</span><span class="o">[</span><span class="s2">&quot;username&quot;</span><span class="o">]</span> <span class="cp">%}</span>
+  <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary btn-sm&quot;</span>
+          <span class="na">data-toggle</span><span class="o">=</span><span class="s">&quot;modal&quot;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&quot;#loginModal&quot;</span><span class="p">&gt;</span>
+    Ulogujte se
+  <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;&lt;</span><span class="nt">br</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">url_for</span><span class="o">(</span><span class="s1">&#39;register&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;</span>Nemate nalog? Registrujte se<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
+  <span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span>
+  <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">url_for</span><span class="o">(</span><span class="s1">&#39;logout&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;</span>Izlogujte se<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+  <span class="cp">{%</span> <span class="k">endif</span> <span class="cp">%}</span>
+  <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Дугме за логовање је приказано на наредној слици.</p>
+<a class="reference internal image-reference" href="../_images/projekat_05_login_button.png"><img alt="Изглед дугмета за логовање" class="align-center" src="../_images/projekat_05_login_button.png" style="width: 300px;" /></a>
+</div>
+<div class="section" id="id8">
+<h2>Формулар за логовање и његова стилизација<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>Кренимо од описа формулара за унос корисничког имена и лозинке. Тај
+формулар ће бити приказан у оквиру модалног прозора, који се веома
+једноставно реализује уз помоћ библиотеке Boostrap.</p>
+<p>Изглед формулара у модалном прозору је приказан на следећој слици.</p>
+<a class="reference internal image-reference" href="../_images/projekat_01_formular_za_logovanje.png"><img alt="Изглед формулара за логовање" class="align-center" src="../_images/projekat_01_formular_za_logovanje.png" style="width: 350px;" /></a>
+<p>Модални прозор се реализује као елемент <code class="docutils literal notranslate"><span class="pre">div</span></code> који има класу
+<code class="docutils literal notranslate"><span class="pre">modal</span></code>. Унутар њега се налази елемент <code class="docutils literal notranslate"><span class="pre">div</span></code> који има класу
+<code class="docutils literal notranslate"><span class="pre">modal-dialog</span></code>, а унутар њега три елемента <code class="docutils literal notranslate"><span class="pre">div</span></code>: заглавље које
+има класу <code class="docutils literal notranslate"><span class="pre">modal-header</span></code>, централни део који има класу
+<code class="docutils literal notranslate"><span class="pre">modal-body</span></code> и подножје које има класу <code class="docutils literal notranslate"><span class="pre">modal-footer</span></code>. У заглављу
+је приказан наслов и дугменце са ознаком <code class="docutils literal notranslate"><span class="pre">×</span></code> којом се модални прозор
+може искључити (што је подешено атрибутом <code class="docutils literal notranslate"><span class="pre">data-dismiss=&quot;modal&quot;</span></code>). У
+централном делу се налазе два поља за унос података: једно за унос
+корисничког имена, а друго за унос лозинке. У подножју се налази дугме
+за слање података из формулара (дугме <code class="docutils literal notranslate"><span class="pre">submit</span></code>) и дугме за затварање
+модалног прозора (што је подешено атрибутом <code class="docutils literal notranslate"><span class="pre">data-dismiss=&quot;modal&quot;</span></code>).</p>
+<div class="highlight-html+jinja notranslate"><div class="highlight"><pre><span></span> <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;modal&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;loginModal&quot;</span><span class="p">&gt;</span>
+   <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;modal-dialog&quot;</span><span class="p">&gt;</span>
+     <span class="p">&lt;</span><span class="nt">form</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;</span><span class="cp">{{</span> <span class="nv">url_for</span><span class="o">(</span><span class="s1">&#39;login&#39;</span><span class="o">)</span> <span class="cp">}}</span><span class="s">&quot;</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;modal-content&quot;</span><span class="p">&gt;</span>
+
+         <span class="c">&lt;!-- zaglavlje modalnog prozora --&gt;</span>
+         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;modal-header&quot;</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">h5</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;modal-title&quot;</span><span class="p">&gt;</span>Logovanje<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+           <span class="c">&lt;!-- dugme × za isključivanje prozora --&gt;</span>
+           <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;close&quot;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&quot;modal&quot;</span><span class="p">&gt;</span>
+             <span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span><span class="ni">&amp;times;</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+           <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+         <span class="c">&lt;!-- telo modalnog prozora --&gt;</span>
+         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;modal-body&quot;</span><span class="p">&gt;</span>
+           <span class="c">&lt;!-- polje za unos korisničkog imena --&gt;</span>
+           <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group row&quot;</span><span class="p">&gt;</span>
+             <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-4 col-form-label&quot;</span><span class="p">&gt;</span>Korisničko ime:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+             <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;signinUsername&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;username&quot;</span>
+                    <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control col-md-6&quot;</span> <span class="na">autocomplete</span><span class="o">=</span><span class="s">&quot;username&quot;</span> <span class="p">/&gt;</span>
+           <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+             
+           <span class="c">&lt;!-- polje za unos lozinke --&gt;</span>
+           <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group row&quot;</span><span class="p">&gt;</span>
+             <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;col-md-4 col-form-label&quot;</span><span class="p">&gt;</span>Lozinka:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+             <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;password&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;signinPassword&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;password&quot;</span>
+                    <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control col-md-6&quot;</span> <span class="na">autocomplete</span><span class="o">=</span><span class="s">&quot;current-password&quot;</span> <span class="p">/&gt;</span>
+           <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+         <span class="c">&lt;!-- podnožje modalnog prozora --&gt;</span>
+         <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;modal-footer&quot;</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary&quot;</span><span class="p">&gt;</span>Uloguj me<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-secondary&quot;</span> <span class="na">data-dismiss</span><span class="o">=</span><span class="s">&quot;modal&quot;</span><span class="p">&gt;</span>Zatvori<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+         <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+       <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+     <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+ <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Модални прозор је подразумевано сакривен и приказује се притиском на
+дугме за логовање. Подсетимо се, оно је реализовано на следећи начин:</p>
+<div class="highlight-html+jinja notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;button&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-outline-primary btn-sm&quot;</span>
+        <span class="na">data-toggle</span><span class="o">=</span><span class="s">&quot;modal&quot;</span> <span class="na">data-target</span><span class="o">=</span><span class="s">&quot;#loginModal&quot;</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>Параметром <code class="docutils literal notranslate"><span class="pre">data-toggle</span></code> постављено је да то дугме буде оно које
+укључује модални прозор, док је параметром <code class="docutils literal notranslate"><span class="pre">data-target</span></code> постављен
+идентификатор модалног прозора који ће се укључивати на ово дугме.</p>
+<p>Валидацију овог формулара нећемо вршити на клијентској страни. Наиме,
+ако се не унесу подаци или се унесу погрешни подаци одмах ће се
+утврдити да корисник не може да се улогује и биће свакако пријављена
+грешка.</p>
+</div>
+<div class="section" id="id9">
+<h2>Серверски скрипт за логовање и излогивање<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>Логовање је везано за путању <code class="docutils literal notranslate"><span class="pre">/login</span></code> и функцију <code class="docutils literal notranslate"><span class="pre">login</span></code>. Она
+податке (корисничко име и лозинку прихвата преко метода POST). Ако се
+овој путањи приступи преко методе GET, биће пријављена грешка (помоћу
+флеш-поруке).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/login&quot;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">login</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;POST&quot;</span><span class="p">:</span>
+        <span class="n">OK</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">if</span> <span class="n">validate_login_form</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">):</span>
+            <span class="n">username</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span>
+            <span class="n">password</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s2">&quot;password&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">check_login</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">):</span>
+                <span class="n">session</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">OK</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">OK</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="k">if</span> <span class="n">OK</span><span class="p">:</span>
+            <span class="n">flash</span><span class="p">(</span><span class="s2">&quot;Uspešno ste se ulogovali&quot;</span><span class="p">,</span> <span class="s2">&quot;success&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">flash</span><span class="p">(</span><span class="s2">&quot;Pogrešno korisničko ime ili lozinka&quot;</span><span class="p">,</span> <span class="s2">&quot;danger&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">flash</span><span class="p">(</span><span class="s2">&quot;Greška u prenosu podataka o logovanju&quot;</span><span class="p">,</span> <span class="s2">&quot;danger&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s2">&quot;index&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Валидација форме на серверској страни само проверава да ли су унети
+корисничко име и лозинка.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">validate_login_form</span><span class="p">(</span><span class="n">form</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="s2">&quot;username&quot;</span> <span class="ow">in</span> <span class="n">form</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">form</span><span class="p">[</span><span class="s2">&quot;username&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="s2">&quot;password&quot;</span> <span class="ow">in</span> <span class="n">form</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">form</span><span class="p">[</span><span class="s2">&quot;password&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Ако валидација успе, тада проверавамо коректност лозинке коришћењем
+функције <code class="docutils literal notranslate"><span class="pre">check_login</span></code>, коју смо раније описали. Ако су корисничко
+име и лозинка исправни, уписујемо корисничко име у сесију. У
+зависности од тога да ли је корисник успешно улогован или је дошло до
+неке грешке, постављамо одговарајућу флеш-поруку. У оба случаја
+корисника шаљемо поново на долазну страну сајта, где ће му се та
+порука приказати.</p>
+<p>Функција којом тренутно улоговани корисник може да се излогује назива
+се <code class="docutils literal notranslate"><span class="pre">logout</span></code> и повезана је са путањом <code class="docutils literal notranslate"><span class="pre">/logout</span></code> (којој се може
+приступити преко GET метода, пошто јој се не преносе никакви подаци).
+Из сесије се брише корисничко име и корисник се пребацује на долазну
+страну сајта.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/logout&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">logout</span><span class="p">():</span>
+    <span class="n">session</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;username&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s2">&quot;index&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+    </div>
+    
+    <div>
+<div class="lecture-prev-next-toggle">
+  <a  href="07_projekat_01b_uvod.html" id="prevLectureLink" class="lecture-toggler-arrows"><i class="fas fa-arrow-left fa"></i> <span> Претходно лекција </span> </a>
+  
+</div>
+
+<script type="text/javascript">
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+</script>
+</div>
+
+    
+  </div>
+</div>
+<div class="petljadoc-resources">
+  <span class="pull-left">(Created using  <a href="https://pypi.org/project/Sphinx/">Swinx</a>, <a href="http://runestoneinteractive.org/">RunestoneComponents</a> and <a href="https://github.com/Petlja/PetljaDoc">PetljaDoc</a>) <br> © 2022 Petlja</span>
+</div>
+
+<div class="lectureToolbox">
+
+  <label class="font-size-toggle" id="fontSizeToggle">
+
+      <i class="fas fa-font"></i><label>Слова</label>
+  </label>
+  <div class="font-change d-none" id="fontChangeModal">
+      <span class="dec-letter-icon" id="decLetterIcon">A-</span>
+      <label id="currentFontSize">16</label>
+      <span class="inc-letter-icon" id="incLetterIcon">A+</span>
+  </div>
+</div>
+
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Списак ученика</title>
+   </head>
+   <body>
+     <table border="1">
+       <tr><th>Име</th><th>Презиме</th></tr>
+       {% for ucenik in ucenici %}
+       <tr><td>{{ ucenik.ime }}</td><td>{{ ucenik.prezime }}</td></tr>
+       {% endfor %}
+     </table>
+   </body>
+</html>

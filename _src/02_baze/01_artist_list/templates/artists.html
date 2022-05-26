@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Artists</title>
+   </head>
+   <body>
+     <h1>Artists</h1>
+     <ol>
+       {% for artist in artists %}
+          <li>{{ artist[0] }}</li>
+       {% endfor %}
+     </ol>
+   </body>
+</html>

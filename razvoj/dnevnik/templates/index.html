@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>Списак ученика</title>
+    <link href="{{ url_for('static',filename='styles/stil.css') }}" rel="stylesheet" />
+  </head>
+  <body>
+    {% if razred %}
+      <h1>Ученици  {{ razred }}. разреда</h1>
+    {% else %}
+      <h1>Сви ученици</h1>
+    {% endif %}
+
+    Одабери разред:
+    <form method="get">
+      <select name="razred">
+        {% for r in range(1, 5) %}
+           <option value="{{ r }}" {% if razred == r %}selected{% endif %}> {{ r }}</option>
+        {% endfor %}
+      </select>
+      <input type="submit" value="Прикажи ученике" />
+    </form>
+    
+    <table>
+      {% for ucenik in ucenici %}
+      <tr><td>{{ ucenik.ime }}</td> <td>{{ ucenik.prezime }}</td></tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

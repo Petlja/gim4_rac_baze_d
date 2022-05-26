@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Рачунарске мреже</title>
+    <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/datafile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/dragndrop.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/fitb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/matrixeq.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/parsons.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/lib/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/poll.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/showEval.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/tabbedstuff.css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/webgldemo.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/webglinteractive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/karel.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/notes.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pycode.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/p5js.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-4.0.0-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/flatly.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/petlja-course.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nbstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/runestonebase.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="../_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="../_static/codemirror.js"></script>
+    <script type="text/javascript" src="../_static/xml.js"></script>
+    <script type="text/javascript" src="../_static/css.js"></script>
+    <script type="text/javascript" src="../_static/python.js"></script>
+    <script type="text/javascript" src="../_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="../_static/javascript.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/CLDRPluralRuleParser.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.messagestore.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.fallbacks.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.language.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.parser.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.emitter.js"></script>
+    <script type="text/javascript" src="../_static/jquery_i18n/jquery.i18n.emitter.bidi.js"></script>
+    <script type="text/javascript" src="../_static/activecode-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/activecode-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/activecode.js"></script>
+    <script type="text/javascript" src="../_static/clike.js"></script>
+    <script type="text/javascript" src="../_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="../_static/animationbase.js"></script>
+    <script type="text/javascript" src="../_static/mchoice.js"></script>
+    <script type="text/javascript" src="../_static/timedmc.js"></script>
+    <script type="text/javascript" src="../_static/timed.js"></script>
+    <script type="text/javascript" src="../_static/mchoice-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/mchoice-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/clickable.js"></script>
+    <script type="text/javascript" src="../_static/timedclickable.js"></script>
+    <script type="text/javascript" src="../_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="../_static/pytutor.js"></script>
+    <script type="text/javascript" src="../_static/codelens.js"></script>
+    <script type="text/javascript" src="../_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="../_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="../_static/datafile.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop.js"></script>
+    <script type="text/javascript" src="../_static/timeddnd.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/dragndrop-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/fitb.js"></script>
+    <script type="text/javascript" src="../_static/timedfitb.js"></script>
+    <script type="text/javascript" src="../_static/fitb-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/fitb-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/matrixeq.js"></script>
+    <script type="text/javascript" src="../_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="../_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="../_static/parsons.js"></script>
+    <script type="text/javascript" src="../_static/parsons-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/parsons-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/timedparsons.js"></script>
+    <script type="text/javascript" src="../_static/poll.js"></script>
+    <script type="text/javascript" src="../_static/reveal.js"></script>
+    <script type="text/javascript" src="../_static/shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="../_static/showEval.js"></script>
+    <script type="text/javascript" src="../_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="../_static/runestonevideo.js"></script>
+    <script type="text/javascript" src="../_static/webglinteractive.js"></script>
+    <script type="text/javascript" src="../_static/FileSaver.min.js"></script>
+    <script type="text/javascript" src="../_static/Blob.js"></script>
+    <script type="text/javascript" src="../_static/karelCorner.js"></script>
+    <script type="text/javascript" src="../_static/karelRobot.js"></script>
+    <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
+    <script type="text/javascript" src="../_static/karelUI.js"></script>
+    <script type="text/javascript" src="../_static/karel.js"></script>
+    <script type="text/javascript" src="../_static/karel-i18n.en.js"></script>
+    <script type="text/javascript" src="../_static/karel-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="../_static/notes.js"></script>
+    <script type="text/javascript" src="../_static/pygamelib-init.js"></script>
+    <script type="text/javascript" src="../_static/blockly/blockly_compressed.js"></script>
+    <script type="text/javascript" src="../_static/blockly/blocks_compressed.js"></script>
+    <script type="text/javascript" src="../_static/blockly/python_compressed.js"></script>
+    <script type="text/javascript" src="../_static/blockly/msg-sr.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/utilities.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/python_errors.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/ast_node_visitor.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/pytifa.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/abstract_interpreter_definitions.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/python_to_blockly.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/imported.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/class.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/comment.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/comprehensions.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/dict.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/if.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/io.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/lists.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/sets.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/loops.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/parking.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/tuple.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/turtles.js"></script>
+    <script type="text/javascript" src="../_static/blockpy/blocks/text.js"></script>
+    <script type="text/javascript" src="../_static/blockpy-modal.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
+    <script type="text/javascript" src="../_static/pycode.js"></script>
+    <script type="text/javascript" src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <script type="text/javascript" src="../_static/p5js.js"></script>
+    <script type="text/javascript" src="../_static/gallery.js"></script>
+    <script type="text/javascript" src="../_static/dbDirective.js"></script>
+    <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="../_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="../_static/rangy-core.js"></script>
+    <script type="text/javascript" src="../_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="../_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="../_static/user-highlights.js"></script>
+    <script type="text/javascript" src="../_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="../_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="../_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="../_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../_static/course-errors.js"></script>
+    <script type="text/javascript" src="../_static/petlja.js"></script>
+    <script type="text/javascript" src="../_static/require.js"></script>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <script type="text/javascript">
+      eBookConfig = {};
+      eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+      eBookConfig.app = eBookConfig.host + '/runestone';
+      eBookConfig.ajaxURL = eBookConfig.app + '/ajax/';
+      eBookConfig.course = 'gim4_baze_web_prirodni';
+      eBookConfig.logLevel = '0';
+      eBookConfig.loginRequired = 'false';
+      eBookConfig.build_info = "";
+      eBookConfig.isLoggedIn = false;
+      eBookConfig.useRunestoneServices = false;
+      eBookConfig.python3 = true;
+      eBookConfig.basecourse = 'gim4_baze_web_prirodni';
+      eBookConfig.runestone_version = '';
+      eBookConfig.imagesDir = '../_images/';
+      eBookConfig.staticDir = '../_static/';
+      if (typeof (Sk) != "undefined")
+        Sk.imgPath = eBookConfig.imagesDir;
+    </script>
+
+  </head>
+
+  <body>
+
+
+
+<div id="navbar" class="content-header">
+  <div class="right-side-nav">
+    
+    <div id="usefulLinksToggle" class="useful-links-toggle">
+        <a class="dropdown-toggle dropdown-toggle-burger" role="button" href="#" id="usefulLinksDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-bars fa-2x"></i>
+        </a>
+        <div class="dropdown-menu dropdown-nav-links shadow-lg" aria-labelledby="usefulLinksDropdown" x-placement="bottom-start" style="position: absolute; transform: translate3d(-55px, 32px, 0px); top: 0px; left: 0px; will-change: transform;">
+          <div class="links-title"> Корисни линкови</div>
+          <div class="useful-link">
+            <a href="https://sqlitestudio.pl/" target="_blank">SQLite studio</a></div>
+          <div class="useful-link">
+            <a href="https://www.sqlite.org/index.html" target="_blank">Документација система SQLite</a></div>
+          
+        </div>
+    </div>
+
+    
+</div>
+
+<div class="left-side-nav">
+  <div class="course-logo-nav">
+      <a target="_blank" href="https://petlja.org">
+          <img src="../_static/img/petlja-logo-wt.svg" alt="petlja.org" id="lightPetljaLogo">
+      </a>
+  </div>
+  <div class="course-logo-nav-kabinet">
+      <a target="_blank" href="https://petlja.org/net.kabinet">
+          <img src="../_static/img/netkabinet-logo-strelica-wt.svg" alt="petlja.org" id="lightNetKabinetLogo">
+      </a>
+  </div>
+</div>
+
+
+<div class="content-header-label" id = "content-header-label" href="../">Базе података, рачунарске мреже и серверско веб програмирање за четврти разред гимназије природни смер</div>
+
+</div>
+
+
+
+
+<div class="petljaCourseContainer">
+
+<div class="petljaCourseContent">
+  
+           <div class="tableOfContent">
+            <h5> Садржај </h5>
+            </div>
+           <div>
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-01_baze_i_tabele_00_uvod>
+                    <h5>1.0 Базе: Увод у базе података</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../01_baze_i_tabele_00_uvod/01_baze_00a_uvod.html><div class="studioLecture" id=activity-01_baze_00a_uvod><i class="fas fa-file-alt activity-icon"></i>Шта су базе података?</div></a>
+                <a href=../01_baze_i_tabele_00_uvod/01_baze_00b_tabele.html><div class="studioLecture" id=activity-01_baze_00b_tabele><i class="fas fa-file-alt activity-icon"></i>Табеларна организација података</div></a>
+                <a href=../01_baze_i_tabele_00_uvod/01_baze_00c_povezane_tabele.html><div class="studioLecture" id=activity-01_baze_00c_povezane_tabele><i class="fas fa-file-alt activity-icon"></i>Повезане табеле</div></a>
+                <a href=../01_baze_i_tabele_00_uvod/01_baze_00d_kviz.html><div class="studioLecture" id=activity-01_baze_00d_kviz><i class="far fa-question-circle activity-icon"></i>Базе и табеле - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-01_baze_i_tabele_01_SQLite>
+                    <h5>1.1 Базе: SQLite</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../01_baze_i_tabele_01_SQLite/01_baze_01a_sqlite.html><div class="studioLecture" id=activity-01_baze_01a_sqlite><i class="fas fa-file-alt activity-icon"></i>SQLite и SQLite Studio</div></a>
+                <a href=../01_baze_i_tabele_01_SQLite/01_baze_01b_sqlite_baza.html><div class="studioLecture" id=activity-01_baze_01b_sqlite_baza><i class="fas fa-file-alt activity-icon"></i>Креирање базе у SQLite Studio</div></a>
+                <a href=../01_baze_i_tabele_01_SQLite/01_baze_01c_sqlite_kviz.html><div class="studioLecture" id=activity-01_baze_01c_sqlite_kviz><i class="far fa-question-circle activity-icon"></i>SQLite и SQLite Studio - квиз</div></a>
+                <a href=../01_baze_i_tabele_01_SQLite/01_baze_01d_sqlite_vezba.html><div class="studioLecture" id=activity-01_baze_01d_sqlite_vezba><i class="fas fa-file-alt activity-icon"></i>Креирање базе у SQLite Studio - задаци за вежбу</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-01_baze_i_tabele_02_dizajniranje>
+                    <h5>1.2 Базе: Дизајнирање базе података</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../01_baze_i_tabele_02_dizajniranje/01_baze_02a_dizajn_muzika.html><div class="studioLecture" id=activity-01_baze_02a_dizajn_muzika><i class="fas fa-file-alt activity-icon"></i>База компаније за продају дигиталних композиција - подаци о композицијама</div></a>
+                <a href=../01_baze_i_tabele_02_dizajniranje/01_baze_02b_dizajn_muzika_prodaja.html><div class="studioLecture" id=activity-01_baze_02b_dizajn_muzika_prodaja><i class="fas fa-file-alt activity-icon"></i>База компаније за продају дигиталних композиција - подаци о продаји</div></a>
+                <a href=../01_baze_i_tabele_02_dizajniranje/01_baze_02c_dizajn_kviz.html><div class="studioLecture" id=activity-01_baze_02c_dizajn_kviz><i class="far fa-question-circle activity-icon"></i>Дизајнирање базе података - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_00_uvod>
+                    <h5>2.0 - SQL: Читање података из базе</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_00_uvod/02_citanje_00a_uvod.html><div class="studioLecture" id=activity-02_citanje_00a_uvod><i class="fas fa-file-alt activity-icon"></i>SQL: Читање података из табела</div></a>
+                <a href=../02_citanje_podataka_00_uvod/02_citanje_00b_citanje_kviz.html><div class="studioLecture" id=activity-02_citanje_00b_citanje_kviz><i class="far fa-question-circle activity-icon"></i>Читање података - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_01_projekcija_restrikcija>
+                    <h5>2.1 SQL: Пројекција и селекција</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_01_projekcija_restrikcija/02_citanje_01a_projekcija.html><div class="studioLecture" id=activity-02_citanje_01a_projekcija><i class="fas fa-file-alt activity-icon"></i>Пројекција</div></a>
+                <a href=../02_citanje_podataka_01_projekcija_restrikcija/02_citanje_01b_restrikcija.html><div class="studioLecture" id=activity-02_citanje_01b_restrikcija><i class="fas fa-file-alt activity-icon"></i>Селекција</div></a>
+                <a href=../02_citanje_podataka_01_projekcija_restrikcija/02_citanje_01c_proj_restr_kviz.html><div class="studioLecture" id=activity-02_citanje_01c_proj_restr_kviz><i class="far fa-question-circle activity-icon"></i>Пројекција и селекција - квиз</div></a>
+                <a href=../02_citanje_podataka_01_projekcija_restrikcija/02_citanje_01d_proj_restr_zadaci_skola.html><div class="studioLecture" id=activity-02_citanje_01d_proj_restr_zadaci_skola><i class="fas fa-file-alt activity-icon"></i>Пројекција и селекција - задаци (дневник)</div></a>
+                <a href=../02_citanje_podataka_01_projekcija_restrikcija/02_citanje_01e_proj_restr_zadaci_muzika.html><div class="studioLecture" id=activity-02_citanje_01e_proj_restr_zadaci_muzika><i class="fas fa-file-alt activity-icon"></i>Пројекција и селекција - задаци (музика)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_02_operatori>
+                    <h5>2.2 SQL: Логички и релацијски оператори</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_02_operatori/02_citanje_02a_logicki_operatori.html><div class="studioLecture" id=activity-02_citanje_02a_logicki_operatori><i class="fas fa-file-alt activity-icon"></i>Логички оператори</div></a>
+                <a href=../02_citanje_podataka_02_operatori/02_citanje_02b_relacijski_operatori.html><div class="studioLecture" id=activity-02_citanje_02b_relacijski_operatori><i class="fas fa-file-alt activity-icon"></i>Релацијски оператори</div></a>
+                <a href=../02_citanje_podataka_02_operatori/02_citanje_02c_operatori_kviz.html><div class="studioLecture" id=activity-02_citanje_02c_operatori_kviz><i class="far fa-question-circle activity-icon"></i>Оператори - квиз</div></a>
+                <a href=../02_citanje_podataka_02_operatori/02_citanje_02d_operatori_zadaci_skola.html><div class="studioLecture" id=activity-02_citanje_02d_operatori_zadaci_skola><i class="fas fa-file-alt activity-icon"></i>Оператори - задаци (дневник)</div></a>
+                <a href=../02_citanje_podataka_02_operatori/02_citanje_02e_operatori_zadaci_muzika.html><div class="studioLecture" id=activity-02_citanje_02e_operatori_zadaci_muzika><i class="fas fa-file-alt activity-icon"></i>Оператори - задаци (музика)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_03_izrazi_funkcije>
+                    <h5>2.3 SQL: Изрази и функције</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_03_izrazi_funkcije/02_citanje_03a_izrazi.html><div class="studioLecture" id=activity-02_citanje_03a_izrazi><i class="fas fa-file-alt activity-icon"></i>Изрази</div></a>
+                <a href=../02_citanje_podataka_03_izrazi_funkcije/02_citanje_03b_funkcije.html><div class="studioLecture" id=activity-02_citanje_03b_funkcije><i class="fas fa-file-alt activity-icon"></i>Функције</div></a>
+                <a href=../02_citanje_podataka_03_izrazi_funkcije/02_citanje_03c_izr_fun_kviz.html><div class="studioLecture" id=activity-02_citanje_03c_izr_fun_kviz><i class="far fa-question-circle activity-icon"></i>Изрази и функције - квиз</div></a>
+                <a href=../02_citanje_podataka_03_izrazi_funkcije/02_citanje_03d_izr_fun_zadaci_skola.html><div class="studioLecture" id=activity-02_citanje_03d_izr_fun_zadaci_skola><i class="fas fa-file-alt activity-icon"></i>Изрази и функције - задаци (дневник)</div></a>
+                <a href=../02_citanje_podataka_03_izrazi_funkcije/02_citanje_03e_izr_fun_zadaci_muzika.html><div class="studioLecture" id=activity-02_citanje_03e_izr_fun_zadaci_muzika><i class="fas fa-file-alt activity-icon"></i>Изрази и функције - задаци (музика)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_04_soritiranje>
+                    <h5>2.4 SQL: Сортирање, уклањање дупликата, ограничавање броја врста</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_04_soritiranje/02_citanje_04a_sortiranje.html><div class="studioLecture" id=activity-02_citanje_04a_sortiranje><i class="fas fa-file-alt activity-icon"></i>Сортирање</div></a>
+                <a href=../02_citanje_podataka_04_soritiranje/02_citanje_04b_ogranicavanje.html><div class="studioLecture" id=activity-02_citanje_04b_ogranicavanje><i class="fas fa-file-alt activity-icon"></i>Ограничавање броја врста у резултату</div></a>
+                <a href=../02_citanje_podataka_04_soritiranje/02_citanje_04c_uklanjanje_duplikata.html><div class="studioLecture" id=activity-02_citanje_04c_uklanjanje_duplikata><i class="fas fa-file-alt activity-icon"></i>Уклањање дупликата</div></a>
+                <a href=../02_citanje_podataka_04_soritiranje/02_citanje_04d_sort_ogr_kviz.html><div class="studioLecture" id=activity-02_citanje_04d_sort_ogr_kviz><i class="far fa-question-circle activity-icon"></i>Сортирање, уклањање дупликата, ограничавање одговора - квиз</div></a>
+                <a href=../02_citanje_podataka_04_soritiranje/02_citanje_04e_sort_ogr_zadaci_skola.html><div class="studioLecture" id=activity-02_citanje_04e_sort_ogr_zadaci_skola><i class="fas fa-file-alt activity-icon"></i>Сортирање и ограничавање - задаци (дневник)</div></a>
+                <a href=../02_citanje_podataka_04_soritiranje/02_citanje_04f_sort_ogr_zadaci_muzika.html><div class="studioLecture" id=activity-02_citanje_04f_sort_ogr_zadaci_muzika><i class="fas fa-file-alt activity-icon"></i>Сортирање и ограничавање - задаци (музика)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_05_agregatne_funkcije>
+                    <h5>2.5 SQL: Агрегатне функције и груписање</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_05_agregatne_funkcije/02_citanje_05a_agregatne_funkcije.html><div class="studioLecture" id=activity-02_citanje_05a_agregatne_funkcije><i class="fas fa-file-alt activity-icon"></i>Агрегатне функције</div></a>
+                <a href=../02_citanje_podataka_05_agregatne_funkcije/02_citanje_05b_grupisanje.html><div class="studioLecture" id=activity-02_citanje_05b_grupisanje><i class="fas fa-file-alt activity-icon"></i>Груписање и израчунавање статистика појединачних група</div></a>
+                <a href=../02_citanje_podataka_05_agregatne_funkcije/02_citanje_05c_restrikcija_nakon_grupisanja.html><div class="studioLecture" id=activity-02_citanje_05c_restrikcija_nakon_grupisanja><i class="fas fa-file-alt activity-icon"></i>Селекција након груписања</div></a>
+                <a href=../02_citanje_podataka_05_agregatne_funkcije/02_citanje_05d_agregatne_grupisanje_kviz.html><div class="studioLecture" id=activity-02_citanje_05d_agregatne_grupisanje_kviz><i class="far fa-question-circle activity-icon"></i>Агрегатне функције и груписање - квиз</div></a>
+                <a href=../02_citanje_podataka_05_agregatne_funkcije/02_citanje_05e_agregatne_zadaci_skola.html><div class="studioLecture" id=activity-02_citanje_05e_agregatne_zadaci_skola><i class="fas fa-file-alt activity-icon"></i>Агрегатне функције и груписање - задаци (дневник)</div></a>
+                <a href=../02_citanje_podataka_05_agregatne_funkcije/02_citanje_05f_agregatne_zadaci_muzika.html><div class="studioLecture" id=activity-02_citanje_05f_agregatne_zadaci_muzika><i class="fas fa-file-alt activity-icon"></i>Агрегатне функције и груписање - задаци (музика)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_06_spajanje>
+                    <h5>2.6 SQL: Спајање табела</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_06_spajanje/02_citanje_06a_spajanje.html><div class="studioLecture" id=activity-02_citanje_06a_spajanje><i class="fas fa-file-alt activity-icon"></i>Спајање табела</div></a>
+                <a href=../02_citanje_podataka_06_spajanje/02_citanje_06b_implicitno_spajanje.html><div class="studioLecture" id=activity-02_citanje_06b_implicitno_spajanje><i class="fas fa-file-alt activity-icon"></i>Имплицитно спајање</div></a>
+                <a href=../02_citanje_podataka_06_spajanje/02_citanje_06c_spajanje_i_grupisanje.html><div class="studioLecture" id=activity-02_citanje_06c_spajanje_i_grupisanje><i class="fas fa-file-alt activity-icon"></i>Спајање и груписање</div></a>
+                <a href=../02_citanje_podataka_06_spajanje/02_citanje_06d_vrste_spajanja.html><div class="studioLecture" id=activity-02_citanje_06d_vrste_spajanja><i class="fas fa-file-alt activity-icon"></i>Врсте спајања</div></a>
+                <a href=../02_citanje_podataka_06_spajanje/02_citanje_06e_spajanje_kviz.html><div class="studioLecture" id=activity-02_citanje_06e_spajanje_kviz><i class="far fa-question-circle activity-icon"></i>Спајање табела - квиз</div></a>
+                <a href=../02_citanje_podataka_06_spajanje/02_citanje_06f_spajanje_zadaci_skola.html><div class="studioLecture" id=activity-02_citanje_06f_spajanje_zadaci_skola><i class="fas fa-file-alt activity-icon"></i>Спајање - задаци (дневник)</div></a>
+                <a href=../02_citanje_podataka_06_spajanje/02_citanje_06g_spajanje_zadaci_muzika.html><div class="studioLecture" id=activity-02_citanje_06g_spajanje_zadaci_muzika><i class="fas fa-file-alt activity-icon"></i>Спајање - задаци (музика)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_07_ugnezdjeni_upiti>
+                    <h5>2.7 SQL: Угнежђени упити</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_07_ugnezdjeni_upiti/02_citanje_07a_ugnezdjeni_upiti.html><div class="studioLecture" id=activity-02_citanje_07a_ugnezdjeni_upiti><i class="fas fa-file-alt activity-icon"></i>Угнежђени упити</div></a>
+                <a href=../02_citanje_podataka_07_ugnezdjeni_upiti/02_citanje_07b_korelisani_podupiti.html><div class="studioLecture" id=activity-02_citanje_07b_korelisani_podupiti><i class="fas fa-file-alt activity-icon"></i>Корелисани подупити</div></a>
+                <a href=../02_citanje_podataka_07_ugnezdjeni_upiti/02_citanje_07c_provera_postojanja.html><div class="studioLecture" id=activity-02_citanje_07c_provera_postojanja><i class="fas fa-file-alt activity-icon"></i>Провера постојања</div></a>
+                <a href=../02_citanje_podataka_07_ugnezdjeni_upiti/02_citanje_07d_ugnezdjeni_kviz.html><div class="studioLecture" id=activity-02_citanje_07d_ugnezdjeni_kviz><i class="far fa-question-circle activity-icon"></i>Угнежђени упити - квиз</div></a>
+                <a href=../02_citanje_podataka_07_ugnezdjeni_upiti/02_citanje_07e_ugnezdjeni_zadaci_skola.html><div class="studioLecture" id=activity-02_citanje_07e_ugnezdjeni_zadaci_skola><i class="fas fa-file-alt activity-icon"></i>Угнежђени упити - задаци (дневник)</div></a>
+                <a href=../02_citanje_podataka_07_ugnezdjeni_upiti/02_citanje_07f_ugnezdjeni_zadaci_muzika.html><div class="studioLecture" id=activity-02_citanje_07f_ugnezdjeni_zadaci_muzika><i class="fas fa-file-alt activity-icon"></i>Угнежђени упити - задаци (музика)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-02_citanje_podataka_08_pogledi>
+                    <h5>2.8 SQL: Погледи</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../02_citanje_podataka_08_pogledi/02_citanje_08a_pogledi.html><div class="studioLecture" id=activity-02_citanje_08a_pogledi><i class="fas fa-file-alt activity-icon"></i>Погледи</div></a>
+                <a href=../02_citanje_podataka_08_pogledi/02_citanje_08b_pogledi_kviz.html><div class="studioLecture" id=activity-02_citanje_08b_pogledi_kviz><i class="far fa-question-circle activity-icon"></i>Погледи - квиз</div></a>
+                <a href=../02_citanje_podataka_08_pogledi/02_citanje_08c_pogledi_zadaci.html><div class="studioLecture" id=activity-02_citanje_08c_pogledi_zadaci><i class="fas fa-file-alt activity-icon"></i>Погледи - задаци (дневник)</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-03_izmene_00_uvod>
+                    <h5>3.0 SQL: Промена садржаја базе</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../03_izmene_00_uvod/03_izmene_00a_uvod.html><div class="studioLecture" id=activity-03_izmene_00a_uvod><i class="fas fa-file-alt activity-icon"></i>Измене података у бази</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-03_izmene_01_upisivanje>
+                    <h5>3.1 SQL: Уписивање података у табеле</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../03_izmene_01_upisivanje/03_izmene_01a_upisivanje.html><div class="studioLecture" id=activity-03_izmene_01a_upisivanje><i class="fas fa-file-alt activity-icon"></i>Уписивање података</div></a>
+                <a href=../03_izmene_01_upisivanje/03_izmene_01b_upisivanje_procitanog.html><div class="studioLecture" id=activity-03_izmene_01b_upisivanje_procitanog><i class="fas fa-file-alt activity-icon"></i>Уписивање података прочитаних из базе</div></a>
+                <a href=../03_izmene_01_upisivanje/03_izmene_01c_upisivanje_kviz.html><div class="studioLecture" id=activity-03_izmene_01c_upisivanje_kviz><i class="far fa-question-circle activity-icon"></i>Уписивање података - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-03_izmene_02_azuriranje>
+                    <h5>3.2 SQL: Ажурирање података у табелама</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../03_izmene_02_azuriranje/03_izmene_02a_azuriranje.html><div class="studioLecture" id=activity-03_izmene_02a_azuriranje><i class="fas fa-file-alt activity-icon"></i>Ажурирање података</div></a>
+                <a href=../03_izmene_02_azuriranje/03_izmene_02b_azuriranje_kviz.html><div class="studioLecture" id=activity-03_izmene_02b_azuriranje_kviz><i class="far fa-question-circle activity-icon"></i>Ажурирање података - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-03_izmene_03_brisanje>
+                    <h5>3.3 SQL: Брисање података из табела</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../03_izmene_03_brisanje/03_izmene_03a_brisanje.html><div class="studioLecture" id=activity-03_izmene_03a_brisanje><i class="fas fa-file-alt activity-icon"></i>Брисање података</div></a>
+                <a href=../03_izmene_03_brisanje/03_izmene_03b_brisanje_kviz.html><div class="studioLecture" id=activity-03_izmene_03b_brisanje_kviz><i class="far fa-question-circle activity-icon"></i>Брисање података - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-04_python_sqlite>
+                    <h5>4.0 Python SQLite API</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../04_python_sqlite/04_python_sqlite_01a_uvod.html><div class="studioLecture" id=activity-04_python_sqlite_01a_uvod><i class="fas fa-file-alt activity-icon"></i>4.1 Python SQLite API - увод</div></a>
+                <a href=../04_python_sqlite/04_python_sqlite_01b_povezivanje.html><div class="studioLecture" id=activity-04_python_sqlite_01b_povezivanje><i class="fas fa-file-alt activity-icon"></i>4.2 Повезивање са базом</div></a>
+                <a href=../04_python_sqlite/04_python_sqlite_01c_postavljanje_upita.html><div class="studioLecture" id=activity-04_python_sqlite_01c_postavljanje_upita><i class="fas fa-file-alt activity-icon"></i>4.3 Постављање упита</div></a>
+                <a href=../04_python_sqlite/04_python_sqlite_01d_upiti_sa_parametrima.html><div class="studioLecture" id=activity-04_python_sqlite_01d_upiti_sa_parametrima><i class="fas fa-file-alt activity-icon"></i>4.4 Упити са параметрима</div></a>
+                <a href=../04_python_sqlite/04_python_sqlite_01e_kolacione_sekvence.html><div class="studioLecture" id=activity-04_python_sqlite_01e_kolacione_sekvence><i class="fas fa-file-alt activity-icon"></i>4.5 Колационе секвенце</div></a>
+                <a href=../04_python_sqlite/04_python_sqlite_01f_pomocne_funkcije.html><div class="studioLecture" id=activity-04_python_sqlite_01f_pomocne_funkcije><i class="fas fa-file-alt activity-icon"></i>4.6 Дефинисање помоћних функција</div></a>
+                <a href=../04_python_sqlite/04_python_sqlite_01g_kviz.html><div class="studioLecture" id=activity-04_python_sqlite_01g_kviz><i class="far fa-question-circle activity-icon"></i>4.7 Python SQLite API - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-05_racunarske_mreze>
+                    <h5>5.0 Рачунарске мреже</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../05_racunarske_mreze/05_mreze_01a_pojam_racunarske_mreze.html><div class="studioLecture" id=activity-05_mreze_01a_pojam_racunarske_mreze><i class="fas fa-file-alt activity-icon"></i>5.1 Рачунарске мреже</div></a>
+                <a href=../05_racunarske_mreze/05_mreze_01b_mrezni_hardver_i_softver.html><div class="studioLecture" id=activity-05_mreze_01b_mrezni_hardver_i_softver><i class="fas fa-file-alt activity-icon"></i>5.2 Мрежни хардвер и мрежни софтвер</div></a>
+                <a href=../05_racunarske_mreze/05_mreze_01c_povezivanje_i_postavljanje_mreze.html><div class="studioLecture" id=activity-05_mreze_01c_povezivanje_i_postavljanje_mreze><i class="fas fa-file-alt activity-icon"></i>5.3 Повезивање и постављање кућне мреже</div></a>
+                <a href=../05_racunarske_mreze/05_mreze_01d_kviz.html><div class="studioLecture" id=activity-05_mreze_01d_kviz><i class="far fa-question-circle activity-icon"></i>5.4 Рачунарске мреже - квиз</div></a>
+                <a href=../05_racunarske_mreze/05_mreze_01e_mrezni_slojevi.html><div class="studioLecture" id=activity-05_mreze_01e_mrezni_slojevi><i class="fas fa-file-alt activity-icon"></i>5.5 Додатак: мрежни слојеви и протоколи, детаљније</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-06_serverske_veb_aplikacije_00_uvod>
+                    <h5>6.0 Серверско веб-програмирање</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../06_serverske_veb_aplikacije_00_uvod/06_veb_ap_00a_uvod.html><div class="studioLecture" id=activity-06_veb_ap_00a_uvod><i class="fas fa-file-alt activity-icon"></i>Веб-апликације - увод</div></a>
+                <a href=../06_serverske_veb_aplikacije_00_uvod/06_veb_ap_00b_http_zahtevi.html><div class="studioLecture" id=activity-06_veb_ap_00b_http_zahtevi><i class="fas fa-file-alt activity-icon"></i>Протокол HTTP</div></a>
+                <a href=../06_serverske_veb_aplikacije_00_uvod/06_veb_ap_00c_http_kviz.html><div class="studioLecture" id=activity-06_veb_ap_00c_http_kviz><i class="far fa-question-circle activity-icon"></i>Протокол HTTP - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-06_serverske_veb_aplikacije_01_flask>
+                    <h5>6.1 Библиотека Flask - основни појмови</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01a_flask_uvod.html><div class="studioLecture" id=activity-06_veb_ap_01a_flask_uvod><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - увод</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01b_flask_prvi_program.html><div class="studioLecture" id=activity-06_veb_ap_01b_flask_prvi_program><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - први програм, путање</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01c_flask_sabloni.html><div class="studioLecture" id=activity-06_veb_ap_01c_flask_sabloni><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - шаблони</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01d_flask_staticke_datoteke.html><div class="studioLecture" id=activity-06_veb_ap_01d_flask_staticke_datoteke><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - пратеће статичке датотеке и линкови унутар веб-апликације</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01e_flask_parametri_get.html><div class="studioLecture" id=activity-06_veb_ap_01e_flask_parametri_get><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - Метода GET</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01f_flask_parametri_post.html><div class="studioLecture" id=activity-06_veb_ap_01f_flask_parametri_post><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - Метода POST</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01g_flask_parametri_rutiranje.html><div class="studioLecture" id=activity-06_veb_ap_01g_flask_parametri_rutiranje><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - путање са параметрима</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01h_flask_kolacici.html><div class="studioLecture" id=activity-06_veb_ap_01h_flask_kolacici><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - колачићи</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01i_flask_sesije.html><div class="studioLecture" id=activity-06_veb_ap_01i_flask_sesije><i class="fas fa-file-alt activity-icon"></i>Библиотека Flask - сесије</div></a>
+                <a href=../06_serverske_veb_aplikacije_01_flask/06_veb_ap_01j_flask_kviz.html><div class="studioLecture" id=activity-06_veb_ap_01j_flask_kviz><i class="far fa-question-circle activity-icon"></i>Библиотека Flask - квиз</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-06_serverske_veb_aplikacije_02_baze>
+                    <h5>6.2 Библиотека Flask - повезивање са базом података</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../06_serverske_veb_aplikacije_02_baze/06_veb_ap_02a_povezivanje_i_osnovni_upiti.html><div class="studioLecture" id=activity-06_veb_ap_02a_povezivanje_i_osnovni_upiti><i class="fas fa-file-alt activity-icon"></i>Повезивање са базом и постављање упита</div></a>
+                <a href=../06_serverske_veb_aplikacije_02_baze/06_veb_ap_02b_prenos_argumenata_upita.html><div class="studioLecture" id=activity-06_veb_ap_02b_prenos_argumenata_upita><i class="fas fa-file-alt activity-icon"></i>Пренос параметара упита</div></a>
+                <a href=../06_serverske_veb_aplikacije_02_baze/06_veb_ap_02c_formulari_i_baze.html><div class="studioLecture" id=activity-06_veb_ap_02c_formulari_i_baze><i class="fas fa-file-alt activity-icon"></i>Формулари и упити</div></a>
+                <a href=../06_serverske_veb_aplikacije_02_baze/06_veb_ap_02d_upis_u_bazu.html><div class="studioLecture" id=activity-06_veb_ap_02d_upis_u_bazu><i class="fas fa-file-alt activity-icon"></i>Упис података у базу</div></a>
+                <a href=../06_serverske_veb_aplikacije_02_baze/06_veb_ap_02e_flesovane_poruke.html><div class="studioLecture" id=activity-06_veb_ap_02e_flesovane_poruke><i class="fas fa-file-alt activity-icon"></i>Флешоване поруке</div></a>
+                <a href=../06_serverske_veb_aplikacije_02_baze/06_veb_ap_02f_validacija_formulara.html><div class="studioLecture" id=activity-06_veb_ap_02f_validacija_formulara><i class="fas fa-file-alt activity-icon"></i>Валидација података унетих у формулар</div></a>
+                <a href=../06_serverske_veb_aplikacije_02_baze/06_veb_ap_02g_baze_i_ajax.html><div class="studioLecture" id=activity-06_veb_ap_02g_baze_i_ajax><i class="fas fa-file-alt activity-icon"></i>AJAX</div></a>
+                </div>
+            </div>
+                
+                <div class="courseContentsSection">
+                <div class="lecture-div courseContentsSectionHeadline" id=lecture-07_projekat>
+                    <h5>7.0 Библиотека Flask - пројектни задатак</h5>
+                    <i class="fas fa-angle-down caret-position "> </i>
+                    <i class="fas fa-angle-up caret-position d-none"></i>
+                </div>
+                <div class="courseContentsSubSection d-none"><a href=../07_projekat/07_projekat_01b_uvod.html><div class="studioLecture" id=activity-07_projekat_01b_uvod><i class="fas fa-file-alt activity-icon"></i>О пројектном задатку</div></a>
+                <a href=../07_projekat/07_projekat_01a_registracija_i_logovanje.html><div class="studioLecture" id=activity-07_projekat_01a_registracija_i_logovanje><i class="fas fa-file-alt activity-icon"></i>Регистрација корисника и логовање</div></a>
+                </div>
+            </div>
+                </div>
+</div>
+
+
+
+<div class="lectureContent">
+
+  <div id="errors">
+  </div>
+  
+  <div class="lectureContentMaterial">
+  
+    <div id="main-content">
+    
+  <div class="section" id="id1">
+<h1>Рачунарске мреже<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>Скоро сви рачунари и уређаји које данас користимо су повезани са
+другим рачунарима и дигиталним уређајима. Повезивање рачунара,
+изградња рачунарских мрежа, а затим и развој интернета и његових
+сервиса (нарочито веба и електронске поште) су донеле сасвим нове
+примене рачунара и информационе технологије, довели су до знатног
+повећања броја корисника и променили начин на који се рачунари
+користе. Често се каже да је појава савремених
+информационо-комуникационих технологија довела до револуције сличне по
+значају индустријској револуцији коју је изазвала појава парне машине
+у 18. веку. С временом, све већи број различитих уређаја постајe
+умрежен и све је више услуга које нам нуди мрежно окружење. У мреже се
+данас поред рачунара и паметних телефона везују и други уређаји, као
+што су, на пример, телевизори, паметни кућни апарати, аутомобили
+итд. чиме настаје такозвани <strong>интернет ствари</strong>.</p>
+<p><strong>Рачунарска мрежа</strong> подразумева постојање најмање два уређаја који
+међусобно могу да комуницирају и размењују податке. Уређаји
+комуницирају разменом дигиталних порука (можемо рећи да рачунари
+комуницирају тако што један другом диктирају нуле и јединице којима су
+дигитално записани подаци). Често је у мрежу повезано више рачунара, а
+ширењем интернета дошло се до тога да су скоро сви рачунари, паметни
+телефони, телевизори и слични дигитални уређаји на свету међусобно
+повезани. Посебну улогу имају и рачунари на којима се складиште подаци
+и информације које преузимамо (на пример, веб-сервери) и на којима се
+извршавају тзв. апликације „у облаку”. Између наших уређаја и таквих
+сервера у мрежама учествују и многи уређаји чија је улога да посредују
+у тој комуникацији (такви су, на пример, мостови, хабови, свичеви,
+рутери). Уређаји су повезани комуникационом опремом која је жичана или
+бежична. Комуникација у мрежи одвија се под контролом софтвера – од
+системског софтвера (на пример, драјвера за комуникационе уређаје) до
+апликативног софтвера, који корисник користи у раду са мрежом (на
+пример, прегледача веба или програма за рад са електронском
+поштом). Дакле, мреже можемо дефинисати на следећи начин:</p>
+
+    <div class="course-box course-box-info">
+        <div class="course-content">
+            <p>
+<p>Рачунарска мрежа је систем који се састоји од скупа хардверских
+уређаја међусобно повезаних комуникационом опремом, снабдевених
+одговарајућим комуникационим софтвером, којим се остварује контрола
+система тако да је омогућен пренос података између повезаних
+уређаја.</p>
+
+    </p></div></div>
+<a class="reference internal image-reference" href="../_images/mreze_mreza.jpg"><img alt="Пример кућне рачунарске мреже" class="align-center" src="../_images/mreze_mreza.jpg" style="width: 500px;" /></a>
+<p>Два повезана уређаја довољна су да оформе мрежу, међутим, мреже обично
+обухватају више од два уређаја, а са ширењем интернета већина
+рачунарских уређаја на свету међусобно је повезана. Рачунарске мреже
+не треба поистовећивати са интернетом. На пример, дешава се да су у
+школском кабинету рачунари умрежени (и да је могуће пребацивати
+податке између њих), али да ова мрежа није повезана са
+интернетом. Повезивање са интернетом могло би се остварити тако што би
+неки истакнути уређај у тој мрежи остварио везу са интернетом, док би
+остали рачунари интернет везу остваривали преко њега. Зато је, уместо
+као мрежу појединачних рачунара, интернет боље схватити као глобалну
+мрежу која повезује различите рачунарске мреже (а тиме и рачунаре
+умрежене у њих), како је и приказано на наредној слици.</p>
+<a class="reference internal image-reference" href="../_images/mreze_lan_wan.png"><img alt="Умрежене мреже" class="align-center" src="../_images/mreze_lan_wan.png" style="width: 500px;" /></a>
+<div class="section" id="id2">
+<h2>За шта користимо рачунарске мреже?<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Данас је практично незамисливо коришћење рачунара који нису повезани
+са другим рачунарима и умреженост нам омогућава многе ствари које не
+бисмо могли да урадимо на дигиталним уређајима који нису умрежени.</p>
+<ul class="simple">
+<li><p>Умрежени дигитални уређаји су изменили начин на који људи
+комуницирају (некада су се размењивала руком писана писма, а данас
+имамо мејл, друштвене мреже, сервисе за ћаскање и размену порука и
+слично).</p></li>
+<li><p>Интернет и посебно веб данас су најзначајнији извор
+информација. Великим базама података често можемо приступити преко
+интернета, а са интернета можемо преузети и све већу количину
+отворених података.</p></li>
+<li><p>Дељење података и информација могуће је и у оквиру мањих мрежа (на
+пример, учениcи у школи могу да преко мреже приступају наставним
+материјалима које наставници са њима поделе коришћењем локалне мреже
+и мрежних дискова).</p></li>
+<li><p>Све чешће се догађа да софтвер не инсталирамо на своје рачунаре, већ
+га користимо преко мреже „у облаку” (најчешће из прегледача
+веба). Све је више бесплатних сервиса који функционишу на интернету
+и који полако одмењују улогу мањих, локалних мрежа (на пример,
+наставници ће данас чешће поделити са ученицима наставне материјале
+преко Гугл учионице, него преко локалне рачунарске
+мреже).</p></li>
+<li><p>Захваљујући умрежености, више корисника може заједнички да
+употребљава неке хардверске ресурсе (нпр. штампач или скенер). На
+пример, у компанијама или домовима често постоји квалитетнији
+штампач који је преко мреже повезан са неколико рачунара, а са
+сваког од тих рачунара може се покренути штампање на њему.</p></li>
+<li><p>Мреже омогућују и расподелу посла на више рачунара, што доприноси
+бржој обради података. Уколико више рачунара обавља заједнички
+посао, отказивање једног од њих не мора потпуно да прекине
+извршавање тог посла.</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>Улога уређаја у мрежној комуникацији<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>У породичној мрежи сваки члан породице може да преузима податке са
+рачунара других чланова и сви могу да штампају на заједничком
+штампачу, па су у таквој мрежи сви рачунари равноправни. Са друге
+стране, у рачунарским учионицама је наставнички рачунар често истакнут
+и ученици могу да узимају податке само са њега. Често се мреже
+организују или по моделу <strong>мреже равноправних рачунара</strong>
+(енгл. <em>peer-to-peer</em>, <em>P2P</em>) или по моделу <strong>клијент-сервер</strong>. У том
+моделу <strong>сервер</strong> је систем који пружа своје ресурсе (податке,
+софтвер, хардвер), док је <strong>клијент</strong> систем који иницира контакт са
+сервером да би користио ресурсе које сервер пружа.</p>
+<a class="reference internal image-reference" href="../_images/mreze_cs_vs_p2p.png"><img alt="Клијент-сервер и мрежа равноправних рачунара" class="align-center" src="../_images/mreze_cs_vs_p2p.png" style="width: 500px;" /></a>
+<p>Нагласимо да су клијент и сервер само улоге рачунара у процесу
+комуникације. Рачунари нису предодређени само за једну врсту улоге
+(додуше, за сервере се користе моћнији рачунари). Улога је одређена
+софтвером који се извршава и који контролише комуникацију. Рачунар чак
+истовремено може да има различите улоге. На пример, на рачунару који
+служи као веб-сервер администратор може да проверава електронску пошту
+(чиме рачунар игра улогу клијента), док у позадини исти рачунар
+учествује и у некој Bittorent размени, чиме је део p2p мреже.</p>
+<p>Већина интернет сервиса углавном користи модел клијент–сервер. На
+пример, дигитални уређај на којем прегледате садржај веба је
+клијент. Када унесете адресу у прегледач, ваш уређај се обраћа неком
+веб-серверу – удаљеном рачунару на коме се налазе веб-стране које
+захтевате (или програми који их генеришу). Сервер клијенту шаље
+документе (веб-странице, слике итд.) и клијент их приказује
+кориснику. Слично томе, електронска пошта се чува на серверима
+електронске поште, а шаље се, преузима и прегледа на клијентским
+рачунарима тј. дигиталним уређајима. Изузетак представљају P2P сервиси
+за дељење датотека какав је Bittorent. Не постоји централни сервер на
+којем се налази датотека коју сви преузимају, већ сваки од рачунара у
+мрежи има део датотеке и једни од других преузимају делове који им
+недостају, тако да ти сервиси функционишу по моделу P2P.</p>
+</div>
+<div class="section" id="id4">
+<h2>Распон мрежа<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>Мреже се разликују по величини, тј. географском распону који
+покривају. Најмања мрежа повезује само два рачунара тј. дигитална
+уређаја, а највећа мрежа је интернет, која обједињује скоро све
+рачунаре, паметне телефоне и таблете данашњице, али укључује и огромну
+ифраструктуру комуникационих уређаја који ту повезаност
+омогућавају. Између ове две крајности постоји широк дијапазон распона
+мрежа. У зависности од распона мреже, за комуникацију се користе
+различите технологије (на пример, у породичној мрежи која обухвата
+кућу или стан користе се другачији уређаји и каблови него у мрежи која
+покрива целу компанију или државу). Мреже малог распона повезују
+појединачне уређаје, док мреже великог распона повезују мање мреже,
+чиме се постиже хијерархијско умрежавање. Најчешће се разликују
+<strong>локалне мреже</strong> (енгл. <em>local area network</em>, <em>LAN</em>) и <strong>мреже
+широког распона</strong> (енгл. <em>wide area network</em>, <em>WAN</em>).</p>
+<p>LAN мреже повезују уређаје на малим удаљеностима (у стану, рачунарском
+кабинету или пословној згради) и традиционално користе посебне мрежне
+каблове, иако нове технологије омогућавају коришћење и постојећих
+инсталација (коаксијалних каблова, телефонских и електричних линија),
+као и бежичну комуникацију.</p>
+<p>WAN мреже повезују велике географске просторе, често шире од граница
+једног града, области, па и државе. Обично су у саставу интернета и
+одржавају их телекомуникационе компаније које изнајмљују услуге
+њиховог коришћења. За комуникацију се обично користе брзе (најчешће
+оптичке) везе за удаљене уређаје, али се, када није могуће успоставити
+оптичке каблове користе и другачије технологије (на пример, изолована
+острва се некада повезују коришћењем сателитских веза).</p>
+</div>
+<div class="section" id="id5">
+<h2>Мрежни слојеви и протоколи<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Рачунарске мреже су веома сложене. И у најједноставнијим мрежама
+учествује широк дијапазон хардвера и софтвера, а ствари се само још
+усложњавају код великих мрежа каква је интернет. Као што је обично
+случај у рачунарству, сложеност система решава се разлагањем на делове
+и поделом задужења између њих. Слично оперативним системима који врше
+апстракцију хардвера и програмерима дају интерфејс за једноставније
+писање апликативних програма, и рачунарске мреже користе
+<strong>слојевитост</strong> (енгл. <em>layering</em>) и јасно дефинисане <strong>протоколе</strong>
+(енгл. <em>protocol</em>) комуникације.  Комуникација између виших слојева
+остварује се тако што се достава порука препушта нижим слојевима и на
+вишим слојевима није потребно познавати детаље ниже комуникације. Ни
+нижи слојеви не морају (и не треба) да знају за детаље виших
+слојева. Пошиљаоци и примаоци на појединачним слојевима морају
+међусобно да се разумеју, што се постиже коришћењем прецизираних
+протокола – начина и језика комуникације.</p>
+<div class="topic">
+<p class="topic-title first">🤓 Занимљивост</p>
+<p>И класична комуникација је слојевита. Онај ко шаље писмо не мора да
+брине о детаљима доставе, већ је довољно да писмо адресира и преда
+га пошти. Могуће је да ће то писмо заједно са осталим писмима која
+путују у исту земљу бити упаковано у пакет на коме ће писати нешто
+попут „доставити возом у поштанску испоставу број 12345”. Тако
+пошта чини један слој комуникације који пружа услугу слоју изнад
+себе, док се за даље извршење свог задатка обраћа слоју испод себе
+(у овом случају железници). Радници који раде на неком слоју не
+морају да знају детаље осталих слојева (на пример, радника поште не
+занима ни садржај писма ни то у који вагон воза ће пакет бити
+утоварен, док радника железнице не занима адреса крајњег
+примаоца). Протоколи (својеврсни језици комуникације) дефинишу
+комуникацију на засебним слојевима. Радник поште не мора да разуме
+језик на коме је писмо написано, али прималац мора. Поштански
+протокол дефинише формат адресе и један од протокола (обичаја добре
+комуникације) дефинише на којој страни коверте ће бити написана
+адреса примаоца, а на којој адреса пошиљаоца. Ако се овај протокол
+(договор) не би следио, могло би да се деси да писмо дође до онога
+ко га је и послао.</p>
+</div>
+<p>Као најзначајнија мрежа данашњице, интернет је организован према
+моделу <strong>TCP/IP</strong> (енгл. <em>Transmission Control Protocol/Internet
+Protocol</em>) и на њему се разликују наредна четири основна слоја (овде
+набројаних од највишег ка најнижем):</p>
+<ol class="arabic simple">
+<li><p>апликативни слој,</p></li>
+<li><p>транспортни слој,</p></li>
+<li><p>мрежни слој (који се назива и интернет слој),</p></li>
+<li><p>везни слој (који се назива и слој мрежног интерфејса).</p></li>
+</ol>
+<p>На најнижем, <strong>везном слоју</strong> решава се питање како да се изврши
+поуздан пренос података између два конкретна уређаја. Одређују се
+физички детаљи комуникације (електрични и радио сигнали који се
+користе, конверзија дигиталног у аналогне сигнале и
+слично). Поузданост комуникације се постиже коришћењем додавања
+„заштитних” битова порукама које се шаљу, а које примаоцу омогућавају да
+са великом вероватноћом провери да ли је сваки бит основне поруке стигао у
+исправном облику и редоследу, па чак и да аутоматски неке грешке
+исправи (користе се тзв. кодови за детекцију и кодови за корекцију
+грешака).</p>
+<p>На наредном, <strong>мрежном слоју</strong> се са комуникације два фиксирана
+уређаја прелази на уређивање питања комуникације унутар шире
+рачунарске мреже. Предуслов за то је адресирање тј. додељивање система
+адреса који омогућује да се наведе ком тачно рачунару су поруке које
+се шаљу намењене. Јако важно питање које се на овом слоју решава је и
+питање рутирања тј. одређивање путање тј. низа успутних рутера преко
+којих поруке пролазе док не стигну до одредишта (рутери су ти који су
+заправо основа алгоритма рутирања јер они на основу адресе одредишта
+одређују ком од својих суседних рутера треба да проследе поруку).
+Основни протокол на овом слоју је протокол IP.</p>
+<p>Један од основних задатака <strong>транспортног слоја</strong> је да веће поруке
+(које му стигну са вишег, апликативног слоја) подели на ситније пакете
+и те пакете проследи тако да појединачни пакети могу истовремено да
+путују кроз мрежу. На транспортном слоју се уводе <strong>портови</strong>, који
+помажу да се одреди софтвер на коме одређене поруке које стигну до
+уређаја треба да буду покренуте (наиме, IP адресе које се уводе на
+мрежном слоју одређују само уређаје, а портови су додатни елементи
+адреса који онда омогућавају да се тачно одреди софтвер који треба да
+прихвати послату поруку). Основни протоколи на овом слоју су протокол
+<strong>TCP</strong> и <strong>UDP</strong>. Протокол TCP обезбеђује механизме сигурне
+комуникације, који раде тако што прималац потврђује пријем свих
+пакета, на основу чега пошаљилац зна да ли је неки пакет „залутао” и
+треба да буде поново послат. Води се рачуна и брзини слања пакета и
+контроли загушења (да се не би десило да се слањем превеликог броја
+пакета у мрежу која је прилично загушена она још додатно загуши).
+Протокол UDP је намењен мање сигурној, али много бржој комуникацији
+(користи се углавном за апликације у реалном времену, попут преноса
+аудио и видео сигнала и слично, јер нпр. за говорни сигнал је најважније
+да се довољно брзо преноси, па и по цену да неки делићи секунде говора
+буду изгубљени или пренети са малом грешком).</p>
+<p>На врху се налази <strong>апликативни слој</strong> и апликативни протоколи, који
+су специфични за појединачне апликације тј. сервисе интернета – свака
+апликација тј. сервис одређује формате порука које се шаљу током рада те
+апликације.  На пример, за преузимање докумената са веба користе се
+протоколи <strong>HTTP</strong> (енгл. <em>HyperText Transfer Protocol</em>) и <strong>HTTPS</strong>
+(енгл. <em>HyperText Transfer Protocol Secure</em>), за преузимање
+електронске поште протоколи <strong>POP3</strong> (енгл. <em>Post Office Protocol</em>) и
+<strong>IMAP</strong> (енгл. <em>Internet Message Access Protocol</em>), за слање
+електронске поште протокол <strong>SMTP</strong> (енгл. <em>Simple Mail Transfer
+Protocol</em>), за пренос датотека протокол <strong>FTP</strong> (енгл. <em>File Transfer
+Protocol</em>) и слично.  Протоколи прецизно дефинишу формат порука које
+се размењују (њихов облик и садржај). Поруке дефинисане на
+апликативном нивоу се онда размењују коришћењем услуга нижих слојева
+(транспортни слој дели те поруке на пакете, који се онда адресирају и
+шаљу коришћењем услуга мрежног и везног слоја).</p>
+<p>За успешно коришћење, па чак и успостављање савремених рачунарских
+мрежа није неопходно познавати све детаље мрежних слојева и протокола
+који се на њима користе. Стога ћемо у наставку описати само оне
+појмове који крајњем кориснику могу бити значајни, док ћемо датаљнији
+приказ оставити за посебно поглавље, намењено ученицима који су
+заинтересовани за ову тематику.</p>
+</div>
+<div class="section" id="id6">
+<h2>Адресе<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Јако важан детаљ приликом рада у мрежном окружењу је постојање система
+адресирања. Наиме, пожељно је да сваки ресурс коме можемо приступити
+преко мреже (датотека, уређај, сервис) добије своју неку своју
+јединствену адресу. Пошто су мреже изграђене слојевито, постоји
+неколико различитих система адреса који се користе у мрежној
+комуникацији. У данашњим мрежама се обично користе</p>
+<ol class="arabic simple">
+<li><p>MAC тј. физичке адресе.</p></li>
+<li><p>IP адресе,</p></li>
+<li><p>имена домена тј. DNS адресе и URL-ови,</p></li>
+</ol>
+</div>
+<div class="section" id="mac">
+<h2>Физичке (MAC) адресе<a class="headerlink" href="#mac" title="Permalink to this headline">¶</a></h2>
+<p>Сваки мрежни уређај има своју физичку адресу која се одређује приликом
+производње тог уређаја. Те адресе се називају <strong>MAC адресе</strong>
+(енгл. <em>Media Access Control</em>) и могу се сматрати непроменљивим (мада
+постоје начини да се измене на силу). Обично су у питању 48-битне или
+64-битне адресе које се записују помоћу парова хексадекадних цифара
+(нпр. 01-23-45-67-89-AB). MAC адресе имају улогу на нижим слојевима и
+помажу комуникацију унутар локалних мрежа, али њихова структура није
+погодна за коришћење у већим мрежама јер нису погодне за рутирање
+тј. за достављање података рачунарима који се налазе у удаљеним
+мрежама. Наиме, предуслов за ефикасно рутирање је тај да систем
+адресирања прати хијерархијски начин организације рачунарских
+мрежа. Кључни захтев је да сви уређаји у истој подмрежи на неки начин
+имају сличне адресе (слично као што су све адресе у једној улици
+сличне, јер имају исти назив и земље и града и улице, као што су
+адресе у том граду сличне јер имају исти назив земље и назив града
+тј. поштански број). MAC адресе не могу да испуне тај захтев (јер су
+одређене у тренутку производње уређаја, а не у тренутку његовог
+укључивања у неку мрежу) и због тога је уведен посебан систем</p>
+<div class="topic">
+<p class="topic-title first">🤓 Занимљивост</p>
+<p>Систем поштанских адреса у традиционалном поштанском саобраћају
+направљен је по хијерархијском моделу. На врху хијерархије налазе
+се државе, на следећем нивоу су градови, затим улице, кућни
+бројеви, спратови, бројеви стана и слично. Све адресе станова у
+истој згради веома су сличне (разликује се само број стана), све
+адресе у једној улици такође су сличне (разликују се још и кућни бројеви)
+и тако даље. Замислите колико би било тешко да се достави пошта ако
+не би постојао хијерархијски систем адреса, већ да се писма
+адресирају, на пример, на основу ЈМБГ.  Пошто ЈМБГ не даје никакву
+информацију о томе где неко живи, у свакој пошти би био потребан
+попис ЈМБГ свих грађана са прецизним географским локацијама на
+којима се ти грађани налазе.  Потпуно аналогна ситуација је и са
+MAC адресама, па је због тога било неопходно да се поред њих уведе
+и нови систем адресирања одређен IP адресама. Такав попис је могуће
+направити за мали скуп људи, као што се у локалним мрежама у којима
+је број рачунара мали одржава попис MAC адреса прикључених рачунара
+и где се MAC адресе и користе.</p>
+</div>
+</div>
+<div class="section" id="ip">
+<h2>IP адресе<a class="headerlink" href="#ip" title="Permalink to this headline">¶</a></h2>
+<p>IPv4 адресе су 32-битни бројеви, али се традиционално представљају као
+декадне репрезентације својих појединачних бајтова тј. као четири
+декадна броја између 0 и 255. На пример, адреса <code class="docutils literal notranslate"><span class="pre">11000000</span> <span class="pre">10101000</span>
+<span class="pre">000000010</span> <span class="pre">00000001</span></code> представља се као <code class="docutils literal notranslate"><span class="pre">192.168.2.1</span></code>. Број битова у
+IPv4 адресама ограничава укупан број могућих адреса на <span class="math notranslate nohighlight">\(2^{32}\)</span>,
+што је око 4,2 милијарде. Број уређаја тренутно прикључених на интернет
+је већ већи од овог броја. Због тога се прелази на новије, IPv6 адресе,
+које су 128-битни бројеви. Ове адресе се обично представљају као осам
+четвороцифрених хексадекадних бројева, раздвојених по једном цртицом
+(на пример, 2001:db8:3333:4444:CCCC:DDDD:EEEE:FFFF).</p>
+<p>Основна особина IP адреса је да су структуриране
+хијерархијски. Приликом мрежне комуникације, подела на битове који
+чине адресу мреже (то су обично водећи битови) и битове који чине
+адресу уређаја у оквиру мреже изразито је важна. Наиме, на основу тога
+се одређује да ли пакет треба доставити на одредиште коришћењем
+локалног мрежног саобраћаја или га треба послати ван локалне мреже, „у
+свет”. Пакет се у другом случају, коришћењем локалног мрежног
+саобраћаја, доставља посебно одређеном уређају (рутеру), који се
+назива излазна капија или гејтвеј (енгл. gateway).</p>
+<div class="topic">
+<p class="topic-title first">🤓 Занимљивост</p>
+<p>Локални мрежни саобраћај можемо замислити као курира који разуме
+само адресе у граду у којем ради. Јасно је да преко таквог курира
+можемо да пошаљемо оно писмо за које се на основу адресе може
+утврдити да му је одредиште у том граду. Међутим, ако препознамо да
+је одредиште у другом граду, онда ћемо локалном куриру рећи да
+писмо достави на адресу наше локалне поште (коју он разуме), а на
+коверти ће и даље писати адреса одредишта у другом граду, коју ће
+службеници у пошти разумети и проследиће писмо ван града. Локална
+пошта тада игра улогу излазне капије из града.</p>
+</div>
+<p>Уређаји прикључени на интернет добијају IP адресе. Оне могу бити
+додељене <strong>статички</strong>, тако да уређај има фиксну IP адресу када год се
+прикључи на интернет. Ипак, чешћа варијанта је <strong>динамичка</strong> додела IP
+адреса, када се уређају додељује нека слободна IP адреса сваки пут
+када се прикључује на интернет, при чему нема гаранције да ће сваки
+пут добити исту адресу (тј. веома је вероватно да ће приликом сваког
+поновног прикључивања добити другачију адресу). Иако су статичке
+адресе неизбежне у неким случајевима (на пример, пожељно је да се
+адреса сервера никад не мења како би клијенти могли да му увек
+приступају на исти начин), у великом броју случајева пожељнија је
+динамичка додела адреса јер се смањује могућност грешака услед
+погрешно подешених статичких IP адреса и постиже се једноставније
+администрирање мреже. Динамичка додела адреса заснива се на протоколу
+<strong>DHCP</strong> (енгл. <em>Dynamic Host Confi guration Protocol</em>). Један или
+више уређаја у мрежи (било рутера, било рачунара) играју улогу DHCP
+сервера, и када се нови уређај прикључује у локалну мрежу, он шаље
+поруку у којој захтева да му се додели IP адреса. DHCP сервер тада
+одговара шаљући неку слободну адресу (из скупа адреса које он одржава), а
+уз њу може да достави још неке конфигурационе параметре, попут адресе
+DNS сервера или адресе подразумеване излазне капије (гејтвеја).</p>
+</div>
+<div class="section" id="url">
+<h2>Домени и URL<a class="headerlink" href="#url" title="Permalink to this headline">¶</a></h2>
+<p>Крајњи корисник најчешће има додира са <strong>URL</strong> адресама
+(енгл. <em>Uniform Resource Locator</em>). Рецимо и да се некада јавља и
+појам <strong>URI</strong> (енгл. <em>Uniform Resource Identifier</em>) и да постоји
+суптилна разлика између појмова URL и URI, међутим, она је прилично
+техничка и нема потребе да је објашњавамо. URL-ови су тзв. веб-адресе
+и њих сте сигурно често користили да бисте приступили одређеним
+веб-сајтовима.  На пример, да бисте приступили сајту Универзитета у
+Новом Саду користите URL <code class="docutils literal notranslate"><span class="pre">https://www.uns.ac.rs</span></code>, а да бисте
+приступили првој веб-страници икада направљеној можете користити URL
+<code class="docutils literal notranslate"><span class="pre">http://info.cern.ch/hypertext/WWW/TheProject.html</span></code>. У овом
+последњем примеру видимо да URL има ознаку протокола који се користи
+за приступ ресурсу (користи се протокол <code class="docutils literal notranslate"><span class="pre">http</span></code> који је уобичајени
+протокол за преузимање веб-страна и који ће касније бити много
+детаљније објашњен), да се након тога користи назив сервера на ком се
+ресурс налази (у овом случају то је <code class="docutils literal notranslate"><span class="pre">info.cern.ch</span></code>) и на крају је
+наведена путања до ресурса унутар тог сервера (у овом примеру то је
+<code class="docutils literal notranslate"><span class="pre">hypertext/WWW/TheProject.html</span></code>. У поглављу о веб-програмирању ћемо
+видети да URL-ови могу бити још сложенији од наведених, али за сада је
+и ово довољно да се стекне представа о томе шта су URL-ови.</p>
+<p>Јако важан део сваког URL-а је адреса сервера. У ова два примера то су
+адресе <code class="docutils literal notranslate"><span class="pre">www.uns.ac.rs</span></code> и <code class="docutils literal notranslate"><span class="pre">info.cern.ch</span></code>. Ове адресе се називају
+<strong>домени</strong>. Домени се користе и у склопу URL-ова, али и у склопу
+адреса електронске поште (нпр. <code class="docutils literal notranslate"><span class="pre">petar.petrovic&#64;uns.ac.rs</span></code>). Домени
+су хијерархијски организовани и састоје од неколико делова раздвојених
+тачкама. На пример, домен <code class="docutils literal notranslate"><span class="pre">pmf.uns.ac.rs</span></code> указује да се сервер
+налази у Србији (<code class="docutils literal notranslate"><span class="pre">.rs</span></code>), да је део академске мреже (<code class="docutils literal notranslate"><span class="pre">.ac.rs</span></code>), да
+је на универзитету Новом Саду (<code class="docutils literal notranslate"><span class="pre">uns.ac.rs</span></code>) и да је на
+Природно-математичком факултету (<code class="docutils literal notranslate"><span class="pre">pmf.uns.ac.rs</span></code>). Последњи део
+домена често указује на земљу у којој је домен регистрован
+(нпр. <code class="docutils literal notranslate"><span class="pre">.rs</span></code> за Србију). Велики број домена није везан за земљу, већ
+указује на тип организације у чијем је власништву домен (на пример,
+<code class="docutils literal notranslate"><span class="pre">.com</span></code> је комерцијални домен који може свако да закупи, <code class="docutils literal notranslate"><span class="pre">.org</span></code>
+углавном користе непрофитне организације, <code class="docutils literal notranslate"><span class="pre">.edu</span></code> користе образовне
+институције, <code class="docutils literal notranslate"><span class="pre">.aero</span></code> користе авиопревозници и аеродроми).  За доделу
+домена у Србији је задужена невладина организација <em>„Регистар
+националног интернет домена Србије, РНИДС”</em>. Закуп домена врши и
+већина добављача интернета, па ако сте заинтересовани за закуп домена
+све детаље можете сазнати од свог добављача интернета.</p>
+<p>Пошто су за интерно функционисање мрежне комуникације неопходне
+нумеричке IP адресе, а не текстуалне адресе, сваком имену домена
+придружена је IP адреса одговарајућег уређаја регистрованог за тај
+домен (на пример, имену сервера <code class="docutils literal notranslate"><span class="pre">www.pmf.uns.ac.rs</span></code> придружена је IP
+адреса <code class="docutils literal notranslate"><span class="pre">147.91.177.44</span></code>). Ово придруживање бележи се на посебним
+серверима, који се називају <strong>сервери за имена домена</strong> (енгл. <em>Domain
+Name Server</em>, <em>DNS</em>). DNS се често назива <em>телефонским имеником
+интернета</em>. Пре започињања мрежне комуникације, софтвер који подржава
+имена домена (на пример, прегледач у који корисник уноси веб-адресу)
+обраћа се DNS серверу и од њега тражи IP адресу на основу имена домена
+које му пошаље. Комуникација са DNS сервером одвија се преко протокола
+DNS (он је један од протокола апликативног слоја који је део скупа
+протокола TCP/IP). Да би могла да се пошаље порука DNS серверу,
+неопходно је да се зна његова IP адреса. Она се задаје ручно приликом
+конфигурације рачунара или се, чешће, аутоматски добија од посебног
+DHCP сервера.</p>
+</div>
+</div>
+
+
+    </div>
+    
+    <div>
+<div class="lecture-prev-next-toggle">
+  <a  href="index.html" id="prevLectureLink" class="lecture-toggler-arrows"><i class="fas fa-arrow-left fa"></i> <span> Претходно лекција </span> </a>
+  
+  <a id="nextLectureLink" class="lecture-toggler-arrows"><span> Следећа лекција</span>  <i class="fas fa-arrow-right fa"></i> </a>
+</div>
+
+<script type="text/javascript">
+  $('#relations-prev').tooltip({'placement':'right', 'selector': '', 'delay': { show: 100, hide: 50}});
+  $('#relations-next').tooltip({'placement':'left', 'selector': '', 'delay': { show: 100, hide: 50}});
+</script>
+</div>
+
+    
+  </div>
+</div>
+<div class="petljadoc-resources">
+  <span class="pull-left">(Created using  <a href="https://pypi.org/project/Sphinx/">Swinx</a>, <a href="http://runestoneinteractive.org/">RunestoneComponents</a> and <a href="https://github.com/Petlja/PetljaDoc">PetljaDoc</a>) <br> © 2022 Petlja</span>
+</div>
+
+<div class="lectureToolbox">
+
+  <label class="font-size-toggle" id="fontSizeToggle">
+
+      <i class="fas fa-font"></i><label>Слова</label>
+  </label>
+  <div class="font-change d-none" id="fontChangeModal">
+      <span class="dec-letter-icon" id="decLetterIcon">A-</span>
+      <label id="currentFontSize">16</label>
+      <span class="inc-letter-icon" id="incLetterIcon">A+</span>
+  </div>
+</div>
+
+</div>
+
+  </body>
+</html>

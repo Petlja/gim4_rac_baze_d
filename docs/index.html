@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="sr-Cyrl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Базе података, рачунарске мреже и серверско веб програмирање за четврти разред гимназије природни смер</title>
+    <link rel="stylesheet" type="text/css" href="_static/activecode.css" />
+    <link rel="stylesheet" type="text/css" href="_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="_static/clickable.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pytutor.css" />
+    <link rel="stylesheet" type="text/css" href="_static/modal-basic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/datafile.css" />
+    <link rel="stylesheet" type="text/css" href="_static/dragndrop.css" />
+    <link rel="stylesheet" type="text/css" href="_static/fitb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/matrixeq.css" />
+    <link rel="stylesheet" type="text/css" href="_static/parsons.css" />
+    <link rel="stylesheet" type="text/css" href="_static/lib/prettify.css" />
+    <link rel="stylesheet" type="text/css" href="_static/poll.css" />
+    <link rel="stylesheet" type="text/css" href="_static/showEval.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabbedstuff.css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/video.css" />
+    <link rel="stylesheet" type="text/css" href="_static/webgldemo.css" />
+    <link rel="stylesheet" type="text/css" href="_static/webglinteractive.css" />
+    <link rel="stylesheet" type="text/css" href="_static/karel.css" />
+    <link rel="stylesheet" type="text/css" href="_static/notes.css" />
+    <link rel="stylesheet" type="text/css" href="_static/simanim.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pycode.css" />
+    <link rel="stylesheet" type="text/css" href="_static/p5js.css" />
+    <link rel="stylesheet" type="text/css" href="_static/gallery.css" />
+    <link rel="stylesheet" type="text/css" href="_static/dbDirective.css" />
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-4.0.0-dist/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/flatly.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/petlja-course.css" type="text/css" />
+    <link rel="stylesheet" href="_static/nbstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/runestonebase.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/jquery.highlight.js"></script>
+    <script type="text/javascript" src="_static/bookfuncs.js"></script>
+    <script type="text/javascript" src="_static/codemirror.js"></script>
+    <script type="text/javascript" src="_static/xml.js"></script>
+    <script type="text/javascript" src="_static/css.js"></script>
+    <script type="text/javascript" src="_static/python.js"></script>
+    <script type="text/javascript" src="_static/htmlmixed.js"></script>
+    <script type="text/javascript" src="_static/javascript.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/CLDRPluralRuleParser.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.messagestore.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.fallbacks.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.language.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.parser.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.emitter.js"></script>
+    <script type="text/javascript" src="_static/jquery_i18n/jquery.i18n.emitter.bidi.js"></script>
+    <script type="text/javascript" src="_static/activecode-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/activecode-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="_static/activecode.js"></script>
+    <script type="text/javascript" src="_static/clike.js"></script>
+    <script type="text/javascript" src="_static/timed_activecode.js"></script>
+    <script type="text/javascript" src="_static/animationbase.js"></script>
+    <script type="text/javascript" src="_static/mchoice.js"></script>
+    <script type="text/javascript" src="_static/timedmc.js"></script>
+    <script type="text/javascript" src="_static/timed.js"></script>
+    <script type="text/javascript" src="_static/mchoice-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/mchoice-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="_static/clickable.js"></script>
+    <script type="text/javascript" src="_static/timedclickable.js"></script>
+    <script type="text/javascript" src="_static/d3.v2.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.ba-bbq.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.jsPlumb-1.3.10-all-min.js"></script>
+    <script type="text/javascript" src="_static/pytutor.js"></script>
+    <script type="text/javascript" src="_static/codelens.js"></script>
+    <script type="text/javascript" src="_static/skulpt.min.js"></script>
+    <script type="text/javascript" src="_static/skulpt-stdlib.js"></script>
+    <script type="text/javascript" src="_static/datafile.js"></script>
+    <script type="text/javascript" src="_static/dragndrop.js"></script>
+    <script type="text/javascript" src="_static/timeddnd.js"></script>
+    <script type="text/javascript" src="_static/dragndrop-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/dragndrop-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="_static/fitb.js"></script>
+    <script type="text/javascript" src="_static/timedfitb.js"></script>
+    <script type="text/javascript" src="_static/fitb-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/fitb-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="_static/matrixeq.js"></script>
+    <script type="text/javascript" src="_static/lib/prettify.js"></script>
+    <script type="text/javascript" src="_static/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="_static/parsons.js"></script>
+    <script type="text/javascript" src="_static/parsons-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/parsons-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="_static/timedparsons.js"></script>
+    <script type="text/javascript" src="_static/poll.js"></script>
+    <script type="text/javascript" src="_static/reveal.js"></script>
+    <script type="text/javascript" src="_static/shortanswer.js"></script>
+    <script type="text/javascript" src="_static/timed_shortanswer.js"></script>
+    <script type="text/javascript" src="_static/showEval.js"></script>
+    <script type="text/javascript" src="_static/tabbedstuff.js"></script>
+    <script type="text/javascript" src="_static/runestonevideo.js"></script>
+    <script type="text/javascript" src="_static/webglinteractive.js"></script>
+    <script type="text/javascript" src="_static/FileSaver.min.js"></script>
+    <script type="text/javascript" src="_static/Blob.js"></script>
+    <script type="text/javascript" src="_static/karelCorner.js"></script>
+    <script type="text/javascript" src="_static/karelRobot.js"></script>
+    <script type="text/javascript" src="_static/karelWorld.js"></script>
+    <script type="text/javascript" src="_static/karelRobotDrawer.js"></script>
+    <script type="text/javascript" src="_static/karelUI.js"></script>
+    <script type="text/javascript" src="_static/karel.js"></script>
+    <script type="text/javascript" src="_static/karel-i18n.en.js"></script>
+    <script type="text/javascript" src="_static/karel-i18n.sr-Cyrl.js"></script>
+    <script type="text/javascript" src="_static/notes.js"></script>
+    <script type="text/javascript" src="_static/pygamelib-init.js"></script>
+    <script type="text/javascript" src="_static/blockly/blockly_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/blocks_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/python_compressed.js"></script>
+    <script type="text/javascript" src="_static/blockly/msg-sr.js"></script>
+    <script type="text/javascript" src="_static/blockpy/utilities.js"></script>
+    <script type="text/javascript" src="_static/blockpy/python_errors.js"></script>
+    <script type="text/javascript" src="_static/blockpy/ast_node_visitor.js"></script>
+    <script type="text/javascript" src="_static/blockpy/abstract_interpreter.js"></script>
+    <script type="text/javascript" src="_static/blockpy/pytifa.js"></script>
+    <script type="text/javascript" src="_static/blockpy/abstract_interpreter_definitions.js"></script>
+    <script type="text/javascript" src="_static/blockpy/python_to_blockly.js"></script>
+    <script type="text/javascript" src="_static/blockpy/imported.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/class.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/comment.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/comprehensions.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/dict.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/if.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/io.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/lists.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/sets.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/loops.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/parking.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/tuple.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/turtles.js"></script>
+    <script type="text/javascript" src="_static/blockpy/blocks/text.js"></script>
+    <script type="text/javascript" src="_static/blockpy-modal.js"></script>
+    <script type="text/javascript" src="_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
+    <script type="text/javascript" src="_static/pycode.js"></script>
+    <script type="text/javascript" src="//toolness.github.io/p5.js-widget/p5-widget.js"></script>
+    <script type="text/javascript" src="_static/p5js.js"></script>
+    <script type="text/javascript" src="_static/gallery.js"></script>
+    <script type="text/javascript" src="_static/dbDirective.js"></script>
+    <script type="text/javascript" src="_static/sql.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="_static/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-4.0.0-dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <script type="text/javascript" src="_static/waypoints.min.js"></script>
+    <script type="text/javascript" src="_static/rangy-core.js"></script>
+    <script type="text/javascript" src="_static/rangy-textrange.js"></script>
+    <script type="text/javascript" src="_static/rangy-cssclassapplier.js"></script>
+    <script type="text/javascript" src="_static/user-highlights.js"></script>
+    <script type="text/javascript" src="_static/jquery.idle-timer.js"></script>
+    <script type="text/javascript" src="_static/processing-1.4.1.min.js"></script>
+    <script type="text/javascript" src="_static/jquery.hotkey.js"></script>
+    <script type="text/javascript" src="_static/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="_static/course-errors.js"></script>
+    <script type="text/javascript" src="_static/petlja.js"></script>
+    <script type="text/javascript" src="_static/require.js"></script>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <script type="text/javascript">
+      eBookConfig = {};
+      eBookConfig.host = 'http://127.0.0.1:8000' ? 'http://127.0.0.1:8000' : 'http://127.0.0.1:8000';
+      eBookConfig.app = eBookConfig.host + '/runestone';
+      eBookConfig.ajaxURL = eBookConfig.app + '/ajax/';
+      eBookConfig.course = 'gim4_baze_web_prirodni';
+      eBookConfig.logLevel = '0';
+      eBookConfig.loginRequired = 'false';
+      eBookConfig.build_info = "";
+      eBookConfig.isLoggedIn = false;
+      eBookConfig.useRunestoneServices = false;
+      eBookConfig.python3 = true;
+      eBookConfig.basecourse = 'gim4_baze_web_prirodni';
+      eBookConfig.runestone_version = '';
+      eBookConfig.imagesDir = '_images/';
+      eBookConfig.staticDir = '_static/';
+      if (typeof (Sk) != "undefined")
+        Sk.imgPath = eBookConfig.imagesDir;
+    </script>
+
+  </head>
+
+  <body>
+
+
+
+<div id="navbar" class="content-header">
+  <div class="right-side-nav">
+    
+    <div id="usefulLinksToggle" class="useful-links-toggle">
+        <a class="dropdown-toggle dropdown-toggle-burger" role="button" href="#" id="usefulLinksDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-bars fa-2x"></i>
+        </a>
+        <div class="dropdown-menu dropdown-nav-links shadow-lg" aria-labelledby="usefulLinksDropdown" x-placement="bottom-start" style="position: absolute; transform: translate3d(-55px, 32px, 0px); top: 0px; left: 0px; will-change: transform;">
+          <div class="links-title"> Корисни линкови</div>
+          <div class="useful-link">
+            <a href="https://sqlitestudio.pl/" target="_blank">SQLite studio</a></div>
+          <div class="useful-link">
+            <a href="https://www.sqlite.org/index.html" target="_blank">Документација система SQLite</a></div>
+          
+        </div>
+    </div>
+
+    
+</div>
+
+<div class="left-side-nav">
+  <div class="course-logo-nav">
+      <a target="_blank" href="https://petlja.org">
+          <img src="_static/img/petlja-logo-wt.svg" alt="petlja.org" id="lightPetljaLogo">
+      </a>
+  </div>
+  <div class="course-logo-nav-kabinet">
+      <a target="_blank" href="https://petlja.org/net.kabinet">
+          <img src="_static/img/netkabinet-logo-strelica-wt.svg" alt="petlja.org" id="lightNetKabinetLogo">
+      </a>
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+<div class="course-description">
+    <div class="course-info">
+        <div class="course-logo">
+            <img class="course-logo-img" src="_static/images/logo.svg">
+        </div>
+                    <a class="course-start " id="startCourseAnonymously" href="./01_baze_i_tabele_00_uvod/01_baze_00a_uvod.html">
+                        Погледај курс одмах
+                    </a>
+    </div>
+    <div class="course-shortdescription">
+        <h2> Базе података, рачунарске мреже и серверско веб програмирање за четврти разред гимназије природни смер </h2>
+        <div class="course-description-additionalinfo">
+           Овај курс је намењен ученицима четвртог разреда гимназија природно-математичког смера за предмет Рачунарство и информатика. Курс прати одговарајући програм наставе и учења.
+
+<p>
+<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.sr_LATN">
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+<br />Овај курс Фондација Петља објавила je под лиценцом <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.sr_LATN">Creative Commons Autorstvo 4.0 Međunarodna Licenca (CC BY 4.0)</a>.
+</p> 
+    
+        </div>
+    </div>
+</div>
+<div id="errors" style="width: 60%;"></div>
+<div class="studio-course-content">
+    <div class="course-requirements homepage-content">
+        <div class="mb-3">
+            <h3> Шта ћеш научити </h3>
+                <ul class="simple" style="max-height: 298px;">
+                    <li> шта су и чему служе базе података</li>
+                    <li> шта је и како се користи упитни језик SQL</li>
+                    <li> како програми написани на језику Python могу да користе базе података</li>
+                    <li> од чега су сачињене и како функционишу рачунарске мреже</li>
+                    <li> како клијенти и сервери на вебу комуницирају коришћењем протокола HTTP</li>
+                    <li> како се помоћу библиотеке Flask у језику Python програмирају серверске веб-апликације</li>
+                    <li> као пројекат израдићеш једну савремену веб-апликацију</li>
+                    <li> које су најзначајније области савременог рачунарства</li>
+                    
+                </ul>
+        <div class="see-more-reqs" id="seeMoreReqs">прикажи више</div><div class="see-less-reqs" id="seeLessReqs">мање</div></div>
+        <div class="section">
+            <h3>Потребне ствари за курс</h3>
+            <ul class="simple">
+                <li> Инсталиран програмски језик Python</li>
+                <li> Инсталирана библиотека Flask (упутство за инсталацију је дато у склопу курса)</li>
+                <li> Инсталиран програм SQLLite studio (упутство за инсталацију је дато у склопу курса)</li>
+                
+            </ul>
+        </div>
+    </div>
+<div class="course-tableofcontent">
+    <h3> Садржај </h3>
+    
+    <div>
+    <label>1.0 Базе: Увод у базе података</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 4 лекција</span> 
+    </div>
+    
+    <div>
+    <label>1.1 Базе: SQLite</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 4 лекција</span> 
+    </div>
+    
+    <div>
+    <label>1.2 Базе: Дизајнирање базе података</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 3 лекција</span> 
+    </div>
+    
+    <div>
+    <label>2.0 - SQL: Читање података из базе</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 2 лекција</span> 
+    </div>
+    
+    <div>
+    <label>2.1 SQL: Пројекција и селекција</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 5 лекција</span> 
+    </div>
+    
+    <div>
+    <label>2.2 SQL: Логички и релацијски оператори</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 5 лекција</span> 
+    </div>
+    
+    <div>
+    <label>2.3 SQL: Изрази и функције</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 5 лекција</span> 
+    </div>
+    
+    <div>
+    <label>2.4 SQL: Сортирање, уклањање дупликата, ограничавање броја врста</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 6 лекција</span> 
+    </div>
+    
+    <div>
+    <label>2.5 SQL: Агрегатне функције и груписање</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 6 лекција</span> 
+    </div>
+    
+    <div>
+    <label>2.6 SQL: Спајање табела</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 7 лекција</span> 
+    </div>
+    
+    <div>
+    <label>2.7 SQL: Угнежђени упити</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 6 лекција</span> 
+    </div>
+    
+    <div>
+    <label>2.8 SQL: Погледи</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 3 лекција</span> 
+    </div>
+    
+    <div>
+    <label>3.0 SQL: Промена садржаја базе</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 1 лекција</span> 
+    </div>
+    
+    <div>
+    <label>3.1 SQL: Уписивање података у табеле</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 3 лекција</span> 
+    </div>
+    
+    <div>
+    <label>3.2 SQL: Ажурирање података у табелама</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 2 лекција</span> 
+    </div>
+    
+    <div>
+    <label>3.3 SQL: Брисање података из табела</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 2 лекција</span> 
+    </div>
+    
+    <div>
+    <label>4.0 Python SQLite API</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 7 лекција</span> 
+    </div>
+    
+    <div>
+    <label>5.0 Рачунарске мреже</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 5 лекција</span> 
+    </div>
+    
+    <div>
+    <label>6.0 Серверско веб-програмирање</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 3 лекција</span> 
+    </div>
+    
+    <div>
+    <label>6.1 Библиотека Flask - основни појмови</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 10 лекција</span> 
+    </div>
+    
+    <div>
+    <label>6.2 Библиотека Flask - повезивање са базом података</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 7 лекција</span> 
+    </div>
+    
+    <div>
+    <label>7.0 Библиотека Flask - пројектни задатак</label>
+    <span>
+    </span>     
+    <span><i class="fas fa-file-alt"></i> 2 лекција</span> 
+    </div>
+    </div>
+
+
+  </body>
+</html>

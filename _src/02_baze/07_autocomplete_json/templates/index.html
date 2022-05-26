@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>Artists</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" id="Name" />
+    </form>
+
+    <ul id="Artists">
+    </ul>
+
+    <script type="text/javascript">
+      var inputName = document.getElementById("Name");
+      inputName.addEventListener("keyup", function(e) {
+          if (inputName.value.length >= 2) {
+              var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                  if (this.readyState == 4 && this.status == 200) {
+                      var artists = JSON.parse(xhttp.responseText);
+                      var ul = document.getElementById("Artists");
+                      ul.innerHTML = "";
+                      artists.forEach(artist => {
+                          var li = document.createElement("li");
+                          li.innerHTML = artist[0];
+                          ul.append(li);
+                      });
+                  }
+              }
+              const params = new URLSearchParams({"name": inputName.value});
+              const url = "{{ url_for('artists') }}" + "?" + params.toString();
+              xhttp.open("GET", url);
+              xhttp.send();
+          }
+      });
+    </script>
+  </body>
+</html>

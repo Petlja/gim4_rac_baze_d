@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kolačići</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    {% if name %}
+    <h1>Welcome {{ name }}</h1>
+    <a href="{{ url_for('resetcookie') }}">Logout</a>
+    {% else %}
+    <form method="post" action="{{ url_for('setcookie') }}">
+      <input type="text" name="name" />
+      <input type="submit" value="login" />
+    </form>
+    {% endif %}
+  </body>
+</html>

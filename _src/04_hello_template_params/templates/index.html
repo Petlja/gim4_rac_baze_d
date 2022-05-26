@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Jinja šabloni</title>
+   </head>
+   <body>
+      {% if naslov %}
+      <h1>{{ naslov }}</h1>
+      {% endif %}
+      <ul>
+        {% for stavka in spisak %}
+          <li>{{ stavka }}</li>
+        {% endfor %}
+      </ul>
+   </body>
+</html>

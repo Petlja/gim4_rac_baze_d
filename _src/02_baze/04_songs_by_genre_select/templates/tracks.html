@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+{% block content %}
+     {% if error %}
+     <h2>Error: {{ error_msg }}</h2>
+     {% else %}
+     <h2>{{ genre_name }}</h2>
+     <ol>
+       {% for track in tracks %}
+          <li>{{ track["Name"] }}</li>
+       {% endfor %}
+     </ol>
+     {% endif %}
+{% endblock %}

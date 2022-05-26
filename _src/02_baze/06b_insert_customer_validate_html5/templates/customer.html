@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+   <head>
+     <title>Add new customer</title>
+     <style>
+       .msg { border: 1px sold black; }
+       input:invalid {
+           background-color: #f55;
+       }
+     </style>
+   </head>
+   <body>
+     {% if msg %}
+     <h1>Info</h1>
+     <div class='msg'>
+       {{ msg }}
+     </div>
+     {% endif %}
+     
+     <h1>Add customer</h1>
+
+     <form method="POST" id="customerForm">
+       <table>
+         <tr>
+           <td><label for="first-name">First name:</label></td>
+           <td><input type="text" id="first-name" name="first-name" required /></td>
+         </tr>
+         <tr>
+           <td><label for="last-name">Last name:</label></td>
+           <td><input type="text" id="last-name" name="last-name" required /></td>
+         </tr>
+         <tr>
+           <td><label for="phone">Phone:</label></td>
+           <td><input type="tel" id="phone" name="phone" required /></td>
+         </tr>
+         <tr>
+           <td><label for="e-mail">E-mail:</label></td>
+           <td><input type="email" id="e-mail" name="e-mail" required /></td>
+         </tr>
+       </table>
+       <input type="submit" value="Add customer" />
+     </form>
+     
+   </body>
+</html>

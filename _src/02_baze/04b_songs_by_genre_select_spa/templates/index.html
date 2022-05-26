@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Tracks by genre</title>
+   </head>
+   <body>
+     <h1>Tracks by genre</h1>
+
+     <form>
+       <select name="genre_id">
+         {% for genre in genres: %}
+         <option value="{{ genre.GenreId }}"
+                 {% if genre_id == genre.GenreId %}selected{% endif %}>
+           {{ genre.Name }}
+         </option>
+         {% endfor %}
+       </select>
+       <input type="submit" value="Show" />
+     </form>
+     
+     {% if error %}
+     <h2>Error: {{ error_msg }}</h2>
+     {% else %}
+     <h2>{{ genre_name }}</h2>
+     <ol>
+       {% for track in tracks %}
+          <li>{{ track["Name"] }}</li>
+       {% endfor %}
+     </ol>
+     {% endif %}
+   </body>
+</html>

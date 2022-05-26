@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+{% block content %}
+<form action="{{ url_for('tracks_by_genre') }}">
+  <select name="genre_id">
+    {% for genre in genres: %}
+    <option value="{{ genre.GenreId }}">{{ genre.Name }}</option>
+    {% endfor %}
+  </select>
+  <input type="submit" value="Show" />
+</form>
+{% endblock %}

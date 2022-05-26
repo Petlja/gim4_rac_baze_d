@@ -1,0 +1,119 @@
+{% extends "index.html" %}
+{% block content %}
+<!-- [register-form] -->
+<h2>Registracija novog korisnika</h2>
+<form method="POST" id="registration" class="needs-validation" novalidate>
+
+  <!-- username -->
+  <div class="form-group row">
+    <label for="username" class="col-md-2 col-form-label">Korisničko ime:</label>
+     <div class="col-md-4">
+       <input type="text" name="username" id="username" value="{{ username }}"
+              class="form-control" autocomplete="username" required/>
+       <div class="invalid-feedback">
+         Molimo Vas da unesete željeno korisničko ime
+       </div>
+     </div>
+  </div>
+  
+  <!-- password -->
+  <div class="form-group row">
+    <label for="password" class="col-md-2 col-form-label">Lozinka:</label>
+    <div class="col-md-4">
+      <input type="password" name="password" id="password"
+             class="form-control" autocomplete="new-password" required minlength="8" />
+      <div class="invalid-feedback">
+        Morate uneti jaku lozinku, koja ima najmanje 8 karaktera
+      </div>
+    </div>
+  </div>
+
+  <!-- confirm password -->
+  <div class="form-group row">
+    <label for="confirmPassword" class="col-md-2 col-form-label">Ponovi lozinku:</label>
+    <div class="col-md-4">
+      <input type="password" name="confirmPassword" id="confirmPassword"
+             class="form-control" autocomplete="new-password" required />
+      <div class="invalid-feedback">
+        Ponovljena lozinka mora da bude ista kao i originalna
+      </div>
+    </div>
+  </div>
+
+  <!-- name -->
+  <div class="form-group row">
+    <label for="name" class="col-md-2 col-form-label">Ime i prezime:</label>
+    <div class="col-md-4">
+      <input type="text" name="name" id="name" value="{{ name }}"
+             class="form-control" autocomplete="name" required />
+      <div class="invalid-feedback">
+        Morate uneti ime i prezime
+      </div>
+    </div>
+  </div>
+
+  <!-- email -->
+  <div class="form-group row">
+    <label for="email" class="col-md-2 col-form-label">E-mail:</label>
+    <div class="col-md-4">
+      <input type="email" name="email" id="email" value="{{ email }}"
+             class="form-control" autocomplete="email" required />
+      <div class="invalid-feedback">
+        Morate uneti ispravnu mejl adresu
+      </div>
+    </div>
+  </div>
+
+
+  <!-- submit -->
+  <input type="submit" name="register" id="register" value="Registruj me"
+         class="btn btn-primary" />
+</form>
+<!-- [register-form] -->
+
+<!-- [register-form-client-validation] -->
+<script type="text/javascript">
+  // DOM objekti koji odgovaraju formularu i poljima za unos lozinke
+  var form = document.forms.registration;
+  var passwordInput = form.password;
+  var confirmPasswordInput = form.confirmPassword;
+
+  // lozinka se proverava prilikom svake promene
+  confirmPasswordInput.addEventListener("keyup", checkPassword)
+  passwordInput.addEventListener("keyup", checkPassword)
+
+  // funkcija za proveru poklapanja lozinki
+  function checkPassword() {
+      var OK = true;
+      if (confirmPasswordInput.value != passwordInput.value) {
+          confirmPasswordInput.setCustomValidity("Lozinke se ne poklapaju");
+          confirmPasswordInput.classList.add("is-invalid");
+          confirmPasswordInput.classList.remove("is-valid");
+          OK = false;
+      } else {
+          confirmPasswordInput.setCustomValidity("");
+          confirmPasswordInput.classList.add("is-valid");
+          confirmPasswordInput.classList.remove("is-invalid");
+      }
+
+      // TODO: proširiti ovu funkciju zahtevom da lozinka sadrži i slova
+      // i cifre i specijalne karaktere
+      
+      return OK;
+  }
+
+  // provera prilikom slanja podataka iz formulara
+  form.addEventListener("submit", function(event) {
+      // vršimo ugrađene HTML5 provere i dodatnu proveru lozinki
+      if (!form.checkValidity() || !checkPassword()) {
+          // sprečavamo slanje
+          event.preventDefault();
+          event.stopPropagation();
+      }
+
+      // označavamo da je formular proveren
+      form.classList.add("was-validated");
+  });
+</script>
+<!-- [register-form-client-validation] -->
+{% endblock %}

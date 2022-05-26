@@ -1,0 +1,114 @@
+<html>
+  <head>    
+  <title>
+    Prodavnica digitalnih muzičkih kompozicija
+  </title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- [login-form] -->
+    <div class="modal" id="loginModal">
+      <div class="modal-dialog">
+        <form method="post" action="{{ url_for('login') }}">
+          <div class="modal-content">
+
+            <!-- zaglavlje modalnog prozora -->
+            <div class="modal-header">
+              <h5 class="modal-title">Logovanje</h5>
+              <!-- dugme × za isključivanje prozora -->
+              <button type="button" class="close" data-dismiss="modal">
+                <span>&times;</span>
+              </button>
+            </div>
+
+            <!-- telo modalnog prozora -->
+            <div class="modal-body">
+              <!-- polje za unos korisničkog imena -->
+              <div class="form-group row">
+                <label for="username" class="col-md-4 col-form-label">Korisničko ime:</label>
+                <input type="text" id="signinUsername" name="username"
+                       class="form-control col-md-6" autocomplete="username" />
+              </div>
+                
+              <!-- polje za unos lozinke -->
+              <div class="form-group row">
+                <label for="password" class="col-md-4 col-form-label">Lozinka:</label>
+                <input type="password" id="signinPassword" name="password"
+                       class="form-control col-md-6" autocomplete="current-password" />
+              </div>
+            </div>
+
+            <!-- podnožje modalnog prozora -->
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Uloguj me</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- [login-form] -->
+
+    <header>
+      <nav class="navbar navbar-expand-md fixed-top navbar-light bg-light">
+        <!-- [nav-menu] -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Početna strana</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Albumi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Žanrovi</a>
+          </li>
+        </ul>
+        <!-- [nav-menu] -->
+        
+        <!-- [login-logout] -->
+        <div class="float-right">
+        {% if not session["username"] %}
+        <button type="button" class="btn btn-primary btn-sm"
+                data-toggle="modal" data-target="#loginModal">
+          Ulogujte se
+        </button><br />
+        <small><a href="{{ url_for('register') }}">Nemate nalog? Registrujte se</a></small>
+        {% else %}
+        <a href="{{ url_for('logout') }}">Izlogujte se</a>
+        {% endif %}
+        </div>
+        <!-- [login-logout] -->
+      </nav>      
+    </header>
+
+    <main>
+
+    <!-- [flash-messages] -->
+    <div class="container">
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    {% if messages %}
+       {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">
+             {{ message }}
+          </div>
+       {% endfor %}
+    {% endif %}
+    {% endwith %}
+    </div>
+    <!-- [flash-messages] -->
+
+
+    <div class="container border">
+    {% block content %}
+    {% endblock %}
+    </div>
+    
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>          
+  </body>
+</html>
