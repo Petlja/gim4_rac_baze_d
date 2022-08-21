@@ -3,7 +3,7 @@
 
 .. quizq::
 
-    .. mchoice:: brisanje_komanda
+    .. mchoice:: brisanje_1
         :answer_a: REMOVE
         :answer_b: ERASE
         :answer_c: DELETE
@@ -14,7 +14,7 @@
 
 .. quizq::
 
-    .. mchoice:: brisanje_sta
+    .. mchoice:: brisanje_2
         :answer_a: Изабрани редови табеле.
         :answer_b: Изабране колоне табеле.
         :answer_c: Изабране колоне изабраних редова табеле.
@@ -25,7 +25,7 @@
 
 .. quizq::
 
-    .. mchoice:: brisanje_greska
+    .. mchoice:: brisanje_3
         :multiple_answers:
         :answer_a: Поништавањем извршења последњег упита помоћу команде UNDO.
         :answer_b: Тако што пре упита брисања извршимо упит SELECT, да бисмо видели редове који би били обрисани.
@@ -34,3 +34,15 @@
         :correct: b,c
 
         На који све начин можемо да смањимо шансе да изгубимо податке услед случајног брисања података у некој табели, које није требало брисати?
+
+.. quizq::
+
+    .. mchoice:: brisanje_4
+        :answer_a: није потребно ништа да додамо, упит се завршава навођењем назива табеле
+        :answer_b: WHERE ocena = 1 AND vrsta = 'писмени задатак'
+        :answer_c: WHERE ocena = 1 AND id_predmet =  1
+        :answer_d: WHERE ocena = 1 (тачан одговор)
+        :correct: a
+
+        Министарство је одлучило да се све јединице које су ђаци добили пониште (због ванредне ситуације). 
+		Шта је неопходно да додамо упиту којим бришемо податке у складу са овом изменом?

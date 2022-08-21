@@ -3,31 +3,6 @@
 
 .. quizq::
 
-    .. mchoice:: baze_tabele_korisnici
-        :multiple_answers:
-        :answer_a: други програми
-        :answer_b: појединци који директно анализирају податке 
-        :answer_c: сама база података
-        :answer_d: администратори базе података
-        :correct: a,b,d
-
-        Шта од наведеног су корисници система за управљање базом података?
-
-.. quizq::
-
-    .. mchoice:: baze_tabele_uloga_subp
-        :multiple_answers:
-        :answer_a: Формирање базе података
-        :answer_b: Ефикасан приступ подацима
-        :answer_c: Спречавање уписа неконзистентних података
-        :answer_d: Истовремени рад више корисника
-        :answer_e: Заштиту приступа подацима помоћу лозинки
-        :correct: a,b,c,d,e
-
-        Шта све омогућавају системи за управљање базом података?
-
-.. quizq::
-
     .. mchoice:: baze_tabele_zahtev_upucen_SUBP
         :answer_a: упит
         :answer_b: наредба
@@ -37,24 +12,16 @@
 
         Како називамо захтев упућен систему за управљање базом података?
 
-.. quizq::
-
-    .. mchoice:: baze_tabele_pristup_aplikacije_bazi
-        :answer_a: само једна апликација
-        :answer_b: Иста врста апликације инсталирана на више места, али не потпуно различите апликације
-        :answer_c: Различите апликације
-        :correct: c
-
-        Једној бази података може истовремено да приступи:
 
 .. quizq::
 
     .. dragndrop:: baze_tabele_sinonimi
-        :match_1: табела ||| релација
-        :match_2: колона ||| атрибут
-        :match_3: ред (врста) ||| ентитет (једника, објекат)
+        :match_1: табела ||| релација, ентитет
+        :match_2: колона ||| атрибут, својство, особина
+        :match_3: ред (врста) ||| инстанца, објекат, јединка
         
         Упари појмове који (у контексту база података) имају исто или слично значење. 
+
 
 .. quizq::
 
@@ -70,13 +37,13 @@
 .. quizq::
 
     .. mchoice:: baze_tabele_nalazenje_vrste
-        :answer_a: Према вредностима свих атрибута
-        :answer_b: Према положају тог реда у запису табеле
-        :answer_c: Према примарном кључу
-        :answer_d: Навођењем свих услова који важе за ту врсту.
-        :correct: c
+        :answer_a: Према вредностима свих атрибута.
+        :answer_b: Према положају тог реда у запису табеле.
+        :answer_c: Навођењем свих услова који важе за ту врсту.
+        :answer_d: Према примарном кључу.
+        :correct: d
 
-        Који је основни и најефикаснији начин да се пронађе одређена врста у табели?
+        Који је основни и најефикаснији начин да се пронађе одређени ред у табели?
 
 .. quizq::
 
@@ -99,11 +66,78 @@
         :answer_d: одељење - ученик
         :correct: b
 
-        Шта од наведеног је пример везе више према више?
+        Шта од наведеног је пример везе више-према-више?
 
+**Наредна питања се односе на следећу слику**
 
-.. comment
-            Шта је база података
-            Шта је страни кључ? (колона табеле, која у некој другој табели представља примарни кључ)
+.. image:: ../../_images/baze_kviz1.png
+   :width: 780
+   :align: center
+
+.. quizq::
+
+    .. mchoice:: id_nastavnika
+        :answer_a: 1
+        :answer_b: 2
+        :answer_c: 3
+        :answer_d: 4
+        :correct: c
+
+        Који је идентификациони број наставника који се зове и презива Филип Марић?
             
             
+.. quizq::
+
+    .. mchoice:: kolone_primarni_kljucevi
+        :answer_a: id, ime, prezime у табели nastavnik, id_nastavnik у табели predaje
+        :answer_b: id у табели nastavnik,  naziv у табели predmet
+        :answer_c: id у табели nastavnik, id у табели predmet
+        :answer_d: id у табели nastavnik, id_predmet у табели predaje,  id, naziv у табели predmet
+        :correct: c
+
+        Који списак садржи само колоне које су примарни кључеви?
+		
+.. quizq::
+
+    .. mchoice:: kolone_strani_kljucevi
+        :answer_a: id у табели nastavnik, id_nastavnik у табели predaje
+        :answer_b: id у табели nastavnik,  id у табели predmet
+        :answer_c: id_predmet у табели predaje, id у табели predmet
+        :answer_d: id_predmet, id_nastavnik у табели predaje
+        :correct: d
+
+        Који списак садржи само колоне које су страни кључеви?	
+		
+.. quizq::
+
+    .. mchoice:: strani_primarni_kljuc
+        :answer_a: id_nastavnik у табели predaje, id у табели predmet 
+        :answer_b: id_nastavnik у табели predaje, id у табели nastavnik 
+        :answer_c: id_predmet у табели predaje, id у табели nastavnik
+        :answer_d: id_predmet у табели predaje, id_nastavnik у табели predaje
+        :correct: b
+
+        Који списак садржи добру комбинацију страни кључ и одговарајући примарни кључ?
+		
+		
+.. quizq::
+
+    .. mchoice:: nastavnik_RI4
+        :answer_a: 1
+        :answer_b: 2
+        :answer_c: 3
+        :answer_d: 4
+        :correct: b
+
+        Колико наставника предаје Рачунарство и информатику у четвртом разреду?
+		
+.. quizq::
+
+    .. mchoice:: nastavnik_RI2
+        :answer_a: Нина Алимпић
+        :answer_b: Нина Алимпић, Мијодраг Ђуришић, Филип Марић 
+        :answer_c: Мијодраг Ђуришић, Филип Марић
+        :answer_d: Станка Матковић, Филип Марић 
+        :correct: c
+
+        Ко предаје Рачунарство и информатику у другом разреду?

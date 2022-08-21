@@ -3,6 +3,20 @@
 Спајање --- задаци (дневник)
 ............................
 
+У систему SQLite Studio се упити се пишу након што се кликне на креирану базу *dnevnik* у прозору 
+Databases и потом изабере команда менија ``Tools → Open SQL Editor``. Када се напише упит, 
+кликне се на дугме ``Execute query (F9)`` (плави троуглић). 
+
+Савет је да се у прозору ``Databases`` увек прво провере тачни називи табела, 
+као и колона. Посебно је важно да проверимо називе страног кључа и примарног 
+кључа који му одговара у другој табели када желико да извршимо спајање, тј. да 
+прикажемо податке из више табела које су повезане.  
+
+.. image:: ../../_images/dnevnik.png
+   :width: 400
+   :align: center
+   :alt: Логотип система SQLite
+
 .. questionnote::
 
    Приказати у читљивом формату све оцене на контролним вежбама
@@ -16,7 +30,8 @@
                         JOIN ucenik u ON o.id_ucenik = u.id
                         JOIN predmet p ON o.id_predmet = p.id
                    WHERE u.razred = 1 AND u.odeljenje = 2 AND o.vrsta = 'контролна вежба'
-
+   :showresult:
+   
 .. questionnote::
    
    Приказати просечну оцену на сваком писменом задатку у сваком
@@ -33,7 +48,8 @@
                    WHERE o.vrsta = 'писмени задатак'
                    GROUP BY u.razred, u.odeljenje, p.id, o.datum
                    HAVING broj >= 25
-
+   :showresult:
+   
 .. questionnote::
    
    За сваки предмет приказати месечни преглед броја петица (списак
@@ -50,6 +66,7 @@
                    WHERE o.ocena = 5
                    GROUP BY p.id, mesec
                    ORDER BY p.naziv, mesec
+   :showresult:
 
 .. questionnote::
    
@@ -66,7 +83,8 @@
                    WHERE status = 'неоправдан'
                    GROUP BY mesec, razred, odeljenje
                    HAVING broj >= 5
-
+   :showresult:
+	
 .. questionnote::
    
    За сваког ученика приказати просечну оцену из сваког предмета за
@@ -81,7 +99,8 @@
                         predmet p ON o.id_predmet = p.id
                    GROUP BY u.id, p.id
                    HAVING COUNT(*) >= 2
-
+   :showresult:
+	
 .. questionnote::
    
    Рођендански парадокс нам говори да је у одељењу од 23 ученика
@@ -101,7 +120,7 @@
                             u1.razred = u2.razred AND u1.odeljenje = u2.odeljenje AND
                             u1.datum_rodjenja = u2.datum_rodjenja AND u1.id < u2.id
                    ORDER BY u1.razred, u1.odeljenje
-
+   :showresult:
 
 .. questionnote::
    
@@ -116,7 +135,8 @@
                         ocena ON predmet.id = ocena.id_predmet
                    GROUP BY predmet.id
                    ORDER BY broj_ocena DESC
-
+   :showresult:
+   
 .. questionnote::
    
    За сваког ученика приказати број оцена из рачунарства и информатике
@@ -130,3 +150,4 @@
                         (ocena o JOIN
                          predmet p ON p.id = o.id_predmet AND p.naziv = 'Рачунарство и информатика') ON u.id = id_ucenik
                    GROUP BY u.id
+   :showresult:

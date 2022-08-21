@@ -59,3 +59,47 @@
 
         Да ли је могуће у истом упиту применити и пројекцију и рестрикцију на дату табелу?
 
+.. quizq::
+
+    .. mchoice:: proj_sel_komb_2_upita
+        :answer_a: У првом упиту имамо само селекцију, а у другом и пројекцију и селекцију
+        :answer_b: У првом упиту имамо само пројекцију, а у другом имамо само селекцију
+        :answer_c: У првом упиту имамо пројекцију и селекцију, а у другом имамо само пројекцију
+        :answer_d: У првом упиту имамо само пројекцију, а у другом и пројекцију и селекцију 
+        :correct: d
+
+		Дата су следеће два упита:
+		
+	.. code-block:: sql
+
+		/* prvi upit*/
+		SELECT prezime
+		FROM ucenik;
+
+		/* drugi upit*/
+		SELECT id_ucenik, status 
+		FROM izostanak WHERE cas = 1;
+			
+	Које тврђење је тачно?
+
+.. quizq::
+
+    .. mchoice:: upit_razred_fond
+        :answer_a: SELECT razred, fond FROM predmet
+        :answer_b: SELECT razred FROM predmet WHERE naziv='Математика';
+        :answer_c: SELECT razred, fond FROM predmet WHERE naziv='Математика'; 
+        :answer_d: SELECT razred, fond FROM predmet WHERE naziv=Математика;
+        :correct: c
+
+        Којим упитом добијамо разред и фонд часова за предмет Математика који се изучава у различитим разредима?
+
+.. quizq::
+
+    .. mchoice:: upit_prezime_dat_4
+        :answer_a: SELECT prezime, datum_rodjenja FROM predmet WHERE razred=4
+        :answer_b: SELECT prezime, datum_rodjenja FROM ucenik WHERE razred=4 
+        :answer_c: SELECT prezime FROM ucenik WHERE razred=4 
+        :answer_d: SELECT prezime, datum_rodjenja FROM ucenik WHERE razred=1 
+        :correct: b
+		
+		Којим упитом добијамо презимена и датуме рођења свих ученика четвртог разреда?Којим упитом добијамо разред и фонд часова за предмет Математика који се изучава у различитим разредима?

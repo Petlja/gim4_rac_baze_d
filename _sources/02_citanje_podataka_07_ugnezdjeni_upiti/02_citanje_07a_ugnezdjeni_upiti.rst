@@ -221,3 +221,4 @@
                               ocena o ON u.id = o.id_ucenik
                          GROUP BY u.id)
                    GROUP BY razred, odeljenje
+   :showresult: 

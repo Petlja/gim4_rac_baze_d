@@ -3,7 +3,7 @@ SQLite и SQLite Studio - квиз
 
 .. quizq::
 
-    .. mchoice:: SQLite_sta_je_SQLite
+    .. mchoice:: Pitanje_1
         :answer_a: Један упитни језик
         :answer_b: Фајл који у себи садржи базу података
         :answer_c: Окружење за писање програма који користе базу података
@@ -15,7 +15,7 @@ SQLite и SQLite Studio - квиз
 
 .. quizq::
 
-    .. mchoice:: SQLite_interfejs
+    .. mchoice:: Pitanje_2
         :multiple_answers:
         :answer_a: апликативни
         :answer_b: мрежни
@@ -28,7 +28,7 @@ SQLite и SQLite Studio - квиз
 
 .. quizq::
 
-    .. mchoice:: SQLite_commit_str_ch
+    .. mchoice:: Pitanje_3
         :answer_a: да финализује структуру базе података и забрани даље измене
         :answer_b: да запамти измене направљене у структури базе података
         :answer_c: да одбаци измене направљене у структури базе података од последњег чувања базе
@@ -39,7 +39,7 @@ SQLite и SQLite Studio - квиз
 
 .. quizq::
 
-    .. mchoice:: SQLite_kreiranje_tabele
+    .. mchoice:: Pitanje_4
         :multiple_answers:
         :answer_a: све колоне морају одмах да се дефинишу, јер не могу касније да се додају
         :answer_b: колона која представља примарни кључ може да се одабере накнадно
@@ -48,6 +48,93 @@ SQLite и SQLite Studio - квиз
 
         Означи сва тврђења која важе за SQLite студио приликом креирања табеле.
 
+.. quizq::
+
+    .. mchoice:: Pitanje_5
+        :answer_a: назив колоне, тип података и ограничење Primary key 
+        :answer_b: назив колоне, тип података и ограничење Not null
+        :answer_c: назив колоне и тип података 
+        :answer_d: назив колоне, тип података и ограничење Foreign key
+        :correct: c
+
+        Шта је обавезно да се одабере за сваку колону једне табеле?
+
+
+.. quizq::
+
+    .. dragndrop:: Pitanje_6
+        :match_1: INTEGER ||| цели бројеви
+        :match_2: DOUBLE ||| реални бројеви (записани у покретном зарезу)
+        :match_3: VARCHAR ||| текстулани подаци (ниске карактера) за које је позната максимална дужина
+        :match_4: DATE, TIME, DATETIME ||| датум, време у току дана тј. датум и време
+        
+        Повежи типове података и њихове описе. 
+
+
+.. quizq::
+
+    .. mchoice:: Pitanje_7
+        :answer_a: ограничење Primary key 
+        :answer_b: ограничење Not null 
+        :answer_c: ограничење Unique
+        :answer_d: ограничење Foreign key
+        :correct: b
+
+        Уколико подаци морају да се унесу у неку колону, тј. ћелије у тој колони не могу да садрже недостајуће вредности, 
+		шта је обавезно да се одабере за ту колону?
+
+
+.. quizq::
+
+    .. mchoice:: Pitanje_8
+        :answer_a: ограничење Primary key
+        :answer_b: ограничење Not null
+        :answer_c: ограничење Unique
+        :answer_d: ограничење Foreign key
+        :correct: a
+
+        Које ограничење у себи садржи два ограничења тако да је сваки податак у колони за коју се дефинише то ограничење обавезно попуњен (колона не може да садржи недостајуће вредности) 
+		и јединствен је?
+
+		
+.. quizq::
+
+    .. mchoice:: Pitanje_9
+        :answer_a: (1, Петар, Петровић), (2, Петар, Петровић), (3, Јован, Петровић) 
+        :answer_b: (1, Петар, Петровић), (1, Јован, Јовановић), (3, Марко, Марковић)
+        :answer_c: (1, Петар, Петровић), (NULL, Јован, Јовановић), (3, Марко, Марковић)
+        :answer_d: (NULL, Петар, Петровић), (NULL, Јован, Јовановић), (3, Марко, Марковић)
+        :correct: a
+
+        Уколико је колона **id** примарни кључ, који од података су дозвољени у табели **ucenik(id,ime,prezime)**?
+
+
+.. quizq::
+
+    .. mchoice:: Pitanje_10
+        :answer_a: колона id је страни кључ у табели  ucenik, а колона на коју показује је колона id_ucenik која је примарни кључ у табели ocena 
+        :answer_b: колона id је примарни кључ у табели  ucenik, а колона која на њу показује је колона id која је примарни кључ у табели ocena  
+        :answer_c: колона id је примарни кључ у табели  ocena, а колона на коју показује је колона id која је примарни кључ у табели ucenik 
+        :answer_d: колона id је примарни кључ у табели  ucenik, а колона која на њу показује је колона која је страни кључ id_ucenik у табели ocena
+        :correct: d
+
+        Уколико један ученик може да има више оцена, а једна конкретна оцена је оцена коју је један ученик добио, 
+		шта је од следећег тачно?
+	
+	
+.. quizq::
+
+    .. mchoice:: Pitanje_11
+        :answer_a: ON DELETE RESTRICT ON UPDATE CАSCADE
+        :answer_b: ON DELETE RESTRICT ON UPDATE RESTRICT
+        :answer_c: ON DELETE CАSCADE ON UPDATE RESTRICT
+        :answer_d: ON DELETE CАSCADE ON UPDATE CАSCADE
+        :correct: c
+        
+		Уколико желимо да дозволимо каскадно брисање, а забранимо каскадно ажурирање, шта је потребно да се напише?
+		
+		
 .. comment
 
-            Приликом додавања нове колоне у табелу, поребно је дефинисати: (име колоне, тип податка, величина, опције (Primary key, Autoincrement, Not null, Collate, Default...))
+        Приликом додавања нове колоне у табелу, поребно је дефинисати: (име колоне, тип податка, величина, опције (Primary key, Autoincrement, Not null, Collate, Default...))
+

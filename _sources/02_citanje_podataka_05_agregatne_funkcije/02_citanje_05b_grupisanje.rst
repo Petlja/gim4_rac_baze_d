@@ -184,7 +184,8 @@
 Вежба
 .....
 
-Покушај да самостално напишеш наредних неколико упита.
+Покушај да самостално напишеш наредних неколико упита. Решења можеш да тестираш овде, 
+а можеш све задатке да урадиш и у систему SQLite Studio.
 
 .. questionnote::
 
@@ -196,7 +197,7 @@
    :solutionquery: SELECT status, COUNT(*) AS broj_izostanaka
                    FROM izostanak
                    GROUP BY status
-
+    :showresult:
                    
 .. questionnote::
 

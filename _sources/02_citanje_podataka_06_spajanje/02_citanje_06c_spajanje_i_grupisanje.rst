@@ -110,6 +110,7 @@
 
 .. dbpetlja:: db_spajanje_i_grupisanje_01
    :dbfile: dnevnik.sql
+   :showresult:
    :solutionquery: SELECT razred, odeljenje, COUNT(*) AS broj
                    FROM izostanak i JOIN
                         ucenik u ON i.id_ucenik = u.id
@@ -122,6 +123,7 @@
 
 .. dbpetlja:: db_spajanje_i_grupisanje_02
    :dbfile: dnevnik.sql
+   :showresult:
    :solutionquery: SELECT u.razred, u.odeljenje, ROUND(AVG(ocena), 2) AS prosek
                    FROM ucenik u JOIN 
                         ocena o ON u.id = o.id_ucenik JOIN
