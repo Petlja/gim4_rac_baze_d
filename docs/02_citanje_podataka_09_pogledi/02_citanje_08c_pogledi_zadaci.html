@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Погледи — задаци</title>
+    <title>Погледи - задаци</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -465,15 +470,15 @@
     <div id="main-content">
     
   <div class="section" id="id1">
-<h1>Погледи — задаци<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>Погледи - задаци<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>У систему SQLite Studio поглед такође може да се креира након што се кликне на
 жељену базу података <em>dnevnik</em> у прозору <code class="docutils literal notranslate"><span class="pre">Databases</span></code> и потом изабере команда менија
 <code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">→</span> <span class="pre">Open</span> <span class="pre">SQL</span> <span class="pre">Editor</span></code>. Када се напише команда за креирање погледа,
 кликне се на дугме <code class="docutils literal notranslate"><span class="pre">Execute</span> <span class="pre">query</span> <span class="pre">(F9)</span></code> (плави троуглић).</p>
-<a class="reference internal image-reference" href="../_images/dnevnik_a.png"><img alt="../_images/dnevnik_a.png" class="align-center" src="../_images/dnevnik_a.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/dnevnik_a.png"><img alt="../_images/dnevnik_a.png" class="align-center" src="../_images/dnevnik_a.png" style="width: 500px;" /></a>
 <p>Савет је да се у прозору <code class="docutils literal notranslate"><span class="pre">Databases</span></code> увек прво провере тачни називи табела,
 као и колона. Посебно је важно да проверимо називе страног кључа и примарног
-кључа који му одговара у другој табели када желико да извршимо спајање,
+кључа који му одговара у другој табели када желимо да извршимо спајање,
 тј. да прикажемо податке из више табела које су повезане.</p>
 <ol class="arabic simple">
 <li><p>Креирај поглед који садржи резултат спајања ученика, оцена и

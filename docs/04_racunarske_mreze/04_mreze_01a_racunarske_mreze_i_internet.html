@@ -6,6 +6,7 @@
     <title>Рачунарске мреже и интернет</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -486,7 +491,7 @@
 међусобно повезаних комуникационом опремом, снабдевених одговарајућим
 комуникационим софтвером, којим се остварује контрола система тако да је
 омогућен пренос података између повезаних уређаја.</p>
-<a class="reference internal image-reference" href="../_images/Picture1.jpg"><img alt="../_images/Picture1.jpg" class="align-center" src="../_images/Picture1.jpg" style="width: 780px;" /></a>
+<a class="reference internal image-reference" href="../_images/ilustracija_1.png"><img alt="../_images/ilustracija_1.png" class="align-center" src="../_images/ilustracija_1.png" style="width: 780px;" /></a>
 <p>Два повезана уређаја довољна су да оформе мрежу, међутим, мреже обично
 обухватају више од два уређаја, а са ширењем интернета дошло се до тога да су
 скоро сви рачунари, паметни телефони, телевизори и слични дигитални уређаји на
@@ -510,7 +515,7 @@
 <p>У клијент-сервер моделу <strong>сервер</strong> је систем који пружа своје ресурсе (податке,
 софтвер, хардвер), док је <strong>клијент</strong> систем који иницира контакт са сервером
 да би користио ресурсе које сервер пружа.</p>
-<a class="reference internal image-reference" href="../_images/Picture2.png"><img alt="../_images/Picture2.png" class="align-center" src="../_images/Picture2.png" style="width: 780px;" /></a>
+<a class="reference internal image-reference" href="../_images/ilustracija_3.png"><img alt="../_images/ilustracija_3.png" class="align-center" src="../_images/ilustracija_3.png" style="width: 780px;" /></a>
 <p>Нагласимо да су клијент и сервер само улоге рачунара у процесу комуникације.
 Рачунари нису предодређени само за једну врсту улоге (додуше, за сервере се
 користе моћнији рачунари). Улога је одређена софтвером који се извршава и који
@@ -524,7 +529,7 @@
 на коме се налазе веб-стране које захтевате (или програми који их генеришу).
 Сервер клијенту шаље документе (веб-странице, слике итд.) и клијент их
 приказује кориснику.</p>
-<a class="reference internal image-reference" href="../_images/Picture3.png"><img alt="../_images/Picture3.png" class="align-center" src="../_images/Picture3.png" style="width: 780px;" /></a>
+<a class="reference internal image-reference" href="../_images/ilustracija_2.png"><img alt="../_images/ilustracija_2.png" class="align-center" src="../_images/ilustracija_2.png" style="width: 780px;" /></a>
 <p>Слично томе, електронска пошта се чува на серверима електронске поште, а шаље
 се, преузима и прегледа на клијентским рачунарима тј. дигиталним уређајима.
 Изузетак представљају P2P сервиси за дељење датотека какав је Bittorent. Не

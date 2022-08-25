@@ -6,6 +6,7 @@
     <title>SQL: Читање података из базе</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -477,15 +482,15 @@ SQL упиту одређује врсту акције коју корисни�
 <ul class="simple">
 <li><p>Упити <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>, који служе да се из базе прочитају жељени подаци,</p></li>
 <li><p>Упити <code class="docutils literal notranslate"><span class="pre">INSERT</span></code>, који служе да се у базу упишу нови подаци,</p></li>
-<li><p>упити <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>, који служе да се из базе обришу неки подаци, а</p></li>
-<li><p>упити <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>, који служе да се неки подаци у бази ажурирају (измене).</p></li>
+<li><p>Упити <code class="docutils literal notranslate"><span class="pre">DELETE</span></code>, који служе да се из базе обришу неки подаци, и</p></li>
+<li><p>Упити <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>, који служе да се неки подаци у бази ажурирају (измене).</p></li>
 </ul>
 
     <div class="note-wrapper learnmorenote-type">
         <div class="note-icon-holder"> </div>
         <img src="../_static/img/learnmorenote-img.svg" class="note-image learnmorenote-image" /> 
         <div class="course-content">
-            <p>
+            
 <p><strong>Други типови SQL упита:</strong></p>
 <p>Постоје и други типови упита, који се ређе користе. Ми смо, на пример,
 у претходном делу креирали две базе и неколико табела у њима користећи
@@ -493,7 +498,7 @@ SQL упиту одређује врсту акције коју корисни�
 одговарајуће SQL упите, помоћу којих могу да се креирају такве базе и
 табеле у њима. Сваки од тих упита је почињао кључном речју <code class="docutils literal notranslate"><span class="pre">CREATE</span></code>.</p>
 <p>Слично креирању, ГКИ можемо да употребимо и да бисмо изменили структуру
-неке табеле (нпр. додали или обрисали одређене колоне) или чак обрисали
+неке табеле (нпр. додали или обрисали одређене колоне), или чак обрисали
 табелу која нам није потребна. Исте акције можемо да извршимо и помоћу
 SQL упита (упит <code class="docutils literal notranslate"><span class="pre">ALTER</span></code> за мењање структуре табеле, а упит <code class="docutils literal notranslate"><span class="pre">DROP</span></code>
 за њено брисање). Помоћу SQL упита могу да се обаве и разна подешавања и
@@ -505,11 +510,11 @@ SQL упита (упит <code class="docutils literal notranslate"><span class=
 преглед података може да буде потребан знатно ширем кругу корисника
 различитих занимања.</p>
 
-    </p></div></div>
+    </div></div>
 <p>Од свих поменутих типова упита, за нас је најзначајнији упит <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>,
 помоћу којег веома брзо можемо да дођемо до података који су нам потребни.
 Зато ћемо у овом поглављу детаљније да упознамо могућности упита <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>, а
-у следећем поглављу ћемо да обрадимо упите <code class="docutils literal notranslate"><span class="pre">INSERT</span></code>, <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>.</p>
+у следећем поглављу ћемо да обрадимо упите <code class="docutils literal notranslate"><span class="pre">INSERT</span></code>, <code class="docutils literal notranslate"><span class="pre">DELETE</span></code> и <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>.</p>
 </div>
 <div class="section" id="select">
 <h2>Упит SELECT<a class="headerlink" href="#select" title="Permalink to this headline">¶</a></h2>
@@ -531,15 +536,13 @@ SQL упита (упит <code class="docutils literal notranslate"><span class=
 података из једне табеле. Тада се уместо имена свих колона може
 навести само симбол <code class="docutils literal notranslate"><span class="pre">*</span></code>. Размотримо следећи пример. Тачка-зарез (;) може и не мора да се дода на крај упита.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати све податке о ученицима који су уписани у бази.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">ucenik</span><span class="p">;</span>
 </pre></div>
@@ -699,43 +702,49 @@ SQL упита (упит <code class="docutils literal notranslate"><span class=
 </tbody>
 </table>
 <p>Облик упита <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> који смо управо упознали садржи само обавезне
-делове, па је то најкраћи могућ облик овог упита. У наставку овог
+делове, па је то најкраћи могући облик овог упита. У наставку овог
 поглавља ћемо обрадити различите сложеније облике упита <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>,
 који нам омогућавају да од постојећих података одаберемо само неке, да
 их пребројимо, да нађемо најмањи или највећи податак који испуњава
 неки услов, да прикажемо једноставне статистике по групама података и
 слично.</p>
-<p>У систему SQLite Studio се упити се пишу након што се кликне на креирану базу <em>dnevnik</em> у
+<p>У систему SQLite Studio се упити пишу након што се кликне на креирану базу <em>dnevnik</em> у
 прозору``Databases`` и потом изабере команда менија <code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">→</span> <span class="pre">Open</span> <span class="pre">SQL</span> <span class="pre">Editor</span></code>.
 Када се напише упит, кликне се на дугме <code class="docutils literal notranslate"><span class="pre">Execute</span> <span class="pre">query</span> <span class="pre">(F9)</span></code> (плави троуглић).
 Уколико се у простору за писање упита налази више њих, потребно је обележити онај коју желимо да покренемо.
-Уколико имамо више база података, обавезно проверити да ли је поред овог дугмета назив базе у којој желите
+Уколико имамо више база података, обавезно провери да ли је поред овог дугмета назив базе у којој желиш
 да вршите упите.</p>
-<a class="reference internal image-reference" href="../_images/execute_query.png"><img alt="../_images/execute_query.png" class="align-center" src="../_images/execute_query.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/execute_query.png"><img alt="../_images/execute_query.png" class="align-center" src="../_images/execute_query.png" style="width: 500px;" /></a>
+
+    <div class="note-wrapper suggestionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/suggestionnote-img.svg" class="note-image suggestionnote-image" /> 
+        <div class="course-content">
+            
 <p>Савет је да се у прозору <code class="docutils literal notranslate"><span class="pre">Databases</span></code> увек прво провере тачни називи табела.</p>
-<a class="reference internal image-reference" href="../_images/dnevnik.png"><img alt="../_images/dnevnik.png" class="align-center" src="../_images/dnevnik.png" style="width: 400px;" /></a>
+
+    </div></div>
+<a class="reference internal image-reference" href="../_images/dnevnik.png"><img alt="../_images/dnevnik.png" class="align-center" src="../_images/dnevnik.png" style="width: 500px;" /></a>
 <p>Често ће нам код упита бити потребно да знамо и тачне називе колона.
 То можемо да видимо за сваку табелу појединачно тако што кликнемо на њу у прозору
-<code class="docutils literal notranslate"><span class="pre">Databases</span></code> па се онда појави опис структуре табеле који садржи списак свих колона.</p>
-<a class="reference internal image-reference" href="../_images/ucenik.png"><img alt="../_images/ucenik.png" class="align-center" src="../_images/ucenik.png" style="width: 600px;" /></a>
-<p>Списак колона можемо да видимо и када извршимо основни SELECT упит.</p>
-<a class="reference internal image-reference" href="../_images/select.png"><img alt="../_images/select.png" class="align-center" src="../_images/select.png" style="width: 600px;" /></a>
+<code class="docutils literal notranslate"><span class="pre">Databases</span></code>, па се онда појави опис структуре табеле који садржи списак свих колона.</p>
+<a class="reference internal image-reference" href="../_images/ucenik.png"><img alt="../_images/ucenik.png" class="align-center" src="../_images/ucenik.png" style="width: 780px;" /></a>
+<p>Списак колона можемо да видимо и када извршимо основни SELECT упит:</p>
+<a class="reference internal image-reference" href="../_images/select.png"><img alt="../_images/select.png" class="align-center" src="../_images/select.png" style="width: 780px;" /></a>
 </div>
 <div class="section" id="id2">
 <h2>Вежба<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>Пробај сада самостално да напишеш наредни упит. Тачност твог решења се аутоматски
 проверава притиском на дугме <code class="docutils literal notranslate"><span class="pre">Тестирај</span> <span class="pre">упит</span></code>. Пробај овај упит и у систему SQLite
-Studio који си исталирао код себе на рачунару и у оквиру којег си додао базу података са називом <em>dnevnik</em>.</p>
+Studio који си инсталирао код себе на рачунару и у оквиру којег си додао базу података са називом <em>dnevnik</em>.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати све податке из табеле предмета која има назив <code class="docutils literal notranslate"><span class="pre">predmet</span></code>.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_uvod_01" class="db" data-db-name="dnevnik.sql" db-check = "SELECT *
 FROM predmet"    > 

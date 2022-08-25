@@ -6,6 +6,7 @@
     <title>База компаније за продају дигиталних композиција – подаци о продаји</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -475,68 +480,68 @@
 <p>У компанији постоји неколико запослених особа. За сваког запосленог
 познати су следећи подаци:</p>
 <ul class="simple">
-<li><p>име, презиме</p></li>
-<li><p>титула тј. назив запослења</p></li>
-<li><p>датум рођења</p></li>
-<li><p>датум запослења</p></li>
-<li><p>адреса</p></li>
-<li><p>град</p></li>
-<li><p>држава/покрајина</p></li>
-<li><p>поштански кôд</p></li>
-<li><p>број телефона</p></li>
-<li><p>факс</p></li>
-<li><p>мејл</p></li>
+<li><p>име, презиме,</p></li>
+<li><p>титула, тј. назив запослења,</p></li>
+<li><p>датум рођења,</p></li>
+<li><p>датум запослења,</p></li>
+<li><p>адреса,</p></li>
+<li><p>град,</p></li>
+<li><p>држава/покрајина,</p></li>
+<li><p>поштански кôд,</p></li>
+<li><p>број телефона,</p></li>
+<li><p>факс и</p></li>
+<li><p>мејл.</p></li>
 </ul>
 <p>Запослени имају свог надређеног и на тај начин су организовани у
 хијерархијску, дрволику структуру.</p>
-<p>Чува се листа свих купаца. За сваког купца су познати следећи подаци.</p>
+<p>Чува се листа свих купаца. За сваког купца су познати следећи подаци:</p>
 <ul class="simple">
-<li><p>име, презиме</p></li>
-<li><p>компанија у чије име купује (ако не купује сам за себе)</p></li>
-<li><p>адреса</p></li>
-<li><p>град</p></li>
-<li><p>држава/покрајина</p></li>
-<li><p>поштански кôд</p></li>
-<li><p>телефон</p></li>
-<li><p>факс</p></li>
-<li><p>мејл</p></li>
+<li><p>име, презиме,</p></li>
+<li><p>компанија у чије име купује (ако не купује сам за себе),</p></li>
+<li><p>адреса,</p></li>
+<li><p>град,</p></li>
+<li><p>држава/покрајина,</p></li>
+<li><p>поштански кôд,</p></li>
+<li><p>телефон,</p></li>
+<li><p>факс и</p></li>
+<li><p>мејл.</p></li>
 </ul>
 <p>За купца може бити задужен неко од запослених (он му пружа комплетну
-кориснчику подршку).</p>
+корисничику подршку).</p>
 <p>Корисници врше наруџбине и у склопу сваке наруџбине могу да наруче и
-више композиција. За сваку наруџбину познати су следећи подаци.</p>
+више композиција. За сваку наруџбину познати су следећи подаци:</p>
 <ul class="simple">
-<li><p>датум наруџбине</p></li>
-<li><p>адреса наплате</p></li>
-<li><p>град наплате</p></li>
-<li><p>поштански кôд наплате</p></li>
-<li><p>држава/покрајина наплате</p></li>
-<li><p>укупна цена наруџбине</p></li>
+<li><p>датум наруџбине,</p></li>
+<li><p>адреса наплате,</p></li>
+<li><p>град наплате,</p></li>
+<li><p>поштански кôд наплате,</p></li>
+<li><p>држава/покрајина наплате и</p></li>
+<li><p>укупна цена наруџбине.</p></li>
 </ul>
 <p>За сваку наруџбину познат је и списак свих композиција на тој
 наруџбини.</p>
 </div>
 <div class="section" id="id3">
 <h2>Превођење спецификације у табеле<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
-<p>Јасно препознајмо врсту ентитета <em>запослени</em>, <em>купац</em> и
+<p>Јасно препознајмо врсту ентитета: <em>запослени</em>, <em>купац</em> и
 <em>наруџбеница</em>. Све ове врсте ентитета ћемо представити
 табелама. Свакој од њих ћемо, поред атрибута који тај ентитет природно
 описују, да придружимо по један вештачки целобројни примарни кључ,
 односно <code class="docutils literal notranslate"><span class="pre">id</span></code>. Тиме добијамо почетну листу табела и њихових колона
-(коју ћемо успут дорађивати):</p>
+(коју ћемо успут дорађивати).</p>
 <ul class="simple">
 <li><dl class="simple">
 <dt>Табела <code class="docutils literal notranslate"><span class="pre">zaposleni</span></code> ће да садржи следеће колоне:</dt><dd><ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">id_zaposleni</span></code> као примарни кључ</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ime</span></code>, име запосленог</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">prezime</span></code>, презиме запосленог</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pozicija</span></code>, титула тј. назив запослења</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">datum_rodjenja</span></code>, датум рођења</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">datum_zaposlenja</span></code>, датум запослења</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">adresa</span></code>, адреса</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">grad</span></code>, град</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">drzava</span></code>, земља</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mejl</span></code>, мејл адреса</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id_zaposleni</span></code> као примарни кључ,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ime</span></code>, име запосленог,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">prezime</span></code>, презиме запосленог,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pozicija</span></code>, титула тј. назив запослења,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">datum_rodjenja</span></code>, датум рођења,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">datum_zaposlenja</span></code>, датум запослења,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">adresa</span></code>, адреса,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grad</span></code>, град,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">drzava</span></code>, земља и</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mejl</span></code>, мејл адреса.</p></li>
 </ul>
 </dd>
 </dl>
@@ -544,12 +549,12 @@
 <li><dl class="simple">
 <dt>Табела <code class="docutils literal notranslate"><span class="pre">kupac</span></code> ће да садржи следеће колоне:</dt><dd><ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">id_kupac</span></code> као примарни кључ,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ime</span></code>, име купца</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">prezime</span></code>, презиме купца</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">kompanija</span></code>, компанија у чије име купује (ако не купује сам за себе)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">adresa</span></code>, адреса купца</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">grad</span></code>, град</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">drzava</span></code>, држава</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ime</span></code>, име купца,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">prezime</span></code>, презиме купца,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kompanija</span></code>, компанија у чије име купује (ако не купује сам за себе),</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">adresa</span></code>, адреса купца,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grad</span></code>, град,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">drzava</span></code>, држава и</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">mejl</span></code>, мејл адреса.</p></li>
 </ul>
 </dd>
@@ -592,7 +597,7 @@
 <dt>Табела <code class="docutils literal notranslate"><span class="pre">stavka_narudzbenice</span></code> ће да садржи следеће колоне:</dt><dd><ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">id_kompozicija</span></code>, примарни кључ композиције,</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">id_narudzbenica</span></code>, примарни кључ наруџбенице,</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">kolicina</span></code>, број тих композиција које се наручују,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kolicina</span></code>, број тих композиција које се наручују и</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cena</span></code>, јединична цена те композиције у склопу те наруџбине
 (она може бити и различита у односу на тренутну јединичну цену
 те композиције).</p></li>
@@ -673,7 +678,7 @@
 <p>На основу урађене анализе, спецификације и завршеног процеса дизајнирања, креирана је и конкретна база која садржи описане табеле, попуњене подацима,
 а може се <a class="reference external" href="https://petljamediastorage.blob.core.windows.net/root/Media/Default/Kursevi/OnlineNastava/kurs-gim-cetvrti-inf/_static/db/music.db">преузети</a>
 и отворити у програму SQLite Studio.</p>
-<p>Након избора команде менија <code class="docutils literal notranslate"><span class="pre">Database</span> <span class="pre">→</span> <span class="pre">Add</span></code> a database одабрати постојећи фајл на диску. Након избора фајла, назив под којим ће се та база видети у нашем систему ће се попунити сам.</p>
+<p>Након избора команде менија <code class="docutils literal notranslate"><span class="pre">Database</span> <span class="pre">→</span> <span class="pre">Add</span></code> a database одабери постојећи фајл на диску. Након избора фајла, назив под којим ће се та база видети у нашем систему ће се попунити сам.</p>
 <a class="reference internal image-reference" href="../_images/database1.png"><img alt="Креирање нове базе у систему SQLite Studio" class="align-center" src="../_images/database1.png" style="width: 600px;" /></a>
 </div>
 </div>

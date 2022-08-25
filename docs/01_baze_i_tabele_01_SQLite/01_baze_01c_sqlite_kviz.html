@@ -6,6 +6,7 @@
     <title>SQLite и SQLite Studio - квиз</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -469,7 +474,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_1">
             <p>Q-13: Шта је SQLite?</p>
 
@@ -489,7 +498,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="true"  id="Pitanje_2">
             <p>Q-14: Путем којих интерфејса може да се користи SQLite?</p>
 
@@ -511,7 +524,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_3">
             <p>Q-15: Чему служи команда Commit structure changes?</p>
 
@@ -531,7 +548,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="true"  id="Pitanje_4">
             <p>Q-16: Означи сва тврђења која важе за SQLite студио приликом креирања табеле.</p>
 
@@ -549,7 +570,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_5">
             <p>Q-17: Шта је обавезно да се одабере за сваку колону једне табеле?</p>
 
@@ -569,7 +594,11 @@
 
     <div class="quiz-question">
 
-<div class="course-box course-box-problem course-content">
+<div class="course-box course-box-problem course-content petlja-problem-box dragndrop-question">
+    <div class="image-background"></div>
+    <div class="petlja-problem-box-icon-holder"> </div>
+    <img src="../_static/img/dragndrop-img.svg" class="petlja-problem-image  dragndrop-image" /> 
+    <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
 <ul data-component="dragndrop" id="Pitanje_6">
     <span data-component="question">Q-18: Повежи типове података и њихове описе.</span>
 	
@@ -581,16 +610,20 @@
     <li data-component="dropzone" for="Pitanje_6_drag2"> реални бројеви (записани у покретном зарезу)</li>
 
     <li data-component="draggable" id="Pitanje_6_drag3">VARCHAR </li>
-    <li data-component="dropzone" for="Pitanje_6_drag3"> текстулани подаци (ниске карактера) за које је позната максимална дужина</li>
+    <li data-component="dropzone" for="Pitanje_6_drag3"> текстуалани подаци (ниске карактера) за које је позната максимална дужина</li>
 
     <li data-component="draggable" id="Pitanje_6_drag4">DATE, TIME, DATETIME </li>
-    <li data-component="dropzone" for="Pitanje_6_drag4"> датум, време у току дана тј. датум и време</li>
+    <li data-component="dropzone" for="Pitanje_6_drag4"> датум, време у току дана, тј. датум и време</li>
 </ul></div>
     </div>
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_7">
             <dl class="simple">
 <dt>Q-19: Уколико подаци морају да се унесу у неку колону, тј. ћелије у тој колони не могу да садрже недостајуће вредности,</dt><dd><p>шта је обавезно да се одабере за ту колону?</p>
@@ -613,10 +646,14 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_8">
             <dl class="simple">
-<dt>Q-20: Које ограничење у себи садржи два ограничења тако да је сваки податак у колони за коју се дефинише то ограничење обавезно попуњен (колона не може да садржи недостајуће вредности)</dt><dd><p>и јединствен је?</p>
+<dt>Q-20: Које ограничење у себи садржи два ограничења, тако да је сваки податак у колони за коју се дефинише то ограничење обавезно попуњен (колона не може да садржи недостајуће вредности)</dt><dd><p>и јединствен је?</p>
 </dd>
 </dl>
 
@@ -636,7 +673,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_9">
             <p>Q-21: Уколико је колона <strong>id</strong> примарни кључ, који од података су дозвољени у табели <strong>ucenik(id,ime,prezime)</strong>?</p>
 
@@ -656,7 +697,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_10">
             <dl class="simple">
 <dt>Q-22: Уколико један ученик може да има више оцена, а једна конкретна оцена је оцена коју је један ученик добио,</dt><dd><p>шта је од следећег тачно?</p>
@@ -679,7 +724,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_11">
             <p>Q-23:         Уколико желимо да дозволимо каскадно брисање, а забранимо каскадно ажурирање, шта је потребно да се напише?</p>
 

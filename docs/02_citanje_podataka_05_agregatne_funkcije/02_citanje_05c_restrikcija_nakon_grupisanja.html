@@ -6,6 +6,7 @@
     <title>Селекција након груписања (HAVING)</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -467,7 +472,7 @@
   <div class="section" id="having">
 <h1>Селекција након груписања (HAVING)<a class="headerlink" href="#having" title="Permalink to this headline">¶</a></h1>
 <p>Када се израчунају статистике по групама, можемо пожелети да поново
-филтрирамо податке тј. да одаберемо које групе желимо да буду
+филтрирамо податке, тј. да одаберемо које групе желимо да буду
 приказане на основу вредности израчунатих статистика. На пример,
 може да буде потребно да прикажемо само она одељења која имају више
 од 30 ученика. У овом случају филтрирање података може и треба да се
@@ -478,24 +483,22 @@
         <div class="note-icon-holder"> </div>
         <img src="../_static/img/infonote-img.svg" class="note-image infonote-image" /> 
         <div class="course-content">
-            <p>
+            
 <p>Када желимо да филтрирамо податке пре груписања, користимо
 клаузулу <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>.</p>
 <p>Када желимо да филтрирамо податке након груписања и
 израчунавања агрегатних статистика, користимо клаузулу
 <code class="docutils literal notranslate"><span class="pre">HAVING</span></code>.</p>
 
-    </p></div></div>
+    </div></div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати одељења у којима има више од 30 ученика.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">broj_ucenika</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span>
@@ -534,7 +537,7 @@
 </tr>
 </tbody>
 </table>
-<p>Током извршавања овог упита је било потребно прво груписати редове
+<p>Током извршавања овог упита било је потребно прво груписати редове
 по одељењима и пребројати их у свакој групи, а онда из резултата
 по групама издвојити (HAVING) одељења која имају тражени број ученика.</p>
 <a class="reference internal image-reference" href="../_images/having.png"><img alt="../_images/having.png" class="align-center" src="../_images/having.png" style="width: 780px;" /></a>
@@ -543,15 +546,13 @@
 се подаци филтрирају пре груписања, а помоћу клаузуле <code class="docutils literal notranslate"><span class="pre">HAVING</span></code>
 после груписања. У клаузули <code class="docutils literal notranslate"><span class="pre">HAVING</span></code> се у услову увек појављује резултат рада агрегатне функције.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати одељења у којима има више од 20 девојчица.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">broj_devojcica</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 <span class="k">WHERE</span> <span class="n">pol</span> <span class="o">=</span> <span class="s1">&#39;ж&#39;</span>
@@ -588,16 +589,14 @@
 <p>И овде је могуће сортирање врста резултата, ограничавање броја врста и
 слично.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>За свако женско име које носи више ученица приказати број ученица
 које носе то име (резултат сортирати опадајуће по броју ученица).</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">ime</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 <span class="k">WHERE</span> <span class="n">pol</span> <span class="o">=</span> <span class="s1">&#39;ж&#39;</span>
@@ -641,16 +640,14 @@
 <p>У примерима до сада смо у клаузули <code class="docutils literal notranslate"><span class="pre">HAVING</span></code> користили алијас који смо увели за резултат
 агрегатне функције. То није неопходно. Сама агрегатна функција може да се појави у клаузули <code class="docutils literal notranslate"><span class="pre">HAVING</span></code>.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Прикажи сва одељења четвртог разреда у којима има бар четири ученика
 рођена 2004. године.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 <span class="k">WHERE</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">4</span> <span class="k">AND</span> <span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y&#39;</span><span class="p">,</span> <span class="n">datum_rodjenja</span><span class="p">)</span> <span class="o">=</span> <span class="s1">&#39;2004&#39;</span>
@@ -686,16 +683,14 @@
 <p>Покушај да наредних неколико упита напишеш самостално. Решења можеш да тестираш овде,
 а можеш све задатке да урадиш и у систему SQLite Studio.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати све датуме за које постоје бар два нерегулисана изостанка
 (уз датум приказати и број нерегулисаних изостанака).</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_having_01" class="db" data-db-name="dnevnik.sql" db-check = "SELECT datum, COUNT(*) AS broj_neregulisanih
 FROM izostanak
@@ -726,16 +721,14 @@ HAVING broj_neregulisanih >= 2"    db-show-result>
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Прикажи сва одељења четвртог разреда у којима има бар 15 дечака
 (приказати само разред и одељење).</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_having_02" class="db" data-db-name="dnevnik.sql" db-check = "SELECT razred, odeljenje
 FROM ucenik

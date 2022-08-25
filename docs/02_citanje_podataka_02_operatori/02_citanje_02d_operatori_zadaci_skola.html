@@ -6,6 +6,7 @@
     <title>Логички и релацијски оператори – задаци (дневник)</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -468,28 +473,26 @@
 <h1>Логички и релацијски оператори – задаци (дневник)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>Покушај сада да самостално решиш наредних неколико задатака.</p>
 <p>Решења можеш да тестираш овде, а можеш све задатке да урадиш и у систему SQLite Studio.
-Непоходно је, наравно, да је систем преузет на рачунар и је додата база података са називом
-<em>dnevnik</em> како је описано у ранијим лекцијама.</p>
+Неопходно је, наравно, да је систем преузет на рачунар и је додата база података са називом
+<em>dnevnik</em>, како је описано у ранијим лекцијама.</p>
 <p>Упити се пишу након што се кликне на креирану базу у прозору <code class="docutils literal notranslate"><span class="pre">Databases</span></code> и потом изабере команда
 менија <code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">→</span> <span class="pre">Open</span> <span class="pre">SQL</span> <span class="pre">Editor</span></code>. Када се напише упит, кликне се на дугме <code class="docutils literal notranslate"><span class="pre">Execute</span> <span class="pre">query</span> <span class="pre">(F9)</span></code>
 (плави троуглић).</p>
 <p>Савет је да се у прозору <code class="docutils literal notranslate"><span class="pre">Databases</span></code> увек прво провере тачни називи табела.</p>
-<a class="reference internal image-reference" href="../_images/dnevnik2.png"><img alt="../_images/dnevnik2.png" class="align-center" src="../_images/dnevnik2.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/dnevnik2.png"><img alt="../_images/dnevnik2.png" class="align-center" src="../_images/dnevnik2.png" style="width: 500px;" /></a>
 <p>Често ће нам код упита бити потребно да знамо и тачне називе колона, а понекад нам је значајно и да
 знамо како су неки подаци записани у бази (да ли су ћирилична слова, да ли су латинична,
 да ли имена и називи почињу великим словом, итд), па је добро да се пре писања коначног
 решења задатка прво напише и изврши основни SELECT упит који приказује све податке из табеле
 коју треба да користимо у решењу задатка.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати имена свих девојчица у одељењу III1.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_operatori_zadaci_01" class="db" data-db-name="dnevnik.sql" db-check = "SELECT ime
 FROM ucenik
@@ -518,15 +521,13 @@ WHERE pol = 'ж' AND razred = 3 AND odeljenje = 1"    db-show-result>
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати сва мушка имена ученика која се завршавају словом <code class="docutils literal notranslate"><span class="pre">ан</span></code>.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_operatori_zadaci_02" class="db" data-db-name="dnevnik.sql" db-check = "SELECT ime
 FROM ucenik
@@ -555,15 +556,13 @@ WHERE pol = 'м' AND ime LIKE '%ан'"    db-show-result>
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати податке о свим ученицима рођеним у априлу 2006.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_operatori_zadaci_03" class="db" data-db-name="dnevnik.sql" db-check = "SELECT *
 FROM ucenik
@@ -592,16 +591,14 @@ WHERE datum_rodjenja BETWEEN '2006-04-01' AND '2006-04-30'"    db-show-result>
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати податке о свим ученицима који су рођени у зимским
 месецима (у децембру, јануару или фебруару).</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_operatori_zadaci_04" class="db" data-db-name="dnevnik.sql" db-check = "SELECT *
 FROM ucenik
@@ -632,15 +629,13 @@ WHERE datum_rodjenja LIKE '%-12-%' OR
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
-<p>Приказати сва имена ученика која почињу самогласником.</p>
+<p>Приказати све податке о ученицима чија имена ученика која почињу самогласником.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_operatori_zadaci_05" class="db" data-db-name="dnevnik.sql" db-check = "SELECT *
 FROM ucenik

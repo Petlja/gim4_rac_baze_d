@@ -6,6 +6,7 @@
     <title>Функције</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -474,15 +479,13 @@
 ниска, почетна позиција (позиције се броје од један, а не од нула) и
 број карактера.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Издвојити имена, презимена и иницијале свих ученика.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">ime</span><span class="p">,</span> <span class="n">prezime</span><span class="p">,</span> <span class="n">substr</span><span class="p">(</span><span class="n">ime</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">||</span> <span class="n">substr</span><span class="p">(</span><span class="n">prezime</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">AS</span> <span class="n">inicijali</span>
 <span class="k">FROM</span> <span class="n">ucenik</span><span class="p">;</span>
 </pre></div>
@@ -529,15 +532,13 @@
 </table>
 <p>Функција <code class="docutils literal notranslate"><span class="pre">length</span></code> одређује дужину ниске (број њених карактера).</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати сва имена ученика која имају три слова.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">ime</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 <span class="k">WHERE</span> <span class="k">length</span><span class="p">(</span><span class="n">ime</span><span class="p">)</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
@@ -574,16 +575,14 @@
 датуме и на ниске (при чему треба обратити пажњу на колациону секвенцу
 која одређује поредак ниски).</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Када би сви ученици који су имали јединице и двојке поправили те
 оцене на тројке, прикажи како би изгледала табела оцена.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="n">id_predmet</span><span class="p">,</span> <span class="n">id_ucenik</span><span class="p">,</span> <span class="k">max</span><span class="p">(</span><span class="n">ocena</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="k">AS</span> <span class="n">ocena</span><span class="p">,</span> <span class="n">datum</span><span class="p">,</span> <span class="n">vrsta</span>
 <span class="k">FROM</span> <span class="n">ocena</span><span class="p">;</span>
 </pre></div>
@@ -659,7 +658,7 @@
 <p>Функција <code class="docutils literal notranslate"><span class="pre">CAST(...</span> <span class="pre">AS</span> <span class="pre">...)</span></code> врши конверзију типова података. На
 пример, вредност израза <code class="docutils literal notranslate"><span class="pre">CAST('123'</span> <span class="pre">AS</span> <span class="pre">INTEGER)</span></code> је цео број 123.</p>
 <p>Постоји одређен број функција за рад са датумима и
-временом. Најопштија од њих је фунција <code class="docutils literal notranslate"><span class="pre">strftime</span></code> која форматира
+временом. Најопштија од њих је функција <code class="docutils literal notranslate"><span class="pre">strftime</span></code> која форматира
 дати датум или време у задатом формату, а може се употребити и за
 издвајање одређених делова датума или времена. Сваки део датума описан
 је одређеним спецификатором:</p>
@@ -686,17 +685,15 @@
 <a class="reference external" href="https://www.sqlite.org/lang_datefunc.html">https://www.sqlite.org/lang_datefunc.html</a>).</p>
 <p>Прикажимо неколико примера употребе ових функција.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Неки изостанци су грешком уписани после последњег дана
 школе, 20. јуна 2021. Како би изгледала таблица изостанака ако би
-се сви ти изостанци преправили тако да им датум буде 20. јун 2021.</p>
+се сви ти изостанци преправили тако да им датум буде 20. јун 2021?</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="n">id_ucenik</span><span class="p">,</span> <span class="k">MIN</span><span class="p">(</span><span class="n">datum</span><span class="p">,</span> <span class="s1">&#39;2021-06-20&#39;</span><span class="p">)</span> <span class="k">AS</span> <span class="n">datum</span><span class="p">,</span> <span class="n">cas</span><span class="p">,</span> <span class="n">status</span>
 <span class="k">FROM</span> <span class="n">izostanak</span><span class="p">;</span>
 </pre></div>
@@ -758,16 +755,14 @@
 </tbody>
 </table>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
-<p>Коришћњем функције за издвајање првог слова ниске одредити ученике
+<p>Коришћењем функције за издвајање првог слова ниске одредити ученике
 мушког пола чије име почиње самогласником.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">ime</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 <span class="k">WHERE</span> <span class="n">pol</span> <span class="o">=</span> <span class="s1">&#39;м&#39;</span> <span class="k">AND</span> <span class="n">substr</span><span class="p">(</span><span class="n">ime</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;А&#39;</span><span class="p">,</span> <span class="s1">&#39;Е&#39;</span><span class="p">,</span> <span class="s1">&#39;И&#39;</span><span class="p">,</span> <span class="s1">&#39;О&#39;</span><span class="p">,</span> <span class="s1">&#39;У&#39;</span><span class="p">);</span>
@@ -798,16 +793,14 @@
 </tbody>
 </table>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>За сваког ученика приказати име, презиме, дан рођења, месец рођења
 и годину рођења (засебно, као целе бројеве).</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">ime</span><span class="p">,</span> <span class="n">prezime</span><span class="p">,</span>
        <span class="k">CAST</span><span class="p">(</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%d&#39;</span><span class="p">,</span> <span class="n">datum_rodjenja</span><span class="p">)</span> <span class="k">AS</span> <span class="nb">INTEGER</span><span class="p">)</span> <span class="k">AS</span> <span class="n">dan</span><span class="p">,</span>
        <span class="k">CAST</span><span class="p">(</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%m&#39;</span><span class="p">,</span> <span class="n">datum_rodjenja</span><span class="p">)</span> <span class="k">AS</span> <span class="nb">INTEGER</span><span class="p">)</span> <span class="k">AS</span> <span class="n">mesec</span><span class="p">,</span>
@@ -876,18 +869,16 @@
 <p>Наредних неколико упита пробај да напишеш самостално. Решења можеш да тестираш овде,
 а можеш све задатке да урадиш и у систему SQLite Studio.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>За сваки регулисани изостанак издвојити идентификатор и ознаку
 статуса (<code class="docutils literal notranslate"><span class="pre">о</span></code> за оправдане и <code class="docutils literal notranslate"><span class="pre">н</span></code> за неоправдане) у колони која се
 опет назива status - употребити функцију за издвајање првог
 карактера ниске.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_izrazi_funkcije_01" class="db" data-db-name="dnevnik.sql" db-check = "SELECT id, substr(status, 1, 1) AS status
 FROM izostanak
@@ -916,16 +907,14 @@ WHERE status != 'нерегулисан'"  db-check-col-name  db-show-result>
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Коришћењем функције за издвајање године из датума, приказати имена
-и презимена ученика рођених током 2006 године.</p>
+и презимена ученика рођених током 2006. године.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_izrazi_funkcije_02" class="db" data-db-name="dnevnik.sql" db-check = "SELECT ime, prezime
 FROM ucenik

@@ -6,6 +6,7 @@
     <title>Сортирање, уклањање дупликата, ограничавање одговора - квиз</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -469,7 +474,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="sortiranje_klauzula">
             <p>Q-61: Која клаузула се користи када желимо да подаци у резултату буду уређени растуће по некој колони?</p>
 
@@ -491,7 +500,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="true"  id="sortiranje_tip_podatka">
             <p>Q-62: За које од понуђених типова података резултат упита може да се сортира по податку тог типа (означи све тачне одговоре)?</p>
 
@@ -509,7 +522,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="sortiranje_opadajuce">
             <p>Q-63: Коју реч треба дописати иза колоне по којој се сортирају подаци, ако желимо опадајући редослед?</p>
 
@@ -531,9 +548,13 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="sortiranje_po_vise_kolona">
-            <p>Q-64: Ако се као податак по коме сортирамо ученике наведе „ime, prezime”, како ће подаци бити сортирани?</p>
+            <p>Q-64: Ако се као податак по коме сортирамо ученике наведе „ime, prezime“, како ће подаци бити сортирани?</p>
 
             <li data-component="answer"  id="sortiranje_po_vise_kolona_opt_a">По азбучном редоследу презимена, а они са истим презименом по азбучном редоследу имена</li><li data-component="feedback" id="sortiranje_po_vise_kolona_opt_a"></li>
             
@@ -553,7 +574,12 @@
 
     <div class="quiz-question">
 
-        <div class="course-box course-box-question course-content">
+        <div class="course-box course-box-question course-content petlja-problem-box fitb-question">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/img/fitb-img.svg" class="petlja-problem-image  fitb-image" /> 
+        <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
+        
         <div data-component="fillintheblank" id="ogranicavanje_klauzula">
             <p>Претпоставимо да хоћемо само да проверимо да ли смо неки упут добро написали и не желимо комплетан резултат упита, него само првих 10 редова.</p>
 <p>Коју клаузулу треба додати упиту да бисмо ово постигли? Одговор упиши ВЕЛИКИМ СЛОВИМА.</p>
@@ -570,7 +596,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="ogranicavanje_mala_tabela">
             <p>Q-65: Шта ће се догодити ако резултат упита ограничимо на 10 редова, а у резултату има само 4 реда?</p>
 
@@ -592,7 +622,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="bez_ponavljanja">
             <p>Q-66: Којим од наведених упита добијамо све датуме када су прављени изостанци, али без понављања?</p>
 

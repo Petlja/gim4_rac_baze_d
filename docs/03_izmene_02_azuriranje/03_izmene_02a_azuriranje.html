@@ -6,6 +6,7 @@
     <title>Ажурирање података</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -466,8 +471,8 @@
     
   <div class="section" id="id1">
 <h1>Ажурирање података<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>Понекад желимо да изменимо неке податке у бази тј. у табелама базе. У
-језику SQL за то се користе упити <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>. Основни облик ових упита је</p>
+<p>Понекад желимо да изменимо неке податке у бази, тј. у табелама базе. У
+језику SQL за то се користе упити <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>. Основни облик ових упита је:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span> <span class="n">naziv_tabele</span>
 <span class="k">SET</span> <span class="n">kolona_1</span> <span class="o">=</span> <span class="n">vrednost_1</span><span class="p">,</span> <span class="p">...,</span> <span class="n">kolona_k</span> <span class="o">=</span> <span class="n">vrednost_k</span>
 <span class="k">WHERE</span> <span class="n">uslov</span><span class="p">;</span>
@@ -477,17 +482,15 @@
 изостави, биће измењени сви редови, што често није оно што
 желимо. Илуструјмо ажурирање кроз неколико примера.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
-<p>Ученику са идентификатором 1, Петру Петровићу грешком је уписан
-датум рођења 1. јул 2006., а он је заправо рођен 2. јула
-2006. Исправити ову грешку.</p>
+<p>Ученику са идентификатором 1, Петру Петровићу, грешком је уписан
+датум рођења 1. јул 2006. године, а он је заправо рођен 2. јула
+2006. године. Исправити ову грешку.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span> <span class="n">ucenik</span>
 <span class="k">SET</span> <span class="n">datum_rodjenja</span> <span class="o">=</span> <span class="s1">&#39;2006-07-02&#39;</span>
 <span class="k">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
@@ -495,17 +498,15 @@
 </div>
 <p>Условом може да се одабере и више врста.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Министарство је (због ванредних околности) одлучило да ниједан ученик неће
 имати јединицу. Напиши упит који све јединице у табели оцена претвара у
 двојке.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span> <span class="n">ocena</span>
 <span class="k">SET</span> <span class="n">ocena</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="k">WHERE</span> <span class="n">ocena</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
@@ -513,16 +514,14 @@
 </div>
 <p>Вредности које се уписују не морају бити константне.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Министарство је одлучило да повећа све оцене за 1 (осим, наравно,
 петица, које остају петице).</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span> <span class="n">ocena</span>
 <span class="k">SET</span> <span class="n">ocena</span> <span class="o">=</span> <span class="n">ocena</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="k">WHERE</span> <span class="n">ocena</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">;</span>
@@ -532,23 +531,21 @@
 услови у клаузули <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> могу да буду прилично компликовани и могу
 да садрже и угнежђене подупите.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Сви ученици из првог два су поправили оцене које су добили на
 писменом из математике одржаном 15. октобра 2020. Напиши упит који
 свим ученицима уместо јединице уписује двојку.</p>
 
-    </p></div></div>
+    </div></div>
 <p>Кључни задатак код овог упита је одредити које су то врсте у табели
 оцена, које одговарају оценама на том писменом задатку у том
-одељењу. Потребно је, дакле, одредити клаузлу <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> која ће
+одељењу. Потребно је, дакле, одредити клаузулу <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> која ће
 издвојити само те врсте у табели оцена. Добра пракса је да се пре
 ажурирања провери да ли су одабране добре врсте, тако што ће се иста
-клаузлуа <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> употребити у склопу упита <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>.</p>
+клаузула <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> употребити у склопу упита <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>.</p>
 <p>Задатак можемо да решимо угнежђеним упитима, тако што ћемо у једном
 подупиту прочитати из табеле ученика идентификаторе свих ученика из
 одељења I2, а у другом ћемо прочитати идентификатор предмета
@@ -632,7 +629,7 @@
 </tr>
 </tbody>
 </table>
-<p>Када видимо да су врсте добро одабране, од упита <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> лако
+<p>Када видимо да су редови добро одабрани, од упита <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> лако
 можемо да направимо упит <code class="docutils literal notranslate"><span class="pre">UPDATE</span></code>.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">UPDATE</span> <span class="n">ocena</span>
 <span class="k">SET</span> <span class="n">ocena</span> <span class="o">=</span> <span class="mi">2</span>
@@ -651,17 +648,15 @@
 <h2>Вежба<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>Покушај да наредних неколико упита напишеш самостално.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>По новом плану и програму предмет рачунарство и информатика у првом
 разреду треба да има фонд од 3 уместо 2 часа. Напиши упит који
 ажурира базу у складу са тим.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_azuriranje_01" class="db" data-db-name="dnevnik.sql" db-check = "UPDATE predmet
 SET fond = 3
@@ -690,17 +685,15 @@ WHERE naziv = 'Рачунарство и информатика' AND razred = 1"
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Наставник је грешком уписао да је писмени задатак из предмета чији
-је идентификатор 1 одржан 15. октобра, а одржан је
-заправо 16. октобра. Напиши упит који исправља ову грешку.</p>
+је идентификатор 1 одржан 15. октобра 2020. године, а одржан је
+заправо 16. октобра 2020. године. Напиши упит који исправља ову грешку.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_azuriranje_02" class="db" data-db-name="dnevnik.sql" db-check = "UPDATE ocena
 SET datum = '2020-10-16'
@@ -729,16 +722,14 @@ WHERE id_predmet = 1 AND vrsta = 'писмени задатак'" db-check-query
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>По новом плану и програму фонд часова математике у сваком разреду
 се смањује за један. Напиши упит који реализује ову промену.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_azuriranje_03" class="db" data-db-name="dnevnik.sql" db-check = "UPDATE predmet
 SET fond = fond - 1
@@ -767,17 +758,15 @@ WHERE naziv = 'Математика'" db-check-query = "SELECT * FROM predmet WH
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Разредни одељења II1 је од родитеља ученика сазнао да су сви
 изостанци које су ученици тог одељења направили, а који до сада
 нису регулисани, оправдани. Напиши упит који реализује ту промену.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_azuriranje_04" class="db" data-db-name="dnevnik.sql" db-check = "UPDATE izostanak
 SET status = 'оправдан'

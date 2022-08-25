@@ -6,6 +6,7 @@
     <title>Сортирање (ORDER BY)</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -471,15 +476,13 @@
 У клаузули <code class="docutils literal notranslate"><span class="pre">ORDER</span> <span class="pre">BY</span></code> се наводи једна (или више) колона, на основу којих
 се врши сортирање врста резултата.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати списак свих предмета, уређен по разреду у ком се предају.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">predmet</span>
 <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">razred</span><span class="p">;</span>
@@ -535,19 +538,17 @@
 </table>
 <p>Сортирање се, наравно, лако комбинује са пројекцијом и
 селекцијом. Такође, сортирање може да се примени и на типове података
-који нису бројеви (на датуме, ниске).</p>
+који нису бројеви (на датуме, ниске…).</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати имена, презимена и датуме рођења свих ученика одељења
 првог један, уређене неопадајуће по датуму рођења (од најстаријих
 до најмлађих ђака).</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">ime</span><span class="p">,</span> <span class="n">prezime</span><span class="p">,</span> <span class="n">datum_rodjenja</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 <span class="k">WHERE</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">AND</span> <span class="n">odeljenje</span> <span class="o">=</span> <span class="mi">1</span>
@@ -594,7 +595,7 @@
 </tr>
 </tbody>
 </table>
-<p>Овај упит можемо да прочитамо као</p>
+<p>Овај упит можемо да прочитамо као:</p>
 <div class="line-block">
 <div class="line"><strong>ОДАБЕРИ</strong> име, презиме и датум рођења</div>
 <div class="line"><strong>ИЗ РЕДОВА</strong> табеле ученика</div>
@@ -606,17 +607,15 @@
 се наглашава да је редослед неопадајући, међутим, пошто је тај
 редослед подразумеван, ово се често изоставља.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
-<p>Приказати имена, презимена и датуме рођења свих ученика одељења
+<p>Приказати имена, презимена и датуме рођења свих ученика одељења I1
 првог један, уређене нерастући по датуму рођења (од најмлађих
 до најстаријих ђака).</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">ime</span><span class="p">,</span> <span class="n">prezime</span><span class="p">,</span> <span class="n">datum_rodjenja</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 <span class="k">WHERE</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">AND</span> <span class="n">odeljenje</span> <span class="o">=</span> <span class="mi">1</span>
@@ -668,15 +667,13 @@
 поређење се врши по другој колони, ако су вредности и у другој колони
 једнаке, поређење се врши по трећој колони итд.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати све податке о ученицима у азбучном редоследу презимена и имена.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">prezime</span><span class="p">,</span> <span class="n">ime</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 <span class="k">ORDER</span> <span class="k">BY</span> <span class="n">prezime</span> <span class="k">ASC</span><span class="p">,</span> <span class="n">ime</span> <span class="k">ASC</span><span class="p">;</span>
@@ -726,16 +723,14 @@
 <p>Наредних неколико упита напиши самостално. Решења можеш да тестираш овде,
 а можеш све задатке да урадиш и у систему SQLite Studio.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Прикажи све податке о предметима првог разреда у нерастућем
 редоследу фонда часова.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_sortiranje_01" class="db" data-db-name="dnevnik.sql" db-check = "SELECT *
 FROM predmet
@@ -765,18 +760,16 @@ ORDER BY fond DESC"    db-show-result>
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Прикажи све податке о изостанцима тако да су прво наведени
 неоправдани, па нерегулисани, па оправдани, при чему су у свакој
 категорији изостанци поређени по датуму када су направљени, а за
 оне направљене истог датума по часу на ком су направљени.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_sortiranje_02" class="db" data-db-name="dnevnik.sql" db-check = "SELECT *
 FROM izostanak

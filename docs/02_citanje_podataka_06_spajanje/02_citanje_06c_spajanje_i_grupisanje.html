@@ -6,6 +6,7 @@
     <title>Спајање и груписање</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -469,15 +474,13 @@
 <p>У овом делу не бавимо се новим могућностима језика <cite>SQL</cite>, већ само
 новим комбинацијама раније упознатих могућности.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати просечне оцене из свих предмета из првог разреда.</p>
 
-    </p></div></div>
+    </div></div>
 <p>Јасно је да је потребно извршити груписање оцена из табеле оцена на
 основу предмета (тј. њихових идентификатора) и затим израчунати
 статистику (аритметичку средину) за сваку групу посебно. Проблем је то
@@ -526,16 +529,14 @@
 </tbody>
 </table>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати просечне оцене из свих предмета (уређене опадајуће по
 просечној оцени).</p>
 
-    </p></div></div>
+    </div></div>
 <p>Овај упит је сличан претходном. Када бисмо се задовољили приказом
 просечних оцена и идентификатора предмета, тада бисмо могли да применимо
 само груписање и израчунавање просека група из табеле са
@@ -584,17 +585,15 @@
 филтрирање након груписања на основу израчунатих вредности статистика
 група).</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати називе предмета и просечне оцене на писменим задацима за
 све предмете код којих је просечна оцена на писменим задацима бар
 3,50.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">naziv</span><span class="p">,</span> <span class="n">round</span><span class="p">(</span><span class="k">AVG</span><span class="p">(</span><span class="n">ocena</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span> <span class="k">AS</span> <span class="n">prosek</span>
 <span class="k">FROM</span> <span class="n">ocena</span>
      <span class="k">JOIN</span> <span class="n">predmet</span> <span class="k">ON</span> <span class="n">ocena</span><span class="p">.</span><span class="n">id_predmet</span> <span class="o">=</span> <span class="n">predmet</span><span class="p">.</span><span class="n">id</span>
@@ -624,15 +623,13 @@
 <h2>Вежба<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>Покушај да наредне упите напишеш самостално.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>За свако одељење приказати укупан број неоправданих изостанака.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_spajanje_i_grupisanje_01" class="db" data-db-name="dnevnik.sql" db-check = "SELECT razred, odeljenje, COUNT(*) AS broj
 FROM izostanak i JOIN
@@ -663,15 +660,13 @@ GROUP BY razred, odeljenje"    db-show-result>
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати просечну оцену (заокружено на две децимале) из математике за свако одељење.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_spajanje_i_grupisanje_02" class="db" data-db-name="dnevnik.sql" db-check = "SELECT u.razred, u.odeljenje, ROUND(AVG(ocena), 2) AS prosek
 FROM ucenik u JOIN

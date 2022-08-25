@@ -6,6 +6,7 @@
     <title>Ажурирање података - квиз</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -469,7 +474,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="izmena_1">
             <p>Q-90: Којом SQL командом се постојећи подаци у табели замењују новим?</p>
 
@@ -489,7 +498,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="izmena_2">
             <p>Q-91: Који редови табеле ће бити измењени извршавањем команде за ажурирање табеле?</p>
 
@@ -511,9 +524,13 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="true"  id="izmena_3">
-            <p>Q-92: На који све начин можемо да смањимо шансе да изгубимо податке услед случајног мењања редова у некој табели, које није требало мењати?</p>
+            <p>Q-92: На који све начин можемо да смањимо шансе да изгубимо податке услед случајног мењања редова у некој табели, а које није требало мењати?</p>
 
             <li data-component="answer"  id="izmena_3_opt_a">Поништавањем извршења последњег упита помоћу команде UNDO.</li><li data-component="feedback" id="izmena_3_opt_a"></li>
             
@@ -521,7 +538,7 @@
             
             <li data-component="answer" data-correct id="izmena_3_opt_c">Тако што пре упита ажурирања направимо копију целе базе података.</li><li data-component="feedback" id="izmena_3_opt_c"></li>
             
-            <li data-component="answer"  id="izmena_3_opt_d">Тако што погледамо привју резултата упита ажурирања.</li><li data-component="feedback" id="izmena_3_opt_d"></li>
+            <li data-component="answer"  id="izmena_3_opt_d">Тако што погледамо *preview* резултата упита ажурирања.</li><li data-component="feedback" id="izmena_3_opt_d"></li>
             
 
             </ul>
@@ -531,7 +548,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="izmena_4">
             <dl class="simple">
 <dt>Q-93: Шта је неопходно да додамо упиту којим ажурирамо податке уколико желимо ученику</dt><dd><p>са идентификационим бројем 4 да променимо неисправно унет датум рођења на
@@ -551,7 +572,15 @@
             </ul>
             </div>
             
-            <div class="course-box course-box-question course-content">
+    </div>
+
+    <div class="quiz-question">
+
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="izmena_5">
             <dl class="simple">
 <dt>Q-94: По новом плану и програму предмет рачунарство и информатика у првом разреду треба да има фонд</dt><dd><p>од 3 уместо 2 часа. Ово је једини предмет са тренутним фондом од 2 часа код којег постоји измена.
@@ -571,7 +600,15 @@
             </ul>
             </div>
             
-            <div class="course-box course-box-question course-content">
+    </div>
+
+    <div class="quiz-question">
+
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="izmena_6">
             <dl class="simple">
 <dt>Q-95: Наставник је грешком уписао да је писмени задатак из предмета чији је идентификатор 1</dt><dd><p>одржан 15. октобра, а одржан је заправо 16. октобра. Шта је неопходно да додамо упиту којим
@@ -591,7 +628,15 @@
             </ul>
             </div>
             
-            <div class="course-box course-box-question course-content">
+    </div>
+
+    <div class="quiz-question">
+
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="izmena_7">
             <dl class="simple">
 <dt>Q-96: По новом плану и програму фонд часова математике у сваком разреду се повећава за један.</dt><dd><p>Уколико је потребно да напишемо један упит који реализује ову промену за све разреде,

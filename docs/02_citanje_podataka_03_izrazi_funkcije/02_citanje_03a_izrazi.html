@@ -6,6 +6,7 @@
     <title>Изрази</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -480,16 +485,14 @@
 (нпр. вредност израза <code class="docutils literal notranslate"><span class="pre">14</span> <span class="pre">/</span> <span class="pre">4</span></code> је <code class="docutils literal notranslate"><span class="pre">3</span></code>, а израза <code class="docutils literal notranslate"><span class="pre">14</span> <span class="pre">%</span> <span class="pre">4</span></code> је
 <code class="docutils literal notranslate"><span class="pre">2</span></code>).</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати годишњи фонд часова за сваки предмет (претпоставља се да
 школска година има 37 радних недеља).</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">naziv</span><span class="p">,</span> <span class="n">razred</span><span class="p">,</span> <span class="mi">37</span> <span class="o">*</span> <span class="n">fond</span>
 <span class="k">FROM</span> <span class="n">predmet</span><span class="p">;</span>
 </pre></div>
@@ -535,7 +538,7 @@
 </tbody>
 </table>
 <p>Уместо назива колоне <code class="docutils literal notranslate"><span class="pre">fond</span></code> наведен је израз <code class="docutils literal notranslate"><span class="pre">37</span> <span class="pre">*</span> <span class="pre">fond</span></code> који
-подразумева да се вредност прочитана из колоне фонд помножи са 37.</p>
+подразумева да се вредност прочитана из колоне <code class="docutils literal notranslate"><span class="pre">fond</span></code> помножи са 37.</p>
 <p>Приметимо да колона са годишњим фондом нема неко илустративно име. То
 можемо да променимо коришћењем тзв. <strong>алијаса</strong>, тако што ћемо колони
 променити име коришћењем кључне речи <code class="docutils literal notranslate"><span class="pre">AS</span></code>.</p>
@@ -583,18 +586,16 @@
 </tr>
 </tbody>
 </table>
-<p>Изрази могу да буду и део услова приликом селекције тј. могу да се
+<p>Изрази могу да буду и део услова приликом селекције, тј. могу да се
 наводе и у склопу клаузуле <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати оне предмете код којих је годишњи фонд часова једнак 74.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">predmet</span>
 <span class="k">WHERE</span> <span class="mi">37</span> <span class="o">*</span> <span class="n">fond</span> <span class="o">=</span> <span class="mi">74</span><span class="p">;</span>
@@ -696,16 +697,14 @@
 </tbody>
 </table>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>За сваки предмет приказати назив, разред и смену у којој се предаје
 (прва и трећа година су у првој, а друга и четврта у другој смени).</p>
 
-    </p></div></div>
+    </div></div>
 <p>Јасно је да смена зависи од парности разреда. Оператором <code class="docutils literal notranslate"><span class="pre">%</span></code> можемо
 израчунати остатак при дељењу разреда са 2 и тако за први и трећи
 разред добити вредност 1, а за други и четврти разред
@@ -758,16 +757,14 @@
 <p>Аритметички оператори нису једини оператори који су подржани. Ниске се
 могу надовезати оператором <code class="docutils literal notranslate"><span class="pre">||</span></code>.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Направити јединствену колону која садржи пуно име и презиме сваког
 ученика.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="n">ime</span> <span class="o">||</span> <span class="s1">&#39; &#39;</span> <span class="o">||</span> <span class="n">prezime</span> <span class="k">AS</span> <span class="n">ime_i_prezime</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 </pre></div>
@@ -807,18 +804,16 @@
 <p>Напоменимо да се у неким другим системима за управљање базама података
 за надовезивање ниски уместо оператора <code class="docutils literal notranslate"><span class="pre">||</span></code> користи функција <code class="docutils literal notranslate"><span class="pre">CONCAT</span></code>.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Направити преглед регулисаних и нерегулисаних изостанака, тако што
 се уз идентификатор сваког изостанка прикаже да ли је нерегулисан
 или регулисан (било да је оправдан или неоправдан). Истаћи нерегулисане
-изостанке поруком: „потребно да се регулише“.</p>
+изостанке поруком „потребно да се регулише“.</p>
 
-    </p></div></div>
+    </div></div>
 <p>Задатак ћемо решити употребом гранања. Основни облик гранања у језику
 SQL је израз <code class="docutils literal notranslate"><span class="pre">CASE</span></code>. Његова основна синтакса је облика:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CASE</span>
@@ -876,16 +871,14 @@ SQL је израз <code class="docutils literal notranslate"><span class="pre"
 </table>
 <p>Илуструјмо употребу <code class="docutils literal notranslate"><span class="pre">CASE</span></code> израза још једним примером.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Уз сваку оцену из табеле оцена приказати и њен текстуални опис
 (недовољан, довољан, добар, врлодобар, одличан).</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id</span><span class="p">,</span> <span class="n">ocena</span><span class="p">,</span> <span class="k">CASE</span>
                     <span class="k">WHEN</span> <span class="n">ocena</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">THEN</span> <span class="s1">&#39;недовољан&#39;</span>
                     <span class="k">WHEN</span> <span class="n">ocena</span> <span class="o">=</span> <span class="mi">2</span> <span class="k">THEN</span> <span class="s1">&#39;довољан&#39;</span>
@@ -941,19 +934,17 @@ SQL је израз <code class="docutils literal notranslate"><span class="pre"
 <p>Наредних неколико упита пробај да напишеш самостално. Решења можеш да тестираш овде,
 а можеш све задатке да урадиш и у систему SQLite Studio.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Ученици скупљају поене на основу оцена које су добили. За оцену два
 добијају 5 поена, за оцену три 10 поена, за оцену четири 15 поена и
-за оцену 5 двадесет поена. За сваку оцену у табели оцена приказати
+за оцену пет 20 поена. За сваку оцену у табели оцена приказати
 идентификатор ученика који је добио ту оцену и број поена који се
 добијају за ту оцену.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_izrazi_01" class="db" data-db-name="dnevnik.sql" db-check = "SELECT id_ucenik, 5 * (ocena - 1) AS poeni
 FROM ocena"    db-show-result> 
@@ -981,17 +972,15 @@ FROM ocena"    db-show-result>
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Прикажи све податке о изостанцима, при чему се уз оправдане
 изостанке као статус наводи вредност 1, уз неоправдане вредност 2,
 а уз нерегулисане 0 (та колона треба да се зове <code class="docutils literal notranslate"><span class="pre">status</span></code>).</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_izrazi_02" class="db" data-db-name="dnevnik.sql" db-check = "SELECT id, id_ucenik, datum, cas,
        CASE

@@ -6,6 +6,7 @@
     <title>Уписивање података - квиз</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -469,7 +474,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="unos1">
             <p>Q-85: Којом SQL командом се у табелу уписују нови редови?</p>
 
@@ -489,13 +498,17 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="unos2">
             <p>Q-86: Шта се дешава ако изоставимо вредност за колону у којој су недостајуће вредности забрањене (NOT NULL) и за коју није постављена опција AUTOINCREMENT?</p>
 
             <li data-component="answer"  id="unos2_opt_a">Ипак ће бити уписана вредност NULL у ту колону</li><li data-component="feedback" id="unos2_opt_a"></li>
             
-            <li data-component="answer"  id="unos2_opt_b">За ту колону неће бити уписано ништа, у остале колоне ће бити уписане наведене вредности</li><li data-component="feedback" id="unos2_opt_b"></li>
+            <li data-component="answer"  id="unos2_opt_b">За ту колону неће бити уписано ништа, а у остале колоне ће бити уписане наведене вредности</li><li data-component="feedback" id="unos2_opt_b"></li>
             
             <li data-component="answer" data-correct id="unos2_opt_c">Биће пријављена грешка, а табела ће остати неизмењена</li><li data-component="feedback" id="unos2_opt_c"></li>
             
@@ -509,7 +522,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="unos3">
             <p>Q-87: Чему служи команда INSERT са клаузулом SELECT?</p>
 
@@ -527,10 +544,14 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="unos4">
             <dl class="simple">
-<dt>Q-88:         Уколико у теблу ucenik треба да унесемо нови ред и неопходно је да податке унесемо у следећем</dt><dd><p>редоследу (ime, prezime, pol, datum_rodjenja, razred, odeljenje), која клаузула VALUES је исправна?</p>
+<dt>Q-88:         Уколико у тебелу ucenik треба да унесемо нови ред и неопходно је да податке унесемо у следећем</dt><dd><p>редоследу (ime, prezime, pol, datum_rodjenja, razred, odeljenje), која клаузула VALUES је исправна?</p>
 </dd>
 </dl>
 
@@ -550,7 +571,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="unos5">
             <dl class="simple">
 <dt>Q-89: Који списак колона одговара следећој клаузули:</dt><dd><p>VALUES (293, 9, ’2020-10-01’, 5, ’контролна вежба’)?</p>

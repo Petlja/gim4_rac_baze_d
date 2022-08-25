@@ -6,6 +6,7 @@
     <title>Читање података - квиз</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -469,7 +474,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_21">
             <p>Q-33: Којом речју почиње SQL упит за читање податка?</p>
 
@@ -491,19 +500,23 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_22">
-            <p>Q-34: Шта се наводи после почетне кључне речи у најједноставнијем облику SQL упита за читање свих података из табеле „t”?</p>
+            <p>Q-34: Шта се наводи после почетне кључне речи у најједноставнијем облику SQL упита за читање свих података из табеле „t“?</p>
 
-            <li data-component="answer"  id="Pitanje_22_opt_a">Наставак је "all FROM t"</li><li data-component="feedback" id="Pitanje_22_opt_a"></li>
+            <li data-component="answer"  id="Pitanje_22_opt_a">Наставак је „all FROM t“</li><li data-component="feedback" id="Pitanje_22_opt_a"></li>
             
-            <li data-component="answer"  id="Pitanje_22_opt_b">Наставак је "*"</li><li data-component="feedback" id="Pitanje_22_opt_b"></li>
+            <li data-component="answer"  id="Pitanje_22_opt_b">Наставак је „*“</li><li data-component="feedback" id="Pitanje_22_opt_b"></li>
             
-            <li data-component="answer"  id="Pitanje_22_opt_c">Наставак је "all t"</li><li data-component="feedback" id="Pitanje_22_opt_c"></li>
+            <li data-component="answer"  id="Pitanje_22_opt_c">Наставак је „all t“</li><li data-component="feedback" id="Pitanje_22_opt_c"></li>
             
-            <li data-component="answer"  id="Pitanje_22_opt_d">Наставак је "FROM t"</li><li data-component="feedback" id="Pitanje_22_opt_d"></li>
+            <li data-component="answer"  id="Pitanje_22_opt_d">Наставак је „FROM t“</li><li data-component="feedback" id="Pitanje_22_opt_d"></li>
             
-            <li data-component="answer" data-correct id="Pitanje_22_opt_e">Наставак је "* FROM t"</li><li data-component="feedback" id="Pitanje_22_opt_e"></li>
+            <li data-component="answer" data-correct id="Pitanje_22_opt_e">Наставак је „* FROM t“</li><li data-component="feedback" id="Pitanje_22_opt_e"></li>
             
 
             </ul>
@@ -513,7 +526,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_23">
             <p>Q-35: Који је од следећих упита исправан?</p>
 
@@ -535,7 +552,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_24">
             <p>Q-36: Које тврђење није тачно?</p>
 
@@ -545,7 +566,7 @@
             
             <li data-component="answer"  id="Pitanje_24_opt_c">Неке делове упита можемо да напишемо великим, а неке малим словима</li><li data-component="feedback" id="Pitanje_24_opt_c"></li>
             
-            <li data-component="answer" data-correct id="Pitanje_24_opt_d">Тачка-зарез је обавезан на крају упита</li><li data-component="feedback" id="Pitanje_24_opt_d"></li>
+            <li data-component="answer" data-correct id="Pitanje_24_opt_d">Тачка-зарез је обавезнa на крају упита</li><li data-component="feedback" id="Pitanje_24_opt_d"></li>
             
             <li data-component="answer"  id="Pitanje_24_opt_e">Није битно да ли се упит пише у једном или више редова</li><li data-component="feedback" id="Pitanje_24_opt_e"></li>
             
@@ -557,7 +578,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_25">
             <p>Q-37: У систему SQLite Studio, упите пишемо када изаберемо следећу команду менија:</p>
 
@@ -579,7 +604,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_26">
             <p>Q-38: Које дугме треба да притиснемо да се упит изврши након што смо га написали у систему SQLite Studio?</p>
 

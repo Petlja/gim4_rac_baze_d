@@ -6,6 +6,7 @@
     <title>Рачунарске мреже - квиз</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -469,7 +474,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="true"  id="mreze_uloge_uredjaja">
             <p>Q-101: Означи тачна тврђења о улогама рачунара и сличних уређаја (таблети, паметни телефони) у мрежној комуникацији?</p>
 
@@ -489,7 +498,11 @@
 
     <div class="quiz-question">
 
-<div class="course-box course-box-problem course-content">
+<div class="course-box course-box-problem course-content petlja-problem-box dragndrop-question">
+    <div class="image-background"></div>
+    <div class="petlja-problem-box-icon-holder"> </div>
+    <img src="../_static/img/dragndrop-img.svg" class="petlja-problem-image  dragndrop-image" /> 
+    <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
 <ul data-component="dragndrop" id="mreze_slojevi_i_opisi">
     <span data-component="question">Q-102: Упари сваки слој у мрежној комуникацији са кључним појмовима за тај слој.</span>
 	
@@ -510,7 +523,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="mreze_mac_rutiranje">
             <p>Q-103: Зашто MAC адресе нису погодне за рутирање у великим мрежама?</p>
 
@@ -530,7 +547,11 @@
 
     <div class="quiz-question">
 
-<div class="course-box course-box-problem course-content">
+<div class="course-box course-box-problem course-content petlja-problem-box dragndrop-question">
+    <div class="image-background"></div>
+    <div class="petlja-problem-box-icon-holder"> </div>
+    <img src="../_static/img/dragndrop-img.svg" class="petlja-problem-image  dragndrop-image" /> 
+    <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
 <ul data-component="dragndrop" id="mreze_upotrebe_adresa">
     <span data-component="question">Q-104: Упари сваку врсту адресе са њеном наменом.</span>
 	
@@ -548,7 +569,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="mreze_switch_hub">
             <p>Q-105: У чему је разлика између хаба и свича?</p>
 
@@ -568,7 +593,11 @@
 
     <div class="quiz-question">
 
-        <div class="course-box course-box-problem course-content" style="max-width: none;">
+        <div class="course-box course-box-problem course-content petlja-problem-box parsons-question" style="max-width: none;">
+        <div class="image-background"></div>
+        <div class="petlja-problem-box-icon-holder"> </div>
+        <img src="../_static/img/parsons-img.svg" class="petlja-problem-image  parsons-image" /> 
+        <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz quiz-image" /> 
         <pre data-component="parsons" id="mreze_slozenost_uredjaja"      >
         <span data-question> Q-106: Поређај уређаје од најједноставнијег до најсложенијег.</span>Хаб
 Свич
@@ -580,7 +609,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="mreze_kablovi_protok">
             <p>Q-107: Који од жичних комуникационих медијума има највећи проток?</p>
 
@@ -600,7 +633,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="mreze_adsl">
             <p>Q-108: Коју врсту медијума користи ADSL мрежа?</p>
 
@@ -620,7 +657,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="mreze_kablovski_modem">
             <p>Q-109: Која врста проводника доводи интернет везу непосредно до кабловског модема (од локалног чворишта)?</p>
 

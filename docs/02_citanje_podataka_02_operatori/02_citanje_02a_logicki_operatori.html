@@ -6,6 +6,7 @@
     <title>Логички оператори (AND, OR, NOT)</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -468,21 +473,19 @@
 <h1>Логички оператори (AND, OR, NOT)<a class="headerlink" href="#and-or-not" title="Permalink to this headline">¶</a></h1>
 <p>Више логичких услова могуће је повезати уобичајеним логичким операторима:</p>
 <ul class="simple">
-<li><p>Оператор <code class="docutils literal notranslate"><span class="pre">AND</span></code> означава конјункцију тј. логичко <em>и</em>.</p></li>
-<li><p>Оператор <code class="docutils literal notranslate"><span class="pre">OR</span></code> означава дисјункцију тј. логичко <em>или</em>.</p></li>
-<li><p>Оператор <code class="docutils literal notranslate"><span class="pre">NOT</span></code> означава негацију тј. логичко <em>не</em>.</p></li>
+<li><p>Оператор <code class="docutils literal notranslate"><span class="pre">AND</span></code> означава конјункцију, тј. логичко <em>и</em>.</p></li>
+<li><p>Оператор <code class="docutils literal notranslate"><span class="pre">OR</span></code> означава дисјункцију, тј. логичко <em>или</em>.</p></li>
+<li><p>Оператор <code class="docutils literal notranslate"><span class="pre">NOT</span></code> означава негацију, тј. логичко <em>не</em>.</p></li>
 </ul>
 <p>Прикажимо њихову употребу на неколико примера упита.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати све податке о ученицима одељења I2 (првог два).</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 <span class="k">WHERE</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">AND</span> <span class="n">odeljenje</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
@@ -574,15 +577,13 @@
 постављен услов.</p>
 <a class="reference internal image-reference" href="../_images/12_razred.png"><img alt="../_images/12_razred.png" class="align-center" src="../_images/12_razred.png" style="width: 780px;" /></a>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати све податке о ученицима који се зову Петар Петровић.</p>
 
-    </p></div></div>
+    </div></div>
 <p>Нагласимо да је могуће да постоји више ученика који имају исто име и презиме.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
@@ -624,16 +625,14 @@
 <p>Структура овог упита је веома слична оном претходном (потребно је да
 су задовољена оба наведена услова).</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати све податке о ученицима који иду у непарну смену (то су
 ученици који иду у први и ученици који иду у трећи разред).</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 <span class="k">WHERE</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">OR</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
@@ -721,16 +720,14 @@
 (подаци о ученику се приказују било да иде у први, било да иде у трећи разред),
 па се користи оператор <code class="docutils literal notranslate"><span class="pre">OR</span></code>.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>На екскурзију у октобру иду сви ученици, осим ученика првог разреда.
 Приказати њихова имена и презимена.</p>
 
-    </p></div></div>
+    </div></div>
 <p>Тражи се списак ученика код којих је разред различит од 1. Задатак
 можемо да решимо применом оператора <code class="docutils literal notranslate"><span class="pre">NOT</span></code>.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
@@ -895,16 +892,14 @@
 </tbody>
 </table>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати све податке о ученицима који се презивају <code class="docutils literal notranslate"><span class="pre">Петровић</span></code>,
 али се не зову <code class="docutils literal notranslate"><span class="pre">Петар</span></code>.</p>
 
-    </p></div></div>
+    </div></div>
 <p>И у овом случају можемо да употребимо оператор <code class="docutils literal notranslate"><span class="pre">NOT</span></code>.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
@@ -1049,16 +1044,14 @@
 <h2>Вежба<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Покушај сада да самостално решиш наредни задатак.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Прикажи називе предмета из другог разреда који имају недељни фонд
 од два часа.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_logicki_operatori_01" class="db" data-db-name="dnevnik.sql" db-check = "SELECT naziv
 FROM predmet

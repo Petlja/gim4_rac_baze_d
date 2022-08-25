@@ -6,6 +6,7 @@
     <title>Угнежђени упити – задаци (дневник)</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -466,7 +471,7 @@
     
   <div class="section" id="id1">
 <h1>Угнежђени упити – задаци (дневник)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>Угнежђени подупити су без сумње најкомпликованији концепт језика SQL
+<p>Угнежђени подупити су, без сумње, најкомпликованији концепт језика SQL
 који ћете срести у овом курсу и користе се само у случају потребе да
 се изврше прилично напредне анализе података. Стога се овакви упити
 могу сматрати материјалом за ученике који имају жељу да се у
@@ -475,19 +480,17 @@
 покушати да их самостално решите, а иза сваког задатка дато је и
 поступно објашњено решење.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Рођендански парадокс нам говори да је у одељењу од 23 ученика
 вероватноћа да два ученика имају исти датум рођења преко
 50%. Исписати она одељења у којима постоји више ученика који су
 рођени у истом дану, као и највећи број ученика који су рођени у
 једном дану.</p>
 
-    </p></div></div>
+    </div></div>
 <p>Покушај прво да самостално решиш задатак.</p>
 
     <div id="db_ugnezdjeni_upiti_zadaci_01" class="db" data-db-name="dnevnik.sql" db-check = "SELECT razred, odeljenje, MAX(broj) AS max_broj
@@ -629,15 +632,13 @@ ORDER BY razred, odeljenje;"    >
 </tbody>
 </table>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати број оцена из математике свих ученика.</p>
 
-    </p></div></div>
+    </div></div>
 <p>Покушај прво да самостално решиш задатак.</p>
 
     <div id="db_ugnezdjeni_upiti_zadaci_02" class="db" data-db-name="dnevnik.sql" db-check = "SELECT u.id, u.ime, u.prezime, COUNT(*) AS broj_ocena_iz_matematike
@@ -764,17 +765,15 @@ GROUP BY u.id;"    >
 издвојиле само оне врсте код којих је назив предмета једнак
 <code class="docutils literal notranslate"><span class="pre">Математика</span></code>).</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати податке о ученицима који би по тренутним оценама имали
 закључену петицу из српског језика. Уредити списак по разредима и
 одељењима, а затим по азбучном реду.</p>
 
-    </p></div></div>
+    </div></div>
 <p>Покушај прво да самостално решиш задатак.</p>
 
     <div id="db_ugnezdjeni_upiti_zadaci_02" class="db" data-db-name="dnevnik.sql" db-check = "SELECT u.id, u.ime, u.prezime, u.razred, u.odeljenje
@@ -882,16 +881,14 @@ ORDER BY razred, odeljenje, prezime, ime;"    >
 </tbody>
 </table>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати број изостанака свих ученика који би по тренутним оценама
 имали закључену петицу из математике.</p>
 
-    </p></div></div>
+    </div></div>
 <p>Покушај прво да самостално решиш задатак.</p>
 
     <div id="db_ugnezdjeni_upiti_zadaci_02" class="db" data-db-name="dnevnik.sql" db-check = "SELECT u.id, u.ime, u.prezime, COUNT(*) AS broj_izostanaka
@@ -969,7 +966,7 @@ GROUP BY u.id;"    >
 <p>Тај скуп идентификатора можемо сада употребити да урадимо филтрирање
 табеле изостанака и да добијемо само изостанке тих ученика. Након
 тога, изостанке једноставно можемо пребројати коришћењем груписања
-свих на основу изостанака на основу идентификатора ученика.</p>
+свих на основу изостанака и на основу идентификатора ученика.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">prezime</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj_izostanaka</span>
 <span class="k">FROM</span> <span class="n">izostanak</span> <span class="n">i</span> <span class="k">JOIN</span>
      <span class="n">ucenik</span> <span class="n">u</span> <span class="k">ON</span> <span class="n">i</span><span class="p">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span>

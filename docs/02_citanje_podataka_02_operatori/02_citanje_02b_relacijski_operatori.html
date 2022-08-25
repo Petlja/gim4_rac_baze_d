@@ -6,6 +6,7 @@
     <title>Релацијски оператори (&lt;, &lt;=, &gt;, &gt;=, BETWEEN, IN)</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -468,19 +473,17 @@
 <h1>Релацијски оператори (&lt;, &lt;=, &gt;, &gt;=, BETWEEN, IN)<a class="headerlink" href="#between-in" title="Permalink to this headline">¶</a></h1>
 <p>До сада смо у свим упитима употребљавали само релацијске операторе
 једнако (<code class="docutils literal notranslate"><span class="pre">=</span></code>) и различито (<code class="docutils literal notranslate"><span class="pre">!=</span></code>). Језик SQL подржава још неке
-релацијске операторе. Над бројевима (као и на још неким типовима) се
-могу употребљавати и релацијски оператори поретка <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>
+релацијске операторе. Над бројевима (као и на још неким типовима)
+могу се употребљавати и релацијски оператори поретка <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>
 и <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
-<p>Приказати све ученике старијих разреда</p>
+<p>Приказати све ученике старијих разреда.</p>
 
-    </p></div></div>
+    </div></div>
 <p>Приказујемо све ученике код којих је разред већи или једнак од 3.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
@@ -559,11 +562,11 @@
 </tr>
 </tbody>
 </table>
-<p>Овај упит можемо протумачити као</p>
+<p>Овај упит можемо протумачити као:</p>
 <div class="line-block">
 <div class="line"><strong>ОДАБЕРИ</strong> све колоне</div>
 <div class="line"><strong>ИЗ РЕДОВА</strong> табеле ученика</div>
-<div class="line"><strong>КОД КОЈИХ</strong> је разред већи или једнак 3</div>
+<div class="line"><strong>КОД КОЈИХ</strong> је разред већи или једнак 3.</div>
 </div>
 <p>На следећој слици може да се види како изгледа овај упит покренут у систему SQLite Studio.
 Види се само првих неколико редова и информација о томе да има укупно 169 редова који задовољавају
@@ -648,15 +651,13 @@
 </tbody>
 </table>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
-<p>Приказати све податке о предметима у прва два разреда</p>
+<p>Приказати све податке о предметима у прва два разреда.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">predmet</span>
 <span class="k">WHERE</span> <span class="n">razred</span> <span class="o">&lt;=</span> <span class="mi">2</span><span class="p">;</span>
@@ -713,15 +714,13 @@
 <p>Оператори поретка могу да се примене и на другим типовима података (на
 пример, нискама и датумима).</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
-<p>Приказати све податке о учениицма који су рођени после првог јуна 2006.</p>
+<p>Приказати све податке о ученицима који су рођени после првог јуна 2006.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 <span class="k">WHERE</span> <span class="n">datum_rodjenja</span> <span class="o">&gt;</span> <span class="s1">&#39;2006-06-01&#39;</span><span class="p">;</span>
@@ -802,17 +801,15 @@
 <p>Подсетимо се да се датум наводи као ниска карактера, између једноструких
 наводника, у формату <code class="docutils literal notranslate"><span class="pre">gggg-mm-dd</span></code>.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати све податке о ученицима који су на време кренули у школу током
 2006. године (то су они који су рођени између 1. марта 2006. и 1. марта
 2007. године, не укључујући последњи датум).</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 <span class="k">WHERE</span> <span class="s1">&#39;2006-03-01&#39;</span> <span class="o">&lt;=</span> <span class="n">datum_rodjenja</span> <span class="k">AND</span> <span class="n">datum_rodjenja</span> <span class="o">&lt;</span> <span class="s1">&#39;2007-03-01&#39;</span><span class="p">;</span>
@@ -973,16 +970,14 @@
 </table>
 <p>Оператор <code class="docutils literal notranslate"><span class="pre">BETWEEN</span></code> може да се комбинује и са другим операторима.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати податке о свим регулисаним изостанцима на првом часу
 добијеним у 2021. години.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">izostanak</span>
 <span class="k">WHERE</span> <span class="n">datum</span> <span class="k">BETWEEN</span> <span class="s1">&#39;2021-01-01&#39;</span> <span class="k">AND</span> <span class="s1">&#39;2021-12-01&#39;</span> <span class="k">AND</span>
@@ -1046,15 +1041,13 @@
 </tbody>
 </table>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати све ученике који су у дневнику одељења I1 пре Петровића</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 <span class="k">WHERE</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">AND</span> <span class="n">odeljenje</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">AND</span> <span class="n">prezime</span> <span class="o">&lt;</span> <span class="s1">&#39;Петровић&#39;</span><span class="p">;</span>
@@ -1132,7 +1125,7 @@
 </tr>
 </tbody>
 </table>
-<p>У овом упиту смо презиме упоредили са Петровић, помоћу оператора <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>
+<p>У овом упиту смо презиме упоредили са Петровић, помоћу оператора <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>,
 и тада се поређење врши по азбучном редоследу (каже се,
 лексикографски). За примену овог оператора над нискама је веома битно
 да је за колону подешена одговарајућа колациона секвенца (подсетимо
@@ -1142,15 +1135,13 @@
 подацима (нискама) је оператор <code class="docutils literal notranslate"><span class="pre">LIKE</span></code>, којим може да се наметне облик
 (шаблон) ниске који желимо да издвојимо (или изоставимо) из резултата.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати све ученике чије презиме почиње на слово <code class="docutils literal notranslate"><span class="pre">П</span></code>.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 <span class="k">WHERE</span> <span class="n">prezime</span> <span class="k">LIKE</span> <span class="s1">&#39;П%&#39;</span><span class="p">;</span>
@@ -1233,15 +1224,13 @@
 (карактер <code class="docutils literal notranslate"><span class="pre">%</span></code> у склопу шаблона означава било какав низ карактера,
 док карактер <code class="docutils literal notranslate"><span class="pre">_</span></code> означава било који појединачан карактер).</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати све ученике чији су иницијали <code class="docutils literal notranslate"><span class="pre">ПП</span></code>.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 <span class="k">WHERE</span> <span class="n">ime</span> <span class="k">LIKE</span> <span class="s1">&#39;П%&#39;</span> <span class="k">AND</span> <span class="n">prezime</span> <span class="k">LIKE</span> <span class="s1">&#39;П%&#39;</span><span class="p">;</span>
@@ -1291,15 +1280,13 @@
 <div class="line"><br /></div>
 </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
-<p>Приказати све ученице чије се име не завршава на <cite>а</cite>.</p>
+<p>Приказати све ученице чије се име не завршава на слово <cite>а</cite>.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 <span class="k">WHERE</span> <span class="n">pol</span> <span class="o">=</span> <span class="s1">&#39;ж&#39;</span> <span class="k">AND</span> <span class="k">NOT</span> <span class="p">(</span><span class="n">ime</span> <span class="k">LIKE</span> <span class="s1">&#39;%а&#39;</span><span class="p">);</span>
@@ -1344,16 +1331,14 @@
 <div class="line"><br /></div>
 </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати имена и презимена ученика чије се презиме завршава на
 <code class="docutils literal notranslate"><span class="pre">ић</span></code>, али не и на <code class="docutils literal notranslate"><span class="pre">вић</span></code>.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">ime</span><span class="p">,</span> <span class="n">prezime</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 <span class="k">WHERE</span> <span class="p">(</span><span class="n">prezime</span> <span class="k">LIKE</span> <span class="s1">&#39;%ић&#39;</span><span class="p">)</span> <span class="k">AND</span> <span class="k">NOT</span> <span class="p">(</span><span class="n">prezime</span> <span class="k">LIKE</span> <span class="s1">&#39;%вић&#39;</span><span class="p">);</span>
@@ -1391,23 +1376,21 @@
 </tr>
 </tbody>
 </table>
-<p>Још један користан оператор може бити оператор <code class="docutils literal notranslate"><span class="pre">IN</span></code> којим се
+<p>Још један користан оператор може бити оператор <code class="docutils literal notranslate"><span class="pre">IN</span></code>, којим се
 проверава да ли вредност припада неком датом скупу
 елемената. Приказаћемо његову употребу на следећем примеру.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Издвојити податке о свим предметима који се зову <code class="docutils literal notranslate"><span class="pre">Математика</span></code>,
 <code class="docutils literal notranslate"><span class="pre">Физика</span></code> или <code class="docutils literal notranslate"><span class="pre">Рачунарство</span> <span class="pre">и</span> <span class="pre">информатика</span></code>.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">predmet</span>
 <span class="k">WHERE</span> <span class="n">naziv</span> <span class="k">IN</span> <span class="p">(</span><span class="s1">&#39;Математика&#39;</span><span class="p">,</span> <span class="s1">&#39;Физика&#39;</span><span class="p">,</span> <span class="s1">&#39;Рачунарство и информатика&#39;</span><span class="p">)</span>
@@ -1463,17 +1446,15 @@
 </table>
 <div class="section" id="id1">
 <h2>Вежба<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>Покушај сада да самостално реших наредних неколико задатака.</p>
+<p>Покушај сада да самостално решиш наредних неколико задатака.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати све податке о изостанцима добијеним током прва три часа.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_relacijski_01" class="db" data-db-name="dnevnik.sql" db-check = "SELECT *
 FROM izostanak
@@ -1502,15 +1483,13 @@ WHERE cas <= 3"    db-show-result>
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
-<p>Приказати сва имена и презимена ученика чија презимена почињу на <em>Ми</em>.</p>
+<p>Приказати сва имена и презимена ученика чија презимена почињу на „Ми“.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_relacijski_02" class="db" data-db-name="dnevnik.sql" db-check = "SELECT ime, prezime
 FROM ucenik

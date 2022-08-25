@@ -6,6 +6,7 @@
     <title>SQLite и SQLite Studio</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -477,14 +482,15 @@
         <div class="note-icon-holder"> </div>
         <img src="../_static/img/learnmorenote-img.svg" class="note-image learnmorenote-image" /> 
         <div class="course-content">
-            <p>
+            
+<p><strong>Ко жели да зна више…</strong></p>
 <p>Сваки <em>Android</em> и сваки <em>iPhone</em> телефон, сваки
 <em>Windows 10</em> или <em>Mac</em> рачунар, сваки <em>Firefox</em>, <em>Chrome</em> или <em>Safari</em>
 прегледач у својој интерној имплементацији користе SQLite. У
-јуну 2021. године се процењује да постоји преко <span class="math notranslate nohighlight">\(10^{12}\)</span> SQLite
+јуну 2021. године се процењивало да постоји преко <span class="math notranslate nohighlight">\(10^{12}\)</span> SQLite
 база података које се активно користе.</p>
 
-    </p></div></div>
+    </div></div>
 <a class="reference internal image-reference" href="../_images/sqlite.png"><img alt="Логотип система SQLite" class="align-center" src="../_images/sqlite.png" style="width: 220px;" /></a>
 <p>Систем SQLite целу базу података чува у једном фајлу, тј. за сваку базу података
 коју користимо имамо по један фајл и по називу фајла бирамо базу са којом радимо.
@@ -498,29 +504,26 @@
 свака апликација на мобилном уређају путем које се плаћају рачуни и тако даље,
 користи неку базу података. Уколико размислимо о томе, схватићемо да је сваки
 корисник рачунара и телефона готово свакодневно и корисник неке базе.
-Начин на који ми, корисници рачуанра и телефона, приступамо базама података
+Начин на који ми, корисници рачунара и телефона, приступамо базама података
 је тако што користимо неку апликацију која заправо обавља интеракцију са самом базом.</p>
 <p>Да би то било могуће, неопходно је да постоји начин интеракције са СУБП који ће
-се уградити у апликацију која се креира. Програмери, када из својих програма
-приступају базама података, користе  апликативни програмски интерфејс, <strong>АПИ</strong>
+се уградити у апликацију која се креира. Када из својих програма
+приступају базама података, програмери користе апликативни програмски интерфејс, <strong>АПИ</strong>
 (енгл. <em>application programming interface</em>). И ми ћемо (у склопу изучавања
-веб-програмирања коришћењем програмског језика Python) показати како се из Python
+веб програмирања коришћењем програмског језика Python) показати како се из Python
 програма приступа SQLite базама података.</p>
 <p>Да би наши програми преко АПИ могли да приступају СУБП, обично је потребно да у
-програм укњучимо посебан модул односно програмску библиотеку (како се већ зове у
-ком програмском језику) која имплементира АПИ за приступ бази.
+програм укључимо посебан модул односно програмску библиотеку (како се већ зове, зависно о
+ком програмском језику говоримо) која имплементира АПИ за приступ бази.
 Постоје стандардизовани АПИ који омогућавају да апликативни програмер на исти начин
 иницира конекцију према различитим базама или да покрене извршавање упита, али и даље
 обично мора да се у апликацију укључи посебан модул који омогућава рад са конкретним СУБП.</p>
 <p>Када је у питању програмски језик Python, већ у стандардној инсталацији програмског
-језика долази модул za SQLite који се зове <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> и то са уграђеним СУБП за SQLite.
-То значи да ако програмирате у програмском језику Python није потребно ништа додатно
+језика долази модул зa SQLite који се зове <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code>, и то са уграђеним СУБП за SQLite.
+То значи да, ако програмирате у програмском језику Python није потребно ништа додатно
 да инсталирате да бисте користили SQLite. Модул <code class="docutils literal notranslate"><span class="pre">sqlite3</span></code> имплементира стандадну
-спецификацију АПИ-а за приступ бази која се зове DB-API 2.0, што значи да када научите
-као у Python-у да користите SQLite на сличан начин ћете моћи да користите и друге релационе базе.</p>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
+спецификацију АПИ-ја за приступ бази која се зове DB-API 2.0, што значи да када научите
+како у Python-у да користите SQLite, на сличан начин ћете моћи да користите и друге релационе базе.</p>
 <p><strong>Кориснички интерфејс</strong></p>
 <p>Сваки СУБП подразумева неколико начина интеракције са својим корисницима.
 Већ смо рекли да СУБП пре свега служи да пружи услугу коришћења база другим програмима,
@@ -531,19 +534,25 @@
 <strong>КЛИ</strong> (енгл. <em>command line interface</em>, <em>CLI</em>), било <strong>графички кориснички интерфејси</strong>, <strong>ГКИ</strong> (engl. <em>graphic user interface</em>,
 <em>GUI</em>). С обзиром на то да је коришћење ГКИ удобније и једноставније, нарочито за почетнике, у наставку ћемо се
 бавити искључиво тим начином рада. Сам систем SQLite не пружа ГКИ, међутим, постоји систем који се назива
-SQLite Studio (<a class="reference external" href="https://sqlitestudio.pl/">https://sqlitestudio.pl/</a>) који је бесплатан и који се може једноставно преузети и користити.</p>
-<a class="reference internal image-reference" href="../_images/sqlite_studio.png"><img alt="SQLite Studio" class="align-center" src="../_images/sqlite_studio.png" style="width: 780px;" /></a>
-</div>
-<div class="section" id="id2">
-<h2>Инсталација<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>Систем SQLite Studio који пружа ГКИ за администрирање SQL база података се може бесплатно преузети
+SQLite Studio (<a class="reference external" href="https://sqlitestudio.pl/">https://sqlitestudio.pl/</a>), који је бесплатан и који се може једноставно преузети и користити.</p>
+<a class="reference internal image-reference" href="../_images/sqlite_studio.png"><img alt="SQLite Studio" class="align-center" src="../_images/sqlite_studio.png" style="width: 692px;" /></a>
+
+    <div class="note-wrapper technicalnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/technicalnote-img.svg" class="note-image technicalnote-image" /> 
+        <div class="course-content">
+            
+<p>Инсталација</p>
+<p>Систем SQLite Studio који пружа ГКИ за администрирање SQL база података може се бесплатно преузети
 са веба и инсталирати на разним оперативним системима. SQLite Studio у себи садржи уграђен СУБП за SQLite,
-тако да не треба ништа додатно инсталирати да би сте могли да креирате нову или приступите постојећој
+тако да не треба ништа додатно инсталирати да бисте могли да креирате нову или приступите постојећој
 SQLite бази података.</p>
-<p>На следећој адреси је потребно кликнути на дугме Download и преузети цео систем који се запакован у један zip фајл:</p>
+<p>На следећој адреси је потребно кликнути на дугме Download и преузети цео систем који је запакован у један zip фајл:</p>
 <p><a class="reference external" href="https://sqlitestudio.pl/">https://sqlitestudio.pl/</a></p>
 <p>Када се преузме, фајл обавезно мора да се распакује, а затим се систем SQLite Studio
 покреће тако што се нађе извршни фајл са истим називом.</p>
+
+    </div></div>
 </div>
 </div>
 

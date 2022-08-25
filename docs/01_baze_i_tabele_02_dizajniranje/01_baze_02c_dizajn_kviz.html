@@ -6,6 +6,7 @@
     <title>Дизајнирање базе података - квиз</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -469,7 +474,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_12">
             <p>Q-24: Шта је спецификација базе података?</p>
 
@@ -489,7 +498,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_13">
             <p>Q-25: Које ентитете, односно табеле, можемо да уочимо уколико правимо базу података за продавницу?</p>
 
@@ -509,7 +522,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_14">
             <p>Q-26: За коју базу података су нам потребни следећи ентитети: лекар, пацијент, преглед, рецепт, упут?</p>
 
@@ -529,7 +546,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_15">
             <p>Q-27: Допуни следећу спецификацију. За сваки филм познати су следећи подаци:</p>
 
@@ -550,11 +571,15 @@
     <div class="quiz-question">
 <a class="reference internal image-reference" href="../_images/q_erd_1.png"><img alt="../_images/q_erd_1.png" class="align-center" src="../_images/q_erd_1.png" style="width: 400px;" /></a>
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="true"  id="Pitanje_16">
-            <p>Q-28: Шта од наведеног, на основу приказаног дијаграма важи за везу између табела „Objekat tipa A” и „Objekat tipa B”?</p>
+            <p>Q-28: Шта од наведеног, на основу приказаног дијаграма важи за везу између табела „Objekat tipa A“ и „Objekat tipa B“?</p>
 
-            <li data-component="answer"  id="Pitanje_16_opt_a">Веза између ове две табеле је типа "више према више".</li><li data-component="feedback" id="Pitanje_16_opt_a"></li>
+            <li data-component="answer"  id="Pitanje_16_opt_a">Веза између ове две табеле је типа „више према више“.</li><li data-component="feedback" id="Pitanje_16_opt_a"></li>
             
             <li data-component="answer" data-correct id="Pitanje_16_opt_b">Сваком објекту типа А одговара тачно један објекат типа Б.</li><li data-component="feedback" id="Pitanje_16_opt_b"></li>
             
@@ -570,7 +595,11 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_17">
             <dl class="simple">
 <dt>Q-29: Која веза је описана на следећи начин? Сваком писцу одговара нула или више романа.</dt><dd><p>Сваком роману одговара тачно један писац.</p>
@@ -579,9 +608,9 @@
 
             <li data-component="answer"  id="Pitanje_17_opt_a">Веза један-према-један</li><li data-component="feedback" id="Pitanje_17_opt_a"></li>
             
-            <li data-component="answer"  id="Pitanje_17_opt_b">Веза један-према-више, ентитет који одговара писцу је на крају "више", а ентитет који одговара роману је на крају "један"</li><li data-component="feedback" id="Pitanje_17_opt_b"></li>
+            <li data-component="answer"  id="Pitanje_17_opt_b">Веза један-према-више, ентитет који одговара писцу је на крају „више“, а ентитет који одговара роману је на крају „један“</li><li data-component="feedback" id="Pitanje_17_opt_b"></li>
             
-            <li data-component="answer" data-correct id="Pitanje_17_opt_c">Веза један-према-више, ентитет који одговара писцу је на крају "један", а ентитет који одговара роману је на крају "више"</li><li data-component="feedback" id="Pitanje_17_opt_c"></li>
+            <li data-component="answer" data-correct id="Pitanje_17_opt_c">Веза један-према-више, ентитет који одговара писцу је на крају „један“, а ентитет који одговара роману је на крају „више“</li><li data-component="feedback" id="Pitanje_17_opt_c"></li>
             
             <li data-component="answer"  id="Pitanje_17_opt_d">Веза више-према-више</li><li data-component="feedback" id="Pitanje_17_opt_d"></li>
             
@@ -593,13 +622,17 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_18">
-            <p>Q-30:         Како се обично реализује веза „један-према-више” између две табеле?</p>
+            <p>Q-30:         Како се обично реализује веза „један-према-више“ између две табеле?</p>
 
-            <li data-component="answer" data-correct id="Pitanje_18_opt_a">Убацивањем страног кључа у табели на страни "више", који је примарни кључ у табели на страни "један"</li><li data-component="feedback" id="Pitanje_18_opt_a"></li>
+            <li data-component="answer" data-correct id="Pitanje_18_opt_a">Убацивањем страног кључа у табели на страни „више“, који је примарни кључ у табели на страни „један“</li><li data-component="feedback" id="Pitanje_18_opt_a"></li>
             
-            <li data-component="answer"  id="Pitanje_18_opt_b">Убацивањем страног кључа у табели на страни "један", који је примарни кључ у табели на страни "више"</li><li data-component="feedback" id="Pitanje_18_opt_b"></li>
+            <li data-component="answer"  id="Pitanje_18_opt_b">Убацивањем страног кључа у табели на страни „један“, који је примарни кључ у табели на страни „више“</li><li data-component="feedback" id="Pitanje_18_opt_b"></li>
             
             <li data-component="answer"  id="Pitanje_18_opt_c">Спајањем тих табела у једну и додавањем колона по потреби</li><li data-component="feedback" id="Pitanje_18_opt_c"></li>
             
@@ -613,15 +646,19 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_19">
             <p>Q-31:         Која веза је описана на следећи начин? Сваком аутору одговара нула или више уџбеника. Сваком уџбенику одговара један или више аутора.</p>
 
             <li data-component="answer"  id="Pitanje_19_opt_a">Веза један-према-један</li><li data-component="feedback" id="Pitanje_19_opt_a"></li>
             
-            <li data-component="answer"  id="Pitanje_19_opt_b">Веза један-према-више, ентитет који одговара аутору је на крају "више", а ентитет који одговара уџбенику је на крају "један"</li><li data-component="feedback" id="Pitanje_19_opt_b"></li>
+            <li data-component="answer"  id="Pitanje_19_opt_b">Веза један-према-више, ентитет који одговара аутору је на крају „више“, а ентитет који одговара уџбенику је на крају „један“</li><li data-component="feedback" id="Pitanje_19_opt_b"></li>
             
-            <li data-component="answer"  id="Pitanje_19_opt_c">Веза један-према-више, ентитет који одговара аутору је на крају "један", а ентитет који одговара уџбенику је на крају "више"</li><li data-component="feedback" id="Pitanje_19_opt_c"></li>
+            <li data-component="answer"  id="Pitanje_19_opt_c">Веза један-према-више, ентитет који одговара аутору је на крају „један“, а ентитет који одговара уџбенику је на крају „више“</li><li data-component="feedback" id="Pitanje_19_opt_c"></li>
             
             <li data-component="answer" data-correct id="Pitanje_19_opt_d">Веза више-према-више</li><li data-component="feedback" id="Pitanje_19_opt_d"></li>
             
@@ -633,17 +670,21 @@
 
     <div class="quiz-question">
 
-            <div class="course-box course-box-question course-content">
+            <div class="course-box course-box-question course-content petlja-problem-box choice-question">
+                <div class="image-background"></div>
+                <div class="petlja-problem-box-icon-holder"> </div>
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image  qchoice-image" />
+                <img src="../_static/img/qchoice-img.svg" class="petlja-problem-image-quiz  qchoice-image" /> 
             <ul data-component="multiplechoice" data-multipleanswers="false"  id="Pitanje_20">
-            <p>Q-32: Како се обично реализује веза „више према више” између две табеле?</p>
+            <p>Q-32: Како се обично реализује веза „више према више“ између две табеле?</p>
 
             <li data-component="answer"  id="Pitanje_20_opt_a">Додавањем примарног кључа сваке од тих табела као страног кључа у другој табели.</li><li data-component="feedback" id="Pitanje_20_opt_a"></li>
             
-            <li data-component="answer" data-correct id="Pitanje_20_opt_b">Убацивањем нове табеле која је у вези "један према више" са сваком од датих табела.</li><li data-component="feedback" id="Pitanje_20_opt_b"></li>
+            <li data-component="answer" data-correct id="Pitanje_20_opt_b">Убацивањем нове табеле која је у вези „један према више“ са сваком од датих табела.</li><li data-component="feedback" id="Pitanje_20_opt_b"></li>
             
             <li data-component="answer"  id="Pitanje_20_opt_c">Проширивањем обе табеле са по више нових колона.</li><li data-component="feedback" id="Pitanje_20_opt_c"></li>
             
-            <li data-component="answer"  id="Pitanje_20_opt_d">Веза "више према више" се не реализује на неки посебан начин, само се препознаје на основу веза између стварних објеката.</li><li data-component="feedback" id="Pitanje_20_opt_d"></li>
+            <li data-component="answer"  id="Pitanje_20_opt_d">Веза „више према више“ се не реализује на неки посебан начин, само се препознаје на основу веза између стварних објеката.</li><li data-component="feedback" id="Pitanje_20_opt_d"></li>
             
 
             </ul>

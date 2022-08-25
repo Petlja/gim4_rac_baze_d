@@ -6,6 +6,7 @@
     <title>Спајање табела</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -471,19 +476,17 @@
 могућност настанка грешака. Због тога су подаци у бази података организовани
 у више табела.</p>
 <p>Са друге стране, сви досадашњи упити су читали податке искључиво из једне
-табеле. У многим ситуацијама нам то није довољно, већ јер потребно да се
+табеле. У многим ситуацијама нам то није довољно, већ је потребно да се
 подаци из две или више табела повежу (помоћу страних кључева) и прикажу
 заједно у резултату.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
-<p>Приказати све изостанке на дан 14. 5. 2021.</p>
+<p>Приказати све изостанке на дан 14. 05. 2021. године.</p>
 
-    </p></div></div>
+    </div></div>
 <p>Први покушај може да буде просто читање свих података из табеле изостанака.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">izostanak</span>
@@ -548,11 +551,11 @@
 </table>
 <p>Кључни проблем са овим упитом је то што се не виде имена ученика, већ
 само њихови идентификатори. Пошто желимо да добијемо што прегледнији
-резултат, потребно је користимо податке и из табеле уеника и из табеле
+резултат, потребно је да користимо податке и из табеле ученика и из табеле
 изостанака. Прецизније, за сваки идентификатор ученика који је
 записан у табели изостанака, потребно је пронаћи и приказати податке о
 ученику са тим идентификатором (пре свега његово име и презиме).</p>
-<p>Један начин да то урадимо је да употребимо оператор спајања
+<p>Један од начина да то урадимо је да употребимо оператор спајања
 <code class="docutils literal notranslate"><span class="pre">...</span> <span class="pre">JOIN</span> <span class="pre">...</span> <span class="pre">ON</span> <span class="pre">...</span></code>.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">izostanak</span> <span class="k">JOIN</span> <span class="n">ucenik</span> <span class="k">ON</span> <span class="n">izostanak</span><span class="p">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">ucenik</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
@@ -688,11 +691,11 @@
 Овај пример је део следеће илустрације на којој можемо да видимо још један
 изостанак ученика Петра Петровића и два изостанка ученика Петра Миловановића са
 идентификатором 4.</p>
-<img alt="../_images/spojene_tabele1.jpg" class="align-center" src="../_images/spojene_tabele1.jpg" />
+<a class="reference internal image-reference" href="../_images/spojene_tabele1.jpg"><img alt="../_images/spojene_tabele1.jpg" class="align-center" src="../_images/spojene_tabele1.jpg" style="width: 780px;" /></a>
 <p>Приметимо да смо у услову спајања <code class="docutils literal notranslate"><span class="pre">ON</span></code> називе колона оквалификовали
 називима табела. Што се тиче колоне <code class="docutils literal notranslate"><span class="pre">id</span></code> то је било неопходно, јер
 колона <code class="docutils literal notranslate"><span class="pre">id</span></code> постоји у обе наведене табеле. Са друге стране, колона
-<code class="docutils literal notranslate"><span class="pre">id_ucenik</span></code> постоји само у табели изостанака, па је није било
+<code class="docutils literal notranslate"><span class="pre">id_ucenik</span></code> постоји само у табели изостанака, па није било
 неопходно наводити назив табеле уз назив колоне, међутим, експлицитним
 навођењем имена табеле упит постаје јаснији и прегледнији.</p>
 <p>Текст упита може мало да се скрати ако се табелама у оквиру
@@ -702,20 +705,20 @@
      <span class="k">JOIN</span> <span class="n">ucenik</span> <span class="k">AS</span> <span class="n">u</span> <span class="k">ON</span> <span class="n">i</span><span class="p">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Извршавањем упита добија се исти резултат како малопре.</p>
-<p>Кључна реч <code class="docutils literal notranslate"><span class="pre">AS</span></code> може да се изостави и у том случају би исти упит изгледао овако:</p>
+<p>Извршавањем упита добија се исти резултат као малопре.</p>
+<p>Кључна реч <code class="docutils literal notranslate"><span class="pre">AS</span></code> може да се изостави, и у том случају би исти упит изгледао овако:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">izostanak</span> <span class="n">i</span>
      <span class="k">JOIN</span> <span class="n">ucenik</span> <span class="n">u</span> <span class="k">ON</span> <span class="n">i</span><span class="p">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>У систему SQLite Studio се упити се пишу након што се кликне на креирану базу <em>dnevnik</em> у прозору
+<p>У систему SQLite Studio упити се пишу након што се кликне на креирану базу <em>dnevnik</em> у прозору
 <code class="docutils literal notranslate"><span class="pre">Databases</span></code> и потом изабере команда менија <code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">→</span> <span class="pre">Open</span> <span class="pre">SQL</span> <span class="pre">Editor</span></code>. Када се напише упит,
 кликне се на дугме <code class="docutils literal notranslate"><span class="pre">Execute</span> <span class="pre">query</span> <span class="pre">(F9)</span></code> (плави троуглић).
 Савет је да се у прозору <code class="docutils literal notranslate"><span class="pre">Databases</span></code> увек прво провере тачни називи табела, као и колона.
 Посебно је важно да проверимо називе страног кључа и примарног кључа који му одговара у другој
-табели када желико да извршимо спајање, тј. да прикажемо податке из више табела које су повезане.</p>
-<a class="reference internal image-reference" href="../_images/dnevnik4.png"><img alt="../_images/dnevnik4.png" class="align-center" src="../_images/dnevnik4.png" style="width: 400px;" /></a>
+табели када желимо да извршимо спајање, тј. да прикажемо податке из више табела које су повезане.</p>
+<a class="reference internal image-reference" href="../_images/dnevnik4.png"><img alt="../_images/dnevnik4.png" class="align-center" src="../_images/dnevnik4.png" style="width: 500px;" /></a>
 <p>Исти упит покренут у систему SQLite Studio може да се види на следећој слици.
 Види се само првих неколико редова и информација о томе да има укупно 10194 редова,
 односно толико има евидентираних изостанака у овој бази података, а уз сваки смо додали и
@@ -726,16 +729,14 @@
 занимају. Напоменимо да се у овом случају филтрирање, ефикасности ради, врши пре
 спајања (мада би резултат био исти и кад би се прво вршило спајање).</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>За сваки изостанак начињен 14. маја 2021. године, приказати
 име и презиме ученика, редни број часа и статус изостанка.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">ime</span><span class="p">,</span> <span class="n">prezime</span><span class="p">,</span> <span class="n">cas</span><span class="p">,</span> <span class="n">status</span>
 <span class="k">FROM</span> <span class="n">izostanak</span> <span class="n">i</span>
      <span class="k">JOIN</span> <span class="n">ucenik</span> <span class="n">u</span> <span class="k">ON</span> <span class="n">i</span><span class="p">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span>
@@ -791,29 +792,27 @@
 </tbody>
 </table>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати све оцене из математике за први разред.</p>
 
-    </p></div></div>
+    </div></div>
 <p>Проблем код оваквих упита је то што не знамо идентификатор
 траженог предмета. Не желимо (и не треба) да памтимо вредности
 идентификатора, који могу да нам затребају у разним сличним
 упитима над овом и другим базама података.</p>
 <p>Оцене се налазе у табели оцена, док се називи предмета налазе у
 табели предмета, па је једно могуће решење да се прво изврши
-спајање те две табеле, да би затим филтирање могло да се врши на
+спајање те две табеле, да би затим филтрирање могло да се врши на
 основу назива предмета и разреда у ком се предаје. Захваљујући спајању,
 нестаје потреба да знамо вредности идентификатора предмета.</p>
 <p>Овде претпостављамо да постоји само један предмет у првом разреду
 који се зове математика, тј. да је пар <code class="docutils literal notranslate"><span class="pre">(naziv,</span> <span class="pre">razred)</span></code> довољан
 за јединствено идентификовање сваког реда у табели <code class="docutils literal notranslate"><span class="pre">predmet</span></code>. У
 противном (ако постоји више предмета са називом математика у првом
-разреду) ће бити приказане све оцене из свих таквих предмета.</p>
+разреду) биће приказане све оцене из свих таквих предмета.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id_ucenik</span><span class="p">,</span> <span class="n">ocena</span><span class="p">,</span> <span class="n">datum</span><span class="p">,</span> <span class="n">vrsta</span>
 <span class="k">FROM</span> <span class="n">ocena</span>
      <span class="k">JOIN</span> <span class="n">predmet</span> <span class="k">ON</span> <span class="n">ocena</span><span class="p">.</span><span class="n">id_predmet</span> <span class="o">=</span> <span class="n">predmet</span><span class="p">.</span><span class="n">id</span>
@@ -870,16 +869,14 @@
 </table>
 <p>Спајање је могуће применити и на више од две табеле.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати све оцене у читљивом формату (тако да се виде име и
 презиме ученика и назив предмета)</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">p</span><span class="p">.</span><span class="n">naziv</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">prezime</span><span class="p">,</span> <span class="n">o</span><span class="p">.</span><span class="n">ocena</span><span class="p">,</span> <span class="n">o</span><span class="p">.</span><span class="n">datum</span><span class="p">,</span> <span class="n">o</span><span class="p">.</span><span class="n">vrsta</span>
 <span class="k">FROM</span> <span class="n">ocena</span> <span class="n">o</span>
      <span class="k">JOIN</span> <span class="n">predmet</span> <span class="n">p</span> <span class="k">ON</span> <span class="n">o</span><span class="p">.</span><span class="n">id_predmet</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">id</span>
@@ -957,16 +954,14 @@
 <p>Наравно, и тада је могуће извршити додатно филтрирање коришћењем
 клаузуле <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати све оцене на писменим задацима из предмета првог разреда
 у читљивом формату.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">p</span><span class="p">.</span><span class="n">naziv</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">prezime</span><span class="p">,</span> <span class="n">o</span><span class="p">.</span><span class="n">ocena</span><span class="p">,</span> <span class="n">o</span><span class="p">.</span><span class="n">datum</span><span class="p">,</span> <span class="n">o</span><span class="p">.</span><span class="n">vrsta</span>
 <span class="k">FROM</span> <span class="n">ocena</span> <span class="n">o</span>
      <span class="k">JOIN</span> <span class="n">predmet</span> <span class="n">p</span> <span class="k">ON</span> <span class="n">o</span><span class="p">.</span><span class="n">id_predmet</span> <span class="o">=</span> <span class="n">p</span><span class="p">.</span><span class="n">id</span>
@@ -1041,17 +1036,15 @@
 <p>Табеле при спајању не морају бити различите – могуће је спојити
 табелу саму са собом.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати све парове близанаца (под близанцима ћемо подразумевати
 све парове ученика који се исто презивају и имају исти датум
 рођења).</p>
 
-    </p></div></div>
+    </div></div>
 <p>Први покушај подразумева само да се табела <code class="docutils literal notranslate"><span class="pre">ucenik</span></code> споји сама са
 собом, уз услов да презиме и датум рођења буду једнаки.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">u1</span><span class="p">.</span><span class="n">ime</span> <span class="k">as</span> <span class="n">ime1</span><span class="p">,</span> <span class="n">u2</span><span class="p">.</span><span class="n">ime</span> <span class="k">as</span> <span class="n">ime2</span><span class="p">,</span> <span class="n">u1</span><span class="p">.</span><span class="n">prezime</span>
@@ -1101,7 +1094,7 @@
 </table>
 <p>Као што видимо, постоје два проблема са овим приступом. Наиме, сваки
 ученик има исти датум рођења и презиме као он сам, па се за сваког
-ученика пријављује да је сам себи близанац. Даље, сваки пар близанаца
+ученика пријављује да је сâм себи близанац. Даље, сваки пар близанаца
 се пријављује два пута (јер се за првог близанца успешно налази пар,
 па се затим и за другог близанца успешно налази пар). И један и други
 проблем се могу решити ако се наметне да су идентификатори унутар пара
@@ -1138,16 +1131,14 @@
 <h2>Вежба<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>Покушај да наредних неколико упита напишеш самостално.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати све регулисане изостанке у читљивом формату (у ком се
 види име и презиме ученика и датум, час и статус изостанка).</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_spajanje_01" class="db" data-db-name="dnevnik.sql" db-check = "SELECT u.ime, u.prezime, i.datum, i.cas, i.status
 FROM izostanak i
@@ -1177,17 +1168,15 @@ WHERE i.status != 'нерегулисан'"    db-show-result>
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>За сваког ученика приказати списак предмета које похађа (свака
 врста треба да садржи име и презиме ученика, разред и одељење у
 које иде и назив једног предмета).</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_spajanje_02" class="db" data-db-name="dnevnik.sql" db-check = "SELECT u.ime, u.prezime, u.razred, u.odeljenje, p.naziv
 FROM ucenik u JOIN

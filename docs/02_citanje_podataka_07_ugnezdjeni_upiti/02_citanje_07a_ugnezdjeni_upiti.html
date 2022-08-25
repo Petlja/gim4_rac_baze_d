@@ -6,6 +6,7 @@
     <title>Угнежђени упити</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -468,20 +473,18 @@
 <h1>Угнежђени упити<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>Код сложенијих упита може бити потребно да се упит формира тако да се
 до резултата долази кроз неколико фаза. Свака фаза се формулише као
-нови <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> упит који поред полазних табела може да користи и
+нови <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> упит који, поред полазних табела, може да користи и
 резултат упита из претходне фазе.</p>
 <p>Прикажимо ово кроз неколико примера.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати највећи број остварених оправданих изостанака неког
 ученика.</p>
 
-    </p></div></div>
+    </div></div>
 <p>У првој фази формулишемо упит који за сваког ученика израчунава
 број оправданих изостанака. Ово је класичан упит у ком се врши
 груписање и израчунавање статистика (овај пут броја елемената сваке
@@ -516,7 +519,7 @@
 </tr>
 </tbody>
 </table>
-<p>до коначног резултата можемо да стигнемо тако што из табеле која се добија
+<p>До коначног резултата можемо да стигнемо тако што из табеле која се добија
 као резултат претходног упита израчунамо максималну вредност колоне
 <code class="docutils literal notranslate"><span class="pre">broj</span></code>. То се лако постиже коришћењем агрегатне функције <code class="docutils literal notranslate"><span class="pre">MAX</span></code>.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">MAX</span><span class="p">(</span><span class="n">broj</span><span class="p">)</span>
@@ -545,16 +548,14 @@
 <div class="line"><br /></div>
 </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати просечне оцене свих предмета који се предају у првом
 разреду.</p>
 
-    </p></div></div>
+    </div></div>
 <p>Овај задатак може да се реши спајањем (и то је пожељно решење, поготово
 ако се жели приказ назива предмета). Могуће је и решење засновано на
 угнежђеним упитима, тако што се у првој фази из табеле предмета издвоје
@@ -605,17 +606,15 @@
 <div class="line"><br /></div>
 </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати називе предмета и просечне оцене на писменим задацима за
 све предмете код којих је просечна оцена на писменим задацима бар
 3,50.</p>
 
-    </p></div></div>
+    </div></div>
 <p>Када бисмо се задовољили само приказом идентификатора предмета, онда
 бисмо све могли да решимо упитом над табелом оцена, груписањем на
 основу идентификатора предмета, израчунавањем просека оцена за сваку
@@ -654,15 +653,13 @@
 <div class="line"><br /></div>
 </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>За свако одељење приказати највећи број оправданих изостанака.</p>
 
-    </p></div></div>
+    </div></div>
 <p>У првој фази можемо да изградимо табелу која за сваког ученика садржи
 идентификатор, разред и одељење и број оправданих изостанака. Пошто се
 разред и одељење налазе у табели ученика, а број изостанака се рачуна
@@ -785,20 +782,18 @@
 док се овај пут именује табела.</p>
 <div class="section" id="id2">
 <h2>Вежба<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>Покушај да самостално напишеш наредни упит, коришћењем угнежћених
+<p>Покушај да самостално напишеш наредни упит, коришћењем угнежђених
 упита.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>За сваки разред и одељење прикажи највећу просечну оцену коју је
 постигао неки ученик у том одељењу (рачунати укупан просек свих
 уписаних оцена и заокружити га на две децимале).</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_ugnezdjeni_upiti_01" class="db" data-db-name="dnevnik.sql" db-check = "SELECT razred, odeljenje, MAX(prosek)
 FROM (SELECT razred, odeljenje, id_ucenik, ROUND(AVG(ocena), 2) AS prosek

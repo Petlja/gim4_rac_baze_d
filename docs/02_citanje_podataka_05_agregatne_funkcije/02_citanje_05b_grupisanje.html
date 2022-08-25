@@ -6,6 +6,7 @@
     <title>Груписање и израчунавање статистика појединачних група (GROUP BY)</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -473,22 +478,20 @@
 датих оцена из неког појединачног предмета. Често се јавља потреба да
 се иста врста упита понови за сваку вредност у некој колони. На
 пример, сасвим је природно пожелети да се одреди фонд часова предмета
-не само у првом, већ у сваком од четири разреда или да се израчуна
+не само у првом, већ у сваком од четири разреда, или да се израчуна
 просечна оцена из сваког појединачног предмета. Уместо да се поставља
 више сродних упита, овакве статистике је могуће израчунати коришћењем
 <strong>груписања и израчунавања статистика по групама</strong>. У језику SQL се за
 то користи клаузула <code class="docutils literal notranslate"><span class="pre">GROUP</span> <span class="pre">BY</span></code>. Прикажимо њену употребу на неколико
 примера.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати укупан фонд часова у сваком од четири разреда.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">razred</span><span class="p">,</span> <span class="k">SUM</span><span class="p">(</span><span class="n">fond</span><span class="p">)</span> <span class="k">as</span> <span class="n">fond_casova</span>
 <span class="k">FROM</span> <span class="n">predmet</span>
 <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">razred</span><span class="p">;</span>
@@ -522,16 +525,16 @@
 </table>
 <p>Извршавање овог упита можемо себи да представимо овако:</p>
 <ul class="simple">
-<li><p>скуп свих врста у табели предмета (свака од њих одговара једном предмету)
-се подели у групе које одговарају појединим разредима. При томе за сваку
+<li><p>Скуп свих врста у табели предмета (свака од њих одговара једном предмету)
+се подели у групе које одговарају појединим разредима. При томе, за сваку
 групу важи да сви редови те групе имају исту вредност колоне <code class="docutils literal notranslate"><span class="pre">razred</span></code>.</p></li>
-<li><p>агрегатна функција <code class="docutils literal notranslate"><span class="pre">SUM</span></code> се примени засебно на сваку групу.</p></li>
-<li><p>за сваку групу се добија (и приказује) по један ред резултата.</p></li>
+<li><p>Агрегатна функција <code class="docutils literal notranslate"><span class="pre">SUM</span></code> се примени засебно на сваку групу.</p></li>
+<li><p>За сваку групу се добија (и приказује) по један ред резултата.</p></li>
 </ul>
 <a class="reference internal image-reference" href="../_images/group_by.png"><img alt="Груписање и израчунавање збира елемената сваке групе" class="align-center" src="../_images/group_by.png" style="width: 500px;" /></a>
 <p>У примеру приказаном на слици се добијају 4 групе, од којих свака одговара
 по једном разреду.</p>
-<p>Напоменимо да СУБП може ради постизања веће ефикасности да ове операције извршава
+<p>Напоменимо да СУБП, може ради постизања веће ефикасности, да ове операције извршава
 и другачијим редоследом, али резултат мора да буде исти као када се рачунање
 обавља онако како је овде описано. На пример, могуће је да се формирање
 група и рачунање збирова по групама извршава једновремено (користећи по
@@ -540,15 +543,13 @@
 <div class="line"><br /></div>
 </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати најмању оцену из сваког предмета.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id_predmet</span><span class="p">,</span> <span class="k">MIN</span><span class="p">(</span><span class="n">ocena</span><span class="p">)</span> <span class="k">as</span> <span class="n">min_ocena</span>
 <span class="k">FROM</span> <span class="n">ocena</span>
 <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">id_predmet</span><span class="p">;</span>
@@ -587,7 +588,7 @@
 </tbody>
 </table>
 <p>У овом упиту се врсте табеле <code class="docutils literal notranslate"><span class="pre">ocena</span></code> поделе у групе на основу
-предмета тј.  њихових идентификатора. У свакој групи се, дакле, налазе
+предмета, тј.  њихових идентификатора. У свакој групи се, дакле, налазе
 све оцене из неког предмета. Затим се у оквиру сваке групе засебно
 проналази минимална оцена и на крају резултат садржи идентификатор
 предмета (заједнички за све оцене у групи) и минималну оцену у групи.</p>
@@ -596,15 +597,13 @@
 <div class="line"><br /></div>
 </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати број ученика у сваком од одељења.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">broj_ucenika</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">;</span>
@@ -659,15 +658,13 @@
 <div class="line"><br /></div>
 </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати број девојчица у сваком разреду.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">razred</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">as</span> <span class="n">broj_devojcica</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 <span class="k">WHERE</span> <span class="n">pol</span> <span class="o">=</span> <span class="s1">&#39;ж&#39;</span>
@@ -700,22 +697,20 @@
 </tr>
 </tbody>
 </table>
-<p>У овом упиту се из табеле ученика одабиру само оне врсте које описују
+<p>У овом упиту се из табеле ученика бирају само оне врсте које описују
 девојчице (код којих је вредност у колони <code class="docutils literal notranslate"><span class="pre">pol</span></code> једнака <code class="docutils literal notranslate"><span class="pre">ж</span></code>), а
 затим се те врсте групишу у четири групе на основу разреда и затим се
 одређује број елемената у свакој од те четири групе.</p>
 <p>Груписани резултати се могу сортирати, може се ограничавати број врста
 у резултату и слично.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
-<p>Приказати нека три најчешћа презимена.</p>
+<p>Приказати три најчешћа презимена.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">prezime</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj_ucenika</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
 <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">prezime</span>
@@ -751,16 +746,14 @@
 <p>Покушај да самостално напишеш наредних неколико упита. Решења можеш да тестираш овде,
 а можеш све задатке да урадиш и у систему SQLite Studio.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Прикажи укупан број изостанака за сваки статус изостанака
 (оправдане, неоправдане, нерегулисане).</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_grupisanje_01" class="db" data-db-name="dnevnik.sql" db-check = "SELECT status, COUNT(*) AS broj_izostanaka
                FROM izostanak
@@ -790,17 +783,15 @@
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Прикажи највећи фонд часова неког предмета за сваки од разреда
 (приказати редни број разреда и максимални фонд у колони под
 називом <code class="docutils literal notranslate"><span class="pre">najveci_fond</span></code>).</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_grupisanje_02" class="db" data-db-name="dnevnik.sql" db-check = "SELECT razred, MAX(fond) AS najveci_fond
 FROM predmet
@@ -829,17 +820,15 @@ GROUP BY razred"  db-check-col-name  db-show-result>
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Прикажи три датума у којима је остварено највише изостанака (уз
 датум приказати и број изостанака у колони под називом
 <code class="docutils literal notranslate"><span class="pre">broj_izostanaka</span></code>).</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_grupisanje_03" class="db" data-db-name="dnevnik.sql" db-check = "SELECT datum, COUNT(*) AS broj_izostanaka
 FROM izostanak

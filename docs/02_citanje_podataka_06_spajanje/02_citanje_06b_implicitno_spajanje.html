@@ -6,6 +6,7 @@
     <title>Имплицитно спајање</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -470,8 +475,8 @@
 спајање</strong>. Наиме, ако се након <code class="docutils literal notranslate"><span class="pre">FROM</span></code> наведе више табела раздвојених
 зарезима, израчунава се њихов <strong>Декартов производ</strong>. У случају две
 табеле то значи да се свака врста прве табеле комбинује са сваком врстом
-друге табеле. У случају више табела би се свака таква врста комбиновала
-са сваком врстом наредне табеле итд.</p>
+друге табеле. У случају више табела свака таква врста би се комбиновала
+са сваком врстом наредне табеле, итд.</p>
 <p>Можемо, на пример, да пишемо:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">izostanak</span><span class="p">,</span> <span class="n">ucenik</span><span class="p">;</span>
@@ -481,10 +486,10 @@
 извршавањем упита се добија 10194 * 346 = 3527124 реда, од којих је већина
 потпуно бесмислена зато што је изостанак, на пример, Петра Петровића, додељен и,
 на пример, Милици Јовановић, која га није направила. Дакле, буквално сваки
-изостанак се везује за свих 346 ученика и тако редом.</p>
-<p>Од свих ових ових редова, за нас заправо имају смисла само они у којима
+изостанак се везује за свих 346 ученика, и тако редом.</p>
+<p>Од свих ових редова, за нас заправо имају смисла само они у којима
 је идентификатор ученика из табеле изостанака једнак идентификатору из
-табеле ученика и њих можемо издвојити клаузулом <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>.</p>
+табеле ученика, и њих можемо издвојити клаузулом <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">izostanak</span><span class="p">,</span> <span class="n">ucenik</span><span class="p">;</span>
 <span class="k">WHERE</span> <span class="n">i</span><span class="p">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">;</span>
@@ -494,8 +499,9 @@
 придодати подаци баш о ученику који је тај изостанак направио.</p>
 <p>За разлику од спајања <code class="docutils literal notranslate"><span class="pre">...</span> <span class="pre">JOIN</span> <span class="pre">...</span> <span class="pre">ON</span> <span class="pre">...</span></code>, где услов спајања наводимо у клаузули <code class="docutils literal notranslate"><span class="pre">ON</span></code>,
 у овом случају смо услов по којем спајамо редове из различитих табела пребацили у клаузулу <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>.
-Како наравно у клаузули <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> може да се наведе и неки услов селекције, то чини целу клаузулу <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>
+Наравно, како у клаузули <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> може да се наведе и неки услов селекције, то чини целу клаузулу <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>
 већом и непрегледнијом.</p>
+<p>Следи пример у којем, у клаузули WHERE наводимо и додатан услов, на пример такав да се додатно ограничимо само на жељени датум.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="o">*</span>
 <span class="k">FROM</span> <span class="n">izostanak</span><span class="p">,</span> <span class="n">ucenik</span><span class="p">;</span>
 <span class="k">WHERE</span> <span class="n">i</span><span class="p">.</span><span class="n">id_ucenik</span> <span class="o">=</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span> <span class="k">AND</span> <span class="n">datum</span> <span class="o">=</span> <span class="s1">&#39;2021-05-14&#39;</span><span class="p">;</span>
@@ -615,15 +621,15 @@
 </table>
 <p>Ипак, експлицитно спајање (помоћу <code class="docutils literal notranslate"><span class="pre">JOIN</span></code>) је пожељније користити од имплицитног. Упити који користе
 експлицитно спајање издвајају услов за спајање у посебну целину па се лакше разумеју, а на неким
-системима за управање базама података могу да буду и ефикаснији.</p>
+системима за управљање базама података могу да буду и ефикаснији.</p>
 <p>Имплицитно спајање има у неким ретким ситуацијама смисла, па ћемо овде илустровати једну такву ситуацију.</p>
-<p>Рецимо, на пример, да након одржаног писменог задатка из математике у првом разреду, 15. октобра 2020. године,
+<p>Рецимо да, након одржаног писменог задатка из математике у првом разреду, 15. октобра 2020. године,
 наставник жели да направи парове ученика за пројектни рад, али приликом прављења парова,
 жели да има у виду и њихову управо добијену оцену. Можда жели да направи такве парове у којима
-је један ученик знатно бољи у управо савладаној области из математике, па може да помогнем другом у пару.
-А можда жели да направи парове ученика који имају исту или приближну оцену, тако да сваком пару да
+је један ученик знатно бољи у управо савладаној области из математике, па може да помогне другом, у пару.
+А можда жели да направи парове ученика који имају исту или приближну оцену, тако да сваком пару дâ
 задатак који одговара њиховом нивоу знања. У сваком случају, наставнику би итекако користио извештај у
-којем би видео прегледно све могуће парове, како би изгледало да сваког ученика ставимо у пар са сваким
+којем би прегледно видео све могуће парове, како би изгледало да сваког ученика стави у пар са сваким
 другим учеником, а поред тога да су видљиве и њихове управо добијене оцене на писменом из математике.
 Следећи упит управо то приказује. Повезује сваког ученика са сваким учеником. Првог ученика повезује са
 његовом оценом добијеном на писменом, а другог ученика повезује са његовом оценом добијеном на истом
@@ -640,7 +646,7 @@
 </pre></div>
 </div>
 <p>На следећој слици се види део резултата овог упита.</p>
-<a class="reference internal image-reference" href="../_images/implicitno_spajanje.png"><img alt="../_images/implicitno_spajanje.png" class="align-center" src="../_images/implicitno_spajanje.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/implicitno_spajanje.png"><img alt="../_images/implicitno_spajanje.png" class="align-center" src="../_images/implicitno_spajanje.png" style="width: 500px;" /></a>
 <p>Услови спајања сваког ученика са његовом оценом су наведени у клаузули <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="n">o1</span><span class="p">.</span><span class="n">id_ucenik</span><span class="o">=</span><span class="n">u1</span><span class="p">.</span><span class="n">id</span> <span class="k">AND</span> <span class="n">o2</span><span class="p">.</span><span class="n">id_ucenik</span><span class="o">=</span><span class="n">u2</span><span class="p">.</span><span class="n">id</span>
 </pre></div>
@@ -652,17 +658,15 @@
 <h2>Вежба<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>Покушај да наредни упит напишеш самостално.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати све регулисане изостанке у читљивом формату (у ком се
 види име и презиме ученика и датум, час и статус изостанка), али
 тако да упит користи имплицитно, а не експлицитно спајање.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_implicitno_spajanje_01" class="db" data-db-name="dnevnik.sql" db-check = "SELECT u.ime, u.prezime, u.razred, u.odeljenje, p.naziv
 FROM ucenik u, predmet p

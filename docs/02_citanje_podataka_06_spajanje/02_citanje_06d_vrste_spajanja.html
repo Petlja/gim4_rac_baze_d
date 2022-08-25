@@ -6,6 +6,7 @@
     <title>Врсте спајања</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -468,11 +473,10 @@
 <h1>Врсте спајања<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>У базама података постоји неколико различитих оператора спајања:
 <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code>, <code class="docutils literal notranslate"><span class="pre">CROSS</span> <span class="pre">JOIN</span></code>, <code class="docutils literal notranslate"><span class="pre">LEFT</span> <span class="pre">JOIN</span></code>, <code class="docutils literal notranslate"><span class="pre">RIGHT</span> <span class="pre">JOIN</span></code>, <code class="docutils literal notranslate"><span class="pre">FULL</span>
-<span class="pre">JOIN</span></code> који се углавном разликују по томе шта се дешава када у једној
-од спојених табела не постоји ред који би требало да се
-споји. Оператор <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> који смо приказали је заправо оператор
+<span class="pre">JOIN</span></code>, који се углавном разликују по томе шта се дешава у ситуацији када у једној
+од спојених табела не постоји ред који би требало спојити. Оператор <code class="docutils literal notranslate"><span class="pre">JOIN</span></code> који смо приказали је заправо оператор
 <code class="docutils literal notranslate"><span class="pre">INNER</span> <span class="pre">JOIN</span></code> (тзв. унутрашње спајање). То је најчешће коришћена
-врста спајања, па се стога назнака о којој врсти спајања је реч може
+врста спајања, па се и назнака о којој врсти спајања је реч може
 изоставити.</p>
 <p>Природно је очекивати да се у табели изостанака налазе само они
 идентификатори ученика за које у табели ученика постоје одговарајући
@@ -483,15 +487,13 @@
 изостанака (јер могу да постоје ученици који немају ниједан
 изостанак). Размотримо тада следећи задатак.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати списак свих ученика са њиховим изостанцима.</p>
 
-    </p></div></div>
+    </div></div>
 <p>Ако бисмо извршили обично (унутрашње) спајање табеле ученика и табеле
 изостанака, добили бисмо податке само о оним ученицима који имају
 изостанке.</p>
@@ -515,7 +517,7 @@
 <p>На следећој слици може да се види овај упит у систему SQLite Studio.
 Види се само првих неколико редова и информација о томе да има укупно 10200 редова.</p>
 <a class="reference internal image-reference" href="../_images/vrste_spajanja2.png"><img alt="../_images/vrste_spajanja2.png" class="align-center" src="../_images/vrste_spajanja2.png" style="width: 780px;" /></a>
-<p>До разлике у броју редова које враћају претходна два упита је дошло због тога што има ученика
+<p>До разлике у броју редова које враћају претходна два упита, дошло је због тога што има ученика
 који немају изостанке и које први упит није приказао.</p>
 <p>Код ученика који имају изостанака, за сваки изостанак постоји одговарајућа врста у резултату.
 Код ученика који немају изостанака у пољима који описују изостанак стоје специјалне <strong>недостајуће вредности</strong> (<code class="docutils literal notranslate"><span class="pre">NULL</span></code>).
@@ -523,22 +525,20 @@
 резултати првог и другог упита.</p>
 <a class="reference internal image-reference" href="../_images/vrste_spajanja3.png"><img alt="../_images/vrste_spajanja3.png" class="align-center" src="../_images/vrste_spajanja3.png" style="width: 780px;" /></a>
 <p>Иако на први поглед делује да ово нема пуно смисла, кључна ствар је то
-што смо у табели задржали податке о свим ученицима, што омогућава
+што смо у табели задржали податке о свим ученицима, што нам омогућава
 да у извештајима о укупном броју изостанака пријавимо и податке о
 ученицима који нису правили изостанке. Илуструјмо то наредним паром
 примера.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати укупан број изостанака за сваког ученика (укључујући и
 оне ученике који немају изостанака). Списак уредити
 опадајуће по укупном броју изостанака.</p>
 
-    </p></div></div>
+    </div></div>
 <p>Кључни елемент решења је то да агрегатне функције приликом агрегирања
 елемената задате колоне потпуно игноришу недостајуће вредности у тој
 колони. Тако агрегатна функција <code class="docutils literal notranslate"><span class="pre">COUNT</span></code> броји само оне врсте које не
@@ -603,18 +603,16 @@
 </tbody>
 </table>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати број неоправданих изостанака за сваког ученика одељења I2
 (укључујући и оне ученике који немају неоправданих
 изостанака). Списак уредити опадајуће по броју неоправданих
 изостанака.</p>
 
-    </p></div></div>
+    </div></div>
 <p>Овај пример само проширује претходни тиме што се захтева додатно
 филтрирање.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">u</span><span class="p">.</span><span class="n">id</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">ime</span><span class="p">,</span> <span class="n">u</span><span class="p">.</span><span class="n">prezime</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="n">status</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj_neopravdanih</span>
@@ -689,16 +687,16 @@
 </tbody>
 </table>
 <p>Уколико покренемо упит без левог спајања, тј. ако изоставимо реч <code class="docutils literal notranslate"><span class="pre">LEFT</span></code>,
-добићемо 20 редова што може да се види на следећој слици.</p>
-<a class="reference internal image-reference" href="../_images/vrste_spajanja4.png"><img alt="../_images/vrste_spajanja4.png" class="align-center" src="../_images/vrste_spajanja4.png" style="width: 600px;" /></a>
+добићемо 20 редова, што може да се види на следећој слици.</p>
+<a class="reference internal image-reference" href="../_images/vrste_spajanja4.png"><img alt="../_images/vrste_spajanja4.png" class="align-center" src="../_images/vrste_spajanja4.png" style="width: 780px;" /></a>
 <p>Покренут упит са левим спајањем приказује 346 редова, што одговара укупном
-броју ученика чије податке чувамо у овој бази, на на дну списка се налазе они
+броју ученика чије податке чувамо у овој бази, а на дну списка се налазе они
 који немају неоправдане изостанке.</p>
-<a class="reference internal image-reference" href="../_images/vrste_spajanja5.png"><img alt="../_images/vrste_spajanja5.png" class="align-center" src="../_images/vrste_spajanja5.png" style="width: 600px;" /></a>
+<a class="reference internal image-reference" href="../_images/vrste_spajanja5.png"><img alt="../_images/vrste_spajanja5.png" class="align-center" src="../_images/vrste_spajanja5.png" style="width: 780px;" /></a>
 <p>Приметимо да смо услов селекције (филтрирања) навели у склопу услова
 спајања, а не у склопу клаузуле <code class="docutils literal notranslate"><span class="pre">WHERE</span></code>, јер бисмо издвајањем само
 неоправданих изостанака након спајања изгубили податке о ученицима
-који немају изостанака (јер у колони статус не пише <code class="docutils literal notranslate"><span class="pre">neopravdan</span></code>,
+који немају изостанака (пошто у колони статус не пише <code class="docutils literal notranslate"><span class="pre">neopravdan</span></code>,
 већ <code class="docutils literal notranslate"><span class="pre">NULL</span></code>). Алтернативно, услов филтрирања у клаузули <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> би
 се могао записати као <code class="docutils literal notranslate"><span class="pre">status</span> <span class="pre">=</span> <span class="pre">'неоправдан'</span> <span class="pre">OR</span> <span class="pre">status</span> <span class="pre">IS</span> <span class="pre">NULL</span></code>,
 чиме би се задржале врсте које одговарају неоправданим изостанцима
@@ -856,19 +854,17 @@
 <h2>Вежба<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>Покушај да самостално напишеш наредни упит.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>За сваког ученика приказати просек свих уписаних оцена. Табела
 треба да прикаже имена, презимена и просечне оцене свих ученика
 заокружене на две децимале (код оних који немају ниједну уписану
 оцену уместо просечне оцене треба да буде уписана недостајућа
 вредност).</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_spajanje_02" class="db" data-db-name="dnevnik.sql" db-check = "SELECT ime, prezime, ROUND(AVG(ocena), 2)
 FROM ucenik LEFT JOIN

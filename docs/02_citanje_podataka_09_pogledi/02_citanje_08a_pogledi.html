@@ -6,6 +6,7 @@
     <title>Погледи</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -467,7 +472,7 @@
   <div class="section" id="id1">
 <h1>Погледи<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <p>Приметили смо да се неки упити често користе као основа за издвајање
-одређених података. На пример, често се је потребно спојити две или
+одређених података. На пример, често је потребно спојити две или
 више табела, да би се над спојеним табелама вршили различити даљи
 упити. На пример, приликом скоро сваке анализе изостанака врши се
 спајање табеле ученика и табеле изостанака, да би се над резултатом
@@ -577,7 +582,7 @@
 </table>
 <p>База података која је могла у целости да се преузме раније током овог курса и отвори у систему SQLite Studio,
 већ у себи има креиран описан поглед.</p>
-<a class="reference internal image-reference" href="../_images/dnevnik_a.png"><img alt="../_images/dnevnik_a.png" class="align-center" src="../_images/dnevnik_a.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/dnevnik_a.png"><img alt="../_images/dnevnik_a.png" class="align-center" src="../_images/dnevnik_a.png" style="width: 500px;" /></a>
 <p>Системи за управљање базама података омогућавају да се често
 коришћени упити запамте као посебни <strong>погледи</strong> на базу података.
 Погледе можемо да схватимо као фиктивне табеле, које се у каснијим упитима
@@ -705,10 +710,10 @@
 </tr>
 </tbody>
 </table>
-<p>Угнежђени упити (ако нису корелисани) се могу избећи креирањем погледа
+<p>Угнежђени упити (ако нису корелисани) могу се избећи креирањем погледа
 за унутрашњи подупит (што нарочито има смисла ако се за унутрашњи упит
 очекује да може бити коришћен више пута). Разматрали смо већ упит који
-За свако одељење приказује највећи број оправданих изостанака и
+за свако одељење приказује највећи број оправданих изостанака и
 установили смо да је прво пожељно креирати табелу која за сваког
 ученика садржи идентификатор, разред и одељење и број оправданих
 изостанака. Њу можемо креирати као посебан поглед.</p>

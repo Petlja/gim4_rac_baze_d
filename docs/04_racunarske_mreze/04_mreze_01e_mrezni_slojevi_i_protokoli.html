@@ -6,6 +6,7 @@
     <title>Мрежни слојеви и протоколи</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -549,7 +554,7 @@
 <p>На следећој слици имамо пример комуникације и формирања сегмента, пакета и
 мрежног оквира у TCP/IP мрежи за случај преноса у веб апликацији која се налази
 на веб серверу и којој корисник/клијент шаље информације.</p>
-<a class="reference internal image-reference" href="../_images/Picture9.png"><img alt="../_images/Picture9.png" class="align-center" src="../_images/Picture9.png" style="width: 780px;" /></a>
+<a class="reference internal image-reference" href="../_images/ilustracija4.png"><img alt="../_images/ilustracija4.png" class="align-center" src="../_images/ilustracija4.png" style="width: 780px;" /></a>
 <div class="section" id="http">
 <h2>Протокол HTTP<a class="headerlink" href="#http" title="Permalink to this headline">¶</a></h2>
 <p>Веб је од самог свог зачетка заснован на моделу <strong>клијент-сервер</strong>. Клијент (то
@@ -560,7 +565,7 @@
 ресурс. Протокол на основу којег се врши комуникација између клијента и сервера
 назива се протокол за пренос хипертекста <strong>HTTP</strong> (енгл. <strong>HyperText Transfer
 Protocol</strong>).</p>
-<a class="reference internal image-reference" href="../_images/Picture10.png"><img alt="../_images/Picture10.png" class="align-center" src="../_images/Picture10.png" style="width: 780px;" /></a>
+<a class="reference internal image-reference" href="../_images/ilustracija_5.png"><img alt="../_images/ilustracija_5.png" class="align-center" src="../_images/ilustracija_5.png" style="width: 780px;" /></a>
 <p>Размена информација између клијената и сервера на вебу врши се помоћу протокола
 <strong>HTTP</strong> (енгл. <strong>HyperText Transfer Protocol</strong>) или <strong>HTTPS</strong> (енгл.
 <strong>HyperText Transfer Protocol Secure</strong>), који пружа додатну сигурност јер

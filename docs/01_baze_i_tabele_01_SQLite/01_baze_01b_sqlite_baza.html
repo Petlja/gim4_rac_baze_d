@@ -6,6 +6,7 @@
     <title>Креирање базе података у SQLite Studio</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -470,17 +475,17 @@
 <code class="docutils literal notranslate"><span class="pre">Database</span> <span class="pre">→</span> <span class="pre">Add</span> <span class="pre">a</span> <span class="pre">database</span></code>. Приликом креирања базе потребно је одабрати фајл,
 тј. датотеку, у којој ће се та база чувати (ови фајлови обично имају екстензију .``db``)
 и назив под којим ће се база приказивати у корисничком интерфејсу. Ми ћемо креирати базу у фајлу <code class="docutils literal notranslate"><span class="pre">dnevnik.db</span></code>.
-(изабрати локацију за чување и унети назив фајла након клика на дугме са знаком плус) и приказиваће се под
+(изабрати локацију за чување и унети назив фајла након клика на дугме са знаком плус), и приказиваће се под
 називом <code class="docutils literal notranslate"><span class="pre">dnevnik</span></code>.</p>
 <a class="reference internal image-reference" href="../_images/sqlitestudio_add_database.png"><img alt="Креирање нове базе у систему SQLite Studio" class="align-center" src="../_images/sqlitestudio_add_database.png" style="width: 300px;" /></a>
 <p>Уместо да креирамо нову базу, командом менија <code class="docutils literal notranslate"><span class="pre">Database</span> <span class="pre">→</span> <span class="pre">Add</span> <span class="pre">a</span> <span class="pre">database</span></code> можемо и отворити неку постојећу
 (довољно је одабрати постојећи фајл на диску и уписати назив под којим ће се та база видети у нашем систему).</p>
 <div class="section" id="id1">
 <h2>Креирање табела<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>Након креирања базе креираћемо табеле у њој. То се може урадити
+<p>Након креирања базе, креираћемо табеле у њој. То се може урадити
 командом менија <code class="docutils literal notranslate"><span class="pre">Structure</span> <span class="pre">→</span> <span class="pre">Create</span> <span class="pre">a</span> <span class="pre">table</span></code> или командом <code class="docutils literal notranslate"><span class="pre">Create</span> <span class="pre">a</span> <span class="pre">table</span></code> контекстног менија (који се појави након десног клика на назив
 базе на паноу <code class="docutils literal notranslate"><span class="pre">Databases</span></code>).</p>
-<a class="reference internal image-reference" href="../_images/sqlitestudio_add_table_menu.png"><img alt="Креирање нове табеле у систему SQLite Studio" class="align-center" src="../_images/sqlitestudio_add_table_menu.png" style="width: 7800px;" /></a>
+<a class="reference internal image-reference" href="../_images/sqlitestudio_add_table_menu.png"><img alt="Креирање нове табеле у систему SQLite Studio" class="align-center" src="../_images/sqlitestudio_add_table_menu.png" style="width: 780px;" /></a>
 <p>Након тога се у централном делу прозора појављује пано са неколико
 картица који је посвећен уређивању табеле. Подразумевано се приказује
 прва картица (<code class="docutils literal notranslate"><span class="pre">Structure</span></code>) која је намењена дефинисању структуре
@@ -497,11 +502,11 @@
 <p>Постоји велики број различитих типова података, међутим, описаћемо
 само неколико најчешће коришћених:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">INTEGER</span></code> – цели бројеви</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INTEGER</span></code> – цели бројеви,</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">DOUBLE</span></code> – реални бројеви (записани у покретном зарезу)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">VARCHAR</span></code> – текстулани подаци (ниске карактера) за које је
-позната максимална дужина</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">DATE</span></code>, <code class="docutils literal notranslate"><span class="pre">TIME</span></code>, <code class="docutils literal notranslate"><span class="pre">DATETIME</span></code> – датум, време у току дана
+<li><p><code class="docutils literal notranslate"><span class="pre">VARCHAR</span></code> – текстуални подаци (ниске карактера) за које је
+позната максимална дужина,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DATE</span></code>, <code class="docutils literal notranslate"><span class="pre">TIME</span></code>, <code class="docutils literal notranslate"><span class="pre">DATETIME</span></code> – датум, време у току дана,
 тј. датум и време.</p></li>
 </ul>
 <p>Код неких типова података (на пример, код типа <code class="docutils literal notranslate"><span class="pre">VARCHAR</span></code>) потребно
@@ -514,7 +519,7 @@
 прогласимо за примарни кључ табеле (ако више колона чини примарни
 кључ, онда се то подешава тек након додавања свих тих
 колона). Додатне опције су доступне након притиска на дугме
-<code class="docutils literal notranslate"><span class="pre">Configure</span></code>. Једна, прилично често коришћена је <code class="docutils literal notranslate"><span class="pre">Autoincrement</span></code>
+<code class="docutils literal notranslate"><span class="pre">Configure</span></code>. Једна, прилично често коришћена је <code class="docutils literal notranslate"><span class="pre">Autoincrement</span></code>,
 која се користи код целобројних примарних кључева и која омогућава
 да се приликом уноса врсте у табелу не наведе вредност примарног
 кључа, него да се та вредност аутоматски додели као прва наредна
@@ -526,8 +531,8 @@
 прогласимо за страни кључ (ако више колона чини исти страни кључ,
 онда се то подешава тек након додавања свих тих колона). Подсетимо
 се, колона је страни кључ ако је свака вредност у тој колони
-примарни кључ у некој другој табели. Зато се приликом подешавања да
-је колона страни кључ бира табела и колона која је њен примарни кључ
+примарни кључ у некој другој табели. Зато се, приликом подешавања да
+је колона страни кључ, бира табела и колона која је њен примарни кључ
 (подразумева се да је та табела већ креирана). Детаљније објашњење
 подешавања страног кључа биће дато кроз пример креирања табеле
 изостанака, мало касније у тексту.</p>
@@ -539,7 +544,7 @@
 садрже недостајуће вредности, па ову опцију углавном користимо за
 колоне које нису кључеви).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Collate</span></code> — овом опцијом се подешава поредак текстуалних
-података (тзв. <strong>колациона секвенца</strong>) што директно одређује и
+података (тзв. <strong>колациона секвенца</strong>), што директно одређује и
 редослед сортирања елемената колоне. Ако се у колони смештају и
 карактери који нису део енглеске абецеде (тј. који не припадају
 таблици ASCII), тада је пожељно подесити <code class="docutils literal notranslate"><span class="pre">Collation</span> <span class="pre">name</span></code> да буде
@@ -548,8 +553,8 @@
 ћирилицом).</p>
 <a class="reference internal image-reference" href="../_images/sqlitestudio_collate.png"><img alt="Подешавање колационе секвенце у систему SQLite Studio" class="align-center" src="../_images/sqlitestudio_collate.png" style="width: 300px;" /></a>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Default</span></code> — одабиром ове опције можемо задати подразумевану
-вредност, која ће бити уписана ако се приликом додавања нове врсте
+<li><p><code class="docutils literal notranslate"><span class="pre">Default</span></code> - одабиром ове опције можемо задати подразумевану
+вредност, која ће бити уписана ако се, приликом додавања нове врсте,
 вредност ове колоне не наведе.</p></li>
 </ul>
 <p>Користећи описани поступак, можемо да креирамо табелу <code class="docutils literal notranslate"><span class="pre">ucenik</span></code> у
@@ -578,9 +583,9 @@
 уписујете измене у базу, да их не бисте случајно изгубили, али и да бисте што пре уочили ако направите неку грешку.
 Након додавања свих колона потребно је да упишемо све измене у базу (командом <code class="docutils literal notranslate"><span class="pre">Commit</span> <span class="pre">structure</span> <span class="pre">changes</span></code>).</p>
 <p>Ако је све прошло како треба, на картици <code class="docutils literal notranslate"><span class="pre">Structure</span></code> видеће се
-следећи списак колона.</p>
-<a class="reference internal image-reference" href="../_images/sqlitestudio_structure_ucenik.png"><img alt="Структура табеле ucenik у систему SQLite Studio" class="align-center" src="../_images/sqlitestudio_structure_ucenik.png" style="width: 500px;" /></a>
-<p>Једном креираној табели, структура може и накнадно да се промени, да се по потреби додају или уклоне колоне,
+следећи списак колона:</p>
+<a class="reference internal image-reference" href="../_images/sqlitestudio_structure_ucenik.png"><img alt="Структура табеле ucenik у систему SQLite Studio" class="align-center" src="../_images/sqlitestudio_structure_ucenik.png" style="width: 780px;" /></a>
+<p>Једном креираној табели, структура може и накнадно да се промени - да се по потреби додају или уклоне колоне,
 промене типови података, додају или уклоне ограничења.</p>
 </div>
 <div class="section" id="sql">
@@ -593,7 +598,7 @@
 SQL (и то његовог посебног подскупа који се назива <strong>SQL Data
 Definition Language, DDL</strong>). Након креирања табеле помоћу ГКИ, на
 картици <code class="docutils literal notranslate"><span class="pre">DDL</span></code> можемо да видимо како би се табела могла креирати и
-помоћу упита у језику SQL. За табелу ученик то би изгледало овако:</p>
+помоћу упита у језику SQL. За табелу <code class="docutils literal notranslate"><span class="pre">ucenik`</span></code> то би изгледало овако:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">ucenik</span> <span class="p">(</span>
    <span class="n">id</span>             <span class="nb">INTEGER</span>      <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="n">AUTOINCREMENT</span><span class="p">,</span>
    <span class="n">ime</span>            <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">30</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">COLLATE</span> <span class="n">UNICODE</span><span class="p">,</span>
@@ -606,7 +611,7 @@ Definition Language, DDL</strong>). Након креирања табеле п�
 </pre></div>
 </div>
 <p>Приметимо да је овај упит облика <code class="docutils literal notranslate"><span class="pre">CREATE</span> <span class="pre">TABLE</span> <span class="pre">naziv</span> <span class="pre">(kolone);</span></code>, при чему
-се за сваку колону наводи назив, тип података и затим додатни услови и
+се за сваку колону наводи назив, тип података, a затим додатни услови и
 ограничења.</p>
 </div>
 <div class="section" id="id2">
@@ -616,7 +621,7 @@ Definition Language, DDL</strong>). Након креирања табеле п�
 <a class="reference internal image-reference" href="../_images/sqlitestudio_data.png"><img alt="Додавање података у систему SQLite Studio" class="align-center" src="../_images/sqlitestudio_data.png" style="width: 500px;" /></a>
 <p>Додавање врста се врши командом <code class="docutils literal notranslate"><span class="pre">Insert</span> <span class="pre">row</span></code> (доступном путем
 дугмета <img alt="button_insert_row" src="../_images/button_insert_row.png" /> или путем тастера <code class="docutils literal notranslate"><span class="pre">insert</span></code> на
-тастатури). Када се врста дода, може се попунити подацима (при чему,
+тастатури). Када се врста дода, може се попунити подацима (при чему
 оне колоне које имају подешену опцију <code class="docutils literal notranslate"><span class="pre">AUTOINCREMENT</span></code> или
 подразумевану вредност могу да остану и празне).</p>
 <p>Постојеће врсте могу да се ажурирају тако што се просто измени њихов
@@ -635,7 +640,7 @@ Definition Language, DDL</strong>). Након креирања табеле п�
 <p>Пошто је могуће да се стање табеле промени и ван програма SQLite
 studio, командом <code class="docutils literal notranslate"><span class="pre">Refresh</span> <span class="pre">table</span> <span class="pre">data</span></code> (која је доступна путем
 дугмета <img alt="button_refresh" src="../_images/button_refresh.png" /> или путем тастера <code class="docutils literal notranslate"><span class="pre">F5</span></code>) можемо извршити
-поновно учитавање свих података у табели из фајла на диску у којем
+поновно учитавање свих података у табели из фајла на диску на којем
 се чува база података.</p>
 </div>
 <div class="section" id="id3">
@@ -659,36 +664,36 @@ studio, командом <code class="docutils literal notranslate"><span class=
 <li><p>Додајемо колону <code class="docutils literal notranslate"><span class="pre">cas</span></code> типа <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code>.</p></li>
 <li><p>Додајемо колону <code class="docutils literal notranslate"><span class="pre">status</span></code> типа <code class="docutils literal notranslate"><span class="pre">VARCHAR</span></code>, величине 15.</p></li>
 </ul>
-<p>Као што смо већ у ранијим лекцијама детаљно анализарали, да бисмо избегли појаве неконзистентних података
-(нпр. два датума рођења за исту особу) и да бисмо избегли редунданце (вишеструког појављивања истих података)
+<p>Као што смо већ у ранијим лекцијама детаљно анализирали, да бисмо избегли појаве неконзистентних података
+(нпр. два датума рођења за исту особу) и да бисмо избегли редунданце (вишеструко појављивање истих података)
 у бази, подаци се чувају распоређени у више табела, а табеле су међусобно повезане системом страних кључева
 који показују на примарне кључеве других табела. Објаснићемо сада још мало детаљније ограничење које смо додали у табелу <code class="docutils literal notranslate"><span class="pre">izostanak</span></code>.
-Дефинисањем страног кључа у овој табели смо осигурали да није могуће да у табели изостанака постоји изостанак
+Дефинисањем страног кључа у овој табели осигурали смо да није могуће да у табели изостанака постоји изостанак
 који је придружен ученику који не постоји у табели ученика. Дакле, све вредности које се налазе у колони
 <code class="docutils literal notranslate"><span class="pre">id_ucenik</span></code> постоје у колони <code class="docutils literal notranslate"><span class="pre">id</span></code> у табели <code class="docutils literal notranslate"><span class="pre">ucenik</span></code>.</p>
 <a class="reference internal image-reference" href="../_images/tabele1.png"><img alt="../_images/tabele1.png" class="align-center" src="../_images/tabele1.png" style="width: 780px;" /></a>
-<p>Приликом конфигурисања страног кључа смо изабрали да систем забрани да обришемо ученика док у табели изостанака
-постоје његови изостанци (опцијом <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">DELETE</span> <span class="pre">RESTRICT</span></code>), а да када ажурирамо (изменимо) примарни кључ ученика,
-и у табели изостанака подаци за тог ученика буду аутоматски ажурирани (опцијом <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">UPDATE</span> <span class="pre">CASCADE</span></code>).
-Каскадно ажурирање је ислустровано на следећој слици. Под усвловом да ученици Милици Јовановић можемо да променимо
+<p>Приликом конфигурисања страног кључа изабрали смо да систем забрани да обришемо ученика док у табели изостанака
+постоје његови изостанци (опцијом <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">DELETE</span> <span class="pre">RESTRICT</span></code>), а да када, ажурирамо (изменимо) примарни кључ ученика,
+подаци за тог ученика и у табели изостанака буду аутоматски ажурирани (опцијом <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">UPDATE</span> <span class="pre">CASCADE</span></code>).
+Каскадно ажурирање је ислустровано на следећој слици. Под условом да ученици Милици Јовановић можемо да променимо
 идентификациони број на 22 (уколико нема већ ученика са том идентификацијом), каскадно ће се извршити и измена у
 табели са изостанцима и код свих изостанака који се односе на ову ученицу ће се појавити њен нови идентификациони број.
 Тако је очуван интегритет страног кључа.</p>
 <a class="reference internal image-reference" href="../_images/tabele2.png"><img alt="../_images/tabele2.png" class="align-center" src="../_images/tabele2.png" style="width: 780px;" /></a>
-<p>Можемо да приметимо да каскадна опција можда није најбоље решење за брисање зато што би брисање једног реда у једној
+<p>Можемо да приметимо да каскадна опција можда није најбоље решење за брисање, зато што би брисање једног реда у једној
 табели потенцијално обрисало податке из више редова више различитих табела, па тиме можда и значајан део целе базе.
 Узмимо на пример да желимо да обришемо једног ученика. Уколико је укључена каскадна опција, то би значило да би брисање
 тог једног реда узроковало брисање свих изостанака тог ученика, а затим брисање свих оцена тог ученика, и тако редом.
 Боље решење би било да се такво брисање не дозволи, у овом случају да се не дозволи брисање података о ученику школе.
 Када брисање не успе, било би добро урадити неко архивирање свих повезаних података о ученику којег желимо да обришемо
-(изостанци, оцене…). Затим урадити брисање обрнутим редоследом који је увек дозвољен.</p>
+(изостанци, оцене…). Затим урадити брисање обрнутим редоследом, који је увек дозвољен.</p>
 <p>Опишимо све могуће типове акција које систем може да изврши када примети да се нарушава интегритет страног кључа (када
 се на неки начин мења или брише ученик чији изостанци постоје у табели изостанака).</p>
 <ul class="simple">
 <li><p>Опција <code class="docutils literal notranslate"><span class="pre">RESTRICT</span></code> забрањује извођење акције над табелом која би нарушила интегритет страног кључа.</p></li>
 <li><p>Опција <code class="docutils literal notranslate"><span class="pre">CАSCADE</span></code> подразумева да ће се све промене пропагирати (у облику каскаде, тј. степеница), све док се не задовољи интегритет страног кључа. Каскадно брисање би подразумевало да се у случају брисања ученика аутоматски обришу и сви подаци о његовим изостанцима.</p></li>
-<li><p>Опција <code class="docutils literal notranslate"><span class="pre">SET</span> <span class="pre">NULL</span></code> налаже систему да у табели изостанака на место идентификатора ученика упише специјалну недостајућу вредност <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></li>
-<li><p>Опција <code class="docutils literal notranslate"><span class="pre">SET</span> <span class="pre">DEFAULT</span></code> налаже да у табели изостанака на место идентификатора ученика упише подразумевану вредност (под претпоставком да је она подешена).</p></li>
+<li><p>Опција <code class="docutils literal notranslate"><span class="pre">SET</span> <span class="pre">NULL</span></code> налаже систему да у табели изостанака, на место идентификатора ученика, упише специјалну недостајућу вредност <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p></li>
+<li><p>Опција <code class="docutils literal notranslate"><span class="pre">SET</span> <span class="pre">DEFAULT</span></code> налаже да у табели изостанака, на место идентификатора ученика, упише подразумевану вредност (под претпоставком да је она подешена).</p></li>
 <li><p>Опција <code class="docutils literal notranslate"><span class="pre">NO</span> <span class="pre">ACTION</span></code> налаже систему да све остави како јесте, тј. да не врши никакву акцију у случају да је интегритет страног кључа нарушен (ово би требало избегавати, осим ако за то не постоји неки посебан разлог).</p></li>
 </ul>
 <p>Осим страног кључа, анализираћемо још једно ограничење које се природно намеће, а то је да ученик не може да током
@@ -701,7 +706,7 @@ studio, командом <code class="docutils literal notranslate"><span class=
 затим штриклирамо колоне <code class="docutils literal notranslate"><span class="pre">id_ucenik</span></code>, <code class="docutils literal notranslate"><span class="pre">datum</span></code> и <code class="docutils literal notranslate"><span class="pre">cas</span></code>.</p>
 <a class="reference internal image-reference" href="../_images/sqlitestudio_unique.png"><img alt="Подешавање услова јединствености вредности у више колона" class="align-center" src="../_images/sqlitestudio_unique.png" style="width: 300px;" /></a>
 <p>Након креирања табеле <code class="docutils literal notranslate"><span class="pre">izostanak</span></code> на картици <code class="docutils literal notranslate"><span class="pre">DDL</span></code> можемо да видимо
-да је њена дефиниција у језику SQL једнака следећој.</p>
+да је њена дефиниција у језику SQL следећа:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">izostanak</span> <span class="p">(</span>
    <span class="n">id</span>        <span class="nb">INTEGER</span>      <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="n">AUTOINCREMENT</span><span class="p">,</span>
    <span class="n">id_ucenik</span>              <span class="k">REFERENCES</span> <span class="n">ucenik</span> <span class="p">(</span><span class="n">id</span><span class="p">)</span> <span class="k">ON</span> <span class="k">DELETE</span> <span class="k">RESTRICT</span>

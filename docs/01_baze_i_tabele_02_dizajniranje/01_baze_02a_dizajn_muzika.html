@@ -6,6 +6,7 @@
     <title>База компаније за продају дигиталних композиција – подаци о композицијама</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -470,38 +475,38 @@
 једне базе података, што зовемо дизајнирање или пројектовање базе. Као
 пример смо искористили базу података фиктивне компаније за продају
 музичких композиција (углавном песама).</p>
-<p>Сам процес дизајнирања је јако важан и претходи креирању сваке базе података.
+<p>Сâм процес дизајнирања је јако важан и претходи креирању сваке базе података.
 Након што се овај процес заврши, база података са свим табелама може да се креира у систему
-SQLite Studio као што смо видели на примеру креирања базе података за школски дневник.
-Ово је теоријска тема и током њене обраде нећемо практично радити у изабраном СУБП,
+SQLite Studio, као што смо видели на примеру креирања базе података за школски дневник.
+Ово је теоријска тема и током њене обраде нећемо практично радити у изабраном СУБП-u,
 али ћемо објаснити шта је све потребно да се припреми пре практичног креирања базе
 података фиктивне компаније за продају музичких композиција. На крају лекције ћете
-моћи да преузмете комплетну базу и учитате је у систем SQLite Studio да би кроз наредне
+моћи да преузмете комплетну базу и учитате је у систем SQLite Studio, да бисте кроз наредне
 лекције могли практично са њом да радите.</p>
 <div class="section" id="id2">
 <h2>Спецификација<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>Пре свега, у бази треба да чувамо податке о композицијама. За сваку
 композицију чувамо неке основне податке:</p>
 <ul class="simple">
-<li><p>назив</p></li>
-<li><p>трајање (у милисекундама)</p></li>
-<li><p>дигитални формат (MP3, AAC, …)</p></li>
-<li><p>величина (у бајтовима)</p></li>
-<li><p>жанр</p></li>
-<li><p>цена</p></li>
+<li><p>назив,</p></li>
+<li><p>трајање (у милисекундама),</p></li>
+<li><p>дигитални формат (MP3, AAC, итд),</p></li>
+<li><p>величина (у бајтовима),</p></li>
+<li><p>жанр и</p></li>
+<li><p>цена.</p></li>
 </ul>
 <p>Подразумеваћемо да је број жанрова ограничен и да жанр може да буде
-само неки од унапред дефинисаних жанрова или да је композиција
+само неки од унапред дефинисаних жанрова, или да је композиција
 евентуално неког непознатог жанра. Слично, подразумеваћемо и да је
 дигитални формат неки са листе подржаних формата (на пример, mp3 или
 aac), при чему је формат сваке композиције обавезно неки са те листе
 (не може да буде непознат).</p>
-<p>База треба да садржи и податке о албумима, који се, нормално, састоје
+<p>База треба да садржи и податке о албумима који се, нормално, састоје
 од више композиција. Претпоставља се да није могуће да се иста
 композиција нађе на два различита албума, али је допуштено да неке
 композиције нису део ниједног албума (издате су као
 тзв. синглови). Даље, претпоставља се да се на сваком албуму налазе
-композиције само једног извођача и за сваки албум је познат назив
+композиције само једног извођача и да је за сваки албум познат назив
 албума и извођач. За сваког извођача je познато име.</p>
 <p>У бази су дефинисане и листе композиција (тзв. плејлисте,
 енгл. playlist). Може постојати више различитих листа и свака листа
@@ -510,7 +515,7 @@ aac), при чему је формат сваке композиције оба
 <div class="section" id="id3">
 <h2>Превођење спецификације у табеле<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>Покушајмо да на основу ове спецификације осмислимо табеле релационе
-базе података. Размотримо ентитете и њихове односе тј. везе.</p>
+базе података. Размотримо ентитете и њихове односе, тј. везе.</p>
 <p>Ентитети који се одмах јасно препознају су <em>композиција</em>,
 <em>албум</em>, <em>извођач</em> и <em>плејлиста</em>. Све ове ентитете ћемо
 представити табелама. Свакој од њих ћемо, поред атрибута који тај
@@ -521,7 +526,7 @@ aac), при чему је формат сваке композиције оба
 <li><dl class="simple">
 <dt>Табела <code class="docutils literal notranslate"><span class="pre">kompozicija</span></code> ће да садржи следеће колоне:</dt><dd><ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">id_kompozicija</span></code> као примарни кључ</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">naziv</span></code>, назив композиције</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">naziv</span></code> као назив композиције</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">trajanje</span></code> као трајање композиције у милисекундама</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">velicina</span></code> као меморијска величина композиције у бајтовима</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">cena</span></code> као цена једног примерка</p></li>
@@ -532,7 +537,7 @@ aac), при чему је формат сваке композиције оба
 <li><dl class="simple">
 <dt>Табела <code class="docutils literal notranslate"><span class="pre">album</span></code> ће да садржи следеће колоне:</dt><dd><ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">id_album</span></code> као примарни кључ</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">naziv</span></code>, назив албума</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">naziv</span></code> као назив албума</p></li>
 </ul>
 </dd>
 </dl>
@@ -540,7 +545,7 @@ aac), при чему је формат сваке композиције оба
 <li><dl class="simple">
 <dt>Табела <code class="docutils literal notranslate"><span class="pre">izvodjac</span></code> ће да садржи следеће колоне:</dt><dd><ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">id_izvodjac</span></code> као примарни кључ</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">naziv</span></code>, назив извођача</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">naziv</span></code> као назив извођача</p></li>
 </ul>
 </dd>
 </dl>
@@ -548,7 +553,7 @@ aac), при чему је формат сваке композиције оба
 <li><dl class="simple">
 <dt>Табела <code class="docutils literal notranslate"><span class="pre">plejlista</span></code> ће да садржи следеће колоне:</dt><dd><ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">id_plejlista</span></code> као примарни кључ</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">naziv</span></code>, назив листе</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">naziv</span></code> као назив листе</p></li>
 </ul>
 </dd>
 </dl>
@@ -563,7 +568,7 @@ aac), при чему је формат сваке композиције оба
 које нарушавају интегритет података и воде ка погрешним резултатима
 претраге. Због свега тога, прогласићемо и жанр за посебну врсту
 ентитета, којој ће да одговара табела <code class="docutils literal notranslate"><span class="pre">zanr</span></code>, са колоном <code class="docutils literal notranslate"><span class="pre">id_zanr</span></code>
-као примарним кључем и колоном <code class="docutils literal notranslate"><span class="pre">naziv</span></code>, називом жанра. Да бисмо за
+као примарним кључем и колоном <code class="docutils literal notranslate"><span class="pre">naziv</span></code> као називом жанра. Да бисмо за
 дату композицију имали информацију о њеном жанру, додаћемо и у табелу
 <code class="docutils literal notranslate"><span class="pre">kompozicija</span></code> колону <code class="docutils literal notranslate"><span class="pre">id_zanr</span></code> као страни кључ, за који
 дозвољавамо и вредност <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
@@ -582,7 +587,7 @@ aac), при чему је формат сваке композиције оба
 албуму, дозволићемо да вредност колоне <code class="docutils literal notranslate"><span class="pre">id_album</span></code> у табели
 <code class="docutils literal notranslate"><span class="pre">kompozicija</span></code> недостаје (тј. да буде <code class="docutils literal notranslate"><span class="pre">NULL</span></code>).</p>
 <p>Веза између албума и извођача је такође <em>један-према-више</em> (према
-спрецификацији, сваки албум има тачно једног извођача, а сваки извођач
+спецификацији, сваки албум има тачно једног извођача, а сваки извођач
 може да има нула или више албума). Према томе, везу остварујемо
 додавањем колоне <code class="docutils literal notranslate"><span class="pre">id_izvodjac</span></code> у табели <code class="docutils literal notranslate"><span class="pre">album</span></code>. Међутим, пошто
 албум мора да има тачно једног извођача, овај пут нећемо дозволити да
@@ -680,7 +685,7 @@ aac), при чему је формат сваке композиције оба
 дигитални формат. Овакви детаљи су такође приказани на
 дијаграму. Погледајмо пажљивије крајеве линија које представљају везе
 између поменутих ентитета (уоквирене црвено).</p>
-<a class="reference internal image-reference" href="../_images/tracks_erd_detail_1.png"><img alt="Дијаграм базе - детаљ 1" class="align-center" src="../_images/tracks_erd_detail_1.png" style="width: 420px;" /></a>
+<a class="reference internal image-reference" href="../_images/tracks_erd_detail_1.png"><img alt="Дијаграм базе - детаљ 1" class="align-center" src="../_images/tracks_erd_detail_1.png" style="width: 780px;" /></a>
 <p>Рекли смо да свакој композицији може да одговара нула или један
 жанр. Управо то је симболички приказано на крају линије која повезује
 ентитете <code class="docutils literal notranslate"><span class="pre">kompozicija</span></code> и <code class="docutils literal notranslate"><span class="pre">zanr</span></code>, на страни ентитета <code class="docutils literal notranslate"><span class="pre">zanr</span></code> (означено
@@ -693,9 +698,9 @@ aac), при чему је формат сваке композиције оба
 крају линије означава највећи могућ број повезаних елемената (горњу
 границу), а може да буде <em>један</em> или <em>више</em>.</p>
 <p>Тако разликујемо наредне могућности за сваки крај везе:</p>
-<a class="reference internal image-reference" href="../_images/erd_veze.png"><img alt="Везе на ERD дијаграмима" class="align-center" src="../_images/erd_veze.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/erd_veze.png"><img alt="Везе на ERD дијаграмима" class="align-center" src="../_images/erd_veze.png" style="width: 500px;" /></a>
 <p>Увежбајмо читање ових ознака на још једном детаљу дијаграма.</p>
-<a class="reference internal image-reference" href="../_images/tracks_erd_detail_2.png"><img alt="Дијаграм базе - детаљ 1" class="align-center" src="../_images/tracks_erd_detail_2.png" style="width: 580px;" /></a>
+<a class="reference internal image-reference" href="../_images/tracks_erd_detail_2.png"><img alt="Дијаграм базе - детаљ 1" class="align-center" src="../_images/tracks_erd_detail_2.png" style="width: 780px;" /></a>
 <p>Приказану везу између композиција и албума читамо овако:</p>
 <ul class="simple">
 <li><p>сваком албуму одговара нула или више композиција</p></li>
@@ -714,7 +719,7 @@ aac), при чему је формат сваке композиције оба
 табелу (веза <em>више-према-више</em>).</p>
 <p>Доње границе (нула или један) типично одређују да ли ће у некој колони
 табеле бити допуштена вредност <code class="docutils literal notranslate"><span class="pre">NULL</span></code>.</p>
-<p>Следе <em>SQL</em> дефиниције табела које треба да се креирају у СУБП, а које одговарају урађеном дизајну.</p>
+<p>Следе <em>SQL</em> дефиниције табела које треба да се креирају у СУБП, а које одговарају урађеном дизајну:</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span> <span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">zanr</span> <span class="p">(</span>
     <span class="n">id_zanr</span> <span class="nb">INTEGER</span>        <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="n">AUTOINCREMENT</span>
                            <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
@@ -750,7 +755,6 @@ aac), при чему је формат сваке композиције оба
     <span class="n">id_album</span>        <span class="nb">INTEGER</span><span class="p">,</span>
     <span class="n">id_format</span>       <span class="nb">INTEGER</span>         <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
     <span class="n">id_zanr</span>         <span class="nb">INTEGER</span><span class="p">,</span>
-    <span class="n">Composer</span>        <span class="nb">VARCHAR</span> <span class="p">(</span><span class="mi">220</span><span class="p">),</span>
     <span class="n">trajanje</span>        <span class="nb">INTEGER</span>         <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
     <span class="n">velicina</span>        <span class="nb">INTEGER</span><span class="p">,</span>
     <span class="n">cena</span>            <span class="nb">NUMERIC</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>

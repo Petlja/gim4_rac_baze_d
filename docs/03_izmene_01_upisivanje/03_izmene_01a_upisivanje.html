@@ -6,6 +6,7 @@
     <title>Уписивање података</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -478,7 +483,7 @@
 <code class="docutils literal notranslate"><span class="pre">VALUES</span></code> наведу вредности свих колона и то баш у редоследу колона у
 табели (тај редослед је одређен приликом креирања тј. дефинисања
 структуре табеле). Када експлицитно наведемо имена колона, не морамо
-да обраћамо пажњу на тај редослед и упит остаје коректан и ако се тај
+да обраћамо пажњу на тај редослед, а упит остаје коректан и када се тај
 редослед промени. У случају да неке колоне имају постављене
 подразумеване вредности или ако се аутоматски увећавају (што је
 одређено опцијом <code class="docutils literal notranslate"><span class="pre">AUTOINCREMENT</span></code>), тада оне могу да се изоставе из
@@ -496,20 +501,18 @@
 су недостајуће вредности забрањене (<code class="docutils literal notranslate"><span class="pre">NOT</span> <span class="pre">NULL</span></code>),</p></li>
 <li><p>не дозвољава се унос који би нарушио услов страног кључа (који би у
 колону у којој се налази неки страни кључ уписао вредност која не
-постоји као примарни у повезаној табели),</p></li>
+постоји као примарни кључ у повезаној табели).</p></li>
 </ul>
 <p>Прикажимо употребу упита <code class="docutils literal notranslate"><span class="pre">INSERT</span></code> на неколико једноставних примера.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Унети у табелу ученика нову ученицу одељења II1. Она се зове Зденка
 Здолшек и рођена је 17. августа 2005. године.</p>
 
-    </p></div></div>
+    </div></div>
 <p>Пошто идентификатор ученика има постављену опцију <code class="docutils literal notranslate"><span class="pre">AUTOINCREMENT</span></code>,
 уписаћемо вредности свих колона осим колоне <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">ucenik</span> <span class="p">(</span><span class="n">ime</span><span class="p">,</span> <span class="n">prezime</span><span class="p">,</span> <span class="n">pol</span><span class="p">,</span> <span class="n">datum_rodjenja</span><span class="p">,</span> <span class="n">razred</span><span class="p">,</span> <span class="n">odeljenje</span><span class="p">)</span>
@@ -517,17 +520,15 @@
 </pre></div>
 </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Аници Павловић из IV2 уписати петицу на контролној вежби из
 математике, коју је добила 1. октобра 2020. године.</p>
 
-    </p></div></div>
-<p>У табелу оцене треба да унесемо јединствене идентификаторе ученице и
+    </div></div>
+<p>У табелу „Оцене“ треба да унесемо јединствене идентификаторе ученице и
 предмета. Стога њих прво треба да прочитамо упитом <code class="docutils literal notranslate"><span class="pre">SELECT</span></code>.</p>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">id</span>
 <span class="k">FROM</span> <span class="n">ucenik</span>
@@ -577,16 +578,14 @@
 <h2>Вежба<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>Покушај да наредних неколико упита напишеш самостално.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
-<p>Унети у табелу предмета предмет под називом „Социологија” који се у
+<p>Унети у табелу предмета предмет под називом „Социологија“ који се у
 четвртом разреду предаје са 2 часа недељно.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_upisivanje_01" class="db" data-db-name="dnevnik.sql" db-check = "INSERT INTO predmet (naziv, razred, fond) VALUES ('Социологија', 4, 2)" db-check-query = "SELECT * FROM predmet"   > 
         <div class="row">
@@ -613,16 +612,14 @@
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Уписати ученику Петру Петровићу који има идентификатор 1
-неоправдани изостанак на првом часу 10. маја 2021.</p>
+неоправдани изостанак на првом часу 10. маја 2021. године.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_upisivanje_02" class="db" data-db-name="dnevnik.sql" db-check = "INSERT INTO izostanak (id_ucenik, datum, cas, status) VALUES (1, '2020-05-10', 1, 'неоправдан')" db-check-query = "SELECT * FROM izostanak"   > 
         <div class="row">

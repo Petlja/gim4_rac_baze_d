@@ -6,6 +6,7 @@
     <title>Агрегатне функције (SUM, AVG, MIN, MAX, COUNT)</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -466,11 +471,11 @@
     
   <div class="section" id="sum-avg-min-max-count">
 <h1>Агрегатне функције (SUM, AVG, MIN, MAX, COUNT)<a class="headerlink" href="#sum-avg-min-max-count" title="Permalink to this headline">¶</a></h1>
-<p>У применама је вемоа често потребно да се израчунају одређене статистике серија
+<p>У применама је веoма често потребно да се израчунају одређене статистике серија
 података. То може да буде збир, производ, просек тј. аритметичка средина,
 најмања или највећа вредност и слично. Приликом израчунавања ових
 статистика од серије елемената (тј. од свих елемената једне колоне
-табеле) гради се један резултат тј. сви подаци се агрегирају у
+табеле) гради се један резултат, тј. сви подаци се агрегирају у
 јединствен резултат. Зато се ове функције називају <strong>агрегатне
 функције</strong>.</p>
 <p>Илуструјмо набројане функције на неколико примера.</p>
@@ -479,15 +484,13 @@
 <p>Збир елемената неке колоне може да се добије агрегатном функцијом
 <code class="docutils literal notranslate"><span class="pre">SUM</span></code>.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати укупан фонд часова свих предмета.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">fond</span><span class="p">)</span>
 <span class="k">FROM</span> <span class="n">predmet</span><span class="p">;</span>
 </pre></div>
@@ -506,7 +509,7 @@
 </tr>
 </tbody>
 </table>
-<p>Овај упит можемо да прочитамо као</p>
+<p>Овај упит можемо да прочитамо као:</p>
 <div class="line-block">
 <div class="line"><strong>ОДАБЕРИ</strong> збир колоне фонд</div>
 <div class="line"><strong>ИЗ РЕДОВА</strong> табеле предмет</div>
@@ -535,15 +538,13 @@
 <p>Агрегатне функције се веома често примењују након филтрирања
 (селекције само неких врста).</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати укупан фонд часова предмета из првог разреда.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="n">fond</span><span class="p">)</span> <span class="k">AS</span> <span class="n">ukupan_fond</span>
 <span class="k">FROM</span> <span class="n">predmet</span>
 <span class="k">WHERE</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
@@ -572,16 +573,14 @@
 <p>Агрегатне функције се могу применити и на изразе. Илуструјмо то
 следећим примером.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Под претпоставком да постоји 37 радних недеља, прикажи укупан
 годишњи фонд часова свих предмета у другом разреду.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">SUM</span><span class="p">(</span><span class="mi">37</span> <span class="o">*</span> <span class="n">fond</span><span class="p">)</span> <span class="k">AS</span> <span class="n">ukupan_godisnji_fond</span>
 <span class="k">FROM</span> <span class="n">predmet</span>
 <span class="k">WHERE</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
@@ -607,15 +606,13 @@
 <p>Просек (аритметичка средина) елемената неке колоне може да се добије
 агрегатном функцијом <code class="docutils literal notranslate"><span class="pre">AVG</span></code>.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
-<p>Приказати просечну оцену из предмета са идентификатором 1</p>
+<p>Приказати просечну оцену из предмета са идентификатором 1.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">AVG</span><span class="p">(</span><span class="n">ocena</span><span class="p">)</span> <span class="k">AS</span> <span class="n">prosecna_ocena</span>
 <span class="k">FROM</span> <span class="n">ocena</span>
 <span class="k">WHERE</span> <span class="n">id_predmet</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
@@ -667,16 +664,14 @@
 и на ниске и на датуме (при чему је у случају примене на ниске веома
 битно која колациона секвенца се користи).</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати најнижу оцену на писменом задатку из математике у првом разреду
 одржаном 15. октобра 2020. године (математика у првом разреду има идентификатор 1).</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">MIN</span><span class="p">(</span><span class="n">ocena</span><span class="p">)</span> <span class="k">AS</span> <span class="n">najniza_ocena</span>
 <span class="k">FROM</span> <span class="n">ocena</span>
 <span class="k">WHERE</span> <span class="n">id_predmet</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">AND</span> <span class="n">datum</span> <span class="o">=</span> <span class="s1">&#39;2020-10-15&#39;</span> <span class="k">AND</span> <span class="n">vrsta</span> <span class="o">=</span> <span class="s1">&#39;писмени задатак&#39;</span><span class="p">;</span>
@@ -697,15 +692,13 @@
 </tbody>
 </table>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати датум када је у дневник уписана последња оцена из српског језика за први разред.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">MAX</span><span class="p">(</span><span class="n">datum</span><span class="p">)</span> <span class="k">AS</span> <span class="n">poslednji_datum</span>
 <span class="k">FROM</span> <span class="n">ocena</span>
 <span class="k">WHERE</span> <span class="n">id_predmet</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
@@ -726,16 +719,14 @@
 </tbody>
 </table>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Прикажи име и презиме ученика у одељењу IV1 који је први у дневнику
 (ученици се сортирају по азбучном редоследу).</p>
 
-    </p></div></div>
+    </div></div>
 <p>Агрегатне функције могу да се примене и на колоне које се израчунавају
 као вредности неког израза. У овом случају то је израз којим ће се
 надовезати ниске које чине презиме и име. Пошто се тражи поређење
@@ -770,15 +761,13 @@
 сваке појединачне колоне, обично се уместо назива колоне, као аргумент
 ове функције просто наводи звездица <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати број ученика у табели ученика.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj_ucenika</span>
 <span class="k">FROM</span> <span class="n">ucenik</span><span class="p">;</span>
 </pre></div>
@@ -825,15 +814,13 @@
 <p>И пребројавање често иде у комбинацији са филтрирањем (селекцијом само
 неких врста).</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
-<p>Приказати укупан број предмета у првом разреду</p>
+<p>Приказати укупан број предмета у првом разреду.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj_predmeta</span>
 <span class="k">FROM</span> <span class="n">predmet</span>
 <span class="k">WHERE</span> <span class="n">razred</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
@@ -855,15 +842,13 @@
 </table>
 <p>Агрегатне функције могу да се комбинују и са елиминисањем дупликата.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати укупан број различитих презимена ученика.</p>
 
-    </p></div></div>
+    </div></div>
 <div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj_ucenika</span><span class="p">,</span> <span class="k">COUNT</span><span class="p">(</span><span class="k">DISTINCT</span> <span class="n">prezime</span><span class="p">)</span> <span class="k">AS</span> <span class="n">broj_prezimena</span>
 <span class="k">FROM</span> <span class="n">ucenik</span><span class="p">;</span>
 </pre></div>
@@ -890,15 +875,13 @@
 <p>Наредних неколико упита покушај да напишеш самостално. Решења можеш да тестираш овде,
 а можеш све задатке да урадиш и у систему SQLite Studio.</p>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Одредити датум прве добијене оцене у дневнику и датум последње.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_agregatne_funkcije_01" class="db" data-db-name="dnevnik.sql" db-check = "SELECT MIN(datum), MAX(datum)
 FROM ocena"    db-show-result> 
@@ -926,15 +909,13 @@ FROM ocena"    db-show-result>
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Одредити број јединица које су ученици добили на писменим задацима.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_agregatne_funkcije_02" class="db" data-db-name="dnevnik.sql" db-check = "SELECT COUNT(*)
 FROM ocena
@@ -963,16 +944,14 @@ WHERE ocena = 1 AND vrsta = 'писмени задатак'"    db-show-result>
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Одредити просечну оцену ученика на контролним вежбама одржаним током новембра
 2020. године.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_agregatne_funkcije_03" class="db" data-db-name="dnevnik.sql" db-check = "SELECT AVG(ocena)
 FROM ocena
@@ -1001,16 +980,14 @@ WHERE datum LIKE '2020-11-%' AND vrsta = 'контролна вежба'"    db-
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Одредити број предмета из којих је држан писмени задатак (колону
 назвати <code class="docutils literal notranslate"><span class="pre">број</span> <span class="pre">предмета</span></code>).</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_agregatne_funkcije_04" class="db" data-db-name="dnevnik.sql" db-check = "SELECT COUNT(DISTINCT id_predmet) AS broj_predmeta
 FROM ocena

@@ -6,6 +6,7 @@
     <title>Агрегатне функције и груписање – задаци (дневник)</title>
     <link rel="stylesheet" type="text/css" href="../_static/activecode.css" />
     <link rel="stylesheet" type="text/css" href="../_static/codemirror.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/qchoice.css" />
     <link rel="stylesheet" type="text/css" href="../_static/clickable.css" />
     <link rel="stylesheet" type="text/css" href="../_static/pytutor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/modal-basic.css" />
@@ -28,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/associations.css" />
     <link rel="stylesheet" type="text/css" href="../_static/editor.css" />
     <link rel="stylesheet" type="text/css" href="../_static/dbDirective.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/simanim.css" />
     <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="../_static/user-highlights.css" type="text/css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" type="text/css" />
@@ -109,6 +111,7 @@
     <script type="text/javascript" src="../_static/karelCorner.js"></script>
     <script type="text/javascript" src="../_static/karelRobot.js"></script>
     <script type="text/javascript" src="../_static/karelWorld.js"></script>
+    <script type="text/javascript" src="../_static/karelChat.js"></script>
     <script type="text/javascript" src="../_static/karelRobotDrawer.js"></script>
     <script type="text/javascript" src="../_static/karelUI.js"></script>
     <script type="text/javascript" src="../_static/karel.js"></script>
@@ -126,6 +129,8 @@
     <script type="text/javascript" src="../_static/editor-i18n.sr-Cyrl.js"></script>
     <script type="text/javascript" src="../_static/dbDirective.js"></script>
     <script type="text/javascript" src="../_static/sql.js"></script>
+    <script type="text/javascript" src="../_static/simanim.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/pyodide/v0.16.1/full/pyodide.js"></script>
     <script type="text/javascript" src="../_static/translations.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/jquery-ui-1.10.3.custom.min.js"></script>
@@ -466,26 +471,24 @@
     
   <div class="section" id="id1">
 <h1>Агрегатне функције и груписање – задаци (дневник)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>Покушај сада да самостално решиш наредних неколико задатака.
+<p>Покушај да самостално решиш наредних неколико задатака.
 Решења можеш да тестираш овде, а можеш све задатке да урадиш и у систему SQLite Studio.
-Непоходно је, наравно, да је систем преузет на рачунар и је додата база података
+Неопходно је, наравно, да је систем преузет на рачунар и да је додата база података
 са називом <em>dnevnik</em> како је описано у ранијим лекцијама.
 Упити се пишу након што се кликне на креирану базу у прозору <code class="docutils literal notranslate"><span class="pre">Databases</span></code> и потом изабере команда
 менија <code class="docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">→</span> <span class="pre">Open</span> <span class="pre">SQL</span> <span class="pre">Editor</span></code>. Када се напише упит, кликне се на дугме <code class="docutils literal notranslate"><span class="pre">Execute</span> <span class="pre">query</span> <span class="pre">(F9)</span></code>
 (плави троуглић).</p>
 <p>Савет је да се у прозору <code class="docutils literal notranslate"><span class="pre">Databases</span></code> увек прво провере тачни називи табела, као и називи колона.</p>
-<a class="reference internal image-reference" href="../_images/dnevnik3.png"><img alt="../_images/dnevnik3.png" class="align-center" src="../_images/dnevnik3.png" style="width: 400px;" /></a>
+<a class="reference internal image-reference" href="../_images/dnevnik3.png"><img alt="../_images/dnevnik3.png" class="align-center" src="../_images/dnevnik3.png" style="width: 500px;" /></a>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати укупан број оправданих изостанака које је направио ученик
 са идентификатором 1 (колону назвати <code class="docutils literal notranslate"><span class="pre">broj_izostanaka</span></code>).</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_agregatne_zadaci_01" class="db" data-db-name="dnevnik.sql" db-check = "SELECT COUNT(*) AS broj_izostanaka
 FROM izostanak
@@ -514,17 +517,15 @@ WHERE id_ucenik = 1 AND status = 'оправдан'"  db-check-col-name  db-show
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати просечну оцену, заокружену на две децимале, на писменом задатку
 из математике у првом разреду одржаном 15. октобра 2020. године
 (математика у првом разреду има идентификатор 1).</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_agregatne_zadaci_02" class="db" data-db-name="dnevnik.sql" db-check = "SELECT round(AVG(ocena), 2) AS prosek
 FROM ocena
@@ -553,16 +554,14 @@ WHERE id_predmet = 1 AND datum = '2020-10-15' AND vrsta = 'писмени зад
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>За сваки датум у ком је направљен неки изостанак одредити укупан
 број направљених изостанака (колону назвати <code class="docutils literal notranslate"><span class="pre">broj_izostanaka</span></code>).</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_agregatne_zadaci_03" class="db" data-db-name="dnevnik.sql" db-check = "SELECT datum, COUNT(*) AS broj_izostanaka
 FROM izostanak
@@ -591,16 +590,14 @@ GROUP BY datum"  db-check-col-name  db-show-result>
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>За сваки статус изостанака (оправдани, неоправдани, нерегулисани)
 одредити број таквих изостанака у мају 2021. године.</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_agregatne_zadaci_04" class="db" data-db-name="dnevnik.sql" db-check = "SELECT status, COUNT(*) AS broj
 FROM izostanak
@@ -630,17 +627,15 @@ GROUP BY status"    db-show-result>
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>За сваки статус изостанака одреди први и последњи датум када је
 такав изостанак направљен (колоне назвати <code class="docutils literal notranslate"><span class="pre">prvi</span></code> и
 <code class="docutils literal notranslate"><span class="pre">poslednji</span></code>).</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_agregatne_zadaci_05" class="db" data-db-name="dnevnik.sql" db-check = "SELECT status, MIN(datum) AS prvi, MAX(datum) AS poslednji
 FROM izostanak
@@ -669,16 +664,14 @@ GROUP BY status"  db-check-col-name  db-show-result>
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>За сваки месец приказати број ученика рођених у том месецу (колоне
 назвати <code class="docutils literal notranslate"><span class="pre">mesec</span></code> и <code class="docutils literal notranslate"><span class="pre">broj</span></code>).</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_agregatne_zadaci_06" class="db" data-db-name="dnevnik.sql" db-check = "SELECT strftime('%m', datum_rodjenja) AS mesec, COUNT(*) AS broj
 FROM ucenik
@@ -707,17 +700,15 @@ GROUP BY mesec"  db-check-col-name  db-show-result>
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
-<p>За сваки месец у години y ком је неки ученик добио неку јединицу
+<p>За сваки месец у години y ком је неки ученик добио неку јединицу -
 приказати број јединица које су ученици добили током тог месеца
 (колоне назвати <code class="docutils literal notranslate"><span class="pre">mesec</span></code> и <code class="docutils literal notranslate"><span class="pre">broj</span></code>).</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_agregatne_zadaci_07" class="db" data-db-name="dnevnik.sql" db-check = "SELECT strftime('%m', datum) AS mesec, COUNT(*) AS broj
 FROM ocena
@@ -747,16 +738,14 @@ GROUP BY mesec"  db-check-col-name  db-show-result>
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
-<p>Прикажи датуме у којима има неоправданих изостанака, али је то
+<p>Прикажи датуме у којима има неоправданих изостанака, али да је то
 строго мање од 10 (уз сваки датум приказати и број изостанака).</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_agregatne_zadaci_08" class="db" data-db-name="dnevnik.sql" db-check = "SELECT datum, COUNT(*) AS broj
 FROM izostanak
@@ -786,16 +775,14 @@ HAVING broj < 10"    db-show-result>
             
     </div>
 
-    <div class="course-box course-box-special">
+    <div class="note-wrapper questionnote-type">
+        <div class="note-icon-holder"> </div>
+        <img src="../_static/img/question-mark.png" class="note-image questionnote-image" /> 
         <div class="course-content">
-            <h4 class="carbox-title">
-                <img class="corner-image float-right" src="../_static/img/question-mark.png" />
-            </h4>
-            <p>
 <p>Приказати све називе предмета који се предају током неколико
 разреда (приказати само називе).</p>
 
-    </p></div></div>
+    </div></div>
 
     <div id="db_agregatne_zadaci_09" class="db" data-db-name="dnevnik.sql" db-check = "SELECT naziv
 FROM predmet
