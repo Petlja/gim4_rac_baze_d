@@ -24,7 +24,7 @@
 комуникационим софтвером, којим се остварује контрола система тако да је
 омогућен пренос података између повезаних уређаја.
 
-.. image:: ../../_images/Picture1.jpg
+.. image:: ../../_images/ilustracija_1.png
    :width: 780px
    :align: center
 
@@ -57,7 +57,7 @@
 софтвер, хардвер), док је **клијент** систем који иницира контакт са сервером
 да би користио ресурсе које сервер пружа.
 
-.. image:: ../../_images/Picture2.png
+.. image:: ../../_images/ilustracija_3.png
    :width: 780px  
    :align: center
 
@@ -76,7 +76,7 @@
 Сервер клијенту шаље документе (веб-странице, слике итд.) и клијент их
 приказује кориснику.
 
-.. image:: ../../_images/Picture3.png
+.. image:: ../../_images/ilustracija_2.png
    :width: 780px  
    :align: center
 

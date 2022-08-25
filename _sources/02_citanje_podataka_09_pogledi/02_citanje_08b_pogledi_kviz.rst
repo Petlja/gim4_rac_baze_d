@@ -65,4 +65,4 @@
         :match_2: SELECT razred, predmet, count (distinct uid) <br/>FROM ocene_detaljno <br/>GROUP BY pid ||| број оцењених ученика по предметима
         :match_3: SELECT count (distinct pid) <br/>FROM ocene_detaljno ||| број предмета из којих постоје оцене
       
-        Упари упите са њиховим описима
+        Упари упите са њиховим описима:

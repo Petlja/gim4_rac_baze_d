@@ -40,7 +40,7 @@
         :match_2: SELECT COUNT(*) <br/>FROM izostanak <br/>GROUP BY id_ucenik ||| Број изостанака сваког ученика
         :match_3: SELECT COUNT(DISTINCT id_ucenik) <br/>FROM izostanak ||| Број ученика који су правили изостанке
       
-        Упари упите са њиховим описима
+        Упари упите са њиховим описима:
 
 .. quizq:: 
 

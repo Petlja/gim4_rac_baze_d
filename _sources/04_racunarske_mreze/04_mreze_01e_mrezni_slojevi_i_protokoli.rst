@@ -91,7 +91,7 @@
 мрежног оквира у TCP/IP мрежи за случај преноса у веб апликацији која се налази
 на веб серверу и којој корисник/клијент шаље информације.
 
-.. image:: ../../_images/Picture9.png
+.. image:: ../../_images/ilustracija4.png
    :width: 780px
    :align: center
 
@@ -107,7 +107,7 @@
 назива се протокол за пренос хипертекста **HTTP** (енгл. **HyperText Transfer
 Protocol**).
 
-.. image:: ../../_images/Picture10.png
+.. image:: ../../_images/ilustracija_5.png
    :width: 780px
    :align: center
 
