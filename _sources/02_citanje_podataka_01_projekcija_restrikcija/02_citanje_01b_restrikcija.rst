@@ -78,7 +78,7 @@
 .. image:: ../../_images/1_razred.png
    :width: 780
    :align: center
-
+   :class: screenshot-shadow
 
 .. questionnote::
 
@@ -254,7 +254,7 @@
  Приказати све податке о предметима који имају недељни фонд од 2 часа.
 
 
-. dbpetlja:: db_restrikcija_02
+.. dbpetlja:: db_restrikcija_02
    :dbfile: dnevnik.sql
    :solutionquery: SELECT *
                    FROM predmet

@@ -52,9 +52,10 @@
 
  `pocetna_slika3.jpg <https://petljamediastorage.blob.core.windows.net/root/Media/Default/Kursevi/baze_IV/pocetna_slika3.jpg>`_
 
- .. image:: ../../_images/Picture20.png
+ .. figure:: ../../_images/Picture20.png
     :width: 780px
     :align: center
+    :class: screenshot-shadow
 
  У фолдер ставити и следеће фајлове које можеш да преузмеш овде:
 
@@ -73,16 +74,18 @@
  назив фајла са .html (на пример: pocetna_racunarske_mreze.html), и проверите да
  ли је под ``Encoding`` изабран ``UTF-8``.
 
- .. image:: ../../_images/Picture21.png
+ .. figure:: ../../_images/Picture21.png
     :width: 780px
     :align: center
+    :class: screenshot-shadow
 
  Из фолдера обрисати почетне ``txt`` фајлове. Садржај фолдера би требало да буде
  као на следећој слици:
 
- .. image:: ../../_images/Picture22.png
+ .. figure:: ../../_images/Picture22.png
     :width: 457px
     :align: center
+    :class: screenshot-shadow
 
  Сваки од *HTML* докумената поново отворити у едитору текста на један од следећа
  два начина: отворити едитор, па изабрати са менија ``File/Open`` и пронаћи фајл

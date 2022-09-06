@@ -127,6 +127,7 @@
 .. image:: ../../_images/dnevnik.png
    :width: 500
    :align: center
+   :class: screenshot-shadow
    
 Исти упит покренут у систему SQLite Studio може да се види на следећој слици. 
 Види се само првих неколико редова и информација о томе да има укупно 10194 редова, 

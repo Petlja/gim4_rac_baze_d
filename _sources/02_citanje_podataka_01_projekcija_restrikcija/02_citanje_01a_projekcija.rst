@@ -74,7 +74,7 @@
 .. image:: ../../_images/dnevnik.png
    :width: 500
    :align: center
-
+   :class: screenshot-shadow
 
 Често ће нам код упита бити потребно да знамо и тачне називе колона. 
 То можемо да видимо за сваку табелу појединачно тако што кликнемо на њу у прозору ``Databases``, па се онда појави опис структуре табеле који садржи списак свих колона. 
@@ -89,13 +89,14 @@
 .. image:: ../../_images/ucenik.png
    :width: 780
    :align: center
- 
+   :class: screenshot-shadow
 
 Списак колона можемо да видимо и када извршимо основни SELECT упит. 
 
 .. image:: ../../_images/select.png
    :width: 780
    :align: center
+   :class: screenshot-shadow
 
 .. questionnote::
 

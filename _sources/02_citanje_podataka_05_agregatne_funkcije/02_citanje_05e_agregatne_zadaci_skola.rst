@@ -13,9 +13,10 @@
 
 Савет је да се у прозору ``Databases`` увек прво провере тачни називи табела, као и називи колона. 
 
-.. image:: ../../_images/dnevnik.png
+.. figure:: ../../_images/dnevnik.png
    :width: 500
    :align: center
+   :class: screenshot-shadow
 
 .. questionnote::
 

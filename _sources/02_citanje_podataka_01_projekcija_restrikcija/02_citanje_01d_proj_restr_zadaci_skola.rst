@@ -20,7 +20,8 @@
 .. image:: ../../_images/dnevnik.png
    :width: 500
    :align: center
-   
+   :class: screenshot-shadow
+
 Често ће нам код упита бити потребно да знамо и тачне називе колона, 
 а понекад нам је значајно и да знамо како су неки подаци записани у бази 
 (да ли су ћирилична слова, да ли су латинична, да ли имена и називи почињу 
@@ -31,7 +32,7 @@
 .. image:: ../../_images/select.png
    :width: 780
    :align: center
-   
+   :class: screenshot-shadow
 
 .. questionnote::
 

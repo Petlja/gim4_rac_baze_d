@@ -394,7 +394,3 @@ lessons:
         title: Креирање веб-сајта
         file: 04_mreze_01h_kreiranje_veb_sajta.rst
         guid: d24a316f-3f68-49be-88fd-d282947373b2
-      - type: quiz
-        title: Рачунарске мреже - квиз
-        file: 04_mreze_01d_kviz.rst
-        guid: 213aa8a1-3223-491b-8915-b1d7d2a9a753

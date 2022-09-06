@@ -12,10 +12,11 @@ Databases и потом изабере команда менија ``Tools → O
 кључа који му одговара у другој табели када желимо да извршимо спајање, тј. да 
 прикажемо податке из више табела које су повезане.  
 
-.. image:: ../../_images/dnevnik.png
+.. figure:: ../../_images/dnevnik.png
    :width: 500
    :align: center
    :alt: Логотип система SQLite
+   :class: screenshot-shadow
 
 .. questionnote::
 

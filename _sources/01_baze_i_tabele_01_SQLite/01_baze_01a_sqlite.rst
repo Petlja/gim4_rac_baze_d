@@ -77,8 +77,8 @@ SQLite и SQLite Studio
 SQLite Studio (https://sqlitestudio.pl/), који је бесплатан и који се може једноставно преузети и користити.
 
 
-.. image:: ../../_images/sqlite_studio.png
-   :width: 692
+.. figure:: ../../_images/sqlite_studio.png
+   :width: 600
    :align: center
    :alt: SQLite Studio
 
