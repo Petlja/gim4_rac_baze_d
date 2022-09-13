@@ -3,11 +3,7 @@
 Корелисани подупити
 -------------------
 
-Сви приказани угнежђени подупити до сада су били такви да се унутрашњи
-упит (тзв. подупит) може извршити независно од спољашњег. Међутим, SQL
-допушта и да се у унутрашњем упиту врши филтрирање на основу вредности
-наведене у спољашњем подупиту. У том случају кажемо да су упити
-**корелисани**.
+Сви приказани угнежђени подупити до сада су били такви да се унутрашњи упит (тзв. подупит) може извршити независно од спољашњег. Међутим, SQL допушта и да се у унутрашњем упиту врши филтрирање на основу табела и податка наведених у спољашњем упиту. У том случају кажемо да су упити **корелисани**.
 
 Корелисани подупити превазилазе домет овог курса. За оне који желе да знају више, 
 приказаћемо неколико примера. 
@@ -65,7 +61,8 @@
            (SELECT ROUND(AVG(ocena), 2)
             FROM ucenik u1 JOIN 
                  ocena o1 ON u1.id = o1.id_ucenik
-            WHERE u.razred = u1.razred AND u.odeljenje = u1.odeljenje) AS prosek_odeljenja
+            WHERE u.razred = u1.razred AND u.odeljenje = u1.odeljenje) 
+            AS prosek_odeljenja
    FROM ucenik u JOIN
         ocena o ON u.id = o.id_ucenik
    GROUP BY u.id                
@@ -93,15 +90,18 @@
 
 .. code-block:: sql
 
-   SELECT ime, prezime, prosek_ucenika, t1.razred, t1.odeljenje, prosek_odeljenja
-   FROM (SELECT ime, prezime, id_ucenik, razred, odeljenje, ROUND(AVG(ocena), 2) AS prosek_ucenika 
+   SELECT ime, prezime, prosek_ucenika,
+   t1.razred, t1.odeljenje, prosek_odeljenja
+   FROM (SELECT ime, prezime, id_ucenik, razred, odeljenje, ROUND(AVG(ocena), 2)
+   AS prosek_ucenika 
          FROM ucenik u JOIN
               ocena o ON u.id = o.id_ucenik
          GROUP BY u.id) t1 JOIN
         (SELECT razred, odeljenje, ROUND(AVG(ocena), 2) AS prosek_odeljenja
          FROM ucenik u JOIN
               ocena o ON u.id = o.id_ucenik
-         GROUP BY razred, odeljenje) t2 ON t1.razred = t2.razred AND t1.odeljenje = t2.odeljenje;
+         GROUP BY razred, odeljenje) t2 
+   ON t1.razred = t2.razred AND t1.odeljenje = t2.odeljenje;
 
 Извршавањем упита добија се следећи резултат:
 

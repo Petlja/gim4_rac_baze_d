@@ -34,6 +34,8 @@ description:
     - text: Документација система SQLite 
       href: https://www.sqlite.org/index.html
 
+archived-lessons:
+  - guid: 1fcc7207-c493-42dd-80a4-6eeaad971773
 
 lessons:
 ### СЕКЦИЈА Базе података
@@ -361,36 +363,5 @@ lessons:
         guid: 8afe6e16-f8ac-4439-aa6b-5dbd60eb064a
 
 
-### СЕКЦИЈА РАЧУНАРСКЕ МРЕЖЕ
-  - title: "4.0 Рачунарске мреже"
-    guid: 1fcc7207-c493-42dd-80a4-6eeaad971773
-    folder: 04_racunarske_mreze
-    activities:
-      - type: reading
-        title: Рачунарске мреже и интернет
-        file: 04_mreze_01a_racunarske_mreze_i_internet.rst
-        guid: d9a388f4-27ab-43a9-a85d-194d9e0408b8
-      - type: reading
-        title: Мрежни уређаји
-        file: 04_mreze_01b_mrezni_uredjaji.rst
-        guid: 8134f8a5-9730-436a-9a65-b454c9ed5d16
-      - type: reading
-        title: Адресе
-        file: 04_mreze_01c_adrese.rst
-        guid: fb8c6fd6-d377-4ed5-ada8-b969cc588c0f
-      - type: reading
-        title: Мрежни слојеви и протоколи
-        file: 04_mreze_01e_mrezni_slojevi_i_protokoli.rst
-        guid: 7f33e339-51b5-4c87-a7f1-b5dd616c3ab3
-      - type: reading
-        title: Статичке веб-стране HTML/CSS
-        file: 04_mreze_01f_staticke_veb_strane.rst
-        guid: bb1d92e1-9d7d-49b2-849a-1c2912210a8a
-      - type: reading
-        title: Дизајн веб-стране - CSS
-        file: 04_mreze_01g_dizajn_veb_strane_css.rst
-        guid: 20080c51-0c0f-4c16-be9b-26e31420c68a
-      - type: reading
-        title: Креирање веб-сајта
-        file: 04_mreze_01h_kreiranje_veb_sajta.rst
-        guid: d24a316f-3f68-49be-88fd-d282947373b2
+
+
