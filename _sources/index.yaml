@@ -34,9 +34,6 @@ description:
     - text: Документација система SQLite 
       href: https://www.sqlite.org/index.html
 
-archived-lessons:
-  - guid: 1fcc7207-c493-42dd-80a4-6eeaad971773
-
 lessons:
 ### СЕКЦИЈА Базе података
   - title: "1.0 Базе: Увод у базе података"
