@@ -197,7 +197,7 @@
    :solutionquery: SELECT status, COUNT(*) AS broj_izostanaka
                    FROM izostanak
                    GROUP BY status
-    :showresult:
+   :showresult:
                    
 .. questionnote::
 
