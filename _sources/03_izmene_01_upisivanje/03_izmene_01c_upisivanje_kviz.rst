@@ -42,8 +42,7 @@
         :answer_d: VALUES ('Милица', 'Петровић', 'ж', '2005-08-31', 2, 1) 
         :correct: d
 
-		Уколико у тебелу ucenik треба да унесемо нови ред и неопходно је да податке унесемо у следећем 
-		редоследу (ime, prezime, pol, datum_rodjenja, razred, odeljenje), која клаузула VALUES је исправна?
+		Уколико у тебелу ucenik треба да унесемо нови ред и неопходно је да податке унесемо у следећем редоследу (ime, prezime, pol, datum_rodjenja, razred, odeljenje), која клаузула VALUES је исправна?
 		
 .. quizq::
 
@@ -51,9 +50,8 @@
         :answer_a: (datum, ocena, vrsta, id_ucenik, id_predmet)
         :answer_b: (id_ucenik, id_predmet, datum, ocena, vrsta)
         :answer_c: (id_ucenik, id_predmet, ocena, vrsta, datum)
-		:answer_d: (id_ucenik, id_predmet, datum, vrsta, ocena)
+        :answer_d: (id_ucenik, id_predmet, datum, vrsta, ocena)
         :correct: b
 
-        Који списак колона одговара следећој клаузули:  
-		VALUES (293, 9, '2020-10-01', 5, 'контролна вежба')?
+        Који списак колона одговара следећој клаузули: VALUES (293, 9, '2020-10-01', 5, 'контролна вежба')?
 

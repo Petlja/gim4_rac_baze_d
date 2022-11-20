@@ -12,28 +12,6 @@
         :correct: d
 
         Шта је угнежђени упит?
-   
-.. quizq::
-
-    Дат је упит:
-   
-    .. code-block:: sql
-    
-        SELECT id_predmet, round(AVG(ocena), 2) AS prosek
-		FROM ocena
-		WHERE id_predmet IN (SELECT id
-				     FROM predmet
-				     WHERE razred = 1)
-		GROUP BY id_predmet;
-       
-    .. mchoice:: ugnezdeni_2
-        :answer_a: идентификатор оцене из табеле ocena
-        :answer_b: идентификатор предмета и просечна оцена из табеле ocena
-        :answer_c: идентификатор предмета из табеле predmet
-        :answer_d: просечна оцена из табеле ocena
-        :correct: c
-
-		Које све колоне или колону враћа као резултат угњеждени упит у следећем примеру?
 
 .. quizq::
 
