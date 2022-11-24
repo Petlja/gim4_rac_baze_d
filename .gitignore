@@ -10,3 +10,5 @@ v15
 .exe
 course.json
 /_build
+override.json
+export
