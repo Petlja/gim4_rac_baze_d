@@ -124,6 +124,6 @@
 
 .. dbpetlja:: db_implicitno_spajanje_01
    :dbfile: dnevnik.sql
-   :solutionquery: SELECT u.ime, u.prezime, u.razred, u.odeljenje, p.naziv
-                   FROM ucenik u, predmet p
-                   WHERE u.razred = p.razred
+   :solutionquery: SELECT u.ime, u.prezime, i.datum, i.cas, i.status
+                   FROM ucenik as u, izostanak as i
+                   WHERE u.id=i.id_ucenik and i.status!='нерегулисан'
