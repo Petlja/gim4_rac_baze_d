@@ -63,7 +63,7 @@ class DbDirectives {
     }
 
     async initDb() {
-        this.script =  await (await fetch('../../_static/db/'+this.name)).text();
+        this.script =  await (await fetch('../_static/db/'+this.name)).text();
         pyodide.globals.name = this.name;
         pyodide.globals.creationQuery = this.script;
         

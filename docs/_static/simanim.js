@@ -518,6 +518,11 @@ SimAnim.prototype.rotate = function(point) {
 }
 
 window.addEventListener('load',function() {
+	var simanimWhlUrl = ''
+	if (location.hostname === "localhost" || location.hostname === "127.0.0.1")
+		simanimWhlUrl = document.location.origin +'/_static/simanim-0.0.4-py3-none-any.whl'
+	else 
+		simanimWhlUrl = 'https://petljastorage.blob.core.windows.net/kursevi/common_assets/simanim-0.0.4-py3-none-any.whl'
 	// init pyodide
 	languagePluginLoader.then(() =>
 		pyodide.runPythonAsync(`
@@ -527,7 +532,7 @@ window.addEventListener('load',function() {
 	import js
 	import micropip
 	micropip.install('utils')
-	micropip.install('${document.location.origin}/_static/simanim-0.0.4-py3-none-any.whl').then(js.pythonInicijalizovan())
+	micropip.install('${simanimWhlUrl}').then(js.pythonInicijalizovan())
 	`)
 	).then(() => {
 		animations = document.getElementsByClassName('simanim')
