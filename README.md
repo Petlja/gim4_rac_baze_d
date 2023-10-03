@@ -2,9 +2,9 @@
 
 Ovaj repozitorijum posvećen je kursu za Baze podataka za četvrti razred gimnazije društveni i opšti smer. 
 
-Kurs je na Petljom portalu dotupan ovde: [https://petlja.org/kurs/4655/0](https://petlja.org/kurs/4655/)
+Kurs je na Petljinom portalu dotupan ovde: [https://petlja.org/kurs/4655/0](https://petlja.org/kurs/4655/)
 
-Kurs možete itegrisati u svoj LMS koristeći SCORM pakete koji se mogu preuzeti sa: https://github.com/Petlja/gim4_rac_baze_d/releases
+Kurs možete integrisati u svoj LMS koristeći SCORM pakete koji se mogu preuzeti sa: https://github.com/Petlja/gim4_rac_baze_d/releases
 
 ## Konverzija u *HTML*
 
