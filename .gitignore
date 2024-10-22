@@ -12,3 +12,4 @@ course.json
 /_build
 override.json
 export
+.venv
